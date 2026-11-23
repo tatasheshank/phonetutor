@@ -1,0 +1,22 @@
+{
+  "name": "ai-tutor",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev -w @ai-tutor/web",
+    "dev:agent": "npm run dev -w @ai-tutor/agent",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "validate:lessons": "npm run validate -w @ai-tutor/shared"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.43",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

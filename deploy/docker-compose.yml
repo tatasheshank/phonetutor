@@ -1,0 +1,66 @@
+# Staging stack for one Oracle Cloud Always Free server:
+#   caddy  -> HTTPS (free Let's Encrypt certificate), forwards to the web app
+#   web    -> Next.js: sign-in, payments, admin, LiveKit tokens
+#   agent  -> LiveKit tutor worker (outbound only, no ports)
+# Shared ./data holds accounts, payments (app-db.json) and session costs (usage.jsonl).
+#
+# Run from this folder:  docker compose up -d --build
+
+name: aitutor
+
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+      target: web
+    env_file: web.env
+    environment:
+      APP_DB_PATH: /app/data/app-db.json
+      USAGE_LOG_PATH: /app/data/usage.jsonl
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+    expose:
+      - "3000"
+    logging: &logging
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  agent:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+      target: agent
+    env_file: agent.env
+    environment:
+      USAGE_LOG_PATH: /app/data/usage.jsonl
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+    # Live audio needs CPU headroom; give it most of the box.
+    stop_grace_period: 30s
+    logging: *logging
+
+  caddy:
+    image: caddy:2.8
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN in deploy/.env, e.g. 140-238-1-2.sslip.io}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - web
+    restart: unless-stopped
+    logging: *logging
+
+volumes:
+  caddy_data:
+  caddy_config:

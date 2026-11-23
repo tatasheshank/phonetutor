@@ -1,0 +1,15 @@
+{
+  "name": "aitutor-oracle-retry",
+  "private": true,
+  "type": "module",
+  "description": "Keeps asking Oracle Cloud for an Always Free Ampere A1 server until capacity is available.",
+  "scripts": {
+    "check": "node retry-create.mjs --check",
+    "start": "node retry-create.mjs"
+  },
+  "dependencies": {
+    "oci-common": "2.147.0",
+    "oci-core": "2.147.0",
+    "oci-identity": "2.147.0"
+  }
+}

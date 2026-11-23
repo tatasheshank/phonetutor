@@ -1,0 +1,14 @@
+# Never send secrets, local data or build output into the image.
+**/node_modules
+**/.next
+**/dist
+**/.env
+**/.env.*
+!**/.env.example
+data
+samples
+deploy/*.env
+.git
+.claude
+*.log
+*.tgz
