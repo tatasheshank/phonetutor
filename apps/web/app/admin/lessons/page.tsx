@@ -41,7 +41,6 @@ export default async function LessonsAdminPage() {
                 <th className="num">Steps</th>
                 <th>Notes</th>
                 <th>Status</th>
-                <th aria-label="Actions" />
               </tr>
             </thead>
             <tbody>
@@ -53,15 +52,17 @@ export default async function LessonsAdminPage() {
                   <td className="muted">{d.source.fileName}</td>
                   <td className="num">{d.lesson.steps.length}</td>
                   <td>{d.warnings.length ? `⚠ ${d.warnings.length}` : "✓"}</td>
-                  <td>{d.status === "published" ? <span className="live">Published</span> : "Draft"}</td>
                   <td>
-                    <DeleteLessonButton id={d.id} title={d.lesson.locales.en?.title ?? d.id} small />
+                    <div className="status-cell">
+                      {d.status === "published" ? <span className="live">Published</span> : "Draft"}
+                      <DeleteLessonButton id={d.id} title={d.lesson.locales.en?.title ?? d.id} small />
+                    </div>
                   </td>
                 </tr>
               ))}
               {drafts.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="muted">
+                  <td colSpan={5} className="muted">
                     None yet. Add one above.
                   </td>
                 </tr>
