@@ -8,3 +8,5 @@ export * from "./costSummary";
 export * from "./learner";
 export * from "./phone";
 export * from "./revenue";
+export * from "./lesson/runner";
+export * from "./lesson/fromPlan";

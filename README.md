@@ -55,6 +55,19 @@ Open http://localhost:3000/admin and sign in with `ADMIN_PASSWORD` from `apps/we
 - These are estimates. Check your Sarvam and LiveKit dashboards for the actual bills.
 - The log file only works while the agent and web app run on the same machine. Moving it to Postgres is part of M4.
 
+## Adding lessons (admins)
+
+Open http://localhost:3000/admin/lessons (admin password from `apps/web/.env.local`).
+
+1. Choose a **PDF, Word (.docx), .txt or .md** file that explains a phone task, or describe the task in a few sentences.
+2. The app reads it and, with Sarvam, plans the teacher's demonstration on the built-in phone screens, then writes it in Telugu, Hindi and English. This takes a few seconds and costs a few paise.
+3. Preview it step by step (exactly what learners see), read the warnings, then **Publish for all learners**.
+
+- The teacher operates the phone; learners only watch and answer "Did you understand?".
+- Only built-in screens can be shown (WhatsApp chat list, chat and call today). Other topics become spoken lessons, and the preview says so.
+- Screenshots, videos and scanned PDFs need an image-reading AI model (not set up; Sarvam's chat API is text-only).
+- Drafts are in `data/lesson-drafts/`; published lessons go to `content/lessons/`. Telugu and Hindi are AI-written: have a native speaker check them.
+
 ## Checks
 
 ```powershell

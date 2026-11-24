@@ -121,7 +121,6 @@ function checkLocalePack(lesson: Lesson, code: LanguageCode, pack: LocalePack): 
         break;
       case "practice":
         if (!s.text) errors.push(`${at(step.id)}: needs text`);
-        if (!s.hints || s.hints.length === 0) errors.push(`${at(step.id)}: needs at least one hint`);
         break;
       case "check":
         if (!s.question) errors.push(`${at(step.id)}: needs question`);

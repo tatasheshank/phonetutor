@@ -1,5 +1,4 @@
-import type { AgentEvent } from "@ai-tutor/shared";
-import type { RunnerAction } from "./runner";
+import type { AgentEvent, RunnerAction } from "@ai-tutor/shared";
 
 /** The bits of a LiveKit SpeechHandle the driver needs (kept structural for tests). */
 export interface SpeechLike {

@@ -70,6 +70,9 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
           <p className="muted small">
             Estimates from usage × public prices (checked {PRICES_CHECKED_ON}). Your provider bills are the final word.
           </p>
+          <p className="small">
+            <a href="/admin/lessons">📚 Lessons: add a lesson from a file →</a>
+          </p>
         </div>
         <form action={logout}>
           <button className="btn secondary small-btn" type="submit">

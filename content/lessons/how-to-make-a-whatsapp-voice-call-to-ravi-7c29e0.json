@@ -1,0 +1,196 @@
+{
+  "id": "how-to-make-a-whatsapp-voice-call-to-ravi-7c29e0",
+  "version": 1,
+  "course": "generated",
+  "mode": "scripted",
+  "objectives": [
+    "Open WhatsApp and find Ravi's chat",
+    "Start a voice call to Ravi",
+    "End the voice call"
+  ],
+  "screens": [
+    "wa.chats",
+    "wa.chat",
+    "wa.call"
+  ],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "practice",
+      "screen": "wa.chats",
+      "expect": {
+        "tap": "row.beta"
+      },
+      "maxAttempts": 3,
+      "onFail": "demo"
+    },
+    {
+      "id": "s2",
+      "type": "practice",
+      "screen": "wa.chat",
+      "expect": {
+        "tap": "btn.voiceCall"
+      },
+      "maxAttempts": 3,
+      "onFail": "demo"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "practice",
+      "screen": "wa.call",
+      "expect": {
+        "tap": "btn.endCall"
+      },
+      "maxAttempts": 3,
+      "onFail": "demo"
+    },
+    {
+      "id": "s5",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "రవికి WhatsApp వాయిస్ కాల్ ఎలా చేయాలి",
+      "steps": {
+        "s1": {
+          "text": "ఇది మీ WhatsApp చాట్ లిస్ట్. పైన రవి చాట్ నాకు కనిపిస్తోంది."
+        },
+        "s2": {
+          "text": "ఇది చాట్. పైన కుడివైపున వాయిస్ కాల్ కోసం ఫోన్ ఐకాన్ ఉంది."
+        },
+        "s3": {
+          "text": "ఇప్పుడు కాల్ కనెక్ట్ అయింది. మీరు రవితో మాట్లాడవచ్చు. మీ పని అయిపోయాక, కాల్ కట్ చేయడానికి కింద ఉన్న రెడ్ బటన్ నొక్కండి."
+        },
+        "s4": {
+          "text": "ఇప్పుడు నేను రెడ్ ఎండ్ కాల్ బటన్ నొక్కుతున్నాను."
+        },
+        "s5": {
+          "question": "రవికి WhatsApp వాయిస్ కాల్ ఎలా చేయాలి, దాన్ని ఎలా కట్ చేయాలి అనేది మీకు అర్థమైందా?",
+          "accept": [
+            "అర్థమైంది",
+            "అవును",
+            "సరే",
+            "ఓకే",
+            "అవును అండి",
+            "సరే అండి",
+            "అవునండి",
+            "అర్థమైంది అండి",
+            "Yes, I understood",
+            "Yes",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-24T05:44:51.372Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "रवि को WhatsApp वॉइस कॉल कैसे करें",
+      "steps": {
+        "s1": {
+          "text": "यह आपकी WhatsApp चैट लिस्ट है। मुझे सबसे ऊपर रवि की चैट दिख रही है।"
+        },
+        "s2": {
+          "text": "यह चैट है। ऊपर दाईं तरफ वॉइस कॉल के लिए फोन का icon है।"
+        },
+        "s3": {
+          "text": "कॉल अब कनेक्ट हो गई है। आप रवि से बात कर सकती हैं। जब आप बात कर लें, तो कॉल खत्म करने के लिए नीचे लाल बटन दबाएं।"
+        },
+        "s4": {
+          "text": "अब मैं लाल एंड कॉल बटन दबाती हूँ।"
+        },
+        "s5": {
+          "question": "क्या आपको समझ आया कि रवि को WhatsApp वॉइस कॉल कैसे करना है और उसे कैसे खत्म करना है?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "ठीक है",
+            "बिलकुल",
+            "Yes, I understood",
+            "Yes",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-24T05:44:51.372Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "How to make a WhatsApp voice call to Ravi",
+      "steps": {
+        "s1": {
+          "text": "Here is your WhatsApp chat list. I see Ravi's chat near the top."
+        },
+        "s2": {
+          "text": "This is the chat. At the top right is the phone icon for a voice call."
+        },
+        "s3": {
+          "text": "The call is now connected. You can talk with Ravi. When you are done, press the red button at the bottom to end the call."
+        },
+        "s4": {
+          "text": "Now I press the red end call button."
+        },
+        "s5": {
+          "question": "Did you understand how to make a WhatsApp voice call to Ravi and end it?",
+          "accept": [
+            "Yes, I understood",
+            "Yes",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-24T05:44:51.372Z"
+    }
+  }
+}

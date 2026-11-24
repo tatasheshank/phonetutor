@@ -1,4 +1,7 @@
-import { nextScreen, type AgentEvent, type LanguageConfig, type Lesson, type LocalePack } from "@ai-tutor/shared";
+import type { LanguageConfig } from "../languages";
+import type { AgentEvent } from "../protocol";
+import { nextScreen } from "../screens/manifest";
+import type { Lesson, LocalePack } from "./schema";
 
 /** How long the phone needs to show the teacher's press before the next line. */
 const TAP_PAUSE_MS = 900;

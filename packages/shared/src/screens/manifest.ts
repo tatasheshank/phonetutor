@@ -32,6 +32,27 @@ export const SCREEN_NAV: Partial<Record<ScreenId, Record<string, ScreenId>>> = {
   "wa.call": { "btn.endCall": "wa.chat" },
 };
 
+/**
+ * What each button looks like and does, in plain words. Fed to the lesson generator so it can
+ * pick the right target, and useful for anyone writing a lesson by hand.
+ */
+export const TARGET_DESCRIPTIONS: Record<string, string> = {
+  "row.beta": "the chat row of the learner's son (Ravi), near the top of the chat list",
+  "row.family": "the 'Family' group chat row",
+  "btn.newChat": "green round + button at the bottom right, starts a new chat",
+  "tab.calls": "'Calls' tab at the top, shows call history",
+  "btn.back": "back arrow at the top left",
+  "btn.videoCall": "camera icon at the top right of a chat, starts a video call",
+  "btn.voiceCall": "phone icon at the top right of a chat, starts a voice call",
+  "input.message": "the 'Message' box at the bottom, where you type",
+  "btn.send": "round send (paper plane) button at the bottom right",
+  "btn.mic": "round microphone button at the bottom, records a voice message",
+  "btn.endCall": "red round button at the bottom of a call, ends the call",
+  "btn.switchCamera": "flip-camera button during a video call",
+  "btn.mute": "mute (microphone off) button during a call",
+  "btn.cameraOff": "camera off button during a video call",
+};
+
 /** The screen a tap leads to, or null if it stays put. */
 export function nextScreen(screen: string, target: string): ScreenId | null {
   return isScreenId(screen) ? (SCREEN_NAV[screen]?.[target] ?? null) : null;

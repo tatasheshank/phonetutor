@@ -24,3 +24,12 @@ describe("screen navigation", () => {
     }
   });
 });
+
+describe("target descriptions", () => {
+  it("describes every target in the screen library", async () => {
+    const { TARGET_DESCRIPTIONS } = await import("../src");
+    for (const s of Object.values(SCREEN_MANIFEST)) {
+      for (const t of s.targets) expect(TARGET_DESCRIPTIONS[t], t).toBeTruthy();
+    }
+  });
+});

@@ -1,8 +1,7 @@
-import { getLanguage, lessonSchema, type Lesson } from "@ai-tutor/shared";
+import { getLanguage, LessonRunner, lessonSchema, matchesAny, normalize, type Lesson, type RunnerAction } from "@ai-tutor/shared";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { LessonRunner, matchesAny, normalize, type RunnerAction } from "../src/lesson/runner";
 
 const lesson: Lesson = lessonSchema.parse(
   JSON.parse(readFileSync(join(__dirname, "../../../content/lessons/wa-video-call-01.json"), "utf8")),

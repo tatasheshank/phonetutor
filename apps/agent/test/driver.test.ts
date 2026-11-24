@@ -1,7 +1,7 @@
 import type { AgentEvent } from "@ai-tutor/shared";
 import { describe, expect, it, vi } from "vitest";
 import { LessonDriver } from "../src/lesson/driver";
-import type { RunnerAction } from "../src/lesson/runner";
+import type { RunnerAction } from "@ai-tutor/shared";
 
 function setup(interruptOn: string[] = []) {
   const log: string[] = [];

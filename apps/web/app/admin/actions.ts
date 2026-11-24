@@ -11,13 +11,15 @@ export async function login(formData: FormData): Promise<void> {
     httpOnly: true,
     sameSite: "strict",
     secure: process.env.NODE_ENV === "production",
-    path: "/admin",
+    path: "/", // the admin API (/api/admin/...) needs it too
     maxAge: 7 * 24 * 3600,
   });
   redirect("/admin");
 }
 
 export async function logout(): Promise<void> {
-  (await cookies()).delete({ name: ADMIN_COOKIE, path: "/admin" });
+  const jar = await cookies();
+  jar.delete({ name: ADMIN_COOKIE, path: "/" });
+  jar.delete({ name: ADMIN_COOKIE, path: "/admin" }); // cookies from before the path change
   redirect("/admin");
 }

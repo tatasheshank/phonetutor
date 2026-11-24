@@ -1,5 +1,6 @@
 import {
   DATA_TOPIC,
+  LessonRunner,
   decodeEvent,
   encodeEvent,
   type AgentEvent,
@@ -22,7 +23,6 @@ import dotenv from "dotenv";
 import { fileURLToPath } from "node:url";
 import { LessonDriver } from "./lesson/driver";
 import { loadLesson } from "./lesson/load";
-import { LessonRunner } from "./lesson/runner";
 import { buildInstructions } from "./prompt";
 import { buildLlm, buildStt, buildTts, llmChoice, sttStreaming } from "./providers";
 import { isScamEmergency, redact } from "./safety";

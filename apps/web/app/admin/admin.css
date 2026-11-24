@@ -228,3 +228,25 @@
 .neg {
   color: var(--danger);
 }
+
+/* Lesson preparation */
+.admin textarea.input {
+  width: 100%;
+  resize: vertical;
+}
+.preview-caption {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 1.05rem;
+  min-height: 3em;
+}
+.step-text {
+  white-space: normal !important;
+  min-width: 180px;
+}
+.admin td[lang="te"] {
+  line-height: 1.7;
+}
