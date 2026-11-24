@@ -3,7 +3,6 @@
 import {
   getLanguage,
   LessonRunner,
-  nextScreen,
   type AgentEvent,
   type LanguageCode,
   type Lesson,
@@ -12,7 +11,7 @@ import {
 import { useCallback, useEffect, useRef, useState } from "react";
 import { strings } from "../../lib/strings";
 import { Avatar } from "../Avatar";
-import { emptyStage, LessonStage, type StageState } from "../LessonStage";
+import { afterPress, emptyStage, startPress, LessonStage, type StageState } from "../LessonStage";
 
 /**
  * Admin preview: plays a lesson with the same LessonRunner the tutor uses, one teacher line at a
@@ -40,14 +39,8 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
         setStage((s) => ({ ...s, highlight: e.target }));
         break;
       case "tap":
-        setStage((s) => ({ ...s, pressed: e.target }));
-        setTimeout(
-          () =>
-            setStage((s) =>
-              s.pressed === e.target ? { ...s, pressed: null, highlight: null, screen: (s.screen && nextScreen(s.screen, e.target)) || s.screen } : s,
-            ),
-          650,
-        );
+        setStage((s) => startPress(s, e.target));
+        setTimeout(() => setStage((s) => afterPress(s, e.target)), 650);
         break;
       case "check":
         setStage((s) => ({ ...s, check: { stepId: e.stepId, question: e.question, options: e.options } }));

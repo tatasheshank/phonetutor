@@ -1,0 +1,226 @@
+{
+  "id": "paying-with-upi-safely-b6a669",
+  "version": 1,
+  "course": "generated",
+  "mode": "scripted",
+  "objectives": [
+    "Open the UPI app and scan a shop's QR code",
+    "Verify the shop name before paying",
+    "Enter the amount and confirm the payment with PIN safely"
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s6",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s7",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s8",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "UPI తో సురక్షితంగా డబ్బులు కట్టడం",
+      "steps": {
+        "s1": {
+          "text": "మనం షాపుల్లో డబ్బులు కట్టడానికి UPI app వాడతాం. దాన్ని సేఫ్‌గా ఎలా చేయాలో నేను మీకు చూపిస్తాను."
+        },
+        "s2": {
+          "text": "ముందుగా, నేను Google Pay app ఓపెన్ చేసి, Scan QR button నొక్కుతాను."
+        },
+        "s3": {
+          "text": "ఆ తర్వాత, షాపు వాళ్ళ QR code మీద కెమెరా పెడతాను."
+        },
+        "s4": {
+          "text": "ఇప్పుడు, డబ్బులు కట్టే ముందు స్క్రీన్ మీద కనిపించే షాపు పేరు చెక్ చేస్తాను."
+        },
+        "s5": {
+          "text": "తర్వాత, అమౌంట్ టైప్ చేసి, ఆకుపచ్చ రంగులో ఉన్న Pay button నొక్కుతాను."
+        },
+        "s6": {
+          "text": "నా UPI PIN నా సొంత ఫోన్ లో మాత్రమే ఎంటర్ చేస్తాను. బ్యాంక్ వాళ్లమంటే అని ఎవరైనా అడిగినా నా PIN ఎవరికీ చెప్పను."
+        },
+        "s7": {
+          "text": "చివరగా, పేమెంట్ సక్సెస్ అయిందని చెప్పే ఆకుపచ్చ రంగు టిక్ మార్క్ కోసం వెయిట్ చేస్తాను."
+        },
+        "s8": {
+          "question": "Did you understand how to pay safely with UPI?",
+          "accept": [
+            "అర్థమైంది",
+            "అవును",
+            "సరే",
+            "ఓకే",
+            "అవును అండి",
+            "సరే అండి",
+            "ఓకే అండి",
+            "అవునండి",
+            "Yes",
+            "Yes, I understood",
+            "I got it",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-24T12:56:02.277Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "UPI से सुरक्षित तरीके से पेमेंट करना",
+      "steps": {
+        "s1": {
+          "text": "हम दुकानों पर पेमेंट करने के लिए UPI app का इस्तेमाल करते हैं। मैं आपको दिखाऊंगी कि इसे सुरक्षित तरीके से कैसे करते हैं।"
+        },
+        "s2": {
+          "text": "सबसे पहले, मैं Google Pay app खोलती हूँ और Scan QR button पर टैप करती हूँ।"
+        },
+        "s3": {
+          "text": "फिर मैं कैमरे को दुकान के QR code की तरफ करती हूँ।"
+        },
+        "s4": {
+          "text": "अब मैं पेमेंट करने से पहले स्क्रीन पर दिख रहे दुकान के नाम को चेक करती हूँ।"
+        },
+        "s5": {
+          "text": "इसके बाद, मैं अमाउंट टाइप करती हूँ और हरे रंग के Pay button को दबाती हूँ।"
+        },
+        "s6": {
+          "text": "मैं अपना UPI PIN सिर्फ अपने फोन पर डालती हूँ। मैं अपना PIN कभी किसी को नहीं बताती, चाहे वे कहें कि वे बैंक से हैं।"
+        },
+        "s7": {
+          "text": "अंत में, मैं हरे रंग के टिक का इंतज़ार करती हूँ जो बताता है कि पेमेंट सफल हो गया है।"
+        },
+        "s8": {
+          "question": "क्या आप समझ गए कि UPI से सुरक्षित तरीके से पेमेंट कैसे करते हैं?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "बिल्कुल",
+            "ठीक है",
+            "हाँ जी",
+            "जी हाँ",
+            "हाँ, समझ गया",
+            "हाँ, समझ गई",
+            "Yes",
+            "Yes, I understood",
+            "I got it",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-24T12:56:02.277Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "Paying with UPI safely",
+      "steps": {
+        "s1": {
+          "text": "We use the UPI app to pay at shops. I will show you how to do it safely."
+        },
+        "s2": {
+          "text": "First, I open the Google Pay app and tap the Scan QR button."
+        },
+        "s3": {
+          "text": "Then I point the camera at the shop's QR code."
+        },
+        "s4": {
+          "text": "Now I check the shop name shown on the screen before paying."
+        },
+        "s5": {
+          "text": "Next, I type the amount and press the green Pay button."
+        },
+        "s6": {
+          "text": "I enter my UPI PIN only on my own phone. I never tell my PIN to anyone, even if they say they are from the bank."
+        },
+        "s7": {
+          "text": "Finally, I wait for the green tick that says the payment was successful."
+        },
+        "s8": {
+          "question": "Did you understand how to pay safely with UPI?",
+          "accept": [
+            "Yes",
+            "Yes, I understood",
+            "I got it",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-24T12:56:02.277Z"
+    }
+  }
+}

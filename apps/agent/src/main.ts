@@ -20,6 +20,7 @@ import {
 import * as silero from "@livekit/agents-plugin-silero";
 import { RoomEvent } from "@livekit/rtc-node";
 import dotenv from "dotenv";
+import { constants as osConstants, setPriority } from "node:os";
 import { fileURLToPath } from "node:url";
 import { LessonDriver } from "./lesson/driver";
 import { loadLesson } from "./lesson/load";
@@ -30,6 +31,17 @@ import { parseSettings } from "./settings";
 import { UsageTracker, writeUsage } from "./usage";
 
 dotenv.config();
+
+// Live speech must not fall behind when the computer is busy with other work: speech detection
+// runs on the CPU, and at normal priority it can lag by many seconds on a loaded laptop.
+// Runs in every process (the worker and each session process). Turn off with AGENT_HIGH_PRIORITY=false.
+if (process.env.AGENT_HIGH_PRIORITY !== "false") {
+  try {
+    setPriority(osConstants.priority.PRIORITY_ABOVE_NORMAL);
+  } catch (err) {
+    console.warn("[tutor] could not raise process priority", err);
+  }
+}
 
 /** Hard cap on one room, from the plan's guardrails. */
 const MAX_SESSION_MS = 30 * 60 * 1000;

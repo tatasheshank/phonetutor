@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { useState } from "react";
 import { Avatar } from "../../../components/Avatar";
 import { LessonStage, type StageState } from "../../../components/LessonStage";
+import { contactForTap, type Contact } from "../../../components/screens/PracticeScreens";
 import { strings } from "../../../lib/strings";
 
 /**
@@ -19,6 +20,7 @@ export default function ScreensPreview() {
   const [lang, setLang] = useState<LanguageCode>("te");
   const [highlight, setHighlight] = useState<string | null>("btn.videoCall");
   const [pressed, setPressed] = useState<string | null>(null);
+  const [contact, setContact] = useState<Contact>("son");
   const [showCheck, setShowCheck] = useState(false);
   const [pointAt, setPointAt] = useState<{ x: number; y: number } | null>(null);
   const [log, setLog] = useState<string[]>([]);
@@ -28,6 +30,7 @@ export default function ScreensPreview() {
     screen,
     highlight,
     pressed,
+    contact,
     check: showCheck ? { stepId: "c", question: strings(lang).chooseLesson + "?", options: ["yes", "no"] } : null,
   };
   const send = (e: ClientEvent) => setLog((l) => [JSON.stringify(e), ...l].slice(0, 6));
@@ -41,6 +44,7 @@ export default function ScreensPreview() {
       setPressed(null);
       setHighlight(null);
       setScreen((s) => nextScreen(s, target) ?? s);
+      setContact((c) => contactForTap(target) ?? c);
     }, 650);
   }
 

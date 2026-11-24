@@ -16,8 +16,25 @@ interface StageCtx {
   pressed?: string | null;
   /** Null = watch-only: the learner can't operate the phone. */
   onTap: ((target: string) => void) | null;
+  /** Whose chat or call is open: the son (Ravi) or the Family group. */
+  contact?: Contact;
 }
-const Ctx = createContext<StageCtx>({ highlight: null, flash: null, pressed: null, onTap: null });
+
+export type Contact = "son" | "family";
+
+/** The chat a tap on the chat list opens, or null if the tap doesn't open a chat. */
+export function contactForTap(target: string): Contact | null {
+  return target === "row.family" ? "family" : target === "row.beta" ? "son" : null;
+}
+const Ctx = createContext<StageCtx>({ highlight: null, flash: null, pressed: null, onTap: null, contact: "son" });
+
+/** Name, avatar letter and colour of the open chat, in the screen language. */
+function useContact(t: (typeof L)[LanguageCode]) {
+  const { contact } = useContext(Ctx);
+  return contact === "family"
+    ? { name: t.family, letter: t.family.slice(0, 1), color: "#ea580c" }
+    : { name: t.son, letter: t.son.slice(0, 1), color: "#7c3aed" };
+}
 
 export function ScreenProvider({ value, children }: { value: StageCtx; children: ReactNode }) {
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
@@ -240,15 +257,16 @@ export function ChatsScreen({ lang }: { lang: LanguageCode }) {
 
 export function ChatScreen({ lang }: { lang: LanguageCode }) {
   const t = L[lang];
+  const who = useContact(t);
   return (
     <div className="ps" lang={lang}>
       <div className="ps-bar ps-chat-bar">
         <Target id="btn.back" label={t.back} className="ps-icon-btn">
           {Icon.back}
         </Target>
-        <Avatar letter={t.son.slice(0, 1)} color="#7c3aed" />
+        <Avatar letter={who.letter} color={who.color} />
         <span className="ps-chat-name">
-          <strong>{t.son}</strong>
+          <strong>{who.name}</strong>
           <small>{t.online}</small>
         </span>
         <Target id="btn.videoCall" label={t.videoCall} className="ps-icon-btn">
@@ -281,11 +299,12 @@ export function ChatScreen({ lang }: { lang: LanguageCode }) {
 
 export function CallScreen({ lang }: { lang: LanguageCode }) {
   const t = L[lang];
+  const who = useContact(t);
   return (
     <div className="ps ps-call" lang={lang}>
       <div className="ps-call-top">
-        <Avatar letter={t.son.slice(0, 1)} color="#7c3aed" />
-        <strong>{t.son}</strong>
+        <Avatar letter={who.letter} color={who.color} />
+        <strong>{who.name}</strong>
         <small>{t.calling}</small>
       </div>
       <div className="ps-call-self" aria-hidden />

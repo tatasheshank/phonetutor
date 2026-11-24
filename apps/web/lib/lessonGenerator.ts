@@ -62,6 +62,8 @@ Rules:
 - Cover EVERY action the document describes, in order, including the last one (for example ending a call). Do not turn an action into the question.
 - "text" is what the teacher says aloud: simple everyday English, 1-2 short sentences, at most 30 words. Describe buttons by colour, shape and position. Speak as the one doing it ("Now I press the camera button").
 - Follow the real flow: each "press" must be on the screen the previous press led to.
+- Whenever the task happens inside a chat or a call, start on "wa.chats" and PRESS the right row to open it: "row.beta" for the son Ravi, "row.family" for the Family group. Don't just say "open the chat": show it. The chat and call screens then show that person or group.
+- Speak as the teacher doing it ("I press ..."), never tell the learner to tap; the learner only watches.
 - Only teach what the document says. Do not invent features.
 - Never tell anyone to share an OTP, PIN or password; only warn never to share them.
 
@@ -71,7 +73,8 @@ Return JSON only, no other text:
 const TRANSLATE_SYSTEM = (lang: LanguageCode) => {
   const l = getLanguage(lang);
   return `Translate a phone lesson for older learners into ${l.name.en}, as the teacher would SAY it aloud.
-The teacher is a woman: where the language marks gender in the first person (e.g. Hindi "मैं दबाती हूँ", not "दबाता हूँ"), use the feminine form.
+The teacher is a woman: where the language marks gender in the FIRST person (e.g. Hindi "मैं दबाती हूँ", not "दबाता हूँ"), use the feminine form.
+The learner may be a man or a woman: address them respectfully without assuming gender (Hindi: "आप ... कर सकते हैं", never "कर सकती हैं" for the learner; ask "क्या आपको समझ आया ...?", not "क्या आप समझ गए/गईं").
 ${l.llmStyle}
 Keep the JSON shape and every key and step id exactly. Translate "title" and every "text" and "question" faithfully: do not add, drop or change any meaning (a yes/no question stays a yes/no question).
 For "accept", give 4 to 8 short ways a learner might say yes in ${l.name.en} (in ${l.name.en} script), plus common code-mixed forms.
@@ -104,6 +107,29 @@ async function askJson(
     );
     track(second.usage);
     return parseJsonObject(second.content);
+  }
+}
+
+type TranslatedJson = { title?: unknown; steps?: Record<string, { text?: unknown; question?: unknown; accept?: unknown }> };
+const hasText = (v: unknown) => typeof v === "string" && v.trim().length > 0;
+
+/** Step ids whose text or question the model didn't translate. */
+function missingLines(english: LocalePack, translated: unknown): string[] {
+  const t = (translated && typeof translated === "object" ? translated : {}) as TranslatedJson;
+  return Object.entries(english.steps)
+    .filter(([sid, s]) => (s.text && !hasText(t.steps?.[sid]?.text)) || (s.question && !hasText(t.steps?.[sid]?.question)))
+    .map(([sid]) => sid);
+}
+
+/** Copies the retried lines into the first translation (in place). */
+function fillMissing(translated: unknown, retry: unknown, ids: string[]): void {
+  if (!translated || typeof translated !== "object") return;
+  const t = translated as TranslatedJson;
+  const r = (retry && typeof retry === "object" ? retry : {}) as TranslatedJson;
+  t.steps ??= {};
+  for (const sid of ids) {
+    const got = r.steps?.[sid];
+    if (got) t.steps[sid] = { ...t.steps[sid], ...got };
   }
 }
 
@@ -154,6 +180,23 @@ export async function generateLesson(source: SourceText, titleHint?: string): Pr
         { model: "sarvam-105b-conversations", maxTokens: 4096, temperature: 0.3 },
         track,
       );
+      // Models sometimes skip a line (often the final question). Ask once more for just those.
+      const missing = missingLines(en, translated);
+      if (missing.length) {
+        try {
+          const retry = await askJson(
+            [
+              { role: "system", content: TRANSLATE_SYSTEM(lang) },
+              { role: "user", content: JSON.stringify({ steps: Object.fromEntries(missing.map((sid) => [sid, forTranslation.steps[sid]])) }) },
+            ],
+            { model: "sarvam-105b-conversations", maxTokens: 2048, temperature: 0.2 },
+            track,
+          );
+          fillMissing(translated, retry, missing);
+        } catch (err) {
+          console.warn(`[lessons] ${lang}: retry for missing lines failed`, err);
+        }
+      }
       const merged = mergeTranslatedPack(en, translated, lang);
       warnings.push(...merged.warnings);
       return merged.pack;

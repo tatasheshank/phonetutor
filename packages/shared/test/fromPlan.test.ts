@@ -36,7 +36,7 @@ describe("lessonFromPlan", () => {
     });
     const { lesson, warnings } = lessonFromPlan(p, "upi");
     expect(lesson.steps.map((s) => s.type)).toEqual(["say", "show", "check"]);
-    expect(warnings.join("\n")).toContain('no built-in screen "upi.home"');
+    expect(warnings.join("\n")).toContain(`a phone screen we don't have yet ("upi.home")`);
     expect(warnings.join("\n")).toContain('has no button "btn.payNow"');
     expect(validateLesson(lesson).errors.filter((e) => !e.startsWith("locales:"))).toEqual([]);
   });
@@ -106,5 +106,13 @@ describe("lessonFromPlan: show-then-press", () => {
     expect(lesson.steps.map((s) => s.type)).toEqual(["practice", "practice", "check"]);
     expect(lesson.steps.map((s) => s.id)).toEqual(["s1", "s2", "s3"]);
     expect(lesson.locales.en!.steps.s1!.text).toBe("At the top right is the phone icon. I press it.");
+  });
+});
+
+describe("lessonFromPlan: placeholder screens", () => {
+  it("doesn't warn about a step kind written into 'screen'", () => {
+    const p = lessonPlanSchema.parse({ title: "UPI", steps: [{ kind: "explain", screen: "explain", text: "Open your UPI app." }] });
+    const { warnings } = lessonFromPlan(p, "upi");
+    expect(warnings.join("\n")).not.toContain('"explain"');
   });
 });

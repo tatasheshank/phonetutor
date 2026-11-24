@@ -1,9 +1,9 @@
 "use client";
 
-import type { ClientEvent, LanguageCode } from "@ai-tutor/shared";
+import { nextScreen, type ClientEvent, type LanguageCode } from "@ai-tutor/shared";
 import { useEffect, useLayoutEffect, useRef } from "react";
 import type { Strings } from "../lib/strings";
-import { SCREENS, ScreenProvider } from "./screens/PracticeScreens";
+import { contactForTap, SCREENS, ScreenProvider, type Contact } from "./screens/PracticeScreens";
 
 export interface StageState {
   screen: string | null;
@@ -11,9 +11,30 @@ export interface StageState {
   /** The button the teacher is pressing (animation), set by a "tap" event. */
   pressed: string | null;
   check: { stepId: string; question: string; options: string[] } | null;
+  /** Whose chat is open (set when the teacher presses a row in the chat list). */
+  contact: Contact;
 }
 
-export const emptyStage: StageState = { screen: null, highlight: null, pressed: null, check: null };
+export const emptyStage: StageState = { screen: null, highlight: null, pressed: null, check: null, contact: "son" };
+
+/** The teacher starts pressing `target`. A press on a chat-list row opens that chat right away. */
+export function startPress(st: StageState, target: string): StageState {
+  return { ...st, pressed: target, contact: contactForTap(target) ?? st.contact };
+}
+
+/**
+ * The stage after the teacher's press of `target` has finished: the screen it leads to, and
+ * the chat it opened. Used by the tutor room and the admin preview so both behave the same.
+ */
+export function afterPress(st: StageState, target: string): StageState {
+  if (st.pressed !== target) return st;
+  return {
+    ...st,
+    pressed: null,
+    highlight: null,
+    screen: (st.screen && nextScreen(st.screen, target)) || st.screen,
+  };
+}
 
 /**
  * The teacher's board during a lesson: the phone screen she operates and explains.
@@ -66,7 +87,7 @@ export function LessonStage({
   const optionLabel = (o: string) => (o === "yes" ? t.yes : o === "no" ? t.no : o);
   const phone = Screen && (
     <div className="phone-frame watch-only" aria-label={t.speaking}>
-      <ScreenProvider value={{ highlight: stage.highlight, pressed: stage.pressed, flash: null, onTap: null }}>
+      <ScreenProvider value={{ highlight: stage.highlight, pressed: stage.pressed, flash: null, onTap: null, contact: stage.contact }}>
         <Screen lang={screenLanguage} />
       </ScreenProvider>
     </div>

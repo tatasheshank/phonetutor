@@ -74,7 +74,9 @@ export function lessonFromPlan(plan: LessonPlan, id: string): { lesson: Lesson; 
       const screen = clean(p.screen);
       const target = clean(p.target);
       if (!isScreenId(screen)) {
-        if (screen) warnings.push(`${where}: no built-in screen "${screen}", so the teacher only explains this step.`);
+        // Models sometimes put a step kind or "none" in "screen": not worth a warning.
+        const placeholder = !screen || ["explain", "show", "press", "check", "none", "null"].includes(screen.toLowerCase());
+        if (!placeholder) warnings.push(`${where}: needs a phone screen we don't have yet ("${screen}"), so the teacher only explains this step.`);
         if (text) add({ id: nextId(), type: "say", avatar: "neutral" }, { text });
         continue;
       }

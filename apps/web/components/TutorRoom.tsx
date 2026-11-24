@@ -4,7 +4,6 @@ import {
   DATA_TOPIC,
   decodeEvent,
   encodeEvent,
-  nextScreen,
   type AgentEvent,
   type AvatarState,
   type ClientEvent,
@@ -16,7 +15,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { fill, type Strings } from "../lib/strings";
 import type { Me } from "./LoginStep";
 import { Avatar } from "./Avatar";
-import { emptyStage, LessonStage, type StageState } from "./LessonStage";
+import { afterPress, emptyStage, startPress, LessonStage, type StageState } from "./LessonStage";
 import { Board, type BoardState } from "./Board";
 
 type Phase = "ready" | "connecting" | "live" | "ended" | "error" | "payment_required" | "mic_denied";
@@ -108,14 +107,8 @@ export function TutorRoom({
         break;
       case "tap":
         // The teacher presses a button: show the press, then move to the screen it leads to.
-        setStage((st) => ({ ...st, pressed: e.target }));
-        setTimeout(() => {
-          setStage((st) =>
-            st.pressed === e.target
-              ? { ...st, pressed: null, highlight: null, screen: (st.screen && nextScreen(st.screen, e.target)) || st.screen }
-              : st,
-          );
-        }, 650);
+        setStage((st) => startPress(st, e.target));
+        setTimeout(() => setStage((st) => afterPress(st, e.target)), 650);
         break;
       case "check":
         setStage((st) => ({ ...st, check: { stepId: e.stepId, question: e.question, options: e.options } }));
@@ -307,7 +300,7 @@ export function TutorRoom({
           <h2 style={{ margin: 0, fontSize: "1.2rem" }}>{t.chooseLesson}</h2>
           <div className="lesson-list">
             {lessons?.map((l) => (
-              <button key={l.id} className="btn secondary lesson-card" onClick={() => void connect(l.id)}>
+              <button key={l.id} className="btn lesson-card" onClick={() => void connect(l.id)}>
                 <span aria-hidden>▶</span>
                 <span>
                   {l.title}
@@ -317,7 +310,7 @@ export function TutorRoom({
             ))}
             {lessons?.length === 0 && <p className="muted">{t.noLessons}</p>}
           </div>
-          <button className="btn ask" onClick={() => void connect(null)}>
+          <button className="btn secondary" onClick={() => void connect(null)}>
             💬 {t.justTalk}
           </button>
           <button className="btn secondary" onClick={onChangeLanguage}>
