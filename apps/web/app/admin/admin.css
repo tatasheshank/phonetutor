@@ -250,3 +250,20 @@
 .admin td[lang="te"] {
   line-height: 1.7;
 }
+
+.link-danger {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 4px 8px;
+  font: inherit;
+  color: #b91c1c;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.lesson-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}

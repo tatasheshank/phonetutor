@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { DeleteLessonButton } from "../../../components/admin/DeleteLessonButton";
 import { NewLessonForm } from "../../../components/admin/NewLessonForm";
 import { isAdmin } from "../../../lib/adminAuth";
 import { listDrafts } from "../../../lib/lessonDrafts";
@@ -40,6 +41,7 @@ export default async function LessonsAdminPage() {
                 <th className="num">Steps</th>
                 <th>Notes</th>
                 <th>Status</th>
+                <th aria-label="Actions" />
               </tr>
             </thead>
             <tbody>
@@ -52,11 +54,14 @@ export default async function LessonsAdminPage() {
                   <td className="num">{d.lesson.steps.length}</td>
                   <td>{d.warnings.length ? `⚠ ${d.warnings.length}` : "✓"}</td>
                   <td>{d.status === "published" ? <span className="live">Published</span> : "Draft"}</td>
+                  <td>
+                    <DeleteLessonButton id={d.id} title={d.lesson.locales.en?.title ?? d.id} small />
+                  </td>
                 </tr>
               ))}
               {drafts.length === 0 && (
                 <tr>
-                  <td colSpan={5} className="muted">
+                  <td colSpan={6} className="muted">
                     None yet. Add one above.
                   </td>
                 </tr>
@@ -71,8 +76,11 @@ export default async function LessonsAdminPage() {
           <h2>Written by hand (content/lessons)</h2>
           <ul>
             {handWritten.map((l) => (
-              <li key={l.id}>
-                {l.title.en ?? l.id} <span className="muted small">({l.reviewed.length ? `reviewed: ${l.reviewed.join(", ")}` : "draft"})</span>
+              <li key={l.id} className="lesson-li">
+                <span>
+                  {l.title.en ?? l.id} <span className="muted small">({l.reviewed.length ? `reviewed: ${l.reviewed.join(", ")}` : "draft"})</span>
+                </span>
+                <DeleteLessonButton id={l.id} title={l.title.en ?? l.id} small />
               </li>
             ))}
           </ul>

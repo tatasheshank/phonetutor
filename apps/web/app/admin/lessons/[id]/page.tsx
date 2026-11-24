@@ -1,3 +1,4 @@
+import { DeleteLessonButton } from "../../../../components/admin/DeleteLessonButton";
 import { getLanguage, type LanguageCode } from "@ai-tutor/shared";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -128,12 +129,7 @@ export default async function LessonDraftPage({
               </button>
             </form>
           )}
-          <form action={remove}>
-            <input type="hidden" name="id" value={lesson.id} />
-            <button className="btn danger" type="submit">
-              Delete
-            </button>
-          </form>
+          <DeleteLessonButton id={lesson.id} title={lesson.locales.en?.title ?? lesson.id} />
         </div>
       </section>
     </main>
