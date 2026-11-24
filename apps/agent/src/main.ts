@@ -28,6 +28,7 @@ import { buildInstructions } from "./prompt";
 import { buildLlm, buildStt, buildTts, llmChoice, sttStreaming } from "./providers";
 import { isScamEmergency, redact } from "./safety";
 import { parseSettings } from "./settings";
+import { checkCapAlerts, notifySessionCost } from "./costAlerts";
 import { dailyCapReached, UsageTracker, writeUsage } from "./usage";
 
 dotenv.config();
@@ -184,6 +185,7 @@ export default defineAgent({
     const snapshot = setInterval(() => {
       void (async () => {
         await writeUsage(tracker.record("live"));
+        await checkCapAlerts(); // 80% / cap-reached phone alerts, once a day each
         if (capHit) return;
         const cap = await dailyCapReached();
         if (!cap.reached) return;
@@ -216,7 +218,11 @@ export default defineAgent({
       clearInterval(snapshot);
       const final = tracker.record("ended");
       console.log(`[cost] session ${final.id}: ₹${final.cost.total.toFixed(2)} (${(final.usage.roomMs / 60000).toFixed(1)} min)`);
-      void writeUsage(final);
+      // Write first so today's total in the notification includes this session.
+      void writeUsage(final).then(async () => {
+        await notifySessionCost(final);
+        await checkCapAlerts();
+      });
     });
 
     ctx.room.on(RoomEvent.DataReceived, (payload, _participant, _kind, topic) => {
