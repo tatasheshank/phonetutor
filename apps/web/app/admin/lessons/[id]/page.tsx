@@ -7,7 +7,7 @@ import { LessonPreview } from "../../../../components/admin/LessonPreview";
 import { isAdmin } from "../../../../lib/adminAuth";
 import { inr } from "../../../../lib/format";
 import { loadDraft } from "../../../../lib/lessonDrafts";
-import { publish, remove, unpublish } from "../actions";
+import { publish, unpublish } from "../actions";
 import "../../admin.css";
 
 export const dynamic = "force-dynamic";
