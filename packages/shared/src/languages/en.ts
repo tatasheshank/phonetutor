@@ -29,6 +29,7 @@ export const en: LanguageConfig = {
     letMeShow: "That's okay, let me show you. Look at the glowing spot.",
     lessonComplete: "Well done! You finished this lesson. Ask me anything if you like.",
     quizIntro: "Now let's try what you learned, one more time.",
+    demoLimit: "That is all the demo time for today. Let us meet again tomorrow. Thank you!",
     greeting:
       "Hello! I am your teacher. I will help you learn to use your phone. You can ask me a question any time.",
     oneMoment: "One moment...",

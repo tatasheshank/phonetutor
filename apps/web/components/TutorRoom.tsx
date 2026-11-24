@@ -18,7 +18,16 @@ import { Avatar } from "./Avatar";
 import { afterPress, emptyStage, startPress, LessonStage, type StageState } from "./LessonStage";
 import { Board, type BoardState } from "./Board";
 
-type Phase = "ready" | "connecting" | "live" | "ended" | "error" | "payment_required" | "mic_denied" | "teacher_late";
+type Phase =
+  | "ready"
+  | "connecting"
+  | "live"
+  | "ended"
+  | "error"
+  | "payment_required"
+  | "daily_limit"
+  | "mic_denied"
+  | "teacher_late";
 
 /** If the teacher hasn't joined the room by then, stop waiting and offer Try again. */
 const TEACHER_JOIN_TIMEOUT_MS = 25_000;
@@ -162,6 +171,10 @@ export function TutorRoom({
       });
       if (res.status === 402) {
         setPhase("payment_required");
+        return;
+      }
+      if (res.status === 429) {
+        setPhase("daily_limit");
         return;
       }
       if (res.status === 401) {
@@ -422,6 +435,14 @@ export function TutorRoom({
           <a className="btn ask" href="/pay" style={{ textAlign: "center", textDecoration: "none", lineHeight: "64px" }}>
             {t.goToPay}
           </a>
+        </div>
+      )}
+
+      {phase === "daily_limit" && (
+        <div className="controls">
+          <p className="status" style={{ gridColumn: "1 / -1" }}>
+            ⏳ {t.dailyLimit}
+          </p>
         </div>
       )}
 

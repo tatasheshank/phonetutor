@@ -111,3 +111,23 @@ export function summarizeUsage(records: SessionUsageRecord[], now = new Date(), 
     recent: [...records].sort((a, b) => b.startedAt.localeCompare(a.startedAt)),
   };
 }
+
+/** Default daily AI spend cap (₹) when none is configured. Protects demo credit. */
+export const DEFAULT_DAILY_CAP_INR = 50;
+
+/**
+ * Reads DAILY_SPEND_CAP_INR. Unset or invalid = the default cap; "0" or "off" = no cap.
+ * Returns the cap in ₹, or null for no cap.
+ */
+export function parseDailyCap(value: string | undefined): number | null {
+  if (value === undefined || value.trim() === "") return DEFAULT_DAILY_CAP_INR;
+  if (/^(0|off|none)$/i.test(value.trim())) return null;
+  const n = Number(value);
+  return Number.isFinite(n) && n > 0 ? n : DEFAULT_DAILY_CAP_INR;
+}
+
+/** Estimated AI spend so far today (India time), including sessions still running. */
+export function spentToday(records: SessionUsageRecord[], now = new Date()): number {
+  const today = istDate(now);
+  return records.filter((r) => istDate(new Date(r.startedAt)) === today).reduce((sum, r) => sum + r.cost.total, 0);
+}

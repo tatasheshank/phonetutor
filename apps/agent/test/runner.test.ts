@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 const lesson: Lesson = lessonSchema.parse(
-  JSON.parse(readFileSync(join(__dirname, "../../../content/lessons/wa-video-call-01.json"), "utf8")),
+  JSON.parse(readFileSync(join(__dirname, "../../../packages/shared/test/fixtures/wa-video-call-01.json"), "utf8")),
 );
 
 function runner(code: "te" | "hi" | "en" = "en", l: Lesson = lesson) {

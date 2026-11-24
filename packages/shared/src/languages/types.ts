@@ -73,6 +73,8 @@ export interface LanguageConfig {
     letMeShow: string;
     lessonComplete: string;
     quizIntro: string;
+    /** Said when the daily demo spending cap is reached, before the session ends. */
+    demoLimit: string;
   };
   /** Instruction appended to the LLM system prompt for this language. */
   llmStyle: string;

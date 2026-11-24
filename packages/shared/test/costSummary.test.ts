@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { emptyUsage, istDate, parseUsageLog, summarizeUsage, type SessionUsageRecord } from "../src";
+import { emptyUsage, istDate, parseDailyCap, parseUsageLog, spentToday, summarizeUsage, type SessionUsageRecord } from "../src";
 
 function rec(id: string, startedAt: string, total: number, extra: Partial<SessionUsageRecord> = {}): SessionUsageRecord {
   return {
@@ -88,5 +88,27 @@ describe("summarizeUsage", () => {
     const e = summarizeUsage([], now);
     expect(e.all.total).toBe(0);
     expect(e.perLiveMinute).toBeNull();
+  });
+});
+
+describe("daily cap", () => {
+  it("parses the cap setting", () => {
+    expect(parseDailyCap(undefined)).toBe(50);
+    expect(parseDailyCap("")).toBe(50);
+    expect(parseDailyCap("120")).toBe(120);
+    expect(parseDailyCap("0")).toBeNull();
+    expect(parseDailyCap("off")).toBeNull();
+    expect(parseDailyCap("abc")).toBe(50);
+    expect(parseDailyCap("-5")).toBe(50);
+  });
+
+  it("adds up only today's spend in India time", () => {
+    const now = new Date("2026-11-23T10:00:00Z");
+    const records = [
+      rec("a", "2026-11-23T05:00:00Z", 12),
+      rec("b", "2026-11-22T20:00:00Z", 3), // 01:30 IST on the 23rd: today
+      rec("c", "2026-11-22T10:00:00Z", 40), // yesterday
+    ];
+    expect(spentToday(records, now)).toBe(15);
   });
 });

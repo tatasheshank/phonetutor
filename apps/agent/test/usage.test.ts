@@ -2,7 +2,7 @@ import { mkdtempSync, readFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { UsageTracker, writeUsage } from "../src/usage";
+import { dailyCapReached, UsageTracker, writeUsage } from "../src/usage";
 
 const meta = {
   id: "tutor-1",
@@ -50,5 +50,24 @@ describe("UsageTracker", () => {
     await writeUsage(t.record("ended", 2000), path);
     const lines = readFileSync(path, "utf8").trim().split("\n").map((l) => JSON.parse(l));
     expect(lines.map((l) => l.status)).toEqual(["live", "ended"]);
+  });
+});
+
+describe("dailyCapReached", () => {
+  it("compares today's total in the log with DAILY_SPEND_CAP_INR", async () => {
+    const path = join(mkdtempSync(join(tmpdir(), "cap-")), "usage.jsonl");
+    const t = new UsageTracker(meta, 0, Date.now() - 60_000);
+    t.add({ type: "tts_metrics", charactersCount: 10_000 }); // ₹20 on v4-flash
+    await writeUsage(t.record("live"), path);
+
+    process.env.DAILY_SPEND_CAP_INR = "50";
+    expect((await dailyCapReached(path)).reached).toBe(false);
+    process.env.DAILY_SPEND_CAP_INR = "15";
+    const hit = await dailyCapReached(path);
+    expect(hit.reached).toBe(true);
+    expect(hit.spent).toBeCloseTo(20, 1);
+    process.env.DAILY_SPEND_CAP_INR = "0";
+    expect((await dailyCapReached(path)).reached).toBe(false);
+    delete process.env.DAILY_SPEND_CAP_INR;
   });
 });

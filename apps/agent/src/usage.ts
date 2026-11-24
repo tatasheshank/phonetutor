@@ -1,10 +1,13 @@
 import {
   emptyUsage,
+  parseDailyCap,
+  parseUsageLog,
+  spentToday,
   estimateCost,
   type SessionUsageRecord,
   type UsageTotals,
 } from "@ai-tutor/shared";
-import { appendFile, mkdir } from "node:fs/promises";
+import { appendFile, mkdir, readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -99,5 +102,20 @@ export async function writeUsage(record: SessionUsageRecord, path = usageLogPath
   } catch (err) {
     // Never let cost logging break a lesson.
     console.warn("[usage] could not write usage record", err);
+  }
+}
+
+/**
+ * True when today's estimated AI spend (all sessions, including this one's latest snapshot)
+ * has reached DAILY_SPEND_CAP_INR (default ₹50; "0" = no cap).
+ */
+export async function dailyCapReached(path = usageLogPath()): Promise<{ reached: boolean; spent: number; cap: number | null }> {
+  const cap = parseDailyCap(process.env.DAILY_SPEND_CAP_INR);
+  if (cap === null) return { reached: false, spent: 0, cap };
+  try {
+    const spent = spentToday(parseUsageLog(await readFile(path, "utf8")));
+    return { reached: spent >= cap, spent, cap };
+  } catch {
+    return { reached: false, spent: 0, cap };
   }
 }

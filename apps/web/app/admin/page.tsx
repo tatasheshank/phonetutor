@@ -5,6 +5,8 @@ import {
   PRICES_CHECKED_ON,
   summarizeRevenue,
   summarizeUsage,
+  parseDailyCap,
+  spentToday,
   type CostTotals,
 } from "@ai-tutor/shared";
 import type { Metadata } from "next";
@@ -57,6 +59,8 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
   const credit = Number(process.env.SARVAM_CREDIT_INR || 100);
   const budget = Number(process.env.MONTHLY_BUDGET_INR || 0);
   const creditLeft = Math.max(0, credit - s.sarvamSpend);
+  const dailyCap = parseDailyCap(process.env.DAILY_SPEND_CAP_INR);
+  const spentTodayInr = spentToday(records);
   const db = await readDb();
   const rev = summarizeRevenue(records, db.payments, db.users);
   const pct = (v: number | null) => (v === null ? "—" : `${Math.round(v * 100)}%`);
@@ -116,6 +120,24 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
           value={s.perLiveMinute === null ? "—" : inr(s.perLiveMinute)}
           sub="average across all sessions"
         />
+      </section>
+
+      <section className="card">
+        <h2>Today&apos;s spending cap</h2>
+        {dailyCap === null ? (
+          <p className="small">No daily cap (DAILY_SPEND_CAP_INR=0).</p>
+        ) : (
+          <>
+            <Meter value={spentTodayInr} max={dailyCap} />
+            <p className="small">
+              <strong>{inr(spentTodayInr)}</strong> of {inr(dailyCap, 0)} used today (India time).{" "}
+              {spentTodayInr >= dailyCap
+                ? "New sessions are blocked until midnight."
+                : "At the cap, new sessions are refused and running ones end politely."}{" "}
+              Change it with DAILY_SPEND_CAP_INR in both settings files.
+            </p>
+          </>
+        )}
       </section>
 
       <section className="card">

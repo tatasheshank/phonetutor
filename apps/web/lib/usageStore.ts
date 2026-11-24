@@ -1,5 +1,5 @@
 import "server-only";
-import { parseUsageLog, type SessionUsageRecord } from "@ai-tutor/shared";
+import { parseDailyCap, parseUsageLog, spentToday, type SessionUsageRecord } from "@ai-tutor/shared";
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
@@ -27,4 +27,12 @@ export async function loadUsage(): Promise<{ records: SessionUsageRecord[]; path
 export async function liveMinutesUsed(learnerId: string): Promise<number> {
   const { records } = await loadUsage();
   return records.filter((r) => r.learnerId === learnerId).reduce((sum, r) => sum + r.usage.roomMs / 60000, 0);
+}
+
+/** Today's estimated AI spend against the daily cap (DAILY_SPEND_CAP_INR, default ₹50; "0" = no cap). */
+export async function dailyCapStatus(): Promise<{ cap: number | null; spent: number; reached: boolean }> {
+  const cap = parseDailyCap(process.env.DAILY_SPEND_CAP_INR);
+  const { records } = await loadUsage();
+  const spent = spentToday(records);
+  return { cap, spent, reached: cap !== null && spent >= cap };
 }

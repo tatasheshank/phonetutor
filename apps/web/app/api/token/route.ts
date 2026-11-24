@@ -3,7 +3,7 @@ import { AccessToken } from "livekit-server-sdk";
 import { randomUUID } from "node:crypto";
 import { currentUser } from "../../../lib/auth";
 import { freeTrialMinutes, hasPaid } from "../../../lib/payments";
-import { liveMinutesUsed } from "../../../lib/usageStore";
+import { dailyCapStatus, liveMinutesUsed } from "../../../lib/usageStore";
 
 /**
  * Mints a LiveKit token for one tutor session. Requires a signed-in user.
@@ -22,6 +22,11 @@ export async function POST(req: Request) {
   if (!user) return Response.json({ error: "signed_out" }, { status: 401 });
   if (!(await hasPaid(user.id)) && (await liveMinutesUsed(user.id)) >= freeTrialMinutes()) {
     return Response.json({ error: "payment_required" }, { status: 402 });
+  }
+  // Daily AI spend cap (protects Sarvam credit during demos). The agent also ends running sessions at the cap.
+  const cap = await dailyCapStatus();
+  if (cap.reached) {
+    return Response.json({ error: "daily_limit", cap: cap.cap, spent: Math.round(cap.spent * 100) / 100 }, { status: 429 });
   }
 
   let body: Record<string, unknown>;

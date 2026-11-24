@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { availableLanguages, getLanguage, isLanguageCode, validateLesson } from "../src";
 
 const sample = JSON.parse(
-  readFileSync(join(__dirname, "../../../content/lessons/wa-video-call-01.json"), "utf8"),
+  readFileSync(join(__dirname, "fixtures/wa-video-call-01.json"), "utf8"),
 );
 
 function reviewed(lesson: any, code: "te" | "hi" | "en") {

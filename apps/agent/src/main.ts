@@ -28,7 +28,7 @@ import { buildInstructions } from "./prompt";
 import { buildLlm, buildStt, buildTts, llmChoice, sttStreaming } from "./providers";
 import { isScamEmergency, redact } from "./safety";
 import { parseSettings } from "./settings";
-import { UsageTracker, writeUsage } from "./usage";
+import { dailyCapReached, UsageTracker, writeUsage } from "./usage";
 
 dotenv.config();
 
@@ -178,8 +178,26 @@ export default defineAgent({
       ttsModel: tutorVoice.model,
       sttStreaming: sttStreaming(),
     });
-    // Snapshot every minute so a crash loses at most a minute of usage.
-    const snapshot = setInterval(() => void writeUsage(tracker.record("live")), 60_000);
+    // Snapshot every minute so a crash loses at most a minute of usage, then enforce the daily cap:
+    // if today's AI spend has reached DAILY_SPEND_CAP_INR, say goodbye and end the session.
+    let capHit = false;
+    const snapshot = setInterval(() => {
+      void (async () => {
+        await writeUsage(tracker.record("live"));
+        if (capHit) return;
+        const cap = await dailyCapReached();
+        if (!cap.reached) return;
+        capHit = true;
+        console.log(`[cost] daily cap reached: ₹${cap.spent.toFixed(2)} of ₹${cap.cap}. Ending session.`);
+        try {
+          await Promise.resolve(session.interrupt()).catch(() => {});
+          await session.say(language.phrases.demoLimit, { allowInterruptions: false }).waitForPlayout();
+        } catch {
+          // ending anyway
+        }
+        void session.close();
+      })();
+    }, 60_000);
     void writeUsage(tracker.record("live"));
 
     session.on(voice.AgentSessionEventTypes.UserInputTranscribed, (ev) => {
