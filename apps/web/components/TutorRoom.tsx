@@ -18,7 +18,10 @@ import { Avatar } from "./Avatar";
 import { afterPress, emptyStage, startPress, LessonStage, type StageState } from "./LessonStage";
 import { Board, type BoardState } from "./Board";
 
-type Phase = "ready" | "connecting" | "live" | "ended" | "error" | "payment_required" | "mic_denied";
+type Phase = "ready" | "connecting" | "live" | "ended" | "error" | "payment_required" | "mic_denied" | "teacher_late";
+
+/** If the teacher hasn't joined the room by then, stop waiting and offer Try again. */
+const TEACHER_JOIN_TIMEOUT_MS = 25_000;
 
 interface LessonItem {
   id: string;
@@ -62,6 +65,12 @@ export function TutorRoom({
   // Classroom board (video step) and where on screen the teacher should point.
   const [board, setBoard] = useState<BoardState | null>(null);
   const [pointAt, setPointAt] = useState<{ x: number; y: number } | null>(null);
+  // The teacher (agent) has shown up in the room: until then, say she's getting ready.
+  const [teacherHere, setTeacherHere] = useState(false);
+  // The learner's mic couldn't be used: lessons still play (watch + Yes/No buttons).
+  const [micOff, setMicOff] = useState(false);
+  const joinTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const teacherHereRef = useRef(false);
 
   // Lessons available in the tutor language.
   useEffect(() => {
@@ -128,6 +137,8 @@ export function TutorRoom({
   }, []);
 
   const disconnect = useCallback(() => {
+    if (joinTimer.current) clearTimeout(joinTimer.current);
+    joinTimer.current = null;
     stopMeter.current();
     void roomRef.current?.disconnect();
     roomRef.current = null;
@@ -139,6 +150,9 @@ export function TutorRoom({
     setLessonId(chosenLesson);
     setLessonInfo(null);
     setStage(emptyStage);
+    setTeacherHere(false);
+    teacherHereRef.current = false;
+    setMicOff(false);
     setPhase("connecting");
     try {
       const res = await fetch("/api/token", {
@@ -167,8 +181,16 @@ export function TutorRoom({
       });
       roomRef.current = room;
 
+      const teacherArrived = () => {
+        teacherHereRef.current = true;
+        setTeacherHere(true);
+        if (joinTimer.current) clearTimeout(joinTimer.current);
+        joinTimer.current = null;
+      };
+
       room.on(RoomEvent.TrackSubscribed, (track: RemoteTrack) => {
         if (track.kind !== Track.Kind.Audio) return;
+        teacherArrived();
         const el = track.attach();
         audioBox.current?.appendChild(el);
         stopMeter.current();
@@ -179,6 +201,7 @@ export function TutorRoom({
         if (topic !== DATA_TOPIC) return;
         const event = decodeEvent<AgentEvent>(payload);
         if (!event) return;
+        teacherArrived();
         if (event.type === "avatar_state") setAvatar(event.state);
         else onLessonEvent(event);
       });
@@ -197,13 +220,26 @@ export function TutorRoom({
         const name = (err as { name?: string } | null)?.name;
         if (name === "NotAllowedError" || name === "NotFoundError" || name === "SecurityError") {
           console.warn("microphone unavailable:", name);
-          disconnect();
-          setPhase("mic_denied");
-          return;
+          if (!chosenLesson) {
+            // Free conversation needs the mic.
+            disconnect();
+            setPhase("mic_denied");
+            return;
+          }
+          // A lesson is watched and answered with buttons: carry on without the mic.
+          setMicOff(true);
+        } else {
+          throw err;
         }
-        throw err;
       }
       setPhase("live");
+      // The teacher's session usually starts in 1-3 s, but can take longer when the server is busy.
+      if (!teacherHereRef.current) joinTimer.current = setTimeout(() => {
+        joinTimer.current = null;
+        if (teacherHereRef.current) return;
+        disconnect();
+        setPhase("teacher_late");
+      }, TEACHER_JOIN_TIMEOUT_MS);
     } catch (err) {
       console.error(err);
       disconnect();
@@ -214,6 +250,8 @@ export function TutorRoom({
   const status =
     phase === "connecting"
       ? t.connecting
+      : phase === "live" && !teacherHere
+        ? t.teacherJoining
       : avatar === "listening"
         ? t.listening
         : avatar === "thinking"
@@ -330,6 +368,9 @@ export function TutorRoom({
           <button className="btn ask" onClick={() => void connect()}>
             {t.tryAgain}
           </button>
+          <button className="btn secondary" style={{ gridColumn: "1 / -1" }} onClick={() => setPhase("ready")}>
+            📚 {t.chooseLesson}
+          </button>
         </div>
       )}
 
@@ -346,11 +387,15 @@ export function TutorRoom({
         </button>
       )}
 
+      {phase === "live" && micOff && <p className="muted" style={{ textAlign: "center" }}>🎤 {t.noMicNotice}</p>}
+
       {phase === "live" && (
         <div className="controls">
-          <button className="btn ask" onClick={() => send({ type: "ask_pressed" })}>
-            ✋ {t.ask}
-          </button>
+          {!micOff && (
+            <button className="btn ask" onClick={() => send({ type: "ask_pressed" })}>
+              ✋ {t.ask}
+            </button>
+          )}
           <button
             className="btn secondary"
             onClick={() => send({ type: "tap_answer", value: "Please repeat that more slowly." })}
@@ -380,10 +425,10 @@ export function TutorRoom({
         </div>
       )}
 
-      {(phase === "ended" || phase === "error") && (
+      {(phase === "ended" || phase === "error" || phase === "teacher_late") && (
         <div className="controls">
           <p className="status" style={{ gridColumn: "1 / -1" }}>
-            {phase === "ended" ? t.ended : t.offline}
+            {phase === "ended" ? t.ended : phase === "teacher_late" ? t.teacherLate : t.offline}
           </p>
           <button className="btn ask" onClick={() => void connect()}>
             {phase === "ended" ? t.startAgain : t.tryAgain}

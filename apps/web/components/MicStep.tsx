@@ -5,11 +5,17 @@ import type { Strings } from "../lib/strings";
 
 /**
  * Explains the mic before Chrome's permission prompt, then shows a level meter.
+ * Never a dead end: a soft voice unlocks Next after a few seconds, and a blocked mic can be
+ * retried or skipped (lessons are watched and answered with Yes/No buttons, so they work without it).
  * TODO(M2): time the learner's pauses here to set their personal endpointing delay.
  */
-export function MicStep({ t, onDone }: { t: Strings; onDone: () => void }) {
+/** How long the meter listens before Next unlocks even if the learner speaks softly. */
+const SOFT_VOICE_MS = 6000;
+
+export function MicStep({ t, onDone }: { t: Strings; onDone: (micOk: boolean) => void }) {
   const [state, setState] = useState<"idle" | "listening" | "heard" | "denied">("idle");
   const [level, setLevel] = useState(0);
+  const [waitedLong, setWaitedLong] = useState(false);
   const cleanup = useRef<() => void>(() => {});
 
   useEffect(() => () => cleanup.current(), []);
@@ -39,11 +45,13 @@ export function MicStep({ t, onDone }: { t: Strings; onDone: () => void }) {
       };
       setState("listening");
       tick();
+      const soft = setTimeout(() => setWaitedLong(true), SOFT_VOICE_MS);
 
       // Runs on "Next" and again when the step unmounts, so it must be safe to repeat.
       cleanup.current = () => {
         cleanup.current = () => {};
         cancelAnimationFrame(frame);
+        clearTimeout(soft);
         stream.getTracks().forEach((tr) => tr.stop());
         if (ctx.state !== "closed") ctx.close().catch(() => {});
       };
@@ -67,17 +75,30 @@ export function MicStep({ t, onDone }: { t: Strings; onDone: () => void }) {
         </div>
       )}
       {state === "heard" && <p className="status">✅ {t.micHeard}</p>}
-      {state === "denied" && <p className="status" style={{ color: "var(--danger)" }}>{t.micDenied}</p>}
-      <button
-        className="btn"
-        disabled={state !== "heard"}
-        onClick={() => {
-          cleanup.current();
-          onDone();
-        }}
-      >
-        {t.next}
-      </button>
+      {state === "listening" && waitedLong && <p className="muted">{t.micWait}</p>}
+      {state === "denied" ? (
+        <>
+          <p className="status" style={{ color: "var(--danger)" }}>{t.micDenied}</p>
+          <button className="btn" onClick={() => void start()}>
+            🎤 {t.tryAgain}
+          </button>
+          <p className="muted">{t.micSkipHint}</p>
+          <button className="btn secondary" onClick={() => onDone(false)}>
+            {t.micSkip}
+          </button>
+        </>
+      ) : (
+        <button
+          className="btn"
+          disabled={!(state === "heard" || (state === "listening" && waitedLong))}
+          onClick={() => {
+            cleanup.current();
+            onDone(true);
+          }}
+        >
+          {t.next}
+        </button>
+      )}
     </>
   );
 }
