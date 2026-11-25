@@ -1,4 +1,4 @@
-import { isLanguageCode } from "@ai-tutor/shared";
+import { isLanguageCode, normalizeTopicId } from "@ai-tutor/shared";
 import { allowDraftLessons, listLessons } from "../../../lib/lessons";
 
 export const dynamic = "force-dynamic";
@@ -10,6 +10,6 @@ export async function GET(req: Request) {
   const drafts = allowDraftLessons();
   const lessons = (await listLessons())
     .filter((l) => l.reviewed.includes(lang) || (drafts && l.title[lang]))
-    .map((l) => ({ id: l.id, title: l.title[lang]!, steps: l.steps, draft: !l.reviewed.includes(lang) }));
+    .map((l) => ({ id: l.id, title: l.title[lang]!, steps: l.steps, draft: !l.reviewed.includes(lang), topic: normalizeTopicId(l.course) }));
   return Response.json({ lessons });
 }

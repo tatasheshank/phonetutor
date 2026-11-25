@@ -16,6 +16,9 @@ import {
   validateLesson,
   videoLessonFromPlan,
   videoPlanSchema,
+  parseYouTubeId,
+  LessonRunner,
+  getLanguage,
   type Lesson,
 } from "../src";
 
@@ -83,8 +86,8 @@ describe("videoLessonFromPlan", () => {
     expect(lesson.course).toBe("excel-basics");
     expect(lesson.steps.map((s) => s.type)).toEqual(["say", "video", "video", "video", "check"]);
     const [, v1, v2, v3] = lesson.steps as Array<Extract<Lesson["steps"][number], { type: "video" }>>;
-    expect(v1!.src).toBe("/api/lesson-media/excel-sum/clip-s2.mp4");
-    expect(v3!.src).toBe("/api/lesson-media/excel-sum/clip-s4.webm");
+    expect((v1!.source as { src: string }).src).toBe("/api/lesson-media/excel-sum/clip-s2.mp4");
+    expect((v3!.source as { src: string }).src).toBe("/api/lesson-media/excel-sum/clip-s4.webm");
     // Cues sorted by time, first at 0, times kept inside the clip.
     expect(v2!.cues.map((c) => c.at)).toEqual([0, 12]);
     expect(lesson.locales.en!.steps.s3!.cues!.map((c) => c.text)).toEqual(["I click cell A1 and type 10.", "Now I type 20."]);
@@ -139,7 +142,7 @@ function phoneLesson(): Lesson {
 
 describe("editing video steps", () => {
   it("adds a clip step before the final question, with empty narration everywhere", () => {
-    const { lesson, stepId } = appendVideoStep(phoneLesson(), { src: "/api/lesson-media/edit-me/clip-s3.mp4", label: "01 open.mp4" });
+    const { lesson, stepId } = appendVideoStep(phoneLesson(), { source: { kind: "upload", src: "/api/lesson-media/edit-me/clip-s3.mp4" }, label: "01 open.mp4" });
     expect(stepId).toBe("s3");
     expect(lesson.steps.map((s) => s.id)).toEqual(["s1", "s3", "s2"]);
     expect(lesson.locales.te!.steps.s3).toEqual({ cues: [{ text: "" }] });
@@ -150,7 +153,7 @@ describe("editing video steps", () => {
   });
 
   it("saves cues sorted, strictly increasing and clamped to the frame", () => {
-    const { lesson, stepId } = appendVideoStep(phoneLesson(), { src: "/api/lesson-media/edit-me/clip-s3.mp4" });
+    const { lesson, stepId } = appendVideoStep(phoneLesson(), { source: { kind: "upload", src: "/api/lesson-media/edit-me/clip-s3.mp4" } });
     const out = setVideoCues(
       lesson,
       stepId,
@@ -173,12 +176,12 @@ describe("editing video steps", () => {
   it("rejects edits to steps that aren't videos, and empty cue lists", () => {
     const lesson = phoneLesson();
     expect(() => setVideoCues(lesson, "s1", [{ at: 0, text: {} }])).toThrow();
-    const { lesson: l2, stepId } = appendVideoStep(lesson, { src: "/api/lesson-media/edit-me/clip-s3.mp4" });
+    const { lesson: l2, stepId } = appendVideoStep(lesson, { source: { kind: "upload", src: "/api/lesson-media/edit-me/clip-s3.mp4" } });
     expect(() => setVideoCues(l2, stepId, [])).toThrow();
   });
 
   it("removes and moves steps, and puts edited lessons back to draft", () => {
-    const { lesson, stepId } = appendVideoStep(phoneLesson(), { src: "/api/lesson-media/edit-me/clip-s3.mp4" });
+    const { lesson, stepId } = appendVideoStep(phoneLesson(), { source: { kind: "upload", src: "/api/lesson-media/edit-me/clip-s3.mp4" } });
     expect(moveStep(lesson, stepId, -1).steps.map((s) => s.id)).toEqual(["s3", "s1", "s2"]);
     const removed = removeStep(lesson, stepId);
     expect(removed.steps.map((s) => s.id)).toEqual(["s1", "s2"]);
@@ -189,7 +192,64 @@ describe("editing video steps", () => {
   });
 
   it("refuses unsafe media paths in a lesson", () => {
-    const { lesson } = appendVideoStep(phoneLesson(), { src: "/api/lesson-media/../x.mp4" });
+    const { lesson } = appendVideoStep(phoneLesson(), { source: { kind: "upload", src: "/api/lesson-media/../x.mp4" } });
     expect(validateLesson(lesson).ok).toBe(false);
+  });
+});
+
+describe("YouTube video sources", () => {
+  it("reads the video id from every common link form", () => {
+    const id = "dQw4w9WgXcQ";
+    for (const url of [
+      `https://www.youtube.com/watch?v=${id}`,
+      `https://youtube.com/watch?v=${id}&t=42s&list=PL123`,
+      `https://m.youtube.com/watch?v=${id}`,
+      `youtube.com/watch?v=${id}`,
+      `https://youtu.be/${id}?si=abc`,
+      `https://www.youtube.com/shorts/${id}`,
+      `https://www.youtube.com/embed/${id}?rel=0`,
+      `https://www.youtube-nocookie.com/embed/${id}`,
+      `https://www.youtube.com/live/${id}`,
+      id,
+    ]) {
+      expect(parseYouTubeId(url), url).toBe(id);
+    }
+    for (const bad of ["https://vimeo.com/123", "https://youtube.com/watch?v=short", "https://evil.com/watch?v=dQw4w9WgXcQ", "", "not a link"]) {
+      expect(parseYouTubeId(bad), bad).toBeNull();
+    }
+  });
+
+  it("validates a YouTube step without looking for files, and rejects bad ids", () => {
+    const { lesson } = appendVideoStep(phoneLesson(), { source: { kind: "youtube", videoId: "dQw4w9WgXcQ" }, label: "Excel intro" });
+    let asked = 0;
+    const ok = validateLesson(lesson, { mediaExists: () => (asked++, false) });
+    expect(ok.errors.filter((e) => !e.startsWith("locales"))).toEqual([]);
+    expect(asked).toBe(0);
+    const bad = structuredClone(lesson);
+    (bad.steps.find((s) => s.type === "video") as { source: { videoId: string } }).source.videoId = "https://youtu.be/x";
+    expect(validateLesson(bad).errors.join("\n")).toContain("11-character YouTube id");
+  });
+
+  it("plays YouTube steps through the same board events", () => {
+    const { lesson, stepId } = appendVideoStep(phoneLesson(), { source: { kind: "youtube", videoId: "dQw4w9WgXcQ" } });
+    const filled = setVideoCues(lesson, stepId, [{ at: 3, text: { en: "Look here.", te: "ఇక్కడ చూడండి." } }]);
+    const pack = filled.locales.en!;
+    const actions = new LessonRunner(filled, pack, getLanguage("en")).start();
+    const events = actions.flatMap((a) => (a.kind === "event" ? [a.event] : a.kind === "say" ? (a.events ?? []) : []));
+    expect(events.find((e) => e.type === "board_video")).toMatchObject({ source: { kind: "youtube", videoId: "dQw4w9WgXcQ" } });
+    expect(events.find((e) => e.type === "board_cue")).toMatchObject({ at: 3 });
+  });
+
+  it("upgrades lessons saved with the old src/poster fields", () => {
+    const { lesson } = appendVideoStep(phoneLesson(), { source: { kind: "upload", src: "/lesson-media/a/b.mp4", poster: "/lesson-media/a/b.png" } });
+    const old = structuredClone(lesson) as unknown as { steps: Array<Record<string, unknown>> };
+    const v = old.steps.find((s) => s.type === "video")!;
+    delete v.source;
+    Object.assign(v, { src: "/lesson-media/a/b.mp4", poster: "/lesson-media/a/b.png" });
+    const r = validateLesson(old);
+    expect(r.lesson!.steps.find((s) => s.type === "video")).toMatchObject({
+      source: { kind: "upload", src: "/lesson-media/a/b.mp4", poster: "/lesson-media/a/b.png" },
+    });
+    expect(r.lesson!.steps.find((s) => s.type === "video")).not.toHaveProperty("src");
   });
 });

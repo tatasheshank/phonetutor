@@ -12,6 +12,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { strings } from "../../lib/strings";
 import { Avatar } from "../Avatar";
 import { Board, type BoardState } from "../Board";
+import { reportVideoError } from "../reportVideoError";
 import { afterPress, emptyStage, startPress, LessonStage, type StageState } from "../LessonStage";
 
 /**
@@ -45,7 +46,7 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
         setTimeout(() => setStage((s) => afterPress(s, e.target)), 650);
         break;
       case "board_video":
-        setBoard({ stepId: e.stepId, src: e.src, poster: e.poster, cue: null });
+        setBoard({ stepId: e.stepId, source: e.source, cue: null });
         break;
       case "board_cue":
         setBoard((b) => (b && b.stepId === e.stepId ? { ...b, cue: e } : b));
@@ -123,7 +124,7 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
         ))}
       </div>
       {board ? (
-        <Board board={board} hold={false} t={t} onPointScreen={setPointAt} />
+        <Board board={board} hold={false} t={t} onPointScreen={setPointAt} onMediaError={(stepId, code) => reportVideoError(lesson.id, stepId, code)} />
       ) : stage.screen ? (
         <LessonStage
           stage={stage}

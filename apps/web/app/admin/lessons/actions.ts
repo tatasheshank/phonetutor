@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { isAdmin } from "../../../lib/adminAuth";
-import { deleteDraft, publishDraft, unpublishLesson } from "../../../lib/lessonDrafts";
+import { deleteDraft, publishDraft, setLessonTopic, unpublishLesson } from "../../../lib/lessonDrafts";
 import { deleteLessonMedia } from "../../../lib/lessonMedia";
 
 async function requireAdmin() {
@@ -30,4 +30,17 @@ export async function remove(formData: FormData) {
   await deleteDraft(id);
   await deleteLessonMedia(id);
   redirect("/admin/lessons");
+}
+
+export async function changeTopic(formData: FormData) {
+  await requireAdmin();
+  const id = String(formData.get("id") ?? "");
+  const picked = String(formData.get("topic") ?? "");
+  const topic = picked === "other" ? String(formData.get("newTopic") ?? "") : picked;
+  try {
+    await setLessonTopic(id, topic);
+  } catch (err) {
+    redirect(`/admin/lessons/${id}?error=${encodeURIComponent((err as Error).message)}`);
+  }
+  redirect(`/admin/lessons/${id}?topic=1`);
 }

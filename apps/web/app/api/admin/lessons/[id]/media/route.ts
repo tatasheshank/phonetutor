@@ -38,21 +38,26 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
     const step = stepId ? draft.lesson.steps.find((s) => s.id === stepId) : undefined;
     if (stepId && step?.type !== "video") throw new MediaError(`Step ${stepId} is not a video step.`);
     if (kind === "image" && !step) throw new MediaError("A poster image belongs to a video step: upload it from that video's editor.");
+    if (kind === "image" && step?.type === "video" && step.source.kind !== "upload") {
+      throw new MediaError("YouTube videos show their own picture; a poster is only for uploaded clips.");
+    }
 
     let resultStepId = stepId;
     let lesson: Lesson;
     if (kind === "image") {
       const url = await saveUpload(id, `clip-${stepId}-poster`, ext, data);
-      lesson = (await updateDraft(id, (l) => withStep(l, stepId, (s) => ({ ...s, poster: url })))).lesson;
+      lesson = (
+        await updateDraft(id, (l) => withStep(l, stepId, (s) => (s.source.kind === "upload" ? { ...s, source: { ...s.source, poster: url } } : s)))
+      ).lesson;
     } else if (step) {
       const url = await saveUpload(id, `clip-${stepId}`, ext, data);
-      lesson = (await updateDraft(id, (l) => withStep(l, stepId, (s) => ({ ...s, src: url, label })))).lesson;
+      // Replacing the clip (or a YouTube video) with an upload.
+      lesson = (await updateDraft(id, (l) => withStep(l, stepId, (s) => ({ ...s, source: { kind: "upload", src: url }, label })))).lesson;
     } else {
-      // New step: its id decides the file name, so add the step first with the final URL.
-      // The file is saved first; the step that points at it is added right after.
+      // New step: its id decides the file name. The file is saved first; the step that points at it right after.
       const added = nextStepId(draft.lesson);
       const url = await saveUpload(id, `clip-${added}`, ext, data);
-      lesson = (await updateDraft(id, (l) => appendVideoStep(l, { src: url, label }).lesson)).lesson;
+      lesson = (await updateDraft(id, (l) => appendVideoStep(l, { source: { kind: "upload", src: url }, label }).lesson)).lesson;
       resultStepId = added;
     }
     console.log(`[lessons] ${id}: uploaded ${kind} "${file.name}" (${(file.size / 1048576).toFixed(1)} MB) for ${resultStepId}`);

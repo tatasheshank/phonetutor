@@ -6,6 +6,8 @@ import { NewLessonForm } from "../../../components/admin/NewLessonForm";
 import { isAdmin } from "../../../lib/adminAuth";
 import { listDrafts } from "../../../lib/lessonDrafts";
 import { listLessons } from "../../../lib/lessons";
+import { topicInfo } from "@ai-tutor/shared";
+import { recentVideoErrors } from "../../../lib/videoErrors";
 import "../admin.css";
 
 export const dynamic = "force-dynamic";
@@ -13,7 +15,9 @@ export const metadata: Metadata = { title: "Lessons", robots: { index: false } }
 
 export default async function LessonsAdminPage() {
   if (!(await isAdmin())) redirect("/admin");
-  const [drafts, published] = await Promise.all([listDrafts(), listLessons()]);
+  const [drafts, published, videoErrors] = await Promise.all([listDrafts(), listLessons(), recentVideoErrors()]);
+  const brokenVideos = new Map<string, number>();
+  for (const e of videoErrors) brokenVideos.set(e.lessonId, (brokenVideos.get(e.lessonId) ?? 0) + 1);
   const draftIds = new Set(drafts.map((d) => d.id));
   const handWritten = published.filter((l) => !draftIds.has(l.id));
 
@@ -37,6 +41,7 @@ export default async function LessonsAdminPage() {
             <thead>
               <tr>
                 <th>Lesson</th>
+                <th>Topic</th>
                 <th>From</th>
                 <th className="num">Steps</th>
                 <th>Notes</th>
@@ -49,9 +54,15 @@ export default async function LessonsAdminPage() {
                   <td>
                     <Link href={`/admin/lessons/${d.id}`}>{d.lesson.locales.en?.title ?? d.id}</Link>
                   </td>
+                  <td>
+                    {topicInfo(d.lesson.course).emoji} {topicInfo(d.lesson.course).name.en}
+                  </td>
                   <td className="muted">{d.source.fileName}</td>
                   <td className="num">{d.lesson.steps.length}</td>
-                  <td>{d.warnings.length ? `⚠ ${d.warnings.length}` : "✓"}</td>
+                  <td>
+                    {d.warnings.length ? `⚠ ${d.warnings.length}` : "✓"}
+                    {brokenVideos.has(d.id) && <span className="video-flag"> · 🎬 video broken</span>}
+                  </td>
                   <td>
                     <div className="status-cell">
                       {d.status === "published" ? <span className="live">Published</span> : "Draft"}
@@ -62,7 +73,7 @@ export default async function LessonsAdminPage() {
               ))}
               {drafts.length === 0 && (
                 <tr>
-                  <td colSpan={5} className="muted">
+                  <td colSpan={6} className="muted">
                     None yet. Add one above.
                   </td>
                 </tr>
@@ -79,7 +90,7 @@ export default async function LessonsAdminPage() {
             {handWritten.map((l) => (
               <li key={l.id} className="lesson-li">
                 <span>
-                  {l.title.en ?? l.id} <span className="muted small">({l.reviewed.length ? `reviewed: ${l.reviewed.join(", ")}` : "draft"})</span>
+                  {l.title.en ?? l.id} <span className="muted small">({topicInfo(l.course).name.en} · {l.reviewed.length ? `reviewed: ${l.reviewed.join(", ")}` : "draft"})</span>
                 </span>
                 <DeleteLessonButton id={l.id} title={l.title.en ?? l.id} small />
               </li>

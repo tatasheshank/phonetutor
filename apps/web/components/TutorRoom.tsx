@@ -9,14 +9,17 @@ import {
   type ClientEvent,
   type LanguageCode,
   type SpeechRate,
+  TOPICS,
+  topicInfo,
 } from "@ai-tutor/shared";
 import { Room, RoomEvent, Track, type RemoteTrack } from "livekit-client";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { fill, type Strings } from "../lib/strings";
 import type { Me } from "./LoginStep";
 import { Avatar } from "./Avatar";
 import { afterPress, emptyStage, startPress, LessonStage, type StageState } from "./LessonStage";
 import { Board, type BoardState } from "./Board";
+import { reportVideoError } from "./reportVideoError";
 
 type Phase =
   | "ready"
@@ -37,6 +40,7 @@ interface LessonItem {
   title: string;
   steps: number;
   draft: boolean;
+  topic: string;
 }
 
 export function TutorRoom({
@@ -69,6 +73,8 @@ export function TutorRoom({
   const stopMeter = useRef<() => void>(() => {});
   const [lessons, setLessons] = useState<LessonItem[] | null>(null);
   const [lessonId, setLessonId] = useState<string | null>(null);
+  // Topic the learner picked; null = the topic list. Kept across lessons in this visit.
+  const [topic, setTopic] = useState<string | null>(null);
   const [lessonInfo, setLessonInfo] = useState<{ title: string; index: number; total: number; done: boolean } | null>(null);
   const [stage, setStage] = useState<StageState>(emptyStage);
   // Classroom board (video step) and where on screen the teacher should point.
@@ -97,6 +103,15 @@ export function TutorRoom({
     };
   }, [tutorLanguage]);
 
+  // Topics: every known topic, plus any other topic a lesson uses; with how many lessons each has.
+  const topics = useMemo(() => {
+    const ids = [...TOPICS.map((tp) => tp.id)];
+    for (const l of lessons ?? []) if (!ids.includes(l.topic)) ids.push(l.topic);
+    return ids.map((id) => ({ topic: topicInfo(id), count: (lessons ?? []).filter((l) => l.topic === id).length }));
+  }, [lessons]);
+  const currentTopic = topic ? topicInfo(topic) : null;
+  const topicLessons = (lessons ?? []).filter((l) => l.topic === topic);
+
   /** Applies one lesson event from the tutor to the screen state. */
   const onLessonEvent = useCallback((e: AgentEvent) => {
     switch (e.type) {
@@ -106,7 +121,7 @@ export function TutorRoom({
         setBoard(null);
         break;
       case "board_video":
-        setBoard({ stepId: e.stepId, src: e.src, poster: e.poster, cue: null });
+        setBoard({ stepId: e.stepId, source: e.source, cue: null });
         break;
       case "board_cue":
         setBoard((b) => (b && b.stepId === e.stepId ? { ...b, cue: e } : b));
@@ -167,7 +182,7 @@ export function TutorRoom({
       const res = await fetch("/api/token", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ tutorLanguage, screenLanguage, lessonId: chosenLesson ?? undefined, voiceId, speechRate }),
+        body: JSON.stringify({ tutorLanguage, screenLanguage, lessonId: chosenLesson ?? undefined, topic: topic ?? undefined, voiceId, speechRate }),
       });
       if (res.status === 402) {
         setPhase("payment_required");
@@ -318,7 +333,13 @@ export function TutorRoom({
         // the teacher small at the bottom left, pointing at what she's talking about.
         <>
           {board ? (
-            <Board board={board} hold={avatar === "listening" || avatar === "thinking"} t={t} onPointScreen={setPointAt} />
+            <Board
+              board={board}
+              hold={avatar === "listening" || avatar === "thinking"}
+              t={t}
+              onPointScreen={setPointAt}
+              onMediaError={(stepId, code) => lessonId && reportVideoError(lessonId, stepId, code)}
+            />
           ) : (
             <LessonStage stage={stage} screenLanguage={screenLanguage} t={t} send={send} onPointScreen={setPointAt} board />
           )}
@@ -348,22 +369,49 @@ export function TutorRoom({
 
       {phase === "ready" && (
         <div className="stack">
-          <h2 style={{ margin: 0, fontSize: "1.2rem" }}>{t.chooseLesson}</h2>
-          <div className="lesson-list">
-            {lessons?.map((l) => (
-              <button key={l.id} className="btn lesson-card" onClick={() => void connect(l.id)}>
-                <span aria-hidden>▶</span>
-                <span>
-                  {l.title}
-                  {l.draft && <span className="draft-tag">draft</span>}
-                </span>
+          {currentTopic === null ? (
+            <>
+              <h2 style={{ margin: 0, fontSize: "1.2rem" }}>{t.chooseTopic}</h2>
+              <div className="topic-grid">
+                {topics.map(({ topic: tp, count }) => (
+                  <button key={tp.id} className="btn secondary topic-card" onClick={() => setTopic(tp.id)}>
+                    <span className="topic-emoji" aria-hidden>
+                      {tp.emoji}
+                    </span>
+                    <span>{tp.name[screenLanguage]}</span>
+                    <small>{fill(t.lessonCount, { n: count })}</small>
+                  </button>
+                ))}
+              </div>
+              <button className="btn secondary" onClick={() => void connect(null)}>
+                💬 {t.justTalk}
               </button>
-            ))}
-            {lessons?.length === 0 && <p className="muted">{t.noLessons}</p>}
-          </div>
-          <button className="btn secondary" onClick={() => void connect(null)}>
-            💬 {t.justTalk}
-          </button>
+            </>
+          ) : (
+            <>
+              <button className="btn link back-link" onClick={() => setTopic(null)}>
+                ← {t.allTopics}
+              </button>
+              <h2 style={{ margin: 0, fontSize: "1.2rem" }}>
+                <span aria-hidden>{currentTopic.emoji}</span> {currentTopic.name[screenLanguage]}
+              </h2>
+              <div className="lesson-list">
+                {topicLessons.map((l) => (
+                  <button key={l.id} className="btn lesson-card" onClick={() => void connect(l.id)}>
+                    <span aria-hidden>▶</span>
+                    <span>
+                      {l.title}
+                      {l.draft && <span className="draft-tag">draft</span>}
+                    </span>
+                  </button>
+                ))}
+                {lessons !== null && topicLessons.length === 0 && <p className="muted">{t.topicNoLessons}</p>}
+              </div>
+              <button className="btn secondary" onClick={() => void connect(null)}>
+                💬 {fill(t.talkAboutTopic, { topic: currentTopic.name[screenLanguage] })}
+              </button>
+            </>
+          )}
           <button className="btn secondary" onClick={onChangeLanguage}>
             🌐 {t.changeLanguages}
           </button>

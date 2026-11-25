@@ -1,0 +1,11 @@
+file 'C:/sheshank/AiTutor/content/source/geomorphology/slides/v3_1.png'
+duration 7
+file 'C:/sheshank/AiTutor/content/source/geomorphology/slides/v3_2.png'
+duration 7
+file 'C:/sheshank/AiTutor/content/source/geomorphology/slides/v3_3.png'
+duration 7
+file 'C:/sheshank/AiTutor/content/source/geomorphology/slides/v3_4.png'
+duration 7
+file 'C:/sheshank/AiTutor/content/source/geomorphology/slides/v3_5.png'
+duration 7
+file 'C:/sheshank/AiTutor/content/source/geomorphology/slides/v3_5.png'

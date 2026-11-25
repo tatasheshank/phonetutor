@@ -77,7 +77,8 @@ export function validateLesson(input: unknown, options: ValidateOptions = {}): V
         errors.push(`steps.${step.id}.cues.${i}: "at" must be later than the previous cue`);
       }
     }
-    for (const src of [step.src, step.poster]) {
+    const files = step.source.kind === "upload" ? [step.source.src, step.source.poster] : [];
+    for (const src of files) {
       if (src && !locateMedia(src)) errors.push(`steps.${step.id}: media path "${src}" is not allowed`);
       else if (src && options.mediaExists && !options.mediaExists(src)) {
         errors.push(`steps.${step.id}: media file "${src}" not found`);

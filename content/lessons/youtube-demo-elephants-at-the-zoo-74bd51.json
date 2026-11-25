@@ -1,0 +1,208 @@
+{
+  "id": "youtube-demo-elephants-at-the-zoo-74bd51",
+  "version": 1,
+  "course": "demo",
+  "mode": "scripted",
+  "objectives": [
+    "Watch a short YouTube video about elephants at a zoo",
+    "Listen to the explanation of what the video shows"
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s4",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "jNQXAC9IVRw"
+      },
+      "label": "Me at the zoo",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 4,
+          "pause": true,
+          "point": {
+            "x": 0.72,
+            "y": 0.35
+          }
+        },
+        {
+          "at": 11,
+          "pause": true,
+          "highlightBox": {
+            "x": 0.55,
+            "y": 0.15,
+            "w": 0.4,
+            "h": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "YouTube demo: జూలో ఏనుగులు",
+      "steps": {
+        "s1": {
+          "text": "ఇప్పుడు జూలో ఏనుగుల గురించి ఒక చిన్న YouTube వీడియో ప్లే చేస్తాను. దయచేసి చూసి వినండి."
+        },
+        "s3": {
+          "question": "YouTube వీడియో ఎలా చూడాలో, వివరణ ఎలా వినాలో మీకు అర్థమైందా?",
+          "accept": [
+            "అర్థమైంది",
+            "అవును",
+            "సరే",
+            "ఓకే",
+            "అవును అండి",
+            "సరే అండి",
+            "Yes",
+            "I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s4": {
+          "text": "ఇప్పుడు నేను YouTube లో ఒక చిన్న video ప్లే చేస్తాను.",
+          "cues": [
+            {
+              "text": "ఇది zoo కి సంబంధించిన ఒక చిన్న video, YouTube నుంచి."
+            },
+            {
+              "text": "అతని వెనుక చూడండి: అవి ఏనుగులు."
+            },
+            {
+              "text": "వాటికి నిజంగా, చాలా పొడవైన తొండాలు ఉన్నాయని అతను చెబుతున్నాడు."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-25T07:43:37.392Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "YouTube demo: elephants at the zoo",
+      "steps": {
+        "s1": {
+          "text": "अब मैं चिड़ियाघर के हाथियों के बारे में एक छोटा YouTube video चलाऊंगी। कृपया इसे देखिए और सुनिए।"
+        },
+        "s3": {
+          "question": "क्या आपको समझ आया कि YouTube video कैसे देखना है और explanation कैसे सुनना है?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "ठीक है",
+            "समझ आ गया",
+            "Yes",
+            "I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s4": {
+          "text": "अब मैं YouTube से एक छोटा वीडियो चलाऊंगी।",
+          "cues": [
+            {
+              "text": "यह zoo का एक छोटा वीडियो है, YouTube से।"
+            },
+            {
+              "text": "उसके पीछे देखिए: ये हाथी हैं।"
+            },
+            {
+              "text": "वह कहता है कि उनकी सूंड सच में बहुत, बहुत लंबी है।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-25T07:43:37.392Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "YouTube demo: elephants at the zoo",
+      "steps": {
+        "s1": {
+          "text": "Now I will play a short YouTube video about elephants at the zoo. Please watch and listen."
+        },
+        "s3": {
+          "question": "Did you understand how to watch the YouTube video and hear the explanation?",
+          "accept": [
+            "Yes",
+            "I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s4": {
+          "text": "Now I will play a short video from YouTube.",
+          "cues": [
+            {
+              "text": "This is a short video from a zoo, from YouTube."
+            },
+            {
+              "text": "Look behind him: these are the elephants."
+            },
+            {
+              "text": "He says they have really, really long trunks."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-25T07:43:37.392Z"
+    }
+  }
+}

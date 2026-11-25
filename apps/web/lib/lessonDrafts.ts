@@ -106,3 +106,31 @@ export async function updateDraft(id: string, edit: (lesson: Lesson) => Lesson):
   await saveDraft(next);
   return next;
 }
+
+/** "Excel basics" → "excel-basics". Topic ids are lesson `course` values (see topics.ts). */
+export function topicSlug(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 60);
+}
+
+/**
+ * Moves a lesson to another topic. Only the grouping changes (no text), so the language packs keep
+ * their review status, and a published copy is updated in place so learners see it at once.
+ */
+export async function setLessonTopic(id: string, topic: string): Promise<void> {
+  const slug = topicSlug(topic);
+  if (!slug) throw new Error("Topic is empty.");
+  const draft = await loadDraft(id);
+  if (!draft) throw new Error("Draft not found.");
+  await saveDraft({ ...draft, lesson: { ...draft.lesson, course: slug } });
+  const published = resolve(lessonsDir(), `${id}.json`);
+  try {
+    const lesson = JSON.parse(await readFile(/* turbopackIgnore: true */ published, "utf8")) as Lesson;
+    await writeFile(/* turbopackIgnore: true */ published, JSON.stringify({ ...lesson, course: slug }, null, 2) + "\n", "utf8");
+  } catch {
+    // not published: the draft is enough
+  }
+}

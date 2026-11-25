@@ -1,5 +1,5 @@
 import { isAdmin } from "../../../../lib/adminAuth";
-import { saveDraft } from "../../../../lib/lessonDrafts";
+import { saveDraft, topicSlug } from "../../../../lib/lessonDrafts";
 import { byClipName, extensionOf, VIDEO_EXTENSIONS } from "@ai-tutor/shared";
 import { generateLesson, generateVideoLesson, type ClipInfo } from "../../../../lib/lessonGenerator";
 import { normalizeText, readSource, SourceError, type SourceText } from "../../../../lib/lessonSources";
@@ -29,7 +29,10 @@ export async function POST(req: Request) {
   const typed = String(form.get("text") ?? "").trim();
   const title = String(form.get("title") ?? "").trim().slice(0, 120) || undefined;
   const kind = form.get("kind") === "video" ? "video" : "phone";
-  const course = String(form.get("course") ?? "").trim().slice(0, 80) || undefined;
+  // Topic: a known topic id, or "other" with a new topic name. (Older clients sent "course".)
+  const pickedTopic = String(form.get("topic") ?? "");
+  const course =
+    topicSlug(pickedTopic === "other" ? String(form.get("newTopic") ?? "") : pickedTopic || String(form.get("course") ?? "")) || undefined;
   let clips: ClipInfo[] = [];
   if (kind === "video") {
     try {
@@ -58,6 +61,7 @@ export async function POST(req: Request) {
     const started = Date.now();
     const { lesson, warnings, usage } =
       kind === "video" ? await generateVideoLesson(source, clips, { title, course }) : await generateLesson(source, title);
+    if (course) lesson.course = course; // phone lessons get the picked topic too
     await saveDraft({
       id: lesson.id,
       status: "draft",

@@ -52,6 +52,8 @@ const MAX_SESSION_MS = 30 * 60 * 1000;
 interface ActiveLesson {
   runner: LessonRunner;
   driver: LessonDriver;
+  /** The lesson's topic (its `course`), so questions mid-lesson get answers on that subject. */
+  topic: string;
 }
 
 class Tutor extends voice.Agent {
@@ -60,8 +62,8 @@ class Tutor extends voice.Agent {
   /** Speaks fixed lines from pre-recorded audio when available (free), live otherwise. */
   readonly scripted: ScriptedSpeech<voice.SpeechHandle>;
 
-  constructor(lang: LanguageConfig, lesson: ActiveLesson | null, scripted: ScriptedSpeech<voice.SpeechHandle>) {
-    super({ instructions: buildInstructions(lang) });
+  constructor(lang: LanguageConfig, lesson: ActiveLesson | null, scripted: ScriptedSpeech<voice.SpeechHandle>, topic?: string) {
+    super({ instructions: buildInstructions(lang, topic) });
     this.lang = lang;
     this.lesson = lesson;
     this.scripted = scripted;
@@ -118,7 +120,7 @@ export default defineAgent({
     const participant = await ctx.waitForParticipant();
     const { settings, language, voice: tutorVoice } = parseSettings(participant.metadata);
     console.log(
-      `[tutor] room=${ctx.room.name} tutor=${settings.tutorLanguage} screen=${settings.screenLanguage} endpointing=${settings.endpointingMs}ms voice=${tutorVoice.id} (${tutorVoice.speaker}, ${tutorVoice.model}) rate=${settings.speechRate}`,
+      `[tutor] room=${ctx.room.name} tutor=${settings.tutorLanguage} screen=${settings.screenLanguage} endpointing=${settings.endpointingMs}ms voice=${tutorVoice.id} (${tutorVoice.speaker}, ${tutorVoice.model}) rate=${settings.speechRate} topic=${settings.topic ?? "-"}`,
     );
 
     const vad = ctx.proc.userData.vad as silero.VAD;
@@ -165,6 +167,7 @@ export default defineAgent({
             shallWeContinue: language.phrases.shallWeContinue,
             log: (m, err) => console.warn(m, err),
           }),
+          topic: loaded.lesson.course,
         };
         console.log(`[lesson] ${settings.lessonId} (${settings.tutorLanguage}): ${lesson.runner.total} steps`);
       } else {
@@ -258,7 +261,7 @@ export default defineAgent({
       }
     });
 
-    await session.start({ agent: new Tutor(language, lesson, scripted), room: ctx.room });
+    await session.start({ agent: new Tutor(language, lesson, scripted, lesson?.topic ?? settings.topic), room: ctx.room });
 
     const limit = setTimeout(() => {
       scripted.say(language.phrases.shallWeContinue);

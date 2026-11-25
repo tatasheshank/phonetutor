@@ -182,7 +182,7 @@ export class LessonRunner {
       case "video": {
         const cueTexts = text?.cues ?? [];
         const actions: RunnerAction[] = [
-          { kind: "event", event: { type: "board_video", stepId: step.id, src: step.src, ...(step.poster ? { poster: step.poster } : {}) } },
+          { kind: "event", event: { type: "board_video", stepId: step.id, source: step.source } },
           ...say(text?.text),
         ];
         step.cues.forEach((cue, index) => {

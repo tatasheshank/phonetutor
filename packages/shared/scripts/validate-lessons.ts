@@ -3,17 +3,25 @@
 //        npm run validate:lessons -- --strict (fails unless every lesson is playable)
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { validateLesson } from "../src";
+import { locateMedia, validateLesson } from "../src";
 
 const strict = process.argv.includes("--strict");
 const dir = join(import.meta.dirname, "../../../content/lessons");
 let failed = false;
 
+/** Media is uploaded (data/lesson-media/<lesson>/<file>) or placed in apps/web/public/lesson-media. */
+function mediaExists(src: string): boolean {
+  const loc = locateMedia(src);
+  if (!loc) return false;
+  if (loc.root === "uploads") {
+    const uploads = process.env.LESSON_MEDIA_DIR ?? join(import.meta.dirname, "../../../data/lesson-media");
+    return existsSync(join(uploads, loc.lessonId, loc.file));
+  }
+  return existsSync(join(import.meta.dirname, "../../../apps/web/public", loc.path));
+}
+
 for (const file of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
-  const publicDir = join(import.meta.dirname, "../../../apps/web/public");
-  const result = validateLesson(JSON.parse(readFileSync(join(dir, file), "utf8")), {
-    mediaExists: (src) => !src.includes("..") && existsSync(join(publicDir, src)),
-  });
+  const result = validateLesson(JSON.parse(readFileSync(join(dir, file), "utf8")), { mediaExists });
   // Without --strict, "no reviewed pack yet" is expected while content is in draft.
   const errors = strict
     ? result.errors

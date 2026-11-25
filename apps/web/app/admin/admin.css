@@ -377,3 +377,15 @@
   padding: 4px 6px;
   min-height: 0;
 }
+.yt-row {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.yt-note {
+  border-left: 4px solid #f59e0b;
+  padding-left: 10px;
+}
+.video-flag {
+  color: #b45309;
+  font-weight: 600;
+}

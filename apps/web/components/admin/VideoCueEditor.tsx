@@ -3,13 +3,14 @@
 import type { LanguageCode } from "@ai-tutor/shared";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { MediaSurface, mediaErrorMessage, type BoardSource, type MediaControl } from "../boardMedia";
 import { uploadClip } from "./uploadClip";
 
 /**
  * Cue editor for one board video. The admin plays the clip, pauses where something happens, and
  * for each cue sets: the time, where the teacher points (tap the frame) or a box (drag on the frame),
  * and what she says in each language. "Draft Telugu & Hindi" asks Sarvam for translations of the
- * English lines, to edit before publishing.
+ * English lines, to edit before publishing. Works the same for uploaded clips and YouTube videos.
  */
 
 type Point = { x: number; y: number };
@@ -26,8 +27,7 @@ export interface EditorCue {
 
 export interface VideoStepForEditor {
   id: string;
-  src: string;
-  poster?: string;
+  source: BoardSource;
   label?: string;
   cues: EditorCue[];
   intro: PerLang;
@@ -54,18 +54,28 @@ export function VideoCueEditor({
   canMoveDown: boolean;
 }) {
   const router = useRouter();
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const media = useRef<MediaControl | null>(null);
+  const [size, setSize] = useState<{ w: number; h: number } | null>(null);
+  const [mediaError, setMediaError] = useState<string | null>(null);
+  const [youtubeUrl, setYoutubeUrl] = useState("");
   const frameRef = useRef<HTMLDivElement>(null);
   const [cues, setCues] = useState<EditorCue[]>(step.cues);
   const [intro, setIntro] = useState<PerLang>(step.intro);
   const [sel, setSel] = useState(0);
   const [tool, setTool] = useState<"point" | "box">("point");
   const [picture, setPicture] = useState<{ left: number; top: number; width: number; height: number } | null>(null);
-  const [drag, setDrag] = useState<{ from: Point; to: Point } | null>(null);
+  const [drag, setDragState] = useState<{ from: Point; to: Point } | null>(null);
+  // Also in a ref: pointer events can arrive faster than React re-renders.
+  const dragRef = useRef<{ from: Point; to: Point } | null>(null);
+  const setDrag = (d: { from: Point; to: Point } | null) => {
+    dragRef.current = d;
+    setDragState(d);
+  };
   const [dirty, setDirty] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [now, setNow] = useState(0);
+  const [duration, setDuration] = useState<number | null>(null);
   const stopAt = useRef<number | null>(null);
 
   const change = (fn: (c: EditorCue[]) => EditorCue[]) => {
@@ -74,21 +84,36 @@ export function VideoCueEditor({
   };
   const cue = cues[sel];
 
-  // Where the picture sits inside the frame (object-fit: contain letterboxes it).
+  // Where the picture sits inside the frame (letterboxed to fit; YouTube is a 16:9 box).
   const measure = useCallback(() => {
     const f = frameRef.current;
-    const v = videoRef.current;
-    if (!f || !v || !v.videoWidth) return;
-    const scale = Math.min(f.clientWidth / v.videoWidth, f.clientHeight / v.videoHeight);
-    const width = v.videoWidth * scale;
-    const height = v.videoHeight * scale;
+    if (!f || !size) return;
+    const scale = Math.min(f.clientWidth / size.w, f.clientHeight / size.h);
+    const width = size.w * scale;
+    const height = size.h * scale;
     setPicture({ left: (f.clientWidth - width) / 2, top: (f.clientHeight - height) / 2, width, height });
-  }, []);
+  }, [size]);
   useLayoutEffect(() => {
+    measure();
     const ro = new ResizeObserver(measure);
     if (frameRef.current) ro.observe(frameRef.current);
     return () => ro.disconnect();
   }, [measure]);
+
+  // The player's time, for the clock and "play cue" (YouTube has no time events, so poll).
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const m = media.current;
+      if (!m) return;
+      const t = m.currentTime();
+      setNow(t);
+      if (stopAt.current !== null && t >= stopAt.current - 0.05) {
+        m.pause();
+        stopAt.current = null;
+      }
+    }, 100);
+    return () => clearInterval(timer);
+  }, []);
 
   // Warn before leaving with unsaved changes.
   useEffect(() => {
@@ -109,7 +134,7 @@ export function VideoCueEditor({
   function onPointerDown(e: React.PointerEvent) {
     const p = frac(e);
     if (!p || !cue) return;
-    videoRef.current?.pause();
+    media.current?.pause();
     (e.target as Element).setPointerCapture?.(e.pointerId);
     if (tool === "point") {
       change((c) => c.map((x, i) => (i === sel ? { ...x, point: p } : x)));
@@ -118,12 +143,16 @@ export function VideoCueEditor({
     }
   }
   function onPointerMove(e: React.PointerEvent) {
-    if (!drag) return;
+    const d = dragRef.current;
+    if (!d) return;
     const p = frac(e);
-    if (p) setDrag({ ...drag, to: p });
+    if (p) setDrag({ ...d, to: p });
   }
-  function onPointerUp() {
-    if (!drag) return;
+  function onPointerUp(e: React.PointerEvent) {
+    const d0 = dragRef.current;
+    if (!d0) return;
+    const end = frac(e);
+    const drag = end ? { ...d0, to: end } : d0;
     const box = {
       x: Math.min(drag.from.x, drag.to.x),
       y: Math.min(drag.from.y, drag.to.y),
@@ -138,7 +167,7 @@ export function VideoCueEditor({
   const round1 = (n: number) => Math.round(n * 10) / 10;
 
   function addCue() {
-    const at = round1(videoRef.current?.currentTime ?? 0);
+    const at = round1(media.current?.currentTime() ?? 0);
     const next: EditorCue = { at, pause: true, text: {} };
     const list = [...cues, next].sort((a, b) => a.at - b.at);
     setCues(list);
@@ -147,7 +176,7 @@ export function VideoCueEditor({
   }
 
   function setTimeHere() {
-    const at = round1(videoRef.current?.currentTime ?? 0);
+    const at = round1(media.current?.currentTime() ?? 0);
     change((c) => c.map((x, i) => (i === sel ? { ...x, at } : x)));
   }
 
@@ -159,23 +188,14 @@ export function VideoCueEditor({
 
   /** Plays the selected cue's segment: from its time to the next cue's. */
   function playCue(i: number) {
-    const v = videoRef.current;
+    const m = media.current;
     const c = cues[i];
-    if (!v || !c) return;
+    if (!m || !c) return;
     const sorted = [...cues].sort((a, b) => a.at - b.at);
     const k = sorted.indexOf(c);
     stopAt.current = sorted[k + 1]?.at ?? null;
-    v.currentTime = c.at;
-    void v.play().catch(() => {});
-  }
-  function onTimeUpdate() {
-    const v = videoRef.current;
-    if (!v) return;
-    setNow(v.currentTime);
-    if (stopAt.current !== null && v.currentTime >= stopAt.current - 0.05) {
-      v.pause();
-      stopAt.current = null;
-    }
+    m.seek(c.at);
+    m.play();
   }
 
   async function draftTranslations() {
@@ -252,6 +272,28 @@ export function VideoCueEditor({
     }
   }
 
+  async function useYouTube() {
+    if (!youtubeUrl.trim()) return;
+    setBusy(true);
+    setStatus("Checking the YouTube video…");
+    try {
+      const res = await fetch(`/api/admin/lessons/${lessonId}/youtube`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ url: youtubeUrl, stepId: step.id }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { error?: string; warning?: string | null };
+      if (!res.ok) throw new Error(data.error ?? "Failed");
+      setStatus(data.warning ?? "Switched to the YouTube video. Check your cue times against it.");
+      setYoutubeUrl("");
+      router.refresh();
+    } catch (err) {
+      setStatus((err as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
   async function replace(file: File | undefined) {
     if (!file) return;
     setBusy(true);
@@ -274,8 +316,6 @@ export function VideoCueEditor({
     h: Math.abs(drag.to.y - drag.from.y),
   };
   const box = dragBox ?? cue?.highlightBox;
-  // Cache-bust after a re-upload (same URL, new file).
-  const src = step.mediaVersion ? `${step.src}?v=${step.mediaVersion}` : step.src;
 
   return (
     <section className="card stack cue-editor" id={`step-${step.id}`}>
@@ -297,7 +337,7 @@ export function VideoCueEditor({
       </header>
 
       {step.mediaMissing ? (
-        <p className="err">This clip hasn&apos;t been uploaded yet. Choose it below.</p>
+        <p className="err">This clip hasn&apos;t been uploaded yet. Choose it below, or use a YouTube link.</p>
       ) : (
         <div className="cue-stage">
           <div
@@ -307,17 +347,25 @@ export function VideoCueEditor({
             onPointerMove={onPointerMove}
             onPointerUp={onPointerUp}
           >
-            <video
-              ref={videoRef}
-              src={src}
-              poster={step.poster}
-              muted
-              playsInline
-              preload="metadata"
-              onLoadedMetadata={measure}
-              onTimeUpdate={onTimeUpdate}
+            <MediaSurface
+              source={step.source}
+              version={step.mediaVersion}
+              onReady={(control, sz) => {
+                media.current = control;
+                setSize(sz);
+                const d = control.duration();
+                if (d) setDuration(d);
+              }}
+              onDurationChange={setDuration}
+              onError={setMediaError}
             />
-            {picture && (
+            {mediaError && (
+              <div className="board-error">
+                <p>🎬 {mediaErrorMessage(mediaError)}</p>
+                <p className="small">Learners will hear the narration without the video. Switch to another video below.</p>
+              </div>
+            )}
+            {picture && !mediaError && (
               <div className="cue-overlay" style={{ left: picture.left, top: picture.top, width: picture.width, height: picture.height }}>
                 {box && <div className="board-box" style={{ left: pct(box.x), top: pct(box.y), width: pct(box.w), height: pct(box.h) }} />}
                 {cue?.point && <div className="board-point" style={{ left: pct(cue.point.x), top: pct(cue.point.y) }} />}
@@ -325,10 +373,10 @@ export function VideoCueEditor({
             )}
           </div>
           <div className="row cue-transport">
-            <button className="btn secondary" type="button" onClick={() => void videoRef.current?.play()}>
+            <button className="btn secondary" type="button" onClick={() => media.current?.play()}>
               ▶ Play
             </button>
-            <button className="btn secondary" type="button" onClick={() => videoRef.current?.pause()}>
+            <button className="btn secondary" type="button" onClick={() => media.current?.pause()}>
               ⏸ Pause
             </button>
             <span className="cue-time">{now.toFixed(1)} s</span>
@@ -337,12 +385,11 @@ export function VideoCueEditor({
             className="cue-scrub"
             type="range"
             min={0}
-            max={videoRef.current?.duration || 60}
+            max={duration ?? 60}
             step={0.1}
             value={now}
             onChange={(e) => {
-              const v = videoRef.current;
-              if (v) v.currentTime = Number(e.currentTarget.value);
+              media.current?.seek(Number(e.currentTarget.value));
             }}
             aria-label="Position in the clip"
           />
@@ -418,6 +465,7 @@ export function VideoCueEditor({
               <span className="small muted">
                 {c.point ? "👉 point" : ""} {c.highlightBox ? "▭ box" : ""}
               </span>
+              {duration !== null && c.at >= duration && <span className="small err">⚠ after the end of the clip ({duration.toFixed(1)} s)</span>}
               {(c.point || c.highlightBox) && (
                 <button
                   type="button"
@@ -465,16 +513,34 @@ export function VideoCueEditor({
       </div>
       {status && <p className="small">{status}</p>}
 
-      <details className="small">
-        <summary>Replace the clip or add a poster image</summary>
+      <details className="small" open={step.mediaMissing || !!mediaError}>
+        <summary>{step.source.kind === "youtube" ? "Change the video" : "Replace the clip, use a YouTube video, or add a poster"}</summary>
         <label className="field">
-          <span>New clip (MP4 or WebM, up to 50 MB)</span>
+          <span>Upload a clip instead (MP4 or WebM, up to 50 MB)</span>
           <input type="file" accept=".mp4,.webm,video/mp4,video/webm" disabled={busy} onChange={(e) => void replace(e.currentTarget.files?.[0])} />
         </label>
-        <label className="field">
-          <span>Poster image shown before it plays (PNG, JPG or WebP)</span>
-          <input type="file" accept=".png,.jpg,.jpeg,.webp,image/*" disabled={busy} onChange={(e) => void replace(e.currentTarget.files?.[0])} />
-        </label>
+        <div className="field">
+          <span>Or use a YouTube link</span>
+          <div className="row yt-row">
+            <input
+              className="input"
+              type="url"
+              placeholder="https://youtu.be/…"
+              value={youtubeUrl}
+              disabled={busy}
+              onChange={(e) => setYoutubeUrl(e.currentTarget.value)}
+            />
+            <button type="button" className="btn secondary" disabled={busy || !youtubeUrl.trim()} onClick={() => void useYouTube()}>
+              Use this video
+            </button>
+          </div>
+        </div>
+        {step.source.kind === "upload" && (
+          <label className="field">
+            <span>Poster image shown before it plays (PNG, JPG or WebP)</span>
+            <input type="file" accept=".png,.jpg,.jpeg,.webp,image/*" disabled={busy} onChange={(e) => void replace(e.currentTarget.files?.[0])} />
+          </label>
+        )}
       </details>
     </section>
   );

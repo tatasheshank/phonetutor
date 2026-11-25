@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { locateMedia } from "./media";
+import { locateMedia, YOUTUBE_ID } from "./media";
 
 const langCode = z.enum(["te", "hi", "en"]);
 
@@ -55,19 +55,44 @@ const mediaPath = (kind: "video" | "image") =>
     );
 
 /**
- * Classroom board: a short video the teacher plays and points at, narrating cue by cue.
- * Media is uploaded by an admin (data/lesson-media, served at /api/lesson-media/...) or placed by
- * hand in apps/web/public/lesson-media/ (served at /lesson-media/...). See ./media.ts.
+ * Where a board video comes from, chosen per step:
+ *  - upload: a file the admin uploaded (data/lesson-media, served at /api/lesson-media/...) or placed
+ *    by hand in apps/web/public/lesson-media/ (served at /lesson-media/...). See ./media.ts.
+ *  - youtube: a YouTube video, by its 11-character id only (never a full URL). Played muted from
+ *    youtube-nocookie.com; the teacher narrates.
  */
+export const videoSourceSchema = z.discriminatedUnion("kind", [
+  z.object({ kind: z.literal("upload"), src: mediaPath("video"), poster: mediaPath("image").optional() }),
+  z.object({ kind: z.literal("youtube"), videoId: z.string().regex(YOUTUBE_ID, "videoId must be an 11-character YouTube id") }),
+]);
+export type VideoSource = z.infer<typeof videoSourceSchema>;
+
+/** Classroom board: a short video the teacher plays and points at, narrating cue by cue. */
 const videoStep = z.object({
   id: z.string(),
   type: z.literal("video"),
-  src: mediaPath("video"),
-  poster: mediaPath("image").optional(),
-  /** Admin-facing label, e.g. the clip's original file name. Learners don't see it. */
+  source: videoSourceSchema,
+  /** Admin-facing label, e.g. the clip's file name or the YouTube title. Learners don't see it. */
   label: z.string().max(160).optional(),
   cues: z.array(boardCueSchema).min(1),
 });
+
+/**
+ * Lessons saved before video sources existed had `src` / `poster` on the step. Read them as uploads,
+ * so old files keep working; they are written back in the new shape on the next save.
+ */
+function upgradeLegacyVideoSteps(input: unknown): unknown {
+  if (!input || typeof input !== "object" || !Array.isArray((input as { steps?: unknown }).steps)) return input;
+  const lesson = input as { steps: unknown[] };
+  const steps = lesson.steps.map((s) => {
+    if (!s || typeof s !== "object") return s;
+    const step = s as Record<string, unknown>;
+    if (step.type !== "video" || step.source !== undefined || typeof step.src !== "string") return s;
+    const { src, poster, ...rest } = step;
+    return { ...rest, source: { kind: "upload", src, ...(typeof poster === "string" ? { poster } : {}) } };
+  });
+  return { ...lesson, steps };
+}
 
 export const stepSchema = z.discriminatedUnion("type", [sayStep, showStep, practiceStep, checkStep, videoStep]);
 
@@ -110,7 +135,7 @@ export const localePackSchema = z.object({
   neverSay: z.array(z.string()).default([]),
 });
 
-export const lessonSchema = z.object({
+const lessonObject = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   version: z.number().int().positive(),
   course: z.string(),
@@ -132,7 +157,10 @@ export const lessonSchema = z.object({
   locales: z.partialRecord(langCode, localePackSchema),
 });
 
-export type Lesson = z.infer<typeof lessonSchema>;
+/** A lesson. Older files with `src` on video steps are upgraded on read (see upgradeLegacyVideoSteps). */
+export const lessonSchema = z.preprocess(upgradeLegacyVideoSteps, lessonObject);
+
+export type Lesson = z.infer<typeof lessonObject>;
 export type LessonStep = z.infer<typeof stepSchema>;
 export type LocalePack = z.infer<typeof localePackSchema>;
 export type BoardCue = z.infer<typeof boardCueSchema>;

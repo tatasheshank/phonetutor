@@ -4,6 +4,8 @@ import {
   isLearnerId,
   isLanguageCode,
   isSpeechRate,
+  isTopicId,
+  normalizeTopicId,
   resolveVoice,
   type LanguageConfig,
   type ParticipantSettings,
@@ -38,6 +40,7 @@ export function parseSettings(metadata: string | undefined): {
       : language.endpointingMs;
 
   const learnerId = isLearnerId(raw.learnerId) ? raw.learnerId : undefined;
+  const topic = isTopicId(raw.topic) ? normalizeTopicId(raw.topic) : undefined;
   const lessonId = typeof raw.lessonId === "string" && /^[a-z0-9-]{1,80}$/.test(raw.lessonId) ? raw.lessonId : undefined;
 
   // Voice and speed the learner picked; unknown ids fall back to the language default.
@@ -45,7 +48,7 @@ export function parseSettings(metadata: string | undefined): {
   const speechRate = isSpeechRate(raw.speechRate) ? raw.speechRate : "normal";
 
   return {
-    settings: { learnerId, tutorLanguage, screenLanguage, endpointingMs, lessonId, voiceId: voice.id, speechRate },
+    settings: { learnerId, tutorLanguage, screenLanguage, endpointingMs, topic, lessonId, voiceId: voice.id, speechRate },
     language,
     voice,
   };

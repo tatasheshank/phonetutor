@@ -1,5 +1,5 @@
 import { ALL_LANGUAGE_CODES, type LanguageCode } from "../languages";
-import type { BoardCue, Lesson, LessonStep } from "./schema";
+import type { BoardCue, Lesson, LessonStep, VideoSource } from "./schema";
 
 /**
  * Admin edits to a lesson draft: board video steps and their cues. Pure functions on a copy, so
@@ -18,14 +18,13 @@ export function nextStepId(lesson: Lesson): string {
  * Adds a board video step. It goes before the lesson's final check question (if any), with one cue
  * at 0 s and empty narration in every language, for the admin to fill in the cue editor.
  */
-export function appendVideoStep(lesson: Lesson, video: { src: string; label?: string; poster?: string }): { lesson: Lesson; stepId: string } {
+export function appendVideoStep(lesson: Lesson, video: { source: VideoSource; label?: string }): { lesson: Lesson; stepId: string } {
   const out = structuredClone(lesson);
   const id = nextStepId(out);
   const step: VideoStep = {
     id,
     type: "video",
-    src: video.src,
-    ...(video.poster ? { poster: video.poster } : {}),
+    source: video.source,
     ...(video.label ? { label: video.label.slice(0, 160) } : {}),
     cues: [{ at: 0, pause: true }],
   };

@@ -1,5 +1,7 @@
 import { DeleteLessonButton } from "../../../../components/admin/DeleteLessonButton";
-import { getLanguage, locateMedia, missingNarration, type LanguageCode } from "@ai-tutor/shared";
+import { getLanguage, locateMedia, missingNarration, topicInfo, type LanguageCode, type Lesson } from "@ai-tutor/shared";
+import { recentVideoErrors } from "../../../../lib/videoErrors";
+import { mediaErrorMessage } from "../../../../lib/mediaErrors";
 import { statSync } from "node:fs";
 import { AddClipsForm } from "../../../../components/admin/AddClipsForm";
 import { PrerecordPanel } from "../../../../components/admin/PrerecordPanel";
@@ -12,7 +14,8 @@ import { LessonPreview } from "../../../../components/admin/LessonPreview";
 import { isAdmin } from "../../../../lib/adminAuth";
 import { inr } from "../../../../lib/format";
 import { loadDraft } from "../../../../lib/lessonDrafts";
-import { publish, unpublish } from "../actions";
+import { changeTopic, publish, unpublish } from "../actions";
+import { TopicFields } from "../../../../components/admin/TopicFields";
 import "../../admin.css";
 
 export const dynamic = "force-dynamic";
@@ -27,7 +30,7 @@ export default async function LessonDraftPage({
   searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ published?: string; unpublished?: string; error?: string }>;
+  searchParams: Promise<{ published?: string; unpublished?: string; error?: string; topic?: string }>;
 }) {
   if (!(await isAdmin())) redirect("/admin");
   const { id } = await params;
@@ -40,10 +43,13 @@ export default async function LessonDraftPage({
   const videoSteps = lesson.steps.flatMap((s, index) => (s.type === "video" ? [{ s, index }] : []));
   const isVideoLesson = draft.kind === "video" || videoSteps.length > 0;
   const missing = missingNarration(lesson);
+  const videoErrors = (await recentVideoErrors()).filter((e) => e.lessonId === lesson.id);
+  const brokenSteps = [...new Map(videoErrors.map((e) => [e.stepId, e])).values()].filter((e) =>
+    lesson.steps.some((s) => s.id === e.stepId && s.type === "video"),
+  );
   const editorStep = (s: Extract<(typeof lesson.steps)[number], { type: "video" }>): VideoStepForEditor => ({
     id: s.id,
-    src: s.src,
-    ...(s.poster ? { poster: s.poster } : {}),
+    source: s.source,
     ...(s.label ? { label: s.label } : {}),
     intro: Object.fromEntries(langs.map((l) => [l, lesson.locales[l]?.steps[s.id]?.text ?? ""])),
     cues: s.cues.map((c, i) => ({
@@ -53,8 +59,8 @@ export default async function LessonDraftPage({
       ...(c.highlightBox ? { highlightBox: c.highlightBox } : {}),
       text: Object.fromEntries(langs.map((l) => [l, lesson.locales[l]?.steps[s.id]?.cues?.[i]?.text ?? ""])),
     })),
-    mediaMissing: !mediaExists(s.src),
-    mediaVersion: mediaVersion(s.src),
+    mediaMissing: s.source.kind === "upload" && !mediaExists(s.source.src),
+    mediaVersion: s.source.kind === "upload" ? mediaVersion(s.source.src) : undefined,
   });
 
   return (
@@ -73,7 +79,8 @@ export default async function LessonDraftPage({
 
       {q.published && <p className="card">✅ Published. Learners can pick this lesson now.</p>}
       {q.unpublished && <p className="card">Hidden from learners. You can publish it again.</p>}
-      {q.error && <p className="card err">Could not publish: {q.error}</p>}
+      {q.topic && <p className="card">✅ Topic saved.</p>}
+      {q.error && <p className="card err">Could not save: {q.error}</p>}
       {draft.status === "published" && draft.pendingChanges && (
         <p className="card">✏️ You changed this lesson after publishing. Learners still get the published version: publish again below to update it.</p>
       )}
@@ -84,6 +91,21 @@ export default async function LessonDraftPage({
           <ul>
             {draft.warnings.map((w, i) => (
               <li key={i}>{w}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {brokenSteps.length > 0 && (
+        <section className="card">
+          <h2 className="video-flag">⚠ Videos that didn&apos;t play</h2>
+          <p className="muted small">Reported by learners&apos; phones in the last 2 weeks. The narration still played without the video.</p>
+          <ul className="small">
+            {brokenSteps.map((e) => (
+              <li key={e.stepId}>
+                <a href={`#step-${e.stepId}`}>Step {lesson.steps.findIndex((st) => st.id === e.stepId) + 1}</a>: {mediaErrorMessage(e.code)} (last{" "}
+                {new Date(e.at).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", dateStyle: "short", timeStyle: "short" })})
+              </li>
             ))}
           </ul>
         </section>
@@ -154,7 +176,7 @@ export default async function LessonDraftPage({
 
       {videoSteps.map(({ s, index }) => (
         <VideoCueEditor
-          key={`${s.id}-${s.src}-${mediaVersion(s.src) ?? ""}`}
+          key={`${s.id}-${sourceKey(s.source)}`}
           lessonId={lesson.id}
           step={editorStep(s)}
           index={index}
@@ -167,24 +189,42 @@ export default async function LessonDraftPage({
       {isVideoLesson && <AddClipsForm lessonId={lesson.id} />}
 
       <section className="card stack">
+        <h2>Topic</h2>
+        <p className="muted small">
+          Now in: {topicInfo(lesson.course).emoji} {topicInfo(lesson.course).name.en}. Changing the topic does not need a new review and
+          applies to learners right away.
+        </p>
+        <form action={changeTopic} className="stack">
+          <input type="hidden" name="id" value={lesson.id} />
+          <TopicFields current={lesson.course} />
+          <div>
+            <button className="btn secondary" type="submit">
+              Save topic
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section className="card stack">
         <h2>Publish</h2>
         <p className="muted small">
           Publishing makes this lesson available to every learner in Telugu, Hindi and English. The Telugu and Hindi were written by AI: have a
           native speaker read them when you can.
         </p>
         <div className="row">
-          {draft.status === "published" ? (
+          {(draft.status !== "published" || draft.pendingChanges) && (
+            <form action={publish}>
+              <input type="hidden" name="id" value={lesson.id} />
+              <button className="btn" type="submit">
+                {draft.status === "published" ? "✓ Publish the changes" : "✓ Publish for all learners"}
+              </button>
+            </form>
+          )}
+          {draft.status === "published" && (
             <form action={unpublish}>
               <input type="hidden" name="id" value={lesson.id} />
               <button className="btn secondary" type="submit">
                 Hide from learners
-              </button>
-            </form>
-          ) : (
-            <form action={publish}>
-              <input type="hidden" name="id" value={lesson.id} />
-              <button className="btn" type="submit">
-                ✓ Publish for all learners
               </button>
             </form>
           )}
@@ -195,6 +235,10 @@ export default async function LessonDraftPage({
       <PrerecordPanel lessonId={lesson.id} published={draft.status === "published"} />
     </main>
   );
+}
+
+function sourceKey(src: Extract<(Lesson["steps"])[number], { type: "video" }>["source"]): string {
+  return src.kind === "youtube" ? `yt-${src.videoId}` : `up-${src.src}-${mediaVersion(src.src) ?? ""}`;
 }
 
 /** The uploaded file's change time, used to refresh the editor's video after a re-upload. */

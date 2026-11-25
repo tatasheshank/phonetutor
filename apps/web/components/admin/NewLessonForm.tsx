@@ -3,6 +3,7 @@
 import { byClipName, MAX_CLIP_BYTES } from "@ai-tutor/shared";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { TopicFields } from "./TopicFields";
 import { uploadClip, videoDuration } from "./uploadClip";
 
 type Kind = "phone" | "video";
@@ -144,12 +145,9 @@ export function NewLessonForm() {
               ))}
             </ol>
           )}
-          <label className="field">
-            <span>Course (optional, groups lessons, e.g. &quot;Excel basics&quot;)</span>
-            <input className="input" type="text" name="course" maxLength={80} disabled={busy} />
-          </label>
         </>
       )}
+      <TopicFields key={kind} current={kind === "video" ? "computer-basics" : "phone-basics"} disabled={busy} />
       <label className="field">
         <span>Title (optional)</span>
         <input className="input" type="text" name="title" maxLength={120} disabled={busy} />

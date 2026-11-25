@@ -3,60 +3,72 @@
 import type { AgentEvent } from "@ai-tutor/shared";
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { Strings } from "../lib/strings";
+import { MediaSurface, type BoardSource, type MediaControl } from "./boardMedia";
 
 export type BoardCueEvent = Extract<AgentEvent, { type: "board_cue" }>;
 
 export interface BoardState {
   stepId: string;
-  src: string;
-  poster?: string;
+  source: BoardSource;
   cue: BoardCueEvent | null;
 }
 
 /**
- * Classroom board: a short lesson video in a chalkboard frame. The video is muted (the tutor narrates).
- * Each cue plays one segment (seek to `at`, play until `until`, pause there), and draws a pulsing circle
- * at `point` or a box at `highlightBox`, in fractions of the video frame. Reports where the marker is on
- * screen so the avatar can point at it.
+ * Classroom board: a short lesson video in a chalkboard frame, from an upload or YouTube. It is muted
+ * (the tutor narrates). Each cue plays one segment (seek to `at`, play until `until`, pause there),
+ * and draws a pulsing circle at `point` or a box at `highlightBox`, in fractions of the picture.
+ * Reports where the marker is on screen so the avatar can point at it. Learners can't operate the
+ * video itself (a layer above it takes their taps), so they can't wander off to YouTube.
+ * If the video can't play, the board says so and the lesson carries on with the narration.
  */
 export function Board({
   board,
   hold,
   t,
   onPointScreen,
+  onMediaError,
 }: {
   board: BoardState;
   /** True while the learner is asking something: pause the video. */
   hold: boolean;
   t: Strings;
   onPointScreen: (p: { x: number; y: number } | null) => void;
+  /** Reported once per step, so the admin dashboard can flag broken videos. */
+  onMediaError?: (stepId: string, code: string) => void;
 }) {
   const frameRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const markerRef = useRef<HTMLDivElement>(null);
+  const media = useRef<MediaControl | null>(null);
+  const [ready, setReady] = useState(false);
+  // Bumped each time the surface (re)reports ready, e.g. after an upload's metadata loads: the
+  // current cue is applied again then, in case the earlier seek happened before the video loaded.
+  const [readyTick, setReadyTick] = useState(0);
+  const [picture, setPicture] = useState<{ w: number; h: number } | null>(null);
   const [box, setBox] = useState<{ left: number; top: number; width: number; height: number } | null>(null);
   const [paused, setPaused] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const cue = board.cue;
-  // Latest cue and hold for event handlers that outlive a render.
-  const cueRef = useRef(cue);
-  const holdRef = useRef(hold);
-  cueRef.current = cue;
-  holdRef.current = hold;
 
-  // Where the video picture actually sits inside the 16:9 frame (object-fit: contain letterboxes it).
+  // A new video: start over.
+  const sourceKey = board.source.kind === "youtube" ? `yt:${board.source.videoId}` : `up:${board.source.src}`;
+  useEffect(() => {
+    media.current = null;
+    setReady(false);
+    setError(null);
+    setPicture(null);
+  }, [sourceKey]);
+
+  // Where the picture actually sits inside the frame (letterboxed to fit).
   const measure = useCallback(() => {
     const frame = frameRef.current;
-    const video = videoRef.current;
-    if (!frame || !video) return;
+    if (!frame || !picture) return;
     const fw = frame.clientWidth;
     const fh = frame.clientHeight;
-    const vw = video.videoWidth || 9;
-    const vh = video.videoHeight || 16;
-    const scale = Math.min(fw / vw, fh / vh);
-    const width = vw * scale;
-    const height = vh * scale;
+    const scale = Math.min(fw / picture.w, fh / picture.h);
+    const width = picture.w * scale;
+    const height = picture.h * scale;
     setBox({ left: (fw - width) / 2, top: (fh - height) / 2, width, height });
-  }, []);
+  }, [picture]);
 
   useLayoutEffect(() => {
     measure();
@@ -65,63 +77,58 @@ export function Board({
     return () => ro.disconnect();
   }, [measure]);
 
-  // Play the cue's segment.
+  // Play the cue's segment once the video is ready.
   useEffect(() => {
-    const v = videoRef.current;
-    if (!v || !cue) return;
-    if (Math.abs(v.currentTime - cue.at) > 0.3) v.currentTime = cue.at;
-    void v.play().catch(() => {});
-  }, [cue]);
+    const m = media.current;
+    if (!m || !ready || !cue) return;
+    if (Math.abs(m.currentTime() - cue.at) > 0.3) m.seek(cue.at);
+    // Play even while the learner is mid-question: the hold effect pauses it again. Calling play()
+    // is also what makes phone browsers start loading the video at all.
+    m.play();
+    if (hold) m.pause();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- only on a new cue or when the video becomes ready
+  }, [cue, ready, readyTick]);
 
-  // Stop at the end of the segment. "timeupdate" only fires ~4 times a second, so check every
-  // animation frame while playing to stop within a frame of `until`.
+  // Stop at the end of the segment. Checked every animation frame (and on a timer, which keeps
+  // running when animation frames are throttled) to stop close to `until`.
   useEffect(() => {
-    const v = videoRef.current;
-    if (!v || !cue || cue.until === null || !cue.pause || paused) return;
+    const m = media.current;
+    if (!m || !cue || cue.until === null || !cue.pause || paused) return;
     const until = cue.until;
     let frame = 0;
     const check = () => {
-      if (v.currentTime >= until - 0.04) {
-        v.pause();
-        return;
+      if (m.currentTime() >= until - 0.04) {
+        m.pause();
+        return true;
       }
-      frame = requestAnimationFrame(check);
+      return false;
     };
-    frame = requestAnimationFrame(check);
-    return () => cancelAnimationFrame(frame);
+    const loop = () => {
+      if (!check()) frame = requestAnimationFrame(loop);
+    };
+    frame = requestAnimationFrame(loop);
+    const timer = setInterval(check, 100);
+    return () => {
+      cancelAnimationFrame(frame);
+      clearInterval(timer);
+    };
   }, [cue, paused]);
-
-  // Browser-recorded WebM (e.g. placeholders) has no duration or seek index, so seeking fails.
-  // Asking for a far-off time makes the browser scan the file once and learn its duration.
-  function onLoadedMetadata() {
-    const v = videoRef.current;
-    if (v && !Number.isFinite(v.duration)) {
-      const restore = () => {
-        v.removeEventListener("durationchange", restore);
-        v.currentTime = cueRef.current?.at ?? 0;
-        // Jumping to the end stopped playback; carry on with the current segment.
-        if (cueRef.current && !holdRef.current) void v.play().catch(() => {});
-      };
-      v.addEventListener("durationchange", restore);
-      v.currentTime = 1e6;
-    }
-    measure();
-  }
 
   // Pause while the learner asks a question; carry on afterwards if the segment isn't finished.
   useEffect(() => {
-    const v = videoRef.current;
-    if (!v || !cue) return;
-    if (hold) v.pause();
-    else if (cue.until === null ? !v.ended : v.currentTime < cue.until - 0.1) void v.play().catch(() => {});
-  }, [hold, cue]);
+    const m = media.current;
+    if (!m || !ready || !cue) return;
+    if (hold) m.pause();
+    else if (cue.until === null || m.currentTime() < cue.until - 0.1) m.play();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- react to hold only
+  }, [hold]);
 
   // Tell the avatar where to point (screen coordinates of the marker's centre).
   useLayoutEffect(() => {
     const report = () => {
-      const m = markerRef.current;
-      if (!m) return onPointScreen(null);
-      const r = m.getBoundingClientRect();
+      const mk = markerRef.current;
+      if (!mk) return onPointScreen(null);
+      const r = mk.getBoundingClientRect();
       onPointScreen({ x: r.left + r.width / 2, y: r.top + r.height / 2 });
     };
     report();
@@ -136,17 +143,17 @@ export function Board({
   useEffect(() => () => onPointScreen(null), [onPointScreen]);
 
   function replay() {
-    const v = videoRef.current;
-    if (!v) return;
-    v.currentTime = cue?.at ?? 0;
-    void v.play().catch(() => {});
+    const m = media.current;
+    if (!m) return;
+    m.seek(cue?.at ?? 0);
+    m.play();
   }
 
   function togglePause() {
-    const v = videoRef.current;
-    if (!v) return;
-    if (v.paused) void v.play().catch(() => {});
-    else v.pause();
+    const m = media.current;
+    if (!m) return;
+    if (m.paused()) m.play();
+    else m.pause();
   }
 
   const pct = (n: number) => `${n * 100}%`;
@@ -156,41 +163,50 @@ export function Board({
   return (
     <div className="board">
       <div className="board-frame" ref={frameRef}>
-        <video
-          ref={videoRef}
-          className="board-video"
-          src={board.src}
-          poster={board.poster}
-          muted
-          playsInline
-          preload="auto"
-          onLoadedMetadata={onLoadedMetadata}
-          onPlay={() => setPaused(false)}
-          onPause={() => setPaused(true)}
-          aria-label={cue?.caption ?? undefined}
+        <MediaSurface
+          source={board.source}
+          label={cue?.caption ?? undefined}
+          onReady={(control, size) => {
+            media.current = control;
+            setPicture(size);
+            setReady(true);
+            setReadyTick((n) => n + 1);
+          }}
+          onPlayingChange={(playing) => setPaused(!playing)}
+          onError={(code) => {
+            setError(code);
+            onMediaError?.(board.stepId, code);
+          }}
         />
-        {box && (
-          <div className="board-overlay" style={{ left: box.left, top: box.top, width: box.width, height: box.height }} aria-hidden>
-            {hb && <div className="board-box" style={{ left: pct(hb.x), top: pct(hb.y), width: pct(hb.w), height: pct(hb.h) }} />}
-            {pt && (
-              <div
-                ref={markerRef}
-                className={`board-point${cue?.point ? "" : " invisible"}`}
-                style={{ left: pct(pt.x), top: pct(pt.y) }}
-              />
-            )}
+        {/* Takes the learner's taps so they can't operate the video (or open YouTube). */}
+        <div className="board-shield" aria-hidden />
+        {error ? (
+          <div className="board-error" role="status">
+            <p>🎬 {t.videoBroken}</p>
+            <p>{t.videoUnavailable}</p>
           </div>
+        ) : (
+          box && (
+            <div className="board-overlay" style={{ left: box.left, top: box.top, width: box.width, height: box.height }} aria-hidden>
+              {hb && <div className="board-box" style={{ left: pct(hb.x), top: pct(hb.y), width: pct(hb.w), height: pct(hb.h) }} />}
+              {pt && (
+                <div ref={markerRef} className={`board-point${cue?.point ? "" : " invisible"}`} style={{ left: pct(pt.x), top: pct(pt.y) }} />
+              )}
+            </div>
+          )
         )}
       </div>
       {cue?.caption && <p className="board-caption">{cue.caption}</p>}
-      <div className="row">
-        <button className="btn secondary" onClick={replay}>
-          ↺ {t.replay}
-        </button>
-        <button className="btn secondary" onClick={togglePause}>
-          {paused ? `▶ ${t.play}` : `⏸ ${t.pause}`}
-        </button>
-      </div>
+      {!error && (
+        <div className="row">
+          <button className="btn secondary" onClick={replay}>
+            ↺ {t.replay}
+          </button>
+          <button className="btn secondary" onClick={togglePause}>
+            {paused ? `▶ ${t.play}` : `⏸ ${t.pause}`}
+          </button>
+        </div>
+      )}
     </div>
   );
 }

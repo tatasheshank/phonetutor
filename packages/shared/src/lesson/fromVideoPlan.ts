@@ -95,7 +95,7 @@ export function videoLessonFromPlan(
       prev = at;
       boardCues.push({ at, pause: true });
     }
-    steps.push({ id: sid, type: "video", src: clip.src(sid), label: clip.label, cues: boardCues });
+    steps.push({ id: sid, type: "video", source: { kind: "upload", src: clip.src(sid) }, label: clip.label, cues: boardCues });
     texts[sid] = { ...(intro ? { text: intro } : {}), cues: timed.map((c) => ({ text: c.text })) };
   };
 

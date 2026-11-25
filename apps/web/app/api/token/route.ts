@@ -1,4 +1,4 @@
-import { isLanguageCode, isSpeechRate, type ParticipantSettings } from "@ai-tutor/shared";
+import { isLanguageCode, isSpeechRate, isTopicId, type ParticipantSettings } from "@ai-tutor/shared";
 import { AccessToken } from "livekit-server-sdk";
 import { randomUUID } from "node:crypto";
 import { currentUser } from "../../../lib/auth";
@@ -45,6 +45,7 @@ export async function POST(req: Request) {
     screenLanguage: body.screenLanguage,
     learnerId: user.id, // from the sign-in session, never from the request body
     lessonId: typeof body.lessonId === "string" && /^[a-z0-9-]{1,80}$/.test(body.lessonId) ? body.lessonId : undefined,
+    topic: isTopicId(body.topic) ? body.topic : undefined,
     // The learner's picked voice and speed; the agent re-checks the id against the language's voices.
     voiceId: typeof body.voiceId === "string" && /^[a-z0-9-]{1,40}$/.test(body.voiceId) ? body.voiceId : undefined,
     speechRate: isSpeechRate(body.speechRate) ? body.speechRate : undefined,

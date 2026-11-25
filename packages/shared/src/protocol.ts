@@ -25,7 +25,8 @@ export type AgentEvent =
   | { type: "check_done"; stepId: string }
   | { type: "lesson_done" }
   // Classroom board: a video the teacher plays and points at.
-  | { type: "board_video"; stepId: string; src: string; poster?: string }
+  /** Load a board video: an uploaded file, or a YouTube video by id (played muted from youtube-nocookie.com). */
+  | { type: "board_video"; stepId: string; source: { kind: "upload"; src: string; poster?: string } | { kind: "youtube"; videoId: string } }
   /**
    * One narrated segment: the phone seeks to `at`, plays until `until` (next cue, or the end when
    * null), and pauses there if `pause`. `point` / `highlightBox` are fractions of the video frame.
@@ -57,6 +58,8 @@ export interface ParticipantSettings {
   tutorLanguage: LanguageCode;
   screenLanguage: LanguageCode;
   endpointingMs?: number;
+  /** Topic the learner picked (see topics.ts): free conversation stays on it. */
+  topic?: string;
   /** Scripted lesson to run. Absent = free conversation with the tutor. */
   lessonId?: string;
   /** Voice the learner picked (VoiceOption id for the tutor language). Absent = language default. */

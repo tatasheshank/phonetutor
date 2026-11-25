@@ -121,7 +121,7 @@ describe("validateLesson: classroom board videos", () => {
   it("accepts the sample video step", () => {
     const r = validateLesson(withVideo(), { mediaExists: () => true });
     expect(r.errors).toEqual([]);
-    expect(videoStep(r.lesson)).toMatchObject({ src: "/lesson-media/wa-video-call-01/start-call.webm" });
+    expect(videoStep(r.lesson)).toMatchObject({ source: { kind: "upload", src: "/lesson-media/wa-video-call-01/start-call.webm" } }); // old src upgraded
   });
 
   it("reports missing media files when a checker is given", () => {

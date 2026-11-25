@@ -1,0 +1,658 @@
+{
+  "id": "fundamentals-of-geomorphology-5e0b17",
+  "version": 1,
+  "course": "earth-science",
+  "mode": "scripted",
+  "objectives": [
+    "Say what geomorphology studies",
+    "Tell endogenic forces from exogenic forces",
+    "Explain weathering, erosion, transport and deposition",
+    "Name the five agents and one landform each makes",
+    "Describe fold mountains, rift valleys and the geomorphic cycle"
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "video",
+      "source": {
+        "kind": "upload",
+        "src": "/api/lesson-media/fundamentals-of-geomorphology-5e0b17/clip-01.mp4"
+      },
+      "label": "geo-v1-forces.mp4 · Forces that shape the land",
+      "cues": [
+        {
+          "at": 0,
+          "point": {
+            "x": 0.23,
+            "y": 0.3
+          },
+          "pause": true
+        },
+        {
+          "at": 7,
+          "point": {
+            "x": 0.5,
+            "y": 0.26
+          },
+          "pause": true
+        },
+        {
+          "at": 14,
+          "point": {
+            "x": 0.67,
+            "y": 0.35
+          },
+          "pause": true
+        },
+        {
+          "at": 21,
+          "point": {
+            "x": 0.5,
+            "y": 0.45
+          },
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    },
+    {
+      "id": "s4",
+      "type": "video",
+      "source": {
+        "kind": "upload",
+        "src": "/api/lesson-media/fundamentals-of-geomorphology-5e0b17/clip-02.mp4"
+      },
+      "label": "geo-v2-processes.mp4 · Break, move, drop",
+      "cues": [
+        {
+          "at": 0,
+          "point": {
+            "x": 0.47,
+            "y": 0.55
+          },
+          "pause": true
+        },
+        {
+          "at": 7,
+          "point": {
+            "x": 0.68,
+            "y": 0.62
+          },
+          "pause": true
+        },
+        {
+          "at": 14,
+          "point": {
+            "x": 0.5,
+            "y": 0.79
+          },
+          "pause": true
+        },
+        {
+          "at": 21,
+          "point": {
+            "x": 0.55,
+            "y": 0.68
+          },
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "video",
+      "source": {
+        "kind": "upload",
+        "src": "/api/lesson-media/fundamentals-of-geomorphology-5e0b17/clip-03.mp4"
+      },
+      "label": "geo-v3-agents.mp4 · Five agents and their landforms",
+      "cues": [
+        {
+          "at": 0,
+          "point": {
+            "x": 0.28,
+            "y": 0.82
+          },
+          "pause": true
+        },
+        {
+          "at": 7,
+          "point": {
+            "x": 0.32,
+            "y": 0.65
+          },
+          "pause": true
+        },
+        {
+          "at": 14,
+          "point": {
+            "x": 0.5,
+            "y": 0.65
+          },
+          "pause": true
+        },
+        {
+          "at": 21,
+          "point": {
+            "x": 0.65,
+            "y": 0.66
+          },
+          "pause": true
+        },
+        {
+          "at": 28,
+          "point": {
+            "x": 0.47,
+            "y": 0.38
+          },
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    },
+    {
+      "id": "s8",
+      "type": "video",
+      "source": {
+        "kind": "upload",
+        "src": "/api/lesson-media/fundamentals-of-geomorphology-5e0b17/clip-04.mp4"
+      },
+      "label": "geo-v4-plates-cycle.mp4 · Plates and the geomorphic cycle",
+      "cues": [
+        {
+          "at": 0,
+          "point": {
+            "x": 0.67,
+            "y": 0.4
+          },
+          "pause": true
+        },
+        {
+          "at": 7,
+          "point": {
+            "x": 0.5,
+            "y": 0.65
+          },
+          "pause": true
+        },
+        {
+          "at": 14,
+          "point": {
+            "x": 0.44,
+            "y": 0.5
+          },
+          "pause": true
+        },
+        {
+          "at": 21,
+          "point": {
+            "x": 0.5,
+            "y": 0.78
+          },
+          "pause": true
+        },
+        {
+          "at": 28,
+          "point": {
+            "x": 0.59,
+            "y": 0.86
+          },
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    },
+    {
+      "id": "s10",
+      "type": "say",
+      "avatar": "smile"
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": []
+  },
+  "locales": {
+    "en": {
+      "status": "draft",
+      "title": "Fundamentals of Geomorphology",
+      "steps": {
+        "s1": {
+          "text": "Today we will learn geomorphology: how the shapes of the land are made, and how they change."
+        },
+        "s10": {
+          "text": "Today we learned: forces inside lift the land, forces outside wear it down. Break, move, drop. Rivers, wind, ice, waves and groundwater each make their own landforms. Well done!"
+        },
+        "s2": {
+          "cues": [
+            {
+              "text": "Geomorphology is the study of landforms, like mountains, valleys, plains and deltas, and of how they are made and changed."
+            },
+            {
+              "text": "Endogenic forces come from inside the Earth. Its heat pushes land up, making volcanoes, earthquakes and rising mountains."
+            },
+            {
+              "text": "Exogenic forces work on the surface. The sun, rain, rivers, wind, ice and waves slowly wear the land down."
+            },
+            {
+              "text": "Every landform is a tug-of-war: forces inside push land up, and forces outside wear it down."
+            }
+          ]
+        },
+        "s3": {
+          "question": "Is a volcano made by a force from inside the Earth?",
+          "accept": [
+            "yes",
+            "yes it is",
+            "yes it does",
+            "ok",
+            "okay",
+            "right",
+            "correct",
+            "haan"
+          ]
+        },
+        "s4": {
+          "cues": [
+            {
+              "text": "First, weathering. Heat and cold, water, chemicals and plant roots crack the rock, but the pieces stay where they are."
+            },
+            {
+              "text": "Then gravity pulls loose rock and soil downhill. Landslides in the Western Ghats during the monsoon are an example."
+            },
+            {
+              "text": "Next, erosion and transport. An agent, like this river, picks up the broken pieces and carries them away."
+            },
+            {
+              "text": "Finally, deposition. When the river slows down at the sea, it drops the sediment and builds new land, called a delta."
+            }
+          ]
+        },
+        "s5": {
+          "question": "When a river drops sand at the sea, is that called deposition?",
+          "accept": [
+            "yes",
+            "yes it is",
+            "yes it does",
+            "ok",
+            "okay",
+            "right",
+            "correct",
+            "haan"
+          ]
+        },
+        "s6": {
+          "cues": [
+            {
+              "text": "Rivers cut V-shaped valleys in hills. On flat land they bend into meanders and leave ox-bow lakes, and at the sea they build deltas, like the Godavari and Krishna."
+            },
+            {
+              "text": "In deserts like the Thar, wind piles sand into crescent-shaped dunes."
+            },
+            {
+              "text": "Glaciers are slow rivers of ice. They scrape valleys into a wide U shape. Remember: V for river, U for glacier."
+            },
+            {
+              "text": "Sea waves attack rocky coasts and carve cliffs, caves and arches. The sand they drop makes beaches."
+            },
+            {
+              "text": "Underground water dissolves limestone and makes caves, like the Borra Caves near Araku and the Belum Caves in Andhra Pradesh. Stalactites hang down; stalagmites grow up."
+            }
+          ]
+        },
+        "s7": {
+          "question": "Does a glacier make a U-shaped valley?",
+          "accept": [
+            "yes",
+            "yes it is",
+            "yes it does",
+            "ok",
+            "okay",
+            "right",
+            "correct",
+            "haan"
+          ]
+        },
+        "s8": {
+          "cues": [
+            {
+              "text": "The Earth's surface is made of huge plates. When they push together, rock folds up into mountains. The Indian plate is still raising the Himalayas."
+            },
+            {
+              "text": "When plates pull apart, the land cracks and a block drops down, making a rift valley. The Narmada river flows through one."
+            },
+            {
+              "text": "A raised landscape wears down in stages. In youth, slopes are steep, valleys are deep V shapes, and rivers make waterfalls."
+            },
+            {
+              "text": "In maturity, valleys widen, hills become rounded and rivers begin to bend."
+            },
+            {
+              "text": "In old age, the land is almost flat, with slow, winding rivers and ox-bow lakes."
+            }
+          ]
+        },
+        "s9": {
+          "question": "Is a river with waterfalls and a deep V-valley in its youth stage?",
+          "accept": [
+            "yes",
+            "yes it is",
+            "yes it does",
+            "ok",
+            "okay",
+            "right",
+            "correct",
+            "haan"
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": []
+    },
+    "te": {
+      "status": "draft",
+      "title": "జియోమార్ఫాలజీ ప్రాథమిక అంశాలు",
+      "steps": {
+        "s1": {
+          "text": "ఈ రోజు మనం జియోమార్ఫాలజీ గురించి నేర్చుకుందాం. అంటే భూమి ఆకారాలు ఎలా ఏర్పడతాయో, ఎలా మారుతాయో తెలుసుకోవడం."
+        },
+        "s10": {
+          "text": "ఈ రోజు నేర్చుకున్నది: లోపలి శక్తులు నేలను లేపుతాయి, బయటి శక్తులు అరగదీస్తాయి. పగలడం, కదలడం, వదలడం. నదులు, గాలి, మంచు, అలలు, భూగర్భ జలం ఒక్కొక్కటి తమ సొంత భూస్వరూపాలను చేస్తాయి. చాలా బాగా చేశారు!"
+        },
+        "s2": {
+          "cues": [
+            {
+              "text": "జియోమార్ఫాలజీ అంటే పర్వతాలు, లోయలు, మైదానాలు, డెల్టాలు వంటి భూస్వరూపాల గురించి, అవి ఎలా ఏర్పడతాయో, ఎలా మారుతాయో చదివే శాస్త్రం."
+            },
+            {
+              "text": "ఎండోజెనిక్ శక్తులు భూమి లోపలి నుంచి వస్తాయి. భూమి లోపలి వేడి నేలను పైకి నెడుతుంది. అగ్నిపర్వతాలు, భూకంపాలు, పెరిగే పర్వతాలు వీటి వల్లే."
+            },
+            {
+              "text": "ఎక్సోజెనిక్ శక్తులు భూమి ఉపరితలంపై పనిచేస్తాయి. ఎండ, వాన, నదులు, గాలి, మంచు, అలలు నెమ్మదిగా నేలను అరగదీస్తాయి."
+            },
+            {
+              "text": "ప్రతి భూస్వరూపం ఒక తాడు లాగుడు ఆట లాంటిది. లోపలి శక్తులు నేలను పైకి లేపుతాయి, బయటి శక్తులు కిందకు అరగదీస్తాయి."
+            }
+          ]
+        },
+        "s3": {
+          "question": "అగ్నిపర్వతం భూమి లోపలి శక్తి వల్ల ఏర్పడుతుందా?",
+          "accept": [
+            "అవును",
+            "ఔను",
+            "అవునండి",
+            "హా",
+            "yes",
+            "ok",
+            "haan"
+          ]
+        },
+        "s4": {
+          "cues": [
+            {
+              "text": "మొదట వెదరింగ్. వేడి, చలి, నీరు, రసాయనాలు, మొక్కల వేర్లు రాయిని పగలగొడతాయి. కానీ ముక్కలు అక్కడే ఉంటాయి."
+            },
+            {
+              "text": "తర్వాత గురుత్వాకర్షణ వదులైన రాళ్లను, మట్టిని కిందకు లాగుతుంది. వర్షాకాలంలో పశ్చిమ కనుమల్లో కొండచరియలు విరిగిపడటం దీనికి ఉదాహరణ."
+            },
+            {
+              "text": "తర్వాత ఎరోజన్, ట్రాన్స్‌పోర్ట్. ఈ నది లాంటి ఒక శక్తి పగిలిన ముక్కలను తీసుకుని దూరంగా మోసుకెళ్తుంది."
+            },
+            {
+              "text": "చివరగా డిపాజిషన్. నది సముద్రం దగ్గర నెమ్మదించినప్పుడు, మోసుకొచ్చిన మట్టిని అక్కడే వదిలేసి కొత్త నేలను, అంటే డెల్టాను, ఏర్పరుస్తుంది."
+            }
+          ]
+        },
+        "s5": {
+          "question": "నది సముద్రం దగ్గర ఇసుకను వదిలేయడాన్ని డిపాజిషన్ అంటారా?",
+          "accept": [
+            "అవును",
+            "ఔను",
+            "అవునండి",
+            "హా",
+            "yes",
+            "ok",
+            "haan"
+          ]
+        },
+        "s6": {
+          "cues": [
+            {
+              "text": "నదులు కొండల్లో V ఆకారపు లోయలను కోస్తాయి. చదునైన నేలపై వంకరలు తిరుగుతూ ఆక్స్-బౌ సరస్సులను వదులుతాయి. సముద్రం దగ్గర గోదావరి, కృష్ణా లాగా డెల్టాలను ఏర్పరుస్తాయి."
+            },
+            {
+              "text": "థార్ ఎడారి లాంటి ఎడారుల్లో గాలి ఇసుకను నెలవంక ఆకారపు దిబ్బలుగా పోగు చేస్తుంది."
+            },
+            {
+              "text": "హిమానీనదాలు అంటే నెమ్మదిగా కదిలే మంచు నదులు. ఇవి లోయలను వెడల్పాటి U ఆకారంలో గీకుతాయి. గుర్తుంచుకోండి: నదికి V, హిమానీనదానికి U."
+            },
+            {
+              "text": "సముద్రపు అలలు రాతి తీరాలను కొట్టి నిటారు కొండలు, గుహలు, ఆర్చ్‌లను చెక్కుతాయి. అవి వదిలే ఇసుక బీచ్‌లుగా మారుతుంది."
+            },
+            {
+              "text": "భూగర్భ జలం సున్నపురాయిని కరిగించి గుహలను ఏర్పరుస్తుంది. అరకు దగ్గర బొర్రా గుహలు, ఆంధ్రప్రదేశ్‌లోని బెలూం గుహలు దీనికి ఉదాహరణలు. స్టాలక్టైట్‌లు పై నుంచి వేలాడతాయి, స్టాలగ్మైట్‌లు కింద నుంచి పెరుగుతాయి."
+            }
+          ]
+        },
+        "s7": {
+          "question": "హిమానీనదం U ఆకారపు లోయను ఏర్పరుస్తుందా?",
+          "accept": [
+            "అవును",
+            "ఔను",
+            "అవునండి",
+            "హా",
+            "yes",
+            "ok",
+            "haan"
+          ]
+        },
+        "s8": {
+          "cues": [
+            {
+              "text": "భూమి ఉపరితలం పెద్ద పెద్ద ప్లేట్లతో ఏర్పడింది. అవి ఒకదానినొకటి నెట్టుకున్నప్పుడు రాయి మడతలు పడి పర్వతాలు లేస్తాయి. భారత ప్లేట్ ఇప్పటికీ హిమాలయాలను పైకి లేపుతోంది."
+            },
+            {
+              "text": "ప్లేట్లు దూరంగా జరిగినప్పుడు నేల పగిలి ఒక భాగం కిందకు దిగుతుంది. దాన్ని రిఫ్ట్ లోయ అంటారు. నర్మదా నది అలాంటి లోయలో ప్రవహిస్తుంది."
+            },
+            {
+              "text": "ఎత్తైన భూభాగం దశలవారీగా అరిగిపోతుంది. యవ్వన దశలో వాలులు నిటారుగా, లోయలు లోతైన V ఆకారంలో ఉంటాయి, నదులు జలపాతాలను ఏర్పరుస్తాయి."
+            },
+            {
+              "text": "పరిపక్వ దశలో లోయలు వెడల్పవుతాయి, కొండలు గుండ్రంగా మారుతాయి, నదులు వంకర తిరగడం మొదలుపెడతాయి."
+            },
+            {
+              "text": "వృద్ధాప్య దశలో నేల దాదాపు చదునుగా మారుతుంది. నెమ్మదిగా వంకరలు తిరిగే నదులు, ఆక్స్-బౌ సరస్సులు కనిపిస్తాయి."
+            }
+          ]
+        },
+        "s9": {
+          "question": "జలపాతాలు, లోతైన V లోయ ఉన్న నది యవ్వన దశలో ఉంటుందా?",
+          "accept": [
+            "అవును",
+            "ఔను",
+            "అవునండి",
+            "హా",
+            "yes",
+            "ok",
+            "haan"
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": []
+    },
+    "hi": {
+      "status": "draft",
+      "title": "जियोमॉर्फोलॉजी के मूल सिद्धांत",
+      "steps": {
+        "s1": {
+          "text": "आज हम जियोमॉर्फोलॉजी सीखेंगे, यानी धरती के आकार कैसे बनते हैं और कैसे बदलते हैं।"
+        },
+        "s10": {
+          "text": "आज हमने सीखा: अंदर के बल ज़मीन उठाते हैं, बाहर के बल घिसते हैं। टूटना, बहना, जमा होना। नदी, हवा, बर्फ़, लहरें और भूजल अपने-अपने भू-आकार बनाते हैं। बहुत बढ़िया!"
+        },
+        "s2": {
+          "cues": [
+            {
+              "text": "जियोमॉर्फोलॉजी वह विज्ञान है जो पहाड़, घाटियाँ, मैदान और डेल्टा जैसे भू-आकारों का अध्ययन करता है, और यह कि वे कैसे बनते और बदलते हैं।"
+            },
+            {
+              "text": "एंडोजेनिक बल धरती के अंदर से आते हैं। अंदर की गर्मी ज़मीन को ऊपर धकेलती है, जिससे ज्वालामुखी, भूकंप और ऊँचे होते पहाड़ बनते हैं।"
+            },
+            {
+              "text": "एक्सोजेनिक बल सतह पर काम करते हैं। धूप, बारिश, नदियाँ, हवा, बर्फ़ और लहरें धीरे-धीरे ज़मीन को घिसती हैं।"
+            },
+            {
+              "text": "हर भू-आकार एक रस्साकशी जैसा है। अंदर के बल ज़मीन को ऊपर उठाते हैं, बाहर के बल उसे नीचे घिसते हैं।"
+            }
+          ]
+        },
+        "s3": {
+          "question": "क्या ज्वालामुखी धरती के अंदर के बल से बनता है?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "हाँ जी",
+            "जी हाँ",
+            "yes",
+            "ok",
+            "haan"
+          ]
+        },
+        "s4": {
+          "cues": [
+            {
+              "text": "पहला, अपक्षय यानी वेदरिंग। गर्मी, ठंड, पानी, रसायन और पौधों की जड़ें चट्टान को तोड़ती हैं, पर टुकड़े वहीं रहते हैं।"
+            },
+            {
+              "text": "फिर गुरुत्वाकर्षण ढीली चट्टान और मिट्टी को नीचे खींचता है। मानसून में पश्चिमी घाट में भूस्खलन इसका उदाहरण है।"
+            },
+            {
+              "text": "फिर अपरदन और परिवहन। यह नदी जैसा कोई कारक टूटे टुकड़ों को उठाकर दूर ले जाता है।"
+            },
+            {
+              "text": "आख़िर में निक्षेपण यानी डिपॉज़िशन। समुद्र के पास नदी धीमी होकर मिट्टी छोड़ देती है और नई ज़मीन, यानी डेल्टा, बनाती है।"
+            }
+          ]
+        },
+        "s5": {
+          "question": "जब नदी समुद्र के पास रेत छोड़ती है, क्या उसे डिपॉज़िशन कहते हैं?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "हाँ जी",
+            "जी हाँ",
+            "yes",
+            "ok",
+            "haan"
+          ]
+        },
+        "s6": {
+          "cues": [
+            {
+              "text": "नदियाँ पहाड़ों में V आकार की घाटियाँ काटती हैं। समतल ज़मीन पर वे मोड़ बनाती हैं और ऑक्सबो झीलें छोड़ती हैं, और समुद्र के पास गोदावरी और कृष्णा जैसे डेल्टा बनाती हैं।"
+            },
+            {
+              "text": "थार जैसे रेगिस्तान में हवा रेत को अर्धचंद्र आकार के टीलों में जमा करती है।"
+            },
+            {
+              "text": "हिमनद यानी ग्लेशियर बर्फ़ की धीमी नदियाँ हैं। वे घाटियों को चौड़े U आकार में घिसते हैं। याद रखिए: नदी का V, ग्लेशियर का U।"
+            },
+            {
+              "text": "समुद्र की लहरें चट्टानी तट से टकराकर खड़ी चट्टानें, गुफाएँ और मेहराब बनाती हैं। उनकी छोड़ी रेत से समुद्र तट बनते हैं।"
+            },
+            {
+              "text": "भूजल चूना पत्थर को घोलकर गुफाएँ बनाता है, जैसे अराकू के पास बोर्रा गुफाएँ और आंध्र प्रदेश की बेलम गुफाएँ। स्टैलेक्टाइट ऊपर से लटकते हैं, स्टैलेग्माइट नीचे से उगते हैं।"
+            }
+          ]
+        },
+        "s7": {
+          "question": "क्या ग्लेशियर U आकार की घाटी बनाता है?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "हाँ जी",
+            "जी हाँ",
+            "yes",
+            "ok",
+            "haan"
+          ]
+        },
+        "s8": {
+          "cues": [
+            {
+              "text": "धरती की सतह बड़ी-बड़ी प्लेटों से बनी है। जब वे आपस में टकराती हैं, चट्टान मुड़कर पहाड़ बनती है। भारतीय प्लेट आज भी हिमालय को ऊपर उठा रही है।"
+            },
+            {
+              "text": "जब प्लेटें दूर खिसकती हैं, ज़मीन फटती है और एक हिस्सा नीचे धँस जाता है। इसे भ्रंश घाटी यानी रिफ्ट वैली कहते हैं। नर्मदा नदी ऐसी ही घाटी में बहती है।"
+            },
+            {
+              "text": "ऊँची ज़मीन चरणों में घिसती है। युवा अवस्था में ढलान खड़ी होती हैं, घाटियाँ गहरी V आकार की होती हैं और नदियाँ जलप्रपात बनाती हैं।"
+            },
+            {
+              "text": "प्रौढ़ अवस्था में घाटियाँ चौड़ी होती हैं, पहाड़ियाँ गोल हो जाती हैं और नदियाँ मुड़ने लगती हैं।"
+            },
+            {
+              "text": "वृद्धावस्था में ज़मीन लगभग समतल हो जाती है, और धीमी घुमावदार नदियाँ और ऑक्सबो झीलें दिखती हैं।"
+            }
+          ]
+        },
+        "s9": {
+          "question": "क्या जलप्रपात और गहरी V घाटी वाली नदी युवा अवस्था में होती है?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "हाँ जी",
+            "जी हाँ",
+            "yes",
+            "ok",
+            "haan"
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": []
+    }
+  }
+}

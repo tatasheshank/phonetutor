@@ -76,3 +76,32 @@ export function parseRange(header: string | null, size: number): [number, number
   if (start >= size || start > end) return "invalid";
   return [start, end];
 }
+
+/** A YouTube video id: exactly 11 characters of letters, digits, "-" and "_". */
+export const YOUTUBE_ID = /^[A-Za-z0-9_-]{11}$/;
+
+/**
+ * The video id from a YouTube link the admin pastes: youtube.com/watch?v=, youtu.be/, /shorts/,
+ * /embed/, /live/ (also m. and music. hosts, and youtube-nocookie.com), or a bare id. Null otherwise.
+ */
+export function parseYouTubeId(input: string): string | null {
+  const text = input.trim();
+  if (YOUTUBE_ID.test(text)) return text;
+  let url: URL;
+  try {
+    url = new URL(/^https?:\/\//i.test(text) ? text : `https://${text}`);
+  } catch {
+    return null;
+  }
+  const host = url.hostname.toLowerCase().replace(/^(www|m|music)\./, "");
+  let id: string | null = null;
+  if (host === "youtu.be") id = url.pathname.split("/")[1] ?? null;
+  else if (host === "youtube.com" || host === "youtube-nocookie.com") {
+    if (url.pathname === "/watch") id = url.searchParams.get("v");
+    else {
+      const m = /^\/(shorts|embed|live|v)\/([^/?#]+)/.exec(url.pathname);
+      id = m ? m[2]! : null;
+    }
+  }
+  return id && YOUTUBE_ID.test(id) ? id : null;
+}

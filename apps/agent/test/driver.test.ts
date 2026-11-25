@@ -74,7 +74,7 @@ describe("LessonDriver", () => {
     const cue = (index: number) =>
       ({ type: "board_cue", stepId: "v", index, at: index * 3, until: null, pause: true, point: null, highlightBox: null, caption: null }) as const;
     await driver.run([
-      { kind: "event", event: { type: "board_video", stepId: "v", src: "/lesson-media/x.webm" } },
+      { kind: "event", event: { type: "board_video", stepId: "v", source: { kind: "upload", src: "/lesson-media/x.webm" } } },
       { kind: "say", text: "cue one", events: [cue(0)] },
       { kind: "say", text: "cue two", events: [cue(1)] },
       { kind: "event", event: { type: "board_done", stepId: "v" } },
