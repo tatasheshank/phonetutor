@@ -49,6 +49,8 @@ export async function POST(req: Request) {
     // The learner's picked voice and speed; the agent re-checks the id against the language's voices.
     voiceId: typeof body.voiceId === "string" && /^[a-z0-9-]{1,40}$/.test(body.voiceId) ? body.voiceId : undefined,
     speechRate: isSpeechRate(body.speechRate) ? body.speechRate : undefined,
+    // The tutor double-checks this against the admin's setup and the free minutes left.
+    ...(body.liveAvatar === true ? { liveAvatar: true } : {}),
   };
 
   const identity = `learner-${user.id}-${randomUUID().slice(0, 8)}`;

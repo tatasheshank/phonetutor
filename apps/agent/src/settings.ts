@@ -48,7 +48,7 @@ export function parseSettings(metadata: string | undefined): {
   const speechRate = isSpeechRate(raw.speechRate) ? raw.speechRate : "normal";
 
   return {
-    settings: { learnerId, tutorLanguage, screenLanguage, endpointingMs, topic, lessonId, voiceId: voice.id, speechRate },
+    settings: { learnerId, tutorLanguage, screenLanguage, endpointingMs, topic, lessonId, voiceId: voice.id, speechRate, ...(raw.liveAvatar === true ? { liveAvatar: true } : {}) },
     language,
     voice,
   };

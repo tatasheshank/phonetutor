@@ -3,6 +3,8 @@
 import { getLanguage, resolveVoice, SPEECH_RATES, type LanguageCode, type SpeechRate, type VoiceOption } from "@ai-tutor/shared";
 import { useEffect, useRef, useState } from "react";
 import type { Strings } from "../lib/strings";
+import { resolveLook, useTeacher, type TeacherLook } from "../lib/useTeacher";
+import { Avatar } from "./Avatar";
 
 /**
  * Lets the learner hear each tutor voice and pick one, plus a speaking speed.
@@ -13,14 +15,20 @@ export function VoiceStep({
   language,
   initialVoiceId,
   initialRate,
+  initialLook,
   onDone,
 }: {
   t: Strings;
   language: LanguageCode;
   initialVoiceId?: string;
   initialRate?: SpeechRate;
-  onDone: (voiceId: string, rate: SpeechRate) => void;
+  initialLook?: TeacherLook;
+  onDone: (voiceId: string, rate: SpeechRate, look?: TeacherLook) => void;
 }) {
+  const teacher = useTeacher();
+  const [look, setLook] = useState<TeacherLook | undefined>(initialLook);
+  const shownLook = resolveLook(teacher, look);
+  const still = useRef({ current: 0 });
   const lang = getLanguage(language);
   const [voiceId, setVoiceId] = useState(resolveVoice(lang, initialVoiceId).id);
   const [rate, setRate] = useState<SpeechRate>(initialRate ?? "normal");
@@ -100,11 +108,40 @@ export function VoiceStep({
         ))}
       </div>
 
+      {teacher && (
+        <>
+          <h2 className="voice-speed-title">{t.lookTitle}</h2>
+          <div className="look-row" role="radiogroup" aria-label={t.lookTitle}>
+            {([...(teacher.liveAvailable ? (["live"] as const) : []), ...(teacher.photoUrl ? (["photo"] as const) : []), "drawing", "man"] as const).map((l) => (
+              <button
+                key={l}
+                role="radio"
+                aria-checked={shownLook === l}
+                className={`btn secondary look-card${shownLook === l ? " chosen" : ""}`}
+                onClick={() => setLook(l)}
+              >
+                {l === "live" ? (
+                  <span className="look-live" aria-hidden>
+                    🎥
+                  </span>
+                ) : (
+                  <Avatar state="neutral" level={still.current} look={l} photoUrl={teacher.photoUrl} />
+                )}
+                <span>{l === "live" ? t.lookLive : l === "photo" ? t.lookPhoto : l === "man" ? t.lookMan : t.lookDrawing}</span>
+              </button>
+            ))}
+          </div>
+          {((shownLook === "man" && chosen.gender === "female") || (shownLook === "drawing" && chosen.gender === "male")) && (
+            <p className="muted small">{shownLook === "man" ? t.lookVoiceTipMan : t.lookVoiceTipWoman}</p>
+          )}
+        </>
+      )}
+
       <button
         className="btn"
         onClick={() => {
           audio.current?.pause();
-          onDone(voiceId, rate);
+          onDone(voiceId, rate, teacher ? shownLook : look);
         }}
       >
         {t.next}

@@ -396,3 +396,52 @@
   flex-direction: column;
   gap: 4px;
 }
+
+/* Teacher look settings */
+.teacher-looks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+.teacher-looks figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.teacher-looks svg {
+  width: min(180px, 100%);
+  height: auto;
+}
+.teacher-empty {
+  width: min(180px, 100%);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px dashed var(--border, #ccc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted, #777);
+}
+.live-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.live-option {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  border: 1px solid var(--border, #ddd);
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.live-option.chosen {
+  border-color: var(--primary, #0f766e);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary, #0f766e) 25%, transparent);
+}
+.live-option .stack {
+  gap: 2px;
+}

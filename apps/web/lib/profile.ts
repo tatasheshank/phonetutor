@@ -25,6 +25,8 @@ export interface Profile {
   /** Picked tutor voice per language (VoiceOption id). Missing = not chosen yet. */
   voices?: Partial<Record<LanguageCode, string>>;
   speechRate?: SpeechRate;
+  /** How the teacher looks: the drawing or the admin's photo. Missing = the admin's default. */
+  teacherLook?: "drawing" | "man" | "photo" | "live";
 }
 
 const KEY = "tutor.profile.v1";
@@ -59,6 +61,7 @@ export function loadProfile(): Profile {
           )
         : undefined,
     speechRate: isSpeechRate(raw.speechRate) ? raw.speechRate : undefined,
+    teacherLook: raw.teacherLook === "photo" || raw.teacherLook === "drawing" || raw.teacherLook === "man" || raw.teacherLook === "live" ? raw.teacherLook : undefined,
   };
   // Persist a newly created ID straight away so it stays the same across visits.
   if (raw.learnerId !== learnerId) saveProfile(profile);

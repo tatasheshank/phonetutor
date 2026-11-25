@@ -43,7 +43,13 @@ export type AgentEvent =
       highlightBox: { x: number; y: number; w: number; h: number } | null;
       caption: string | null;
     }
-  | { type: "board_done"; stepId: string };
+  | { type: "board_done"; stepId: string }
+  /**
+   * The live (talking video) teacher: "starting" while the service joins, "ready" once its video
+   * is in the room, "failed" if it couldn't start (the lesson goes on with the voice and the
+   * learner's other look).
+   */
+  | { type: "live_avatar"; status: "starting" | "ready" | "failed" };
 
 /** Phone -> agent */
 export type ClientEvent =
@@ -66,6 +72,8 @@ export interface ParticipantSettings {
   voiceId?: string;
   /** Speaking speed the learner picked. Absent = "normal". */
   speechRate?: SpeechRate;
+  /** The learner chose the live (talking video) teacher. Used only if the admin set one up. */
+  liveAvatar?: boolean;
 }
 
 export function encodeEvent(event: AgentEvent | ClientEvent): Uint8Array<ArrayBuffer> {

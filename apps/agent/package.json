@@ -15,10 +15,12 @@
     "@ai-tutor/shared": "*",
     "@livekit/agents": "1.10.1",
     "@livekit/agents-plugin-anthropic": "1.10.1",
+    "@livekit/agents-plugin-bey": "1.10.1",
     "@livekit/agents-plugin-livekit": "1.10.1",
     "@livekit/agents-plugin-openai": "^1.10.1",
     "@livekit/agents-plugin-sarvam": "1.10.1",
     "@livekit/agents-plugin-silero": "1.10.1",
+    "@livekit/agents-plugin-tavus": "1.10.1",
     "@livekit/rtc-node": "1.2.3",
     "dotenv": "18.0.10",
     "zod": "4.6.7"

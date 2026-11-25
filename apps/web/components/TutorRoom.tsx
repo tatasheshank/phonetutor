@@ -20,6 +20,8 @@ import { Avatar } from "./Avatar";
 import { afterPress, emptyStage, startPress, LessonStage, type StageState } from "./LessonStage";
 import { Board, type BoardState } from "./Board";
 import { reportVideoError } from "./reportVideoError";
+import { resolveLook, stillLook, useTeacher, type TeacherLook } from "../lib/useTeacher";
+import { LiveTeacher } from "./LiveTeacher";
 
 type Phase =
   | "ready"
@@ -52,6 +54,7 @@ export function TutorRoom({
   onSignedOut,
   voiceId,
   speechRate,
+  teacherLook,
   onChangeVoice,
 }: {
   t: Strings;
@@ -63,10 +66,20 @@ export function TutorRoom({
   /** Learner's picked voice and speed, sent with the token request. */
   voiceId?: string;
   speechRate?: SpeechRate;
+  /** The learner's chosen look for the teacher (drawing or photo). */
+  teacherLook?: TeacherLook;
   onChangeVoice: () => void;
 }) {
   const [phase, setPhase] = useState<Phase>("ready");
   const [avatar, setAvatar] = useState<AvatarState>("neutral");
+  const teacher = useTeacher();
+  const look = resolveLook(teacher, teacherLook);
+  const photoUrl = teacher?.photoUrl ?? null;
+  // Live (talking video) teacher: its video track once it's in the room. Until then, or if it can't
+  // start, the photo (or drawing) shows instead.
+  const [liveVideo, setLiveVideo] = useState<RemoteTrack | null>(null);
+  const [liveStatus, setLiveStatus] = useState<"off" | "starting" | "ready" | "failed">("off");
+  const stillTeacher = look === "live" ? stillLook(teacher) : look;
   const roomRef = useRef<Room | null>(null);
   const audioBox = useRef<HTMLDivElement>(null);
   const mouthLevel = useRef(0); // 0..1, read by the avatar every frame
@@ -174,6 +187,8 @@ export function TutorRoom({
     setLessonId(chosenLesson);
     setLessonInfo(null);
     setStage(emptyStage);
+    setLiveVideo(null);
+    setLiveStatus("off");
     setTeacherHere(false);
     teacherHereRef.current = false;
     setMicOff(false);
@@ -182,7 +197,15 @@ export function TutorRoom({
       const res = await fetch("/api/token", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ tutorLanguage, screenLanguage, lessonId: chosenLesson ?? undefined, topic: topic ?? undefined, voiceId, speechRate }),
+        body: JSON.stringify({
+          tutorLanguage,
+          screenLanguage,
+          lessonId: chosenLesson ?? undefined,
+          topic: topic ?? undefined,
+          voiceId,
+          speechRate,
+          liveAvatar: look === "live" || undefined,
+        }),
       });
       if (res.status === 402) {
         setPhase("payment_required");
@@ -217,6 +240,11 @@ export function TutorRoom({
       };
 
       room.on(RoomEvent.TrackSubscribed, (track: RemoteTrack) => {
+        // The live teacher's face (only the avatar service publishes video).
+        if (track.kind === Track.Kind.Video) {
+          setLiveVideo(track);
+          return;
+        }
         if (track.kind !== Track.Kind.Audio) return;
         teacherArrived();
         const el = track.attach();
@@ -231,10 +259,16 @@ export function TutorRoom({
         if (!event) return;
         teacherArrived();
         if (event.type === "avatar_state") setAvatar(event.state);
+        else if (event.type === "live_avatar") setLiveStatus(event.status);
         else onLessonEvent(event);
       });
 
+      room.on(RoomEvent.TrackUnsubscribed, (track: RemoteTrack) => {
+        if (track.kind === Track.Kind.Video) setLiveVideo((v) => (v === track ? null : v));
+      });
+
       room.on(RoomEvent.Disconnected, () => {
+        setLiveVideo(null);
         stopMeter.current();
         setPhase((p) => (p === "live" ? "ended" : p));
       });
@@ -345,7 +379,11 @@ export function TutorRoom({
           )}
           <div className="teach-row">
             <div className="teach-avatar">
-              <Avatar state={avatar} level={mouthLevel} pointAt={pointAt} />
+              {liveVideo ? (
+                <LiveTeacher track={liveVideo} state={avatar} small />
+              ) : (
+                <Avatar state={avatar} level={mouthLevel} pointAt={pointAt} look={stillTeacher} photoUrl={photoUrl} />
+              )}
             </div>
             <p className="status" aria-live="polite">
               {status}
@@ -355,7 +393,13 @@ export function TutorRoom({
       ) : (
         <>
           <div className={inLesson ? "avatar-small" : undefined}>
-            <Avatar state={avatar} level={mouthLevel} />
+            {liveVideo ? (
+              <LiveTeacher track={liveVideo} state={avatar} />
+            ) : (
+              <Avatar state={avatar} level={mouthLevel} look={stillTeacher} photoUrl={photoUrl} />
+            )}
+            {look === "live" && liveStatus === "starting" && <p className="muted small live-note">🎥 {t.liveStarting}</p>}
+            {look === "live" && liveStatus === "failed" && <p className="muted small live-note">{t.liveUnavailable}</p>}
           </div>
           <p className="status" aria-live="polite">
             {status}

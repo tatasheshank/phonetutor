@@ -7,6 +7,7 @@ import {
   type AvatarState,
   type ClientEvent,
   type LanguageConfig,
+  type LiveProviderId,
 } from "@ai-tutor/shared";
 import {
   type JobContext,
@@ -28,6 +29,7 @@ import { buildInstructions } from "./prompt";
 import { buildLlm, buildStt, buildTts, llmChoice, sttStreaming } from "./providers";
 import { isScamEmergency, redact } from "./safety";
 import { parseSettings } from "./settings";
+import { addLiveMinutes, liveConfig, startLiveAvatar, writeLiveStatus } from "./liveAvatar";
 import { ScriptedSpeech, voiceKey } from "./audioCache";
 import { checkCapAlerts, notifySessionCost } from "./costAlerts";
 import { dailyCapReached, UsageTracker, writeUsage } from "./usage";
@@ -113,6 +115,8 @@ function avatarFor(state: voice.AgentState): AvatarState {
 export default defineAgent({
   prewarm: async (proc: JobProcess) => {
     proc.userData.vad = await silero.VAD.load();
+    // Tell the admin page which live-teacher services have keys here (never the keys).
+    void writeLiveStatus();
   },
 
   entry: async (ctx: JobContext) => {
@@ -258,6 +262,61 @@ export default defineAgent({
           if (lesson && actions) void lesson.driver.run(actions);
           break;
         }
+      }
+    });
+
+    // Live (talking video) teacher, FREE ONLY: if the learner chose it, the admin set one up, and the
+    // service's free minutes aren't used up. It must start before the session, so the tutor's voice
+    // goes through it (lip-synced). On any problem the lesson goes on with the voice, and the phone
+    // shows the learner's other look.
+    let liveStartedAt: number | null = null;
+    let liveProviderId: LiveProviderId | null = null;
+    let liveCounted = 0; // minutes already added to the free-minute count
+    let liveTick: ReturnType<typeof setInterval> | null = null;
+    let liveCutoff: ReturnType<typeof setTimeout> | null = null;
+    if (settings.liveAvatar) {
+      const live = await liveConfig();
+      if (!live.ok) {
+        console.log(`[live-avatar] learner chose it, but not used: ${live.reason}`);
+        send({ type: "live_avatar", status: "failed" });
+      } else {
+        send({ type: "live_avatar", status: "starting" });
+        try {
+          await startLiveAvatar(session, ctx.room, live.config);
+          liveStartedAt = Date.now();
+          liveProviderId = live.config.provider;
+          console.log(`[live-avatar] ${liveProviderId} is in the room (${live.minutesLeft.toFixed(1)} free min left)`);
+          send({ type: "live_avatar", status: "ready" });
+          // Count a minute at a time, so a crash can't hide usage.
+          liveTick = setInterval(() => {
+            liveCounted += 1;
+            void addLiveMinutes(live.config.provider, 1);
+          }, 60_000);
+          // Stay free: end the session politely before the free minutes run out.
+          liveCutoff = setTimeout(() => {
+            console.log(`[live-avatar] free minutes for ${live.config.provider} used up; ending the session`);
+            void (async () => {
+              try {
+                await scripted.say(language.phrases.demoLimit, { allowInterruptions: false }).waitForPlayout();
+              } catch {
+                // ending anyway
+              }
+              void session.close();
+            })();
+          }, Math.max(30_000, (live.minutesLeft - 0.5) * 60_000));
+        } catch (err) {
+          console.warn(`[live-avatar] ${live.config.provider} couldn't start; voice only`, err);
+          send({ type: "live_avatar", status: "failed" });
+        }
+      }
+    }
+    session.on(voice.AgentSessionEventTypes.Close, () => {
+      if (liveTick) clearInterval(liveTick);
+      if (liveCutoff) clearTimeout(liveCutoff);
+      if (liveStartedAt && liveProviderId) {
+        const total = (Date.now() - liveStartedAt) / 60000;
+        void addLiveMinutes(liveProviderId, total - liveCounted);
+        console.log(`[live-avatar] ${liveProviderId}: ${total.toFixed(1)} min of live teacher (from the free minutes)`);
       }
     });
 

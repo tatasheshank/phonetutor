@@ -985,3 +985,62 @@ p {
     animation: none;
   }
 }
+
+/* Voice step: choose how the teacher looks */
+.look-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.btn.look-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 8px;
+}
+.btn.look-card svg {
+  width: 96px;
+  height: 96px;
+}
+.btn.look-card.chosen {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.look-row:has(> :nth-child(3)) {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.look-live {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  background: #1f2937;
+}
+/* Live (talking video) teacher: the service's video in the same round frame. */
+.live-teacher {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #1f2937;
+  transition: box-shadow 200ms ease;
+}
+.live-teacher.small {
+  width: 110px;
+  height: 110px;
+}
+.live-teacher video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.live-note {
+  text-align: center;
+  margin: 4px 0 0;
+}

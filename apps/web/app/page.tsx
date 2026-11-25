@@ -87,8 +87,9 @@ export default function Home() {
           language={tutorLang}
           initialVoiceId={profile.voices?.[tutorLang]}
           initialRate={profile.speechRate}
-          onDone={(voiceId, speechRate) => {
-            const next = { ...profile, voices: { ...profile.voices, [tutorLang]: voiceId }, speechRate };
+          initialLook={profile.teacherLook}
+          onDone={(voiceId, speechRate, teacherLook) => {
+            const next = { ...profile, voices: { ...profile.voices, [tutorLang]: voiceId }, speechRate, ...(teacherLook ? { teacherLook } : {}) };
             update(next);
             setStep(next.screenLanguage && next.consentAt ? "tutor" : "phone");
           }}
@@ -127,6 +128,7 @@ export default function Home() {
           onChangeLanguage={() => setStep("appLanguage")}
           voiceId={profile.voices?.[tutorLang]}
           speechRate={profile.speechRate}
+          teacherLook={profile.teacherLook}
           onChangeVoice={() => setStep("voice")}
         />
       )}
