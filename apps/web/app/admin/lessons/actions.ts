@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { isAdmin } from "../../../lib/adminAuth";
-import { deleteDraft, publishDraft, setLessonTopic, unpublishLesson } from "../../../lib/lessonDrafts";
+import { deleteDraft, listDrafts, publishDraft, setLessonTopic, unpublishLesson } from "../../../lib/lessonDrafts";
 import { deleteLessonMedia } from "../../../lib/lessonMedia";
 
 async function requireAdmin() {
@@ -43,4 +43,17 @@ export async function changeTopic(formData: FormData) {
     redirect(`/admin/lessons/${id}?error=${encodeURIComponent((err as Error).message)}`);
   }
   redirect(`/admin/lessons/${id}?topic=1`);
+}
+
+/** Publishes every lesson of a course made by the course splitter (the ones not published yet, or edited since). */
+export async function publishCourse(formData: FormData) {
+  await requireAdmin();
+  const seriesId = String(formData.get("seriesId") ?? "");
+  const drafts = (await listDrafts()).filter((d) => d.series?.id === seriesId && (d.status !== "published" || d.pendingChanges));
+  const failed: string[] = [];
+  for (const d of drafts) {
+    const r = await publishDraft(d.id, "admin");
+    if (!r.ok) failed.push(`${d.series?.part}. ${d.lesson.locales.en?.title ?? d.id}: ${r.errors[0]}`);
+  }
+  redirect(`/admin/lessons?${failed.length ? "courseError=" + encodeURIComponent(failed.join(" | ").slice(0, 600)) : "coursePublished=" + drafts.length}#${seriesId}`);
 }

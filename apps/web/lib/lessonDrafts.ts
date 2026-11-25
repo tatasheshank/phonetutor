@@ -24,6 +24,8 @@ export interface LessonDraft {
   kind?: "phone" | "video";
   /** Edited after publishing: learners still get the published version until it is published again. */
   pendingChanges?: boolean;
+  /** Made by the course splitter: which course, and this lesson's place in it. */
+  series?: { id: string; name: string; part: number; total: number };
 }
 
 const isDraftId = (id: string) => /^[a-z0-9-]{1,80}$/.test(id);

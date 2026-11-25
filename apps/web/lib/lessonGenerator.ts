@@ -226,7 +226,7 @@ function finalCheck(lesson: Lesson, warnings: string[]) {
   if (blocking.length) warnings.push(...blocking.map((e) => `Check failed: ${e}`));
 }
 
-export async function generateLesson(source: SourceText, titleHint?: string): Promise<GeneratedLesson> {
+export async function generateLesson(source: SourceText, titleHint?: string, course?: string): Promise<GeneratedLesson> {
   const { usage, track } = newTracker();
 
   // 1. Plan in English.
@@ -249,6 +249,7 @@ export async function generateLesson(source: SourceText, titleHint?: string): Pr
   // 2. Repair against the screen library.
   const id = `${slugify(plan.title)}-${randomBytes(3).toString("hex")}`;
   const { lesson, warnings } = lessonFromPlan(plan, id);
+  if (course?.trim()) lesson.course = slugify(course) || lesson.course;
   warnings.unshift(...source.warnings);
 
   // 3. Translate (Telugu first: the primary audience).

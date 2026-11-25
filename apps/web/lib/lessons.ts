@@ -12,6 +12,8 @@ export interface LessonSummary {
   title: Partial<Record<LanguageCode, string>>;
   /** Languages with a reviewed pack. */
   reviewed: LanguageCode[];
+  /** Position in its course (course-splitter lessons); others sort after them by id. */
+  order?: number;
 }
 
 export function lessonsDir(): string {
@@ -44,10 +46,18 @@ export async function listLessons(): Promise<LessonSummary[]> {
         const pack = lesson.locales[code];
         if (pack) title[code] = pack.title;
       }
-      out.push({ id: lesson.id, course: lesson.course, steps: lesson.steps.length + lesson.quiz.length, title, reviewed: result.playableLanguages });
+      out.push({
+        id: lesson.id,
+        course: lesson.course,
+        steps: lesson.steps.length + lesson.quiz.length,
+        title,
+        reviewed: result.playableLanguages,
+        ...(lesson.order ? { order: lesson.order } : {}),
+      });
     } catch {
       // skip unreadable lesson files
     }
   }
-  return out;
+  // Within a course, numbered lessons first and in order (1, 2, 3 ...), then the rest by id.
+  return out.sort((a, b) => a.course.localeCompare(b.course) || (a.order ?? 1e9) - (b.order ?? 1e9) || a.id.localeCompare(b.id));
 }

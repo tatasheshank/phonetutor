@@ -14,3 +14,4 @@ export * from "./lesson/fromPlan";
 export * from "./lesson/media";
 export * from "./lesson/edit";
 export * from "./lesson/fromVideoPlan";
+export * from "./lesson/courseOutline";

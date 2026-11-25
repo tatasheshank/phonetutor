@@ -139,6 +139,8 @@ const lessonObject = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   version: z.number().int().positive(),
   course: z.string(),
+  /** Position within its course/topic (1, 2, ...), for lessons made together by the course splitter. */
+  order: z.number().int().min(1).max(999).optional(),
   mode: z.enum(["scripted", "generated"]),
   objectives: z.array(z.string()).min(1),
   screens: z.array(z.string()),
