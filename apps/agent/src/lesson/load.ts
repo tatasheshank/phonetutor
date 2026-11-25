@@ -1,4 +1,4 @@
-import { validateLesson, type LanguageCode, type Lesson, type LocalePack } from "@ai-tutor/shared";
+import { locateMedia, validateLesson, type LanguageCode, type Lesson, type LocalePack } from "@ai-tutor/shared";
 import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
@@ -9,10 +9,19 @@ export function lessonsDir(): string {
   return resolve(dirname(fileURLToPath(import.meta.url)), "../../../../content/lessons");
 }
 
-/** Lesson media (videos, posters) is served by the web app from apps/web/public. */
+/** Uploaded lesson videos: data/lesson-media/<lessonId>/<file> (the web app serves them). */
+export function lessonMediaDir(): string {
+  if (process.env.LESSON_MEDIA_DIR) return resolve(process.env.LESSON_MEDIA_DIR);
+  return resolve(lessonsDir(), "../../data/lesson-media");
+}
+
+/** Lesson media is uploaded (data/lesson-media) or placed by hand in apps/web/public/lesson-media. */
 export function mediaExists(src: string): boolean {
+  const loc = locateMedia(src);
+  if (!loc) return false;
+  if (loc.root === "uploads") return existsSync(resolve(lessonMediaDir(), loc.lessonId, loc.file));
   const publicDir = process.env.LESSON_MEDIA_PUBLIC_DIR ?? resolve(lessonsDir(), "../../apps/web/public");
-  return !src.includes("..") && existsSync(resolve(publicDir, "." + src));
+  return existsSync(resolve(publicDir, "." + loc.path));
 }
 
 export function isLessonId(value: unknown): value is string {

@@ -1,7 +1,8 @@
 import "server-only";
-import { ALL_LANGUAGE_CODES, validateLesson, type Lesson } from "@ai-tutor/shared";
+import { ALL_LANGUAGE_CODES, markPacksDraft, validateLesson, type Lesson } from "@ai-tutor/shared";
 import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
+import { mediaExists } from "./lessonMedia";
 import { lessonsDir } from "./lessons";
 
 /**
@@ -19,6 +20,10 @@ export interface LessonDraft {
   usage: { promptTokens: number; completionTokens: number };
   lesson: Lesson;
   publishedAt?: string;
+  /** "video": a board-video lesson (e.g. computer topics), no phone screens. Older drafts: phone. */
+  kind?: "phone" | "video";
+  /** Edited after publishing: learners still get the published version until it is published again. */
+  pendingChanges?: boolean;
 }
 
 const isDraftId = (id: string) => /^[a-z0-9-]{1,80}$/.test(id);
@@ -71,12 +76,12 @@ export async function publishDraft(id: string, admin: string): Promise<{ ok: tru
     const pack = lesson.locales[code];
     if (pack) Object.assign(pack, { status: "reviewed", reviewer: `${admin} (AI-prepared)`, reviewedAt: now });
   }
-  const result = validateLesson(lesson);
+  const result = validateLesson(lesson, { mediaExists });
   if (!result.ok) return { ok: false, errors: result.errors };
 
   await mkdir(lessonsDir(), { recursive: true });
   await writeFile(/* turbopackIgnore: true */ resolve(lessonsDir(), `${lesson.id}.json`), JSON.stringify(lesson, null, 2) + "\n", "utf8");
-  await saveDraft({ ...draft, status: "published", publishedAt: now, lesson });
+  await saveDraft({ ...draft, status: "published", publishedAt: now, pendingChanges: false, lesson });
   return { ok: true };
 }
 
@@ -86,4 +91,18 @@ export async function unpublishLesson(id: string): Promise<void> {
   await rm(/* turbopackIgnore: true */ resolve(lessonsDir(), `${id}.json`), { force: true });
   const draft = await loadDraft(id);
   if (draft) await saveDraft({ ...draft, status: "draft", publishedAt: undefined });
+}
+
+/**
+ * Applies an admin edit to a draft. Every language goes back to "draft" (an edit needs review),
+ * and a published lesson is flagged so the admin publishes again; learners keep the published
+ * version until then.
+ */
+export async function updateDraft(id: string, edit: (lesson: Lesson) => Lesson): Promise<LessonDraft> {
+  const draft = await loadDraft(id);
+  if (!draft) throw new Error("Draft not found.");
+  const lesson = markPacksDraft(edit(draft.lesson));
+  const next: LessonDraft = { ...draft, lesson, pendingChanges: draft.status === "published" ? true : draft.pendingChanges };
+  await saveDraft(next);
+  return next;
 }

@@ -1,5 +1,6 @@
 import { ALL_LANGUAGE_CODES, type LanguageCode } from "../languages";
 import { isScreenId, screenHasTarget } from "../screens/manifest";
+import { locateMedia } from "./media";
 import { lessonSchema, type Lesson, type LocalePack } from "./schema";
 
 export interface ValidationResult {
@@ -77,7 +78,7 @@ export function validateLesson(input: unknown, options: ValidateOptions = {}): V
       }
     }
     for (const src of [step.src, step.poster]) {
-      if (src && src.includes("..")) errors.push(`steps.${step.id}: media path "${src}" must not contain ".."`);
+      if (src && !locateMedia(src)) errors.push(`steps.${step.id}: media path "${src}" is not allowed`);
       else if (src && options.mediaExists && !options.mediaExists(src)) {
         errors.push(`steps.${step.id}: media file "${src}" not found`);
       }

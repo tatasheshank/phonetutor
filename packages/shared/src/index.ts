@@ -10,3 +10,6 @@ export * from "./phone";
 export * from "./revenue";
 export * from "./lesson/runner";
 export * from "./lesson/fromPlan";
+export * from "./lesson/media";
+export * from "./lesson/edit";
+export * from "./lesson/fromVideoPlan";

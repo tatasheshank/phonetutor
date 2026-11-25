@@ -1,8 +1,8 @@
 import "server-only";
 import { ALL_LANGUAGE_CODES, validateLesson, type LanguageCode } from "@ai-tutor/shared";
-import { existsSync } from "node:fs";
 import { readdir, readFile } from "node:fs/promises";
 import { resolve } from "node:path";
+import { mediaExists } from "./lessonMedia";
 
 export interface LessonSummary {
   id: string;
@@ -19,10 +19,6 @@ export function lessonsDir(): string {
   return resolve(process.cwd(), "../../content/lessons");
 }
 
-/** Lesson media is served from apps/web/public (e.g. /lesson-media/...). */
-function mediaExists(src: string): boolean {
-  return !src.includes("..") && existsSync(/* turbopackIgnore: true */ resolve(process.cwd(), "public", "." + src));
-}
 
 export function allowDraftLessons(): boolean {
   return process.env.ALLOW_DRAFT_LESSONS === "true";

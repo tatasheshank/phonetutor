@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { locateMedia } from "./media";
 
 const langCode = z.enum(["te", "hi", "en"]);
 
@@ -43,18 +44,28 @@ export const boardCueSchema = z.object({
   pause: z.boolean().default(true),
 });
 
+const mediaPath = (kind: "video" | "image") =>
+  z
+    .string()
+    .refine(
+      (src) => locateMedia(src) !== null && (kind === "video" ? /\.(mp4|webm)$/ : /\.(png|jpg|jpeg|webp)$/).test(src),
+      kind === "video"
+        ? "src must be an uploaded video (/api/lesson-media/<lesson>/<file>.mp4 or .webm) or /lesson-media/<path>.mp4 or .webm"
+        : "poster must be an uploaded image or a /lesson-media/ image (.png, .jpg, .jpeg, .webp)",
+    );
+
 /**
  * Classroom board: a short video the teacher plays and points at, narrating cue by cue.
- * Media lives in apps/web/public/lesson-media/ for now (served at /lesson-media/...).
+ * Media is uploaded by an admin (data/lesson-media, served at /api/lesson-media/...) or placed by
+ * hand in apps/web/public/lesson-media/ (served at /lesson-media/...). See ./media.ts.
  */
 const videoStep = z.object({
   id: z.string(),
   type: z.literal("video"),
-  src: z.string().regex(/^\/lesson-media\/[a-z0-9][a-z0-9._/-]*\.(mp4|webm)$/, "src must be /lesson-media/<path>.mp4 or .webm"),
-  poster: z
-    .string()
-    .regex(/^\/lesson-media\/[a-z0-9][a-z0-9._/-]*\.(png|jpg|jpeg|webp)$/)
-    .optional(),
+  src: mediaPath("video"),
+  poster: mediaPath("image").optional(),
+  /** Admin-facing label, e.g. the clip's original file name. Learners don't see it. */
+  label: z.string().max(160).optional(),
   cues: z.array(boardCueSchema).min(1),
 });
 

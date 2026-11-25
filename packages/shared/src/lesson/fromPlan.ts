@@ -148,7 +148,7 @@ export function mergeTranslatedPack(english: LocalePack, translated: unknown, la
   const warnings: string[] = [];
   const t = (translated && typeof translated === "object" ? translated : {}) as {
     title?: unknown;
-    steps?: Record<string, { text?: unknown; question?: unknown; accept?: unknown }>;
+    steps?: Record<string, { text?: unknown; question?: unknown; accept?: unknown; cues?: unknown }>;
   };
   const str = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : null);
   const steps: LocalePack["steps"] = {};
@@ -163,6 +163,16 @@ export function mergeTranslatedPack(english: LocalePack, translated: unknown, la
       const acc = Array.isArray(tr.accept) ? tr.accept.map(str).filter((a): a is string => !!a) : [];
       // Keep the English answers too: learners mix languages.
       out.accept = [...new Set([...acc, ...en.accept])];
+    }
+    if (en.cues) {
+      // Board narration, cue by cue (same order and count as English).
+      const trCues = Array.isArray(tr.cues) ? (tr.cues as Array<{ text?: unknown } | string>) : [];
+      out.cues = en.cues.map((c, i) => {
+        const t = trCues[i];
+        const text = str(typeof t === "string" ? t : t?.text);
+        if (!text && c.text) missing++;
+        return { text: text ?? c.text };
+      });
     }
     steps[id] = out;
   }

@@ -28,6 +28,7 @@ import { buildInstructions } from "./prompt";
 import { buildLlm, buildStt, buildTts, llmChoice, sttStreaming } from "./providers";
 import { isScamEmergency, redact } from "./safety";
 import { parseSettings } from "./settings";
+import { ScriptedSpeech, voiceKey } from "./audioCache";
 import { checkCapAlerts, notifySessionCost } from "./costAlerts";
 import { dailyCapReached, UsageTracker, writeUsage } from "./usage";
 
@@ -56,16 +57,19 @@ interface ActiveLesson {
 class Tutor extends voice.Agent {
   readonly lang: LanguageConfig;
   readonly lesson: ActiveLesson | null;
+  /** Speaks fixed lines from pre-recorded audio when available (free), live otherwise. */
+  readonly scripted: ScriptedSpeech<voice.SpeechHandle>;
 
-  constructor(lang: LanguageConfig, lesson: ActiveLesson | null) {
+  constructor(lang: LanguageConfig, lesson: ActiveLesson | null, scripted: ScriptedSpeech<voice.SpeechHandle>) {
     super({ instructions: buildInstructions(lang) });
     this.lang = lang;
     this.lesson = lesson;
+    this.scripted = scripted;
   }
 
   override async onEnter(): Promise<void> {
     if (this.lesson) void this.lesson.driver.run(this.lesson.runner.start());
-    else this.session.say(this.lang.phrases.greeting);
+    else this.scripted.say(this.lang.phrases.greeting);
   }
 
   override async onUserTurnCompleted(turnCtx: llm.ChatContext, msg: llm.ChatMessage): Promise<void> {
@@ -73,7 +77,7 @@ class Tutor extends voice.Agent {
     // Scam emergencies get the authored script, never an LLM answer.
     if (isScamEmergency(text)) {
       this.lesson?.driver.onLearnerTurn();
-      this.session.say(this.lang.phrases.scamHelp, { allowInterruptions: false });
+      this.scripted.say(this.lang.phrases.scamHelp, { allowInterruptions: false });
       throw new voice.StopResponse();
     }
     if (!this.lesson) return;
@@ -136,6 +140,12 @@ export default defineAgent({
       },
     });
 
+    // Pre-recorded audio for scripted lines. Recording a new line costs Sarvam characters once;
+    // count them in this session's cost. (tracker is created below, before any line is recorded.)
+    const scripted = new ScriptedSpeech<voice.SpeechHandle>(session, voiceKey(language, tutorVoice, settings.speechRate ?? "normal"), (chars) =>
+      tracker.add({ type: "tts_metrics", charactersCount: chars }),
+    );
+
     const send = (event: AgentEvent) => {
       ctx.room.localParticipant
         ?.publishData(encodeEvent(event), { reliable: true, topic: DATA_TOPIC })
@@ -150,7 +160,7 @@ export default defineAgent({
         lesson = {
           runner: new LessonRunner(loaded.lesson, loaded.pack, language),
           driver: new LessonDriver({
-            say: (text) => session.say(text),
+            say: (text) => scripted.say(text),
             send,
             shallWeContinue: language.phrases.shallWeContinue,
             log: (m, err) => console.warn(m, err),
@@ -193,7 +203,7 @@ export default defineAgent({
         console.log(`[cost] daily cap reached: ₹${cap.spent.toFixed(2)} of ₹${cap.cap}. Ending session.`);
         try {
           await Promise.resolve(session.interrupt()).catch(() => {});
-          await session.say(language.phrases.demoLimit, { allowInterruptions: false }).waitForPlayout();
+          await scripted.say(language.phrases.demoLimit, { allowInterruptions: false }).waitForPlayout();
         } catch {
           // ending anyway
         }
@@ -217,7 +227,7 @@ export default defineAgent({
     session.on(voice.AgentSessionEventTypes.Close, () => {
       clearInterval(snapshot);
       const final = tracker.record("ended");
-      console.log(`[cost] session ${final.id}: ₹${final.cost.total.toFixed(2)} (${(final.usage.roomMs / 60000).toFixed(1)} min)`);
+      console.log(`[cost] session ${final.id}: ₹${final.cost.total.toFixed(2)} (${(final.usage.roomMs / 60000).toFixed(1)} min) · recorded lines played ${scripted.hits}, spoken live ${scripted.misses}`);
       // Write first so today's total in the notification includes this session.
       void writeUsage(final).then(async () => {
         await notifySessionCost(final);
@@ -248,10 +258,10 @@ export default defineAgent({
       }
     });
 
-    await session.start({ agent: new Tutor(language, lesson), room: ctx.room });
+    await session.start({ agent: new Tutor(language, lesson, scripted), room: ctx.room });
 
     const limit = setTimeout(() => {
-      session.say(language.phrases.shallWeContinue);
+      scripted.say(language.phrases.shallWeContinue);
       void session.close();
     }, MAX_SESSION_MS);
     session.on(voice.AgentSessionEventTypes.Close, () => {

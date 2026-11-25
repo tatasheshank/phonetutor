@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import { isAdmin } from "../../../lib/adminAuth";
 import { deleteDraft, publishDraft, unpublishLesson } from "../../../lib/lessonDrafts";
+import { deleteLessonMedia } from "../../../lib/lessonMedia";
 
 async function requireAdmin() {
   if (!(await isAdmin())) redirect("/admin");
@@ -27,5 +28,6 @@ export async function remove(formData: FormData) {
   const id = String(formData.get("id") ?? "");
   await unpublishLesson(id);
   await deleteDraft(id);
+  await deleteLessonMedia(id);
   redirect("/admin/lessons");
 }
