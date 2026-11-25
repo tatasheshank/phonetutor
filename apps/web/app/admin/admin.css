@@ -273,3 +273,107 @@
   gap: 4px;
   white-space: nowrap;
 }
+
+/* Lesson creator: phone or video lesson */
+.kind-pick {
+  grid-template-columns: 1fr 1fr;
+}
+.clip-list {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+/* Video cue editor */
+.cue-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.cue-head h3 {
+  margin: 0;
+}
+.cue-head-actions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.cue-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cue-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+}
+.cue-frame.tool-point {
+  cursor: crosshair;
+}
+.cue-frame.tool-box {
+  cursor: cell;
+}
+.cue-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+.cue-overlay {
+  position: absolute;
+  pointer-events: none;
+}
+.cue-transport {
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+}
+.cue-time {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.cue-scrub {
+  width: 100%;
+}
+.cue-tools {
+  grid-template-columns: auto 1fr 1fr;
+  align-items: center;
+}
+.cue-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cue-item {
+  border: 1px solid var(--border, #ddd);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cue-item.selected {
+  border-color: var(--primary, #0f766e);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary, #0f766e) 25%, transparent);
+}
+.cue-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  align-items: center;
+}
+.cue-at {
+  width: 5.5em;
+  display: inline-block;
+  padding: 4px 6px;
+  min-height: 0;
+}

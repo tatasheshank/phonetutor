@@ -142,7 +142,7 @@ describe("validateLesson: classroom board videos", () => {
     videoStep(bad).src = "/lesson-media/../secret.mp4";
     expect(validateLesson(bad).ok).toBe(false);
     videoStep(bad).src = "/lesson-media/a/../../secret.mp4";
-    expect(validateLesson(bad).errors.join("\n")).toContain('must not contain ".."');
+    expect(validateLesson(bad).errors.join("\n")).toContain("src must be an uploaded video");
   });
 
   it("needs narration for every cue in a reviewed pack", () => {

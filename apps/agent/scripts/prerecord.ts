@@ -4,6 +4,7 @@
 //   npm run prerecord -w @ai-tutor/agent -- --yes        # record (default voice, normal speed)
 //   ... -- --yes --voices=all --rates=all                # every voice and speed (much more)
 //   ... -- --yes --lang=te                               # one language only
+//   ... -- --lesson=<id> [--yes] [--json]                # one lesson only (used by the admin page)
 //
 // Already-recorded lines are skipped, so re-running only records new or edited lines.
 // Lines not pre-recorded still get recorded automatically the first time a learner hears them.
@@ -28,6 +29,13 @@ const allVoices = flag("voices") === "all";
 const rates: SpeechRate[] = flag("rates") === "all" ? ["slow", "normal", "fast"] : ["normal"];
 const onlyLang = flag("lang");
 const allowDrafts = process.env.ALLOW_DRAFT_LESSONS === "true" || args.includes("--drafts");
+const onlyLesson = flag("lesson");
+if (onlyLesson !== undefined && !/^[a-z0-9-]{1,80}$/.test(onlyLesson)) {
+  console.error("bad --lesson id");
+  process.exit(2);
+}
+/** --json: print one machine-readable summary line ("JSON {...}") for the admin page. */
+const json = args.includes("--json");
 
 const lessonsDir = join(import.meta.dirname, "../../../content/lessons");
 
@@ -35,11 +43,14 @@ const lessonsDir = join(import.meta.dirname, "../../../content/lessons");
 function linesFor(lang: LanguageConfig): string[] {
   const lines = new Set<string>();
   const p = lang.phrases;
-  for (const v of Object.values(p)) lines.add(v);
-  lines.add(p.wellDone.split(/[!.।]/)[0] + "!");
-  lines.add(p.letMeShow.split(/[,.،]/)[0] + ".");
+  if (!onlyLesson) {
+    for (const v of Object.values(p)) lines.add(v);
+    lines.add(p.wellDone.split(/[!.।]/)[0] + "!");
+    lines.add(p.letMeShow.split(/[,.،]/)[0] + ".");
+  }
 
-  for (const file of readdirSync(lessonsDir).filter((f) => f.endsWith(".json"))) {
+  const files = readdirSync(lessonsDir).filter((f) => f.endsWith(".json") && (!onlyLesson || f === `${onlyLesson}.json`));
+  for (const file of files) {
     const lesson = JSON.parse(readFileSync(join(lessonsDir, file), "utf8"));
     const pack = lesson.locales?.[lang.code];
     if (!pack || (pack.status !== "reviewed" && !allowDrafts)) continue;
@@ -81,6 +92,7 @@ console.log(`Lessons: ${allowDrafts ? "reviewed + drafts" : "reviewed only"} · 
 for (const [k, s] of summary) console.log(`  ${k}: ${s.lines} lines, ${s.chars} characters`);
 console.log(`To record: ${jobs.length} lines, ${chars} characters, about Rs ${cost.toFixed(2)} (one time).`);
 
+if (json) console.log(`JSON ${JSON.stringify({ phase: "estimate", lines: jobs.length, chars, costInr: Math.round(cost * 100) / 100 })}`);
 if (!jobs.length) {
   console.log("Nothing to record: everything is already saved.");
   process.exit(0);
@@ -105,4 +117,5 @@ for (const j of jobs) {
   }
 }
 console.log(`Done: ${done} recorded, ${failed} failed, about Rs ${spent.toFixed(2)} spent.`);
+if (json) console.log(`JSON ${JSON.stringify({ phase: "done", recorded: done, failed, costInr: Math.round(spent * 100) / 100 })}`);
 process.exit(failed ? 1 : 0);

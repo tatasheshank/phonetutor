@@ -11,6 +11,7 @@ import {
 import { useCallback, useEffect, useRef, useState } from "react";
 import { strings } from "../../lib/strings";
 import { Avatar } from "../Avatar";
+import { Board, type BoardState } from "../Board";
 import { afterPress, emptyStage, startPress, LessonStage, type StageState } from "../LessonStage";
 
 /**
@@ -26,6 +27,7 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
   // True while the lesson waits for the learner's answer to the check question.
   const [waiting, setWaiting] = useState(false);
   const [pointAt, setPointAt] = useState<{ x: number; y: number } | null>(null);
+  const [board, setBoard] = useState<BoardState | null>(null);
   const runnerRef = useRef<LessonRunner | null>(null);
   const queue = useRef<RunnerAction[]>([]);
   const t = strings(lang);
@@ -41,6 +43,15 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
       case "tap":
         setStage((s) => startPress(s, e.target));
         setTimeout(() => setStage((s) => afterPress(s, e.target)), 650);
+        break;
+      case "board_video":
+        setBoard({ stepId: e.stepId, src: e.src, poster: e.poster, cue: null });
+        break;
+      case "board_cue":
+        setBoard((b) => (b && b.stepId === e.stepId ? { ...b, cue: e } : b));
+        break;
+      case "board_done":
+        setBoard((b) => (b?.stepId === e.stepId ? null : b));
         break;
       case "check":
         setStage((s) => ({ ...s, check: { stepId: e.stepId, question: e.question, options: e.options } }));
@@ -84,6 +95,7 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
     runnerRef.current = new LessonRunner(lesson, pack, getLanguage(lang));
     queue.current = runnerRef.current.start();
     setStage(emptyStage);
+    setBoard(null);
     setCaption("");
     setDone(false);
     setWaiting(false);
@@ -110,7 +122,9 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
           </button>
         ))}
       </div>
-      {stage.screen ? (
+      {board ? (
+        <Board board={board} hold={false} t={t} onPointScreen={setPointAt} />
+      ) : stage.screen ? (
         <LessonStage
           stage={stage}
           screenLanguage={lang}
@@ -126,7 +140,7 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
       )}
       <div className="teach-row">
         <div className="teach-avatar">
-          <Avatar state="speaking" level={{ current: 0 }} pointAt={stage.screen ? pointAt : null} />
+          <Avatar state="speaking" level={{ current: 0 }} pointAt={board || stage.screen ? pointAt : null} />
         </div>
         <p className="preview-caption">{caption || "…"}</p>
       </div>
