@@ -52,6 +52,21 @@ const DEFAULT_CHECK = {
 
 const clean = (s?: string | null) => (s ?? "").replace(/\s+/g, " ").trim();
 
+/** Words that only make sense with a recording on screen. */
+const SCREEN_TALK = /\b(clips?|video|recording|screen|icon|click(s|ed|ing)?|excel|label(l?ed)?|diagram|shown in)\b/i;
+
+/**
+ * Lessons without clips: drops sentences about clips, screens or icons, which a model sometimes
+ * invents ("Now I play the first clip ..."). Keeps every other sentence.
+ */
+export function withoutScreenTalk(text: string): string {
+  return text
+    .split(/(?<=[.!?])\s+/)
+    .filter((sentence) => !SCREEN_TALK.test(sentence))
+    .join(" ")
+    .trim();
+}
+
 /**
  * Builds a draft video lesson (English pack) from the AI plan and the uploaded clips, in clip order.
  * Repairs instead of failing: every clip is used exactly once and in order (missing clips are added
@@ -105,7 +120,8 @@ export function videoLessonFromPlan(
       const index = (p.clip ?? 0) - 1;
       if (index < 0 || index >= clips.length) {
         warnings.push(`The plan referred to clip ${p.clip ?? "?"}, which doesn't exist; its words became a spoken step.`);
-        const words = [clean(p.intro), ...(p.cues ?? []).map((c) => clean(c.text))].filter(Boolean).join(" ");
+        const raw = [clean(p.intro), ...(p.cues ?? []).map((c) => clean(c.text))].filter(Boolean).join(" ");
+        const words = clips.length ? raw : withoutScreenTalk(raw);
         if (words) {
           const sid = nextId();
           steps.push({ id: sid, type: "say", avatar: "neutral" });
@@ -126,7 +142,7 @@ export function videoLessonFromPlan(
       );
       continue;
     }
-    const text = clean(p.text);
+    const text = clips.length ? clean(p.text) : withoutScreenTalk(clean(p.text));
     if (text) {
       const sid = nextId();
       steps.push({ id: sid, type: "say", avatar: steps.length === 0 ? "smile" : "neutral" });

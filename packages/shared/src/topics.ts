@@ -38,6 +38,12 @@ export const TOPICS: Topic[] = [
     name: { en: "Geography", te: "భూగోళ శాస్త్రం", hi: "भूगोल" },
     about: "geography and earth science, such as landforms, rivers, weathering and geomorphology",
   },
+  {
+    id: "class-10-biology",
+    emoji: "🧬",
+    name: { en: "Class 10 Biology", te: "10వ తరగతి జీవశాస్త్రం", hi: "कक्षा 10 जीव विज्ञान" },
+    about: "Class 10 biology (AP State Board): life processes such as nutrition, respiration, transportation and excretion",
+  },
 ];
 
 /** Older lessons were saved with course "generated"; they are phone lessons. */

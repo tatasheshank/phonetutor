@@ -1,0 +1,286 @@
+{
+  "id": "5-excretion-in-humans-and-plants-291302",
+  "version": 1,
+  "course": "class-10-biology",
+  "mode": "scripted",
+  "objectives": [
+    "Explain how human beings excrete waste through the kidneys, nephrons, and urinary pathway.",
+    "Describe how plants excrete waste through transpiration, stomata, and storage in leaves and bark."
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s6",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s8",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "CZE-4G4ZG_c"
+      },
+      "label": "Transportation & Excretion | Life Processes Class 10 Science | CBSE | NCERT | Biology Animation",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        },
+        {
+          "at": 70,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "5. మనుషులు, మొక్కల్లో విసర్జన",
+      "steps": {
+        "s1": {
+          "text": "శరీరంలో తయారయ్యే హానికరమైన వ్యర్థాలను విసర్జన ద్వారా బయటకు పంపుతాం. మనుషుల్లో, రెండు కిడ్నీలు రక్తాన్ని ఫిల్టర్ చేస్తాయి."
+        },
+        "s2": {
+          "text": "ప్రతి కిడ్నీలో దాదాపు 10 లక్షల చిన్న ఫిల్టరింగ్ యూనిట్లు ఉంటాయి. వాటిని నెఫ్రాన్లు అంటారు. గ్లూకోజ్, నీరు లాంటి ఉపయోగపడే పదార్థాలు తిరిగి రక్తంలోకి వెళ్తాయి. వ్యర్థాలు యూరిన్ గా మారుతాయి."
+        },
+        "s3": {
+          "text": "యూరిన్ యూరెటర్స్ ద్వారా యూరినరీ బ్లాడర్ కి వెళ్తుంది. ఆ తర్వాత యూరెత్రా ద్వారా శరీరం నుండి బయటకు వస్తుంది."
+        },
+        "s4": {
+          "text": "ఒకవేళ కిడ్నీలు పనిచేయకపోతే, డయాలసిస్ మెషిన్ తో రక్తాన్ని శుభ్రం చేయొచ్చు."
+        },
+        "s5": {
+          "text": "మొక్కలు ట్రాన్స్పిరేషన్ ద్వారా అదనపు నీటిని కోల్పోతాయి. స్టోమాటా ద్వారా ఆక్సిజన్ ని విడుదల చేస్తాయి."
+        },
+        "s6": {
+          "text": "కొన్ని వ్యర్థాలు పాత ఆకుల్లో నిల్వ ఉండి, ఆకులు రాలిపోతాయి. లేదా బెరడులో గమ్స్, రెసిన్స్ లాగా ఉంటాయి."
+        },
+        "s7": {
+          "question": "మనుషులు, మొక్కల్లో విసర్జన గురించి మీకు అర్థమైందా?",
+          "accept": [
+            "అర్థమైంది",
+            "అవును",
+            "సరే",
+            "ఓకే",
+            "అవును అండి",
+            "అవునండి",
+            "సరే అండి",
+            "అవునులే",
+            "Yes",
+            "Yes, I did",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s8": {
+          "text": "ఇప్పుడు ఒక చిన్న video చూద్దాం.",
+          "cues": [
+            {
+              "text": "శరీరం హానికరమైన waste ని ఎలా తొలగిస్తుందో చూడండి."
+            },
+            {
+              "text": "రెండు kidneys రక్తాన్ని nephrons అనే చిన్న యూనిట్ల ద్వారా filter చేస్తాయి."
+            },
+            {
+              "text": "ఆ waste urine గా మారి bladder ద్వారా శరీరం నుండి బయటకు వెళుతుంది."
+            },
+            {
+              "text": "మొక్కలు తమ ఆకులు, బెరడు మరియు stomata ద్వారా waste ని తొలగిస్తాయి."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.705Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "5. इंसानों और पौधों में उत्सर्जन",
+      "steps": {
+        "s1": {
+          "text": "उत्सर्जन शरीर में बने हानिकारक कचरे को बाहर निकालता है। इंसानों में, दो गुर्दे खून को छानते हैं।"
+        },
+        "s2": {
+          "text": "हर गुर्दे में लगभग 10 लाख छोटे छानने वाले हिस्से होते हैं, जिन्हें नेफ्रॉन कहते हैं। ग्लूकोज और पानी जैसे उपयोगी पदार्थ वापस खून में चले जाते हैं, और कचरा पेशाब बन जाता है।"
+        },
+        "s3": {
+          "text": "पेशाब यूरेटर्स के रास्ते यूरिनरी ब्लैडर तक जाता है और मूत्रमार्ग से शरीर से बाहर निकल जाता है।"
+        },
+        "s4": {
+          "text": "अगर गुर्दे काम करना बंद कर दें, तो डायलिसिस मशीन खून को साफ कर सकती है।"
+        },
+        "s5": {
+          "text": "पौधे ट्रांसपिरेशन के जरिए एक्स्ट्रा पानी खो देते हैं, और स्टोमेटा के जरिए ऑक्सीजन छोड़ते हैं।"
+        },
+        "s6": {
+          "text": "कुछ कचरा पुरानी पत्तियों में जमा हो जाता है जो बाद में गिर जाती हैं, या छाल में गोंद और रेजिन के रूप में जमा हो जाता है।"
+        },
+        "s7": {
+          "question": "क्या आपको इंसानों और पौधों में उत्सर्जन समझ आया?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "बिलकुल",
+            "ठीक है",
+            "हाँ जी, समझ आ गया",
+            "जी हाँ, क्लियर है",
+            "Yes",
+            "Yes, I did",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s8": {
+          "text": "अब हम एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "देखिए, शरीर हानिकारक कचरे को कैसे निकालता है।"
+            },
+            {
+              "text": "दोनों kidneys खून को nephrons नाम की छोटी इकाइयों से filter करती हैं।"
+            },
+            {
+              "text": "कचरा urine बन जाता है और bladder के ज़रिए शरीर से बाहर निकल जाता है।"
+            },
+            {
+              "text": "पौधे अपने पत्तों, छाल और stomata के ज़रिए कचरा निकालते हैं।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.705Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "5. Excretion in humans and plants",
+      "steps": {
+        "s1": {
+          "text": "Excretion removes harmful wastes made in the body. In human beings, the two kidneys filter the blood."
+        },
+        "s2": {
+          "text": "Each kidney has about a million tiny filtering units called nephrons. Useful substances like glucose and water are taken back into the blood, and the waste becomes urine."
+        },
+        "s3": {
+          "text": "Urine goes through the ureters to the urinary bladder and leaves the body through the urethra."
+        },
+        "s4": {
+          "text": "If the kidneys fail, a dialysis machine can clean the blood."
+        },
+        "s5": {
+          "text": "Plants lose extra water through transpiration, and release oxygen through the stomata."
+        },
+        "s6": {
+          "text": "Some wastes are stored in old leaves that later fall off, or in the bark, as gums and resins."
+        },
+        "s7": {
+          "question": "Did you understand excretion in humans and plants?",
+          "accept": [
+            "Yes",
+            "Yes, I did",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s8": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Watch how the body removes harmful waste."
+            },
+            {
+              "text": "The two kidneys filter the blood through tiny units called nephrons."
+            },
+            {
+              "text": "The waste becomes urine and leaves the body through the bladder."
+            },
+            {
+              "text": "Plants remove waste through their leaves, bark and stomata."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.705Z"
+    }
+  },
+  "order": 5
+}

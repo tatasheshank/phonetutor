@@ -1,0 +1,328 @@
+{
+  "id": "2-types-and-areas-of-history-38a59b",
+  "version": 1,
+  "course": "history-and-civics",
+  "mode": "scripted",
+  "objectives": [
+    "Learn the different kinds of history based on subject, area, and time."
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s6",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s7",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s8",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s9",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s10",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s12",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "53ooE8aLhvg"
+      },
+      "label": "Kinds of History",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "2. చరిత్ర రకాలు మరియు ప్రాంతాలు",
+      "steps": {
+        "s1": {
+          "text": "చరిత్రను దాని సబ్జెక్ట్ బట్టి విభజించవచ్చు. రాజకీయ చరిత్రలో రాజులు, ప్రభుత్వాలు, యుద్ధాలు, రాష్ట్రాల గురించి చదువుతాం."
+        },
+        "s2": {
+          "text": "సామాజిక చరిత్రలో కుటుంబ జీవితం, ఆచారాలు, కులం, మహిళల స్థానం, రోజువారీ జీవితం గురించి చదువుతాం."
+        },
+        "s3": {
+          "text": "ఆర్థిక చరిత్రలో వ్యవసాయం, వ్యాపారం, పరిశ్రమలు, డబ్బు గురించి చదువుతాం."
+        },
+        "s4": {
+          "text": "సాంస్కృతిక చరిత్రలో కళ, సాహిత్యం, సంగీతం, కట్టడాల గురించి చదువుతాం."
+        },
+        "s5": {
+          "text": "మత చరిత్రలో మతాలు, మత ఉద్యమాల గురించి చదువుతాం."
+        },
+        "s6": {
+          "text": "రాజ్యాంగ చరిత్రలో చట్టాలు, రాజ్యాంగాలు ఎలా ఏర్పడ్డాయో చదువుతాం."
+        },
+        "s7": {
+          "text": "దౌత్య చరిత్రలో దేశాల మధ్య సంబంధాల గురించి చదువుతాం."
+        },
+        "s8": {
+          "text": "శాస్త్ర చరిత్రలో ఆవిష్కరణలు, కొత్త inventions గురించి చదువుతాం."
+        },
+        "s9": {
+          "text": "చరిత్రను ప్రాంతాల బట్టి కూడా విభజించవచ్చు. అంటే స్థానిక, ప్రాంతీయ, జాతీయ, ప్రపంచ చరిత్ర అని అన్నమాట."
+        },
+        "s10": {
+          "text": "సమయాన్ని బట్టి చూస్తే, దీనిని ప్రాచీన, మధ్యయుగ, ఆధునిక చరిత్ర అని విభజించవచ్చు."
+        },
+        "s11": {
+          "question": "చరిత్రలో ఉండే వేర్వేరు రకాలు, ప్రాంతాల గురించి మీకు అర్థమైందా?",
+          "accept": [
+            "అర్థమైంది",
+            "అవును",
+            "సరే",
+            "అవును సరే",
+            "అవును అండి",
+            "అవును, అర్థమైంది",
+            "Yes",
+            "I did",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s12": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "చరిత్రలో సబ్జెక్టును బట్టి చాలా రకాలు ఉన్నాయి."
+            },
+            {
+              "text": "రాజకీయ, సామాజిక, ఆర్థిక, సాంస్కృతిక చరిత్రలు జీవితంలోని వేర్వేరు కోణాలను అధ్యయనం చేస్తాయి."
+            },
+            {
+              "text": "చరిత్రను ప్రాంతం, కాలాన్ని బట్టి కూడా విభజిస్తారు."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.889Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "2. इतिहास के प्रकार और क्षेत्र",
+      "steps": {
+        "s1": {
+          "text": "इतिहास को उसके विषय के आधार पर बाँटा जा सकता है। राजनीतिक इतिहास में राजाओं, सरकारों, युद्धों और राज्यों का अध्ययन किया जाता है।"
+        },
+        "s2": {
+          "text": "सामाजिक इतिहास में पारिवारिक जीवन, रीति-रिवाजों, जाति, महिलाओं की स्थिति और रोज़मर्रा के जीवन का अध्ययन किया जाता है।"
+        },
+        "s3": {
+          "text": "आर्थिक इतिहास में कृषि, व्यापार, उद्योग और पैसे का अध्ययन किया जाता है।"
+        },
+        "s4": {
+          "text": "सांस्कृतिक इतिहास में कला, साहित्य, संगीत और वास्तुकला का अध्ययन किया जाता है।"
+        },
+        "s5": {
+          "text": "धार्मिक इतिहास में धर्मों और धार्मिक आंदोलनों का अध्ययन किया जाता है।"
+        },
+        "s6": {
+          "text": "संवैधानिक इतिहास में यह देखा जाता है कि कानून और संविधान कैसे विकसित हुए।"
+        },
+        "s7": {
+          "text": "कूटनीतिक इतिहास में देशों के बीच संबंधों का अध्ययन किया जाता है।"
+        },
+        "s8": {
+          "text": "विज्ञान के इतिहास में खोजों और आविष्कारों का अध्ययन किया जाता है।"
+        },
+        "s9": {
+          "text": "इतिहास को क्षेत्र के आधार पर स्थानीय, क्षेत्रीय, राष्ट्रीय और विश्व इतिहास में भी बाँटा जा सकता है।"
+        },
+        "s10": {
+          "text": "इसे समय के आधार पर प्राचीन, मध्यकालीन और आधुनिक इतिहास में बाँटा जा सकता है।"
+        },
+        "s11": {
+          "question": "क्या आपको इतिहास के अलग-अलग प्रकार और क्षेत्रों के बारे में समझ आया?",
+          "accept": [
+            "हाँ",
+            "जी हाँ",
+            "बिल्कुल",
+            "सही है",
+            "जी, समझ आ गया",
+            "हाँ, समझ आया",
+            "हाँ, जी",
+            "हाँ बिलकुल",
+            "Yes",
+            "I did",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s12": {
+          "text": "अब चलिए एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "इतिहास कई तरह का होता है, जिसे विषय के आधार पर बांटा जाता है।"
+            },
+            {
+              "text": "राजनीतिक, सामाजिक, आर्थिक और सांस्कृतिक इतिहास, हर एक जीवन के अलग-अलग पहलू को देखते हैं।"
+            },
+            {
+              "text": "इतिहास को क्षेत्र और समय के हिसाब से भी बांटा जाता है।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.889Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "2. Types and areas of History",
+      "steps": {
+        "s1": {
+          "text": "History can be divided by its subject. Political history studies kings, governments, wars and states."
+        },
+        "s2": {
+          "text": "Social history studies family life, customs, caste, the position of women and daily life."
+        },
+        "s3": {
+          "text": "Economic history studies agriculture, trade, industry and money."
+        },
+        "s4": {
+          "text": "Cultural history studies art, literature, music and architecture."
+        },
+        "s5": {
+          "text": "Religious history studies religions and religious movements."
+        },
+        "s6": {
+          "text": "Constitutional history studies how laws and constitutions grew."
+        },
+        "s7": {
+          "text": "Diplomatic history studies relations between countries."
+        },
+        "s8": {
+          "text": "The history of science studies discoveries and inventions."
+        },
+        "s9": {
+          "text": "History can also be divided by area into local, regional, national and world history."
+        },
+        "s10": {
+          "text": "It can be divided by time into ancient, medieval and modern history."
+        },
+        "s11": {
+          "question": "Did you understand the different kinds and areas of history?",
+          "accept": [
+            "Yes",
+            "I did",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s12": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "History has many kinds, divided by subject."
+            },
+            {
+              "text": "Political, social, economic and cultural history each study a different side of life."
+            },
+            {
+              "text": "History is also divided by area and by time."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.889Z"
+    }
+  },
+  "order": 2
+}

@@ -1,0 +1,381 @@
+{
+  "id": "2-photosynthesis-and-human-digestion-9f979c",
+  "version": 1,
+  "course": "class-10-biology",
+  "mode": "scripted",
+  "objectives": [
+    "Explain how green plants make food by photosynthesis.",
+    "Describe the steps of human digestion from mouth to anus."
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s6",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s7",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s9",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "9MsGAsj6DW8"
+      },
+      "label": "Photosynthesis class 10 | How plants make food | Life processes | Class 10 science",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        },
+        {
+          "at": 70,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "yE3GlzspUJk"
+      },
+      "label": "CLASS 10 LIFE PROCESSES FULL CHAPTER (Animation)| PART - 1  | NCERT Science chapter 6| Nutrition",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        },
+        {
+          "at": 70,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "2. కిరణజన్య సంయోగక్రియ, మానవ జీర్ణక్రియ",
+      "steps": {
+        "s1": {
+          "text": "ఆకుపచ్చ మొక్కలు photosynthesis ద్వారా ఆహారం తయారు చేసుకుంటాయి. ఆకుల్లో chlorophyll అనే ఆకుపచ్చ pigment ఉంటుంది, అది సూర్యరశ్మిని గ్రహిస్తుంది."
+        },
+        "s2": {
+          "text": "ఈ ఎనర్జీతో, మొక్క గాలిలోని carbon dioxide ని stomata అనే చిన్న రంధ్రాల ద్వారా తీసుకుంటుంది. అలాగే మట్టిలోని నీటిని తన వేర్ల ద్వారా పీల్చుకుంటుంది."
+        },
+        "s3": {
+          "text": "ఇది glucose ని తయారు చేసి oxygen ని బయటకు వదులుతుంది. సింపుల్ గా చెప్పాలంటే, carbon dioxide, నీరు, సూర్యరశ్మి, chlorophyll కలిసి glucose మరియు oxygen ని ఇస్తాయి."
+        },
+        "s4": {
+          "text": "మనం తినేది నోట్లోనే digestion మొదలవుతుంది. పళ్లు ఆహారాన్ని చిన్న ముక్కలుగా విరగ్గొడతాయి. లాలాజలంలో salivary amylase అనే enzyme ఉంటుంది, అది starch ని sugar గా మారుస్తుంది."
+        },
+        "s5": {
+          "text": "ఆహారం oesophagus అనే food pipe గుండా stomach కి వెళ్తుంది. Stomach లో hydrochloric acid, pepsin అనే enzyme ప్రోటీన్లను digest చేయడం మొదలుపెడతాయి."
+        },
+        "s6": {
+          "text": "చిన్న పేగులో, liver నుంచి వచ్చే bile, pancreas నుంచి వచ్చే juices digestion ని పూర్తి చేస్తాయి. Digest అయిన ఆహారం villi అనే వేళ్ల లాంటి వాటి ద్వారా రక్తంలోకి చేరుతుంది."
+        },
+        "s7": {
+          "text": "పెద్ద పేగు అదనపు నీటిని పీల్చుకుంటుంది. మిగిలిన వ్యర్థాలు anus ద్వారా శరీరం నుంచి బయటకు వెళ్లిపోతాయి."
+        },
+        "s8": {
+          "question": "మీకు photosynthesis మరియు human digestion అర్థం అయ్యాయా?",
+          "accept": [
+            "అర్థమైంది",
+            "అవును",
+            "సరే",
+            "క్లియర్ గా తెలిసింది",
+            "అవును సార్/మేడమ్",
+            "ఓకే",
+            "Yes, I did.",
+            "Yes, I understand.",
+            "Yes, that is clear.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s9": {
+          "text": "ఇప్పుడు మనం ఒక చిన్న video చూద్దాం.",
+          "cues": [
+            {
+              "text": "ఆకు పచ్చగా ఉండి ఎలా ఆహారం తయారు చేసుకుంటుందో చూడండి."
+            },
+            {
+              "text": "ఆకులోని chlorophyll సూర్యరశ్మిని పీల్చుకుంటుంది."
+            },
+            {
+              "text": "stomata ద్వారా carbon dioxide లోపలికి వస్తుంది, అలాగే వేర్ల నుండి నీరు పైకి వస్తుంది."
+            },
+            {
+              "text": "మొక్క glucose తయారు చేసి oxygen ని బయటకు ఇస్తుంది."
+            }
+          ]
+        },
+        "s10": {
+          "text": "ఇప్పుడు మనం ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "ఇప్పుడు మన శరీరం ఆహారాన్ని ఎలా తీసుకుంటుంది, ఎలా అరిగించుకుంటుందో చూడండి."
+            },
+            {
+              "text": "అన్నం అరగడం నోట్లో మొదలవుతుంది, అక్కడ లాలాజలం స్టార్చ్ ను విడగొడుతుంది."
+            },
+            {
+              "text": "కడుపు, చిన్న పేగుల్లో ఆహారం పూర్తిగా విడగొట్టబడుతుంది."
+            },
+            {
+              "text": "అరిగిన ఆహారం విల్లి ద్వారా రక్తంలోకి చేరుతుంది."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.816Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "2. प्रकाश संश्लेषण और मानव पाचन",
+      "steps": {
+        "s1": {
+          "text": "हरी पौधे photosynthesis से खाना बनाते हैं। पत्तों में, chlorophyll नाम का एक हरा पिगमेंट धूप को सोखता है।"
+        },
+        "s2": {
+          "text": "इस एनर्जी का इस्तेमाल करके, पौधा हवा से carbon dioxide लेता है। यह छोटे छिद्रों से होता है, जिन्हें stomata कहते हैं। और मिट्टी से पानी अपनी जड़ों के ज़रिए लेता है।"
+        },
+        "s3": {
+          "text": "यह glucose बनाता है और ऑक्सीजन छोड़ता है। संक्षेप में कहें तो, कार्बन डाइऑक्साइड और पानी, धूप और chlorophyll के साथ मिलकर glucose और ऑक्सीजन देते हैं।"
+        },
+        "s4": {
+          "text": "पाचन मुँह से शुरू होता है। दाँत खाने को छोटे टुकड़ों में तोड़ते हैं। saliva में salivary amylase नाम का एंजाइम होता है, जो स्टार्च को चीनी में तोड़ता है।"
+        },
+        "s5": {
+          "text": "खाना खाने की नली, oesophagus से नीचे पेट में जाता है। पेट में, hydrochloric acid और pepsin नाम का एंजाइम प्रोटीन को पचाना शुरू करते हैं।"
+        },
+        "s6": {
+          "text": "छोटी आंत में, लिवर से आने वाला bile और पैंक्रियास का रस पाचन पूरा करते हैं। पचा हुआ खाना छोटी उंगली जैसी villi के ज़रिए खून में सोख लिया जाता है।"
+        },
+        "s7": {
+          "text": "बड़ी आंत एक्स्ट्रा पानी सोख लेती है। और कचरा शरीर से anus के रास्ते बाहर निकल जाता है।"
+        },
+        "s8": {
+          "question": "क्या आपको photosynthesis और इंसानी पाचन समझ आया?",
+          "accept": [
+            "हाँ",
+            "जी हाँ",
+            "समझ आ गया",
+            "बिल्कुल",
+            "हाँ जी",
+            "हाँ, समझ आ गया",
+            "जी, समझ आ गया",
+            "हाँ, क्लियर है",
+            "Yes, I did.",
+            "Yes, I understand.",
+            "Yes, that is clear.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s9": {
+          "text": "अब हम एक छोटा video देखते हैं।",
+          "cues": [
+            {
+              "text": "देखिए, एक हरा पत्ता कैसे खाना बनाता है।"
+            },
+            {
+              "text": "पत्ते में मौजूद chlorophyll सूरज की रोशनी को सोखता है।"
+            },
+            {
+              "text": "कार्बन डाइऑक्साइड stomata से अंदर आती है, और पानी जड़ों से ऊपर आता है।"
+            },
+            {
+              "text": "पौधा glucose बनाता है और ऑक्सीजन बाहर निकालता है।"
+            }
+          ]
+        },
+        "s10": {
+          "text": "अब हम एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "अब देखिए कि हमारे शरीर को खाना कैसे मिलता है और यह कैसे पचता है।"
+            },
+            {
+              "text": "पाचन मुंह से शुरू होता है, जहां लार स्टार्च को तोड़ना शुरू करती है।"
+            },
+            {
+              "text": "पेट और छोटी आंत में, खाना पूरी तरह से टूट जाता है।"
+            },
+            {
+              "text": "पचा हुआ खाना विली के जरिए खून में सोख लिया जाता है।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.816Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "2. Photosynthesis and human digestion",
+      "steps": {
+        "s1": {
+          "text": "Green plants make food by photosynthesis. In the leaves, a green pigment called chlorophyll absorbs sunlight."
+        },
+        "s2": {
+          "text": "Using this energy, the plant takes in carbon dioxide from the air through tiny pores called stomata, and water from the soil through its roots."
+        },
+        "s3": {
+          "text": "It makes glucose and releases oxygen. In short, carbon dioxide and water with sunlight and chlorophyll give glucose and oxygen."
+        },
+        "s4": {
+          "text": "Digestion starts in the mouth. Teeth break food into small pieces, and saliva contains an enzyme called salivary amylase that breaks starch into sugar."
+        },
+        "s5": {
+          "text": "Food moves down the food pipe, the oesophagus, to the stomach. In the stomach, hydrochloric acid and the enzyme pepsin start digesting proteins."
+        },
+        "s6": {
+          "text": "In the small intestine, bile from the liver and juices from the pancreas complete digestion. Digested food is absorbed into the blood through tiny finger-like villi."
+        },
+        "s7": {
+          "text": "The large intestine absorbs extra water, and the waste leaves the body through the anus."
+        },
+        "s8": {
+          "question": "Did you understand photosynthesis and human digestion?",
+          "accept": [
+            "Yes, I did.",
+            "Yes, I understand.",
+            "Yes, that is clear.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s9": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Watch how a green leaf makes food."
+            },
+            {
+              "text": "Chlorophyll in the leaf absorbs sunlight."
+            },
+            {
+              "text": "Carbon dioxide enters through the stomata, and water comes up from the roots."
+            },
+            {
+              "text": "The plant makes glucose and gives out oxygen."
+            }
+          ]
+        },
+        "s10": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Now see how our body gets food and digests it."
+            },
+            {
+              "text": "Digestion starts in the mouth, where saliva begins breaking down starch."
+            },
+            {
+              "text": "In the stomach and the small intestine, the food is broken down completely."
+            },
+            {
+              "text": "Digested food is absorbed into the blood through the villi."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.816Z"
+    }
+  },
+  "order": 2
+}

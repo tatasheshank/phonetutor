@@ -253,3 +253,23 @@ describe("YouTube video sources", () => {
     expect(r.lesson!.steps.find((s) => s.type === "video")).not.toHaveProperty("src");
   });
 });
+
+describe("lessons without clips", () => {
+  it("drops invented talk about clips and screens, keeping the real content", () => {
+    const plan = videoPlanSchema.parse({
+      title: "Respiration",
+      steps: [
+        { kind: "explain", text: "Respiration releases energy from food. Now I play the first clip. The green Excel icon is at the top left." },
+        { kind: "clip", clip: 1, intro: "Now I play clip 1.", cues: [{ text: "Look at the diagram. Glucose is broken down in the cells." }] },
+        { kind: "explain", text: "This clip shows the lungs." },
+      ],
+    });
+    const { lesson } = videoLessonFromPlan(plan, "resp", []);
+    const said = Object.values(lesson.locales.en!.steps).map((s) => s.text ?? s.question ?? "");
+    expect(said.join(" ")).not.toMatch(/clip|excel|icon|diagram/i);
+    expect(said).toContain("Respiration releases energy from food.");
+    expect(said).toContain("Glucose is broken down in the cells.");
+    // The step that was only screen talk is gone; the check stays.
+    expect(lesson.steps.map((s) => s.type)).toEqual(["say", "say", "check"]);
+  });
+});

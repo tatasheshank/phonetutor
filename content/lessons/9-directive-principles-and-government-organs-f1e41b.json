@@ -1,0 +1,421 @@
+{
+  "id": "9-directive-principles-and-government-organs-f1e41b",
+  "version": 1,
+  "course": "history-and-civics",
+  "mode": "scripted",
+  "objectives": [
+    "Understand the Directive Principles of State Policy and their three groups.",
+    "Know the three organs of the Government of India and their roles."
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s14",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "ZWEv67LLVHM"
+      },
+      "label": "Directive Principles of State Policy (DPSP) | Indian Polity Explained Animation | UPSC, UPPSC, SSC",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s7",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s8",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s9",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s10",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s11",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s12",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s15",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "G4qVLPFGuvY"
+      },
+      "label": "Organs Of The Central Government | Class 8 - Civics | Learn With BYJU'S",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "9. ఆదేశిక సూత్రాలు మరియు ప్రభుత్వ అంగాలు",
+      "steps": {
+        "s1": {
+          "text": "ది డైరెక్టివ్ ప్రిన్సిపల్స్ ఆఫ్ స్టేట్ పాలసీ అనేవి రాజ్యాంగంలో 4వ భాగంలో, ఆర్టికల్స్ 36 నుంచి 51 వరకు ఉన్నాయి. ఈ ఐడియా ఐర్లాండ్ రాజ్యాంగం నుంచి తీసుకున్నాం."
+        },
+        "s2": {
+          "text": "ఇండియాని ఒక వెల్ఫేర్ స్టేట్ గా మార్చడానికి ఇవి ప్రభుత్వానికి గైడ్ లైన్స్ లాంటివి. వీటిని కోర్టులో అమలు చేయించలేము, కానీ దేశాన్ని పాలించడంలో ఇవి చాలా ముఖ్యం."
+        },
+        "s3": {
+          "text": "సోషలిస్ట్ ప్రిన్సిపల్స్ లో అందరికీ తగినంత జీవనాధారం, ఆడవాళ్ళకి, మగవాళ్ళకి సమాన పనికి సమాన వేతనం, కార్మికులకు కనీస వేతనం ఇవ్వడం లాంటివి ఉన్నాయి."
+        },
+        "s4": {
+          "text": "గాంధేయ ప్రిన్సిపల్స్ అంటే గ్రామ పంచాయతీలను ఏర్పాటు చేయడం, కుటీర పరిశ్రమలను ప్రోత్సహించడం, హానికరమైన మత్తు పానీయాలను నిషేధించడం."
+        },
+        "s5": {
+          "text": "లిబరల్ ప్రిన్సిపల్స్ లో పౌరులందరికీ ఒకే సివిల్ కోడ్, చిన్న పిల్లల సంరక్షణ మరియు విద్య, న్యాయవ్యవస్థను కార్యనిర్వాహక వర్గం నుంచి వేరు చేయడం, అంతర్జాతీయ శాంతిని ప్రోత్సహించడం ఉన్నాయి."
+        },
+        "s6": {
+          "text": "భారత ప్రభుత్వానికి మూడు విభాగాలు ఉన్నాయి. చట్టాలు చేసేది లెజిస్లేచర్."
+        },
+        "s7": {
+          "text": "కేంద్రంలో, లెజిస్లేచర్ అంటే పార్లమెంట్. ఇందులో ప్రెసిడెంట్, లోక్ సభ, రాజ్య సభ ఉంటాయి."
+        },
+        "s8": {
+          "text": "లోక్ సభను ప్రజలు నేరుగా 5 ఏళ్ల పాటు ఎన్నుకుంటారు. రాజ్య సభ అనేది ఒక శాశ్వత సభ, దీనిలో ప్రతి రెండేళ్లకోసారి మూడో వంతు సభ్యులు రిటైర్ అవుతారు."
+        },
+        "s9": {
+          "text": "చట్టాలను అమలు చేసేది ఎగ్జిక్యూటివ్. ప్రెసిడెంట్ రాష్ట్రానికి హెడ్, కానీ నిజమైన పవర్ ప్రైమ్ మినిస్టర్ మరియు మంత్రి మండలి చేతిలో ఉంటుంది."
+        },
+        "s10": {
+          "text": "ఎగ్జిక్యూటివ్ లోక్ సభకు జవాబుదారీగా ఉంటుంది. న్యాయవ్యవస్థ చట్టాలను వివరిస్తుంది, వివాదాలను పరిష్కరిస్తుంది మరియు పౌరుల హక్కులను కాపాడుతుంది."
+        },
+        "s11": {
+          "text": "సుప్రీం కోర్ట్ అత్యున్నత కోర్టు, దాని కింద హై కోర్ట్స్ మరియు కింది కోర్టులు ఉంటాయి."
+        },
+        "s12": {
+          "text": "ఈ మూడు విభాగాలు ఒకదానిపై ఒకటి చెక్ పెట్టుకుంటాయి, అప్పుడు ఏ విభాగం కూడా మరీ పవర్ ఫుల్ గా మారదు."
+        },
+        "s13": {
+          "question": "డైరెక్టివ్ ప్రిన్సిపల్స్ మరియు భారత ప్రభుత్వంలోని మూడు విభాగాల గురించి మీకు అర్థమైందా?",
+          "accept": [
+            "అవునండి",
+            "సరేనండి",
+            "అవును",
+            "అర్థమైంది",
+            "Yes, I understood.",
+            "Yes, I got it.",
+            "Yes.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s14": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "Directive Principles సంక్షేమ రాజ్యాన్ని నిర్మించడానికి ప్రభుత్వాన్ని నడిపిస్తాయి."
+            },
+            {
+              "text": "వాటిని కోర్టులో అమలు చేయించలేము."
+            },
+            {
+              "text": "అవి సోషలిస్ట్, గాంధీయన్, లిబరల్ సూత్రాలు."
+            }
+          ]
+        },
+        "s15": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "ప్రభుత్వానికి మూడు అంగాలు ఉన్నాయి."
+            },
+            {
+              "text": "చట్టసభ చట్టాలు చేస్తుంది, కార్యనిర్వాహక వర్గం వాటిని అమలు చేస్తుంది."
+            },
+            {
+              "text": "న్యాయవ్యవస్థ చట్టాలను వివరిస్తుంది, మన హక్కులను కాపాడుతుంది."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.615Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "9. राज्य के नीति निदेशक तत्व और सरकार के अंग",
+      "steps": {
+        "s1": {
+          "text": "राज्य की नीति के निर्देशक तत्व संविधान के भाग चार में हैं, जो अनुच्छेद 36 से 51 तक हैं। यह आइडिया आयरलैंड के संविधान से लिया गया था।"
+        },
+        "s2": {
+          "text": "ये सरकार के लिए गाइडलाइंस हैं ताकि भारत को एक वेलफेयर स्टेट बनाया जा सके। इन्हें कोर्ट में लागू नहीं किया जा सकता, लेकिन देश चलाने के लिए ये बहुत ज़रूरी हैं।"
+        },
+        "s3": {
+          "text": "सोशलिस्ट सिद्धांतों में सभी के लिए रोज़गार के सही साधन, पुरुषों और महिलाओं को समान काम के लिए समान वेतन, और मज़दूरों के लिए गुज़ारे लायक वेतन शामिल हैं।"
+        },
+        "s4": {
+          "text": "गांधीवादी सिद्धांतों का मतलब है ग्राम पंचायतों को व्यवस्थित करना, कुटीर उद्योगों को बढ़ावा देना, और नुकसानदायक नशीले पदार्थों पर रोक लगाना।"
+        },
+        "s5": {
+          "text": "लिबरल सिद्धांतों में सभी नागरिकों के लिए एक यूनिफॉर्म सिविल कोड, छोटे बच्चों की देखभाल और शिक्षा, न्यायपालिका को कार्यपालिका से अलग करना, और अंतर्राष्ट्रीय शांति को बढ़ावा देना शामिल है।"
+        },
+        "s6": {
+          "text": "भारत सरकार के तीन अंग हैं। विधायिका कानून बनाती है।"
+        },
+        "s7": {
+          "text": "केंद्र में, विधायिका संसद है, जो राष्ट्रपति, लोकसभा और राज्यसभा से मिलकर बनी है।"
+        },
+        "s8": {
+          "text": "लोकसभा के सदस्य लोगों द्वारा सीधे 5 साल के लिए चुने जाते हैं। राज्यसभा एक स्थायी सदन है, और इसके एक-तिहाई सदस्य हर 2 साल में रिटायर होते हैं।"
+        },
+        "s9": {
+          "text": "कार्यपालिका कानूनों को लागू करती है। राष्ट्रपति राज्य के प्रमुख हैं, लेकिन असली पावर प्रधानमंत्री और मंत्रिपरिषद के पास होती है।"
+        },
+        "s10": {
+          "text": "कार्यपालिका लोकसभा के प्रति जवाबदेह है। न्यायपालिका कानूनों को समझाती है, विवाद सुलझाती है और नागरिकों के अधिकारों की रक्षा करती है।"
+        },
+        "s11": {
+          "text": "सुप्रीम कोर्ट सबसे ऊँची अदालत है, और उसके नीचे हाई कोर्ट और निचली अदालतें हैं।"
+        },
+        "s12": {
+          "text": "ये तीनों अंग एक-दूसरे पर नज़र रखते हैं, ताकि कोई भी अंग बहुत ज़्यादा पावरफुल न बन जाए।"
+        },
+        "s13": {
+          "question": "क्या आपको निर्देशक तत्व और भारत सरकार के तीन अंगों के बारे में समझ आया?",
+          "accept": [
+            "हाँ",
+            "जी हाँ",
+            "बिल्कुल",
+            "सही है",
+            "हाँ, समझ गया/गईं",
+            "जी, समझ आया",
+            "Yes, I understood.",
+            "Yes, I got it.",
+            "Yes.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s14": {
+          "text": "अब चलिए एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "निर्देशात्मक सिद्धांत सरकार को कल्याणकारी राज्य बनाने में मार्गदर्शन देते हैं।"
+            },
+            {
+              "text": "उन्हें अदालत में लागू नहीं किया जा सकता।"
+            },
+            {
+              "text": "वे समाजवादी, गांधीवादी और उदारवादी सिद्धांत हैं।"
+            }
+          ]
+        },
+        "s15": {
+          "text": "अब चलिए एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "सरकार के तीन अंग हैं।"
+            },
+            {
+              "text": "विधानमंडल कानून बनाता है, और कार्यपालिका उन्हें लागू करती है।"
+            },
+            {
+              "text": "न्यायपालिका कानूनों को समझाती है और हमारे अधिकारों की रक्षा करती है।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.615Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "9. Directive Principles and government organs",
+      "steps": {
+        "s1": {
+          "text": "The Directive Principles of State Policy are in Part Four of the Constitution, from Articles 36 to 51. The idea was taken from the Constitution of Ireland."
+        },
+        "s2": {
+          "text": "They are guidelines for the government to make India a welfare state. They cannot be enforced in a court, but they are fundamental in governing the country."
+        },
+        "s3": {
+          "text": "Socialist principles include adequate means of livelihood for all, equal pay for equal work for men and women, and a living wage for workers."
+        },
+        "s4": {
+          "text": "Gandhian principles mean organising village panchayats, promoting cottage industries, and prohibiting harmful intoxicating drinks."
+        },
+        "s5": {
+          "text": "Liberal principles include a uniform civil code for all citizens, care and education for young children, separating the judiciary from the executive, and promoting international peace."
+        },
+        "s6": {
+          "text": "The Government of India has three organs. The legislature makes laws."
+        },
+        "s7": {
+          "text": "At the centre, the legislature is Parliament, made of the President, the Lok Sabha and the Rajya Sabha."
+        },
+        "s8": {
+          "text": "The Lok Sabha is elected directly by the people for five years. The Rajya Sabha is a permanent house, and one third of its members retire every two years."
+        },
+        "s9": {
+          "text": "The executive carries out the laws. The President is the head of the state, but real power is with the Prime Minister and the Council of Ministers."
+        },
+        "s10": {
+          "text": "The executive is responsible to the Lok Sabha. The judiciary explains the laws, settles disputes and protects the rights of citizens."
+        },
+        "s11": {
+          "text": "The Supreme Court is the highest court, and below it are the High Courts and the lower courts."
+        },
+        "s12": {
+          "text": "The three organs keep a check on each other, so that no organ becomes too powerful."
+        },
+        "s13": {
+          "question": "Did you understand the Directive Principles and the three organs of the Government of India?",
+          "accept": [
+            "Yes, I understood.",
+            "Yes, I got it.",
+            "Yes.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s14": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Directive Principles guide the government to build a welfare state."
+            },
+            {
+              "text": "They cannot be enforced in a court."
+            },
+            {
+              "text": "They are socialist, Gandhian and liberal principles."
+            }
+          ]
+        },
+        "s15": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "The government has three organs."
+            },
+            {
+              "text": "The legislature makes laws, and the executive carries them out."
+            },
+            {
+              "text": "The judiciary explains the laws and protects our rights."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.615Z"
+    }
+  },
+  "order": 9
+}

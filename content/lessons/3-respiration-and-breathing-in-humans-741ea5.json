@@ -1,0 +1,394 @@
+{
+  "id": "3-respiration-and-breathing-in-humans-741ea5",
+  "version": 1,
+  "course": "class-10-biology",
+  "mode": "scripted",
+  "objectives": [
+    "Explain how respiration releases energy from food",
+    "Describe the path of air during breathing and the role of alveoli and haemoglobin"
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s6",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s7",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s8",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s10",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "L85bKEsUv3g"
+      },
+      "label": "CLASS 10 LIFE PROCESSES FULL CHAPTER (Animation)| PART - 2  | NCERT Science chapter 6| Respiration",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        },
+        {
+          "at": 70,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "UyxKGYsWr94"
+      },
+      "label": "Human Respiratory System class10 / Animated / life processes class10 biology / respiration in human",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        },
+        {
+          "at": 70,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "3. మనుషుల్లో శ్వాసక్రియ మరియు శ్వాస తీసుకోవడం",
+      "steps": {
+        "s1": {
+          "text": "శ్వాసక్రియ ఆహారం నుండి శక్తిని విడుదల చేస్తుంది. మన కణాల లోపల, గ్లూకోజ్ విడిపోతుంది."
+        },
+        "s2": {
+          "text": "ఆక్సిజన్ తో దీన్ని ఏరోబిక్ రెస్పిరేషన్ అంటారు. ఇది కార్బన్ డైఆక్సైడ్, నీరు మరియు చాలా శక్తిని ఇస్తుంది. ఇది మైటోకాండ్రియాలో జరుగుతుంది."
+        },
+        "s3": {
+          "text": "ఆక్సిజన్ లేకుండా చేస్తే దీన్ని ఎనరోబిక్ రెస్పిరేషన్ అంటారు. ఈస్ట్ ఆల్కహాల్ మరియు కార్బన్ డైఆక్సైడ్ తయారు చేస్తుంది. మనం కష్టపడి వ్యాయామం చేసినప్పుడు మన కండరాలు లాక్టిక్ యాసిడ్ తయారు చేస్తాయి, దాని వల్ల కండరాలు పట్టేస్తాయి."
+        },
+        "s4": {
+          "text": "ఆ శక్తి కణం లోపల ATP రూపంలో నిల్వ ఉంటుంది."
+        },
+        "s5": {
+          "text": "గాలి నాసికల ద్వారా లోపలికి వస్తుంది. ఆ తర్వాత గొంతు, శ్వాసనాళం (ట్రాకియా) దాటి బ్రోన్కై, ఊపిరితిత్తుల్లోకి వెళుతుంది."
+        },
+        "s6": {
+          "text": "ఊపిరితిత్తుల్లో లక్షలాది చిన్న గాలి సంచులు ఉంటాయి. వాటిని ఆల్వియోలి అంటారు."
+        },
+        "s7": {
+          "text": "అక్కడ ఆక్సిజన్ రక్తంలోకి వెళుతుంది, కార్బన్ డైఆక్సైడ్ బయటకు వస్తుంది."
+        },
+        "s8": {
+          "text": "ఎర్ర రక్త కణాల్లో ఉండే హిమోగ్లోబిన్ ఆక్సిజన్ ని శరీరం అంతటా మోసుకెళ్తుంది."
+        },
+        "s9": {
+          "question": "మీకు అర్థమైందా?",
+          "accept": [
+            "అర్థమైంది",
+            "అవును",
+            "ఓకే",
+            "సరే",
+            "అవును అండి",
+            "అవును, అర్థమైంది",
+            "Yes, I understood",
+            "Yes, I did",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s10": {
+          "text": "ఇప్పుడు మనం ఒక చిన్న video చూద్దాం.",
+          "cues": [
+            {
+              "text": "ఆహారం నుంచి మన cells కి ఎనర్జీ ఎలా వస్తుందో చూడండి."
+            },
+            {
+              "text": "ఆక్సిజన్ తో, glucose కార్బన్ డై ఆక్సైడ్, నీరు, ఇంకా చాలా ఎనర్జీని ఇస్తుంది."
+            },
+            {
+              "text": "ఆక్సిజన్ లేకపోతే, yeast ఆల్కహాల్ తయారు చేస్తుంది, మన కండరాలు లాక్టిక్ యాసిడ్ తయారు చేస్తాయి."
+            },
+            {
+              "text": "ఆ ఎనర్జీ సెల్ లో ATP రూపంలో నిల్వ ఉంటుంది."
+            }
+          ]
+        },
+        "s11": {
+          "text": "ఇప్పుడు మనం ఒక చిన్న video చూద్దాం.",
+          "cues": [
+            {
+              "text": "మనం ఎలా శ్వాస తీసుకుంటామో చూడండి."
+            },
+            {
+              "text": "గాలి ముక్కు ద్వారా, windpipe లోకి ఊపిరితిత్తుల్లోకి వెళ్తుంది."
+            },
+            {
+              "text": "చిన్న గాలి సంచుల్లో, అంటే alveoli లో, ఆక్సిజన్ రక్తంలోకి చేరుతుంది."
+            },
+            {
+              "text": "ఎర్ర రక్త కణాల్లో ఉండే haemoglobin ఈ ఆక్సిజన్‌ను శరీరం అంతటా తీసుకువెళ్తుంది."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.768Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "3. इंसानों में श्वसन और सांस लेना",
+      "steps": {
+        "s1": {
+          "text": "श्वसन भोजन से ऊर्जा निकालता है। हमारी कोशिकाओं के अंदर, ग्लूकोज टूटता है।"
+        },
+        "s2": {
+          "text": "ऑक्सीजन के साथ, इसे एरोबिक रेस्पिरेशन कहते हैं। यह कार्बन डाइऑक्साइड, पानी और बहुत सारी ऊर्जा देता है। यह माइटोकॉन्ड्रिया में होता है।"
+        },
+        "s3": {
+          "text": "ऑक्सीजन के बिना, इसे एनारोबिक रेस्पिरेशन कहते हैं। यीस्ट अल्कोहल और कार्बन डाइऑक्साइड बनाता है। कड़ी एक्सरसाइज के दौरान हमारी मांसपेशियां लैक्टिक एसिड बनाती हैं, जिससे ऐंठन होती है।"
+        },
+        "s4": {
+          "text": "यह ऊर्जा कोशिका में ATP के रूप में स्टोर होती है।"
+        },
+        "s5": {
+          "text": "हवा नाक से अंदर जाती है। फिर यह गले और श्वासनली से होकर गुजरती है। श्वासनली को ट्रेकिया कहते हैं। उसके बाद यह ब्रोंकाई और फेफड़ों में जाती है।"
+        },
+        "s6": {
+          "text": "फेफड़ों में लाखों छोटे हवा के थैले होते हैं। इन्हें एल्वियोली कहते हैं।"
+        },
+        "s7": {
+          "text": "वहां, ऑक्सीजन खून में चली जाती है और कार्बन डाइऑक्साइड खून से बाहर निकलती है।"
+        },
+        "s8": {
+          "text": "लाल रक्त कोशिकाओं में मौजूद हीमोग्लोबिन ऑक्सीजन को पूरे शरीर में पहुंचाता है।"
+        },
+        "s9": {
+          "question": "क्या आपको इंसानों में श्वसन और सांस लेने की प्रक्रिया समझ आई?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "समझ आ गया",
+            "हूँ, समझ गया",
+            "हाँ-हाँ",
+            "जी हाँ",
+            "हाँ जी",
+            "बिल्कुल",
+            "हाँ, समझ में आ गया",
+            "जी, समझ आया",
+            "Yes, I understood",
+            "Yes, I did",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s10": {
+          "text": "अब हम एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "देखिए, हमारे cells को खाने से कैसे energy मिलती है।"
+            },
+            {
+              "text": "ऑक्सीजन के साथ, glucose से carbon dioxide, पानी और बहुत सारी energy निकलती है।"
+            },
+            {
+              "text": "ऑक्सीजन के बिना, yeast alcohol बनाता है, और हमारे muscles lactic acid बनाते हैं।"
+            },
+            {
+              "text": "यह energy cell में ATP के रूप में store हो जाती है।"
+            }
+          ]
+        },
+        "s11": {
+          "text": "अब हम एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "अब देखिए कि हम साँस कैसे लेते हैं।"
+            },
+            {
+              "text": "हवा नाक और windpipe से होकर फेफड़ों में जाती है।"
+            },
+            {
+              "text": "छोटी-छोटी air sacs, यानी alveoli में, ऑक्सीजन खून में मिल जाती है।"
+            },
+            {
+              "text": "लाल रक्त कोशिकाओं में मौजूद haemoglobin इस ऑक्सीजन को पूरे शरीर में पहुँचाता है।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.768Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "3. Respiration and breathing in humans",
+      "steps": {
+        "s1": {
+          "text": "Respiration releases energy from food. Inside our cells, glucose is broken down."
+        },
+        "s2": {
+          "text": "With oxygen, this is called aerobic respiration. It gives carbon dioxide, water and a lot of energy, and it happens in the mitochondria."
+        },
+        "s3": {
+          "text": "Without oxygen, this is called anaerobic respiration. Yeast makes alcohol and carbon dioxide, and our muscles make lactic acid during hard exercise, which causes cramps."
+        },
+        "s4": {
+          "text": "The energy is stored in the cell as ATP."
+        },
+        "s5": {
+          "text": "Air enters through the nostrils, passes the throat and the windpipe, called the trachea, and goes into the bronchi and the lungs."
+        },
+        "s6": {
+          "text": "The lungs have millions of tiny air sacs called alveoli."
+        },
+        "s7": {
+          "text": "There, oxygen passes into the blood and carbon dioxide passes out of it."
+        },
+        "s8": {
+          "text": "Haemoglobin in the red blood cells carries the oxygen around the body."
+        },
+        "s9": {
+          "question": "Did you understand respiration and breathing in humans?",
+          "accept": [
+            "Yes, I understood",
+            "Yes, I did",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s10": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Watch how our cells get energy from food."
+            },
+            {
+              "text": "With oxygen, glucose gives carbon dioxide, water and a lot of energy."
+            },
+            {
+              "text": "Without oxygen, yeast makes alcohol, and our muscles make lactic acid."
+            },
+            {
+              "text": "The energy is stored in the cell as ATP."
+            }
+          ]
+        },
+        "s11": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Now see how we breathe."
+            },
+            {
+              "text": "Air goes through the nose and the windpipe into the lungs."
+            },
+            {
+              "text": "In the tiny air sacs, the alveoli, oxygen enters the blood."
+            },
+            {
+              "text": "Haemoglobin in the red blood cells carries this oxygen around the body."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.768Z"
+    }
+  },
+  "order": 3
+}

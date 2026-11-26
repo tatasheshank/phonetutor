@@ -1,0 +1,335 @@
+{
+  "id": "1-what-is-history-and-why-study-it-b1ad9b",
+  "version": 1,
+  "course": "history-and-civics",
+  "mode": "scripted",
+  "objectives": [
+    "Understand the meaning of history",
+    "Know why history is important",
+    "Understand the wide scope of history"
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s6",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s7",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s8",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s9",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s10",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s12",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "ovkcCuBezz0"
+      },
+      "label": "What is History? What makes history so important? | History for Kids",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "1. చరిత్ర అంటే ఏమిటి, దాన్ని ఎందుకు చదువుతాం",
+      "steps": {
+        "s1": {
+          "text": "హిస్టరీ అనే పదం గ్రీక్ పదం historia నుంచి వచ్చింది. అంటే ప్రశ్నలు అడగడం ద్వారా వచ్చే జ్ఞానం లేదా విచారణ అని అర్థం."
+        },
+        "s2": {
+          "text": "హిస్టరీ అంటే మనుషుల గతాన్ని అధ్యయనం చేయడం. ప్రజలు ఏం చేశారు, ఎలా బతికారు, పరిస్థితులు ఎందుకు మారాయి అనేది ఇందులో ఉంటుంది."
+        },
+        "s3": {
+          "text": "చరిత్రకారుడు E. H. Carr హిస్టరీని వర్తమానం, గతం మధ్య జరిగే అంతులేని సంభాషణ అని చెప్పారు."
+        },
+        "s4": {
+          "text": "గతం నుంచి నేటి ప్రపంచం పుట్టింది కాబట్టి, హిస్టరీ మనకు వర్తమానాన్ని అర్థం చేసుకోవడానికి సహాయపడుతుంది."
+        },
+        "s5": {
+          "text": "ఇది మన సంస్కృతి, వారసత్వం గురించి నేర్పుతుంది. మన దేశం మీద ప్రేమను పెంచుతుంది."
+        },
+        "s6": {
+          "text": "పాత కాలపు వాళ్లు చేసిన తప్పులు, విజయాలను ఇది చూపిస్తుంది. వాటి నుంచి మనం నేర్చుకోవచ్చు."
+        },
+        "s7": {
+          "text": "ఆధారాలను చూడటం, వేర్వేరు మూలాలను పోల్చడం, విమర్శనాత్మకంగా ఆలోచించడం లాంటివి ఇది మన మైండ్‌కి నేర్పుతుంది."
+        },
+        "s8": {
+          "text": "వేర్వేరు ప్రజలు, మతాలు కలిసి ఎలా బతికారో మనం నేర్చుకుంటాం కాబట్టి, ఇది సహనాన్ని కూడా పెంచుతుంది."
+        },
+        "s9": {
+          "text": "హిస్టరీ పరిధి చాలా పెద్దది. ప్రాచీన కాలం నుంచి ఇప్పటి వరకు ప్రతి కాలాన్ని, మన ఊరి నుంచి ప్రపంచం వరకు ప్రతి ప్రదేశాన్ని ఇది కవర్ చేస్తుంది."
+        },
+        "s10": {
+          "text": "రాజకీయాలు, సమాజం, ఆర్థిక వ్యవస్థ, మతం, కళ, సైన్స్, ఆలోచనలు... ఇలా మానవ జీవితంలోని ప్రతి కోణాన్ని ఇది అధ్యయనం చేస్తుంది."
+        },
+        "s11": {
+          "question": "హిస్టరీ అంటే ఏమిటి, దాన్ని ఎందుకు చదువుతాం అనేది మీకు అర్థమైందా?",
+          "accept": [
+            "అర్థమైంది",
+            "అవును, అర్థమైంది",
+            "సరే",
+            "ఓకే",
+            "అవును",
+            "అవునండి",
+            "అవును సార్/మేడమ్",
+            "క్లియర్ గా అర్థమైంది",
+            "Yes",
+            "Yes, I did",
+            "I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s12": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "చరిత్ర అంటే మనకంటే ముందు జీవించిన వ్యక్తుల కథ."
+            },
+            {
+              "text": "గతం గురించి తెలుసుకోవడం వల్ల ఈ రోజు మన ప్రపంచాన్ని అర్థం చేసుకోవడానికి వీలవుతుంది."
+            },
+            {
+              "text": "గతంలో జరిగిన తప్పులు, విజయాల నుంచి మనం నేర్చుకుంటాం."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.860Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "1. इतिहास क्या है और हम इसे क्यों पढ़ते हैं",
+      "steps": {
+        "s1": {
+          "text": "इतिहास शब्द ग्रीक शब्द हिस्टोरिया से आया है। इसका मतलब है पूछताछ, या सवाल पूछकर हासिल किया गया ज्ञान।"
+        },
+        "s2": {
+          "text": "इतिहास इंसानों के अतीत की पढ़ाई है। इसमें यह बताया गया है कि लोगों ने क्या किया, वे कैसे रहते थे, और चीज़ें क्यों बदलीं।"
+        },
+        "s3": {
+          "text": "इतिहासकार ई. एच. कार ने इतिहास को वर्तमान और अतीत के बीच एक कभी न खत्म होने वाली बातचीत कहा है।"
+        },
+        "s4": {
+          "text": "इतिहास हमें वर्तमान समझने में मदद करता है, क्योंकि आज की दुनिया अतीत से ही निकली है।"
+        },
+        "s5": {
+          "text": "यह हमें हमारी संस्कृति और विरासत के बारे में बताता है, और देश के लिए प्यार जगाता है।"
+        },
+        "s6": {
+          "text": "यह हमें पहले के लोगों की गलतियों और सफलताओं के बारे में दिखाता है, ताकि हम उनसे सीख सकें।"
+        },
+        "s7": {
+          "text": "यह दिमाग को सबूत देखने, स्रोतों की तुलना करने और गहराई से सोचने की ट्रेनिंग देता है।"
+        },
+        "s8": {
+          "text": "यह सहनशीलता भी बढ़ाता है, क्योंकि हम सीखते हैं कि अलग-अलग लोग और धर्म एक साथ कैसे रहते थे।"
+        },
+        "s9": {
+          "text": "इतिहास का दायरा बहुत बड़ा है। यह प्राचीन काल से लेकर आज तक के हर दौर को कवर करता है, और हमारे गाँव से लेकर पूरी दुनिया तक की हर जगह को।"
+        },
+        "s10": {
+          "text": "यह इंसानी जीवन के हर पहलू की पढ़ाई करता है, जिसमें राजनीति, समाज, अर्थव्यवस्था, धर्म, कला, विज्ञान और विचार शामिल हैं।"
+        },
+        "s11": {
+          "question": "क्या आपको समझ आया कि इतिहास क्या है और हम इसे क्यों पढ़ते हैं?",
+          "accept": [
+            "हाँ",
+            "जी हाँ",
+            "बिलकुल",
+            "सही कहा",
+            "हाँ जी",
+            "जी, समझ गया/गईं",
+            "हाँ, समझ आया",
+            "जी, समझ में आ गया",
+            "Yes",
+            "Yes, I did",
+            "I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s12": {
+          "text": "अब चलिए एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "इतिहास उन लोगों की कहानी है जो हमसे पहले जी चुके हैं।"
+            },
+            {
+              "text": "अतीत को जानने से हमें आज की दुनिया समझने में मदद मिलती है।"
+            },
+            {
+              "text": "हम पहले के लोगों की गलतियों और सफलताओं से सीखते हैं।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.860Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "1. What is History and why study it",
+      "steps": {
+        "s1": {
+          "text": "The word history comes from the Greek word historia. It means inquiry, or knowledge gained by asking questions."
+        },
+        "s2": {
+          "text": "History is the study of the past of human beings. It covers what people did, how they lived, and why things changed."
+        },
+        "s3": {
+          "text": "The historian E. H. Carr called history an unending dialogue between the present and the past."
+        },
+        "s4": {
+          "text": "History helps us understand the present, because today's world grew out of the past."
+        },
+        "s5": {
+          "text": "It teaches us about our culture and heritage, and builds love for the nation."
+        },
+        "s6": {
+          "text": "It shows us the mistakes and successes of earlier people, so that we can learn from them."
+        },
+        "s7": {
+          "text": "It trains the mind to look at evidence, compare sources and think critically."
+        },
+        "s8": {
+          "text": "It also builds tolerance, because we learn how different peoples and religions lived together."
+        },
+        "s9": {
+          "text": "The scope of History is very wide. It covers every period, from ancient times to the present day, and every place, from our village to the whole world."
+        },
+        "s10": {
+          "text": "It studies every side of human life, including politics, society, economy, religion, art, science and ideas."
+        },
+        "s11": {
+          "question": "Did you understand what history is and why we study it?",
+          "accept": [
+            "Yes",
+            "Yes, I did",
+            "I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s12": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "History is the story of people who lived before us."
+            },
+            {
+              "text": "Knowing the past helps us understand our world today."
+            },
+            {
+              "text": "We learn from the mistakes and successes of earlier people."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.860Z"
+    }
+  },
+  "order": 1
+}

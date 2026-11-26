@@ -1,0 +1,378 @@
+{
+  "id": "3-capitalism-and-democracy-basics-86de44",
+  "version": 1,
+  "course": "history-and-civics",
+  "mode": "scripted",
+  "objectives": [
+    "Explain the basic ideas of capitalism and democracy."
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s11",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "H6a1hb0c3qI"
+      },
+      "label": "Capitalism | Animation",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s6",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s7",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s8",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s9",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s12",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "u6jgWxkbR7A"
+      },
+      "label": "Democracy - A short introduction",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "3. పెట్టుబడిదారీ విధానం మరియు ప్రజాస్వామ్యం",
+      "steps": {
+        "s1": {
+          "text": "క్యాపిటలిజం అనేది ఒక ఆర్థిక వ్యవస్థ. ఇందులో ఫ్యాక్టరీలు, భూమి, వ్యాపారాలు ప్రభుత్వానివి కావు, ప్రైవేట్ వ్యక్తులవి."
+        },
+        "s2": {
+          "text": "ప్రజలు లాభం కోసం వస్తువులను తయారు చేస్తారు. మార్కెట్లో పోటీని బట్టి ధరలు నిర్ణయించబడతాయి."
+        },
+        "s3": {
+          "text": "ఆడమ్ స్మిత్ తన 1776 పుస్తకం The Wealth of Nations లో ఈ విషయాలను వివరించారు."
+        },
+        "s4": {
+          "text": "క్యాపిటలిజం వల్ల వేగంగా అభివృద్ధి, కొత్త ఆవిష్కరణలు వచ్చాయి. కానీ ఇది ధనవంతులు, పేదల మధ్య పెద్ద గ్యాప్ కూడా తీసుకురావచ్చు."
+        },
+        "s5": {
+          "text": "డెమోక్రసీ అనే పదం రెండు గ్రీకు పదాల నుండి వచ్చింది. డెమోస్ అంటే ప్రజలు, క్రాటోస్ అంటే పాలన."
+        },
+        "s6": {
+          "text": "అంటే డెమోక్రసీ అంటే ప్రజల పాలన. అబ్రహం లింకన్ దీనిని ప్రజల చేత, ప్రజల కోసం, ప్రజల ప్రభుత్వం అని చెప్పారు."
+        },
+        "s7": {
+          "text": "డైరెక్ట్ డెమోక్రసీలో, ప్రాచీన ఏథెన్స్ లో లాగా ప్రజలు స్వయంగా చట్టాలను నిర్ణయిస్తారు."
+        },
+        "s8": {
+          "text": "ఇండియా లాగా రిప్రజెంటేటివ్ డెమోక్రసీలో, ప్రజలు తమ ప్రతినిధులను ఎన్నుకుంటారు. వారే చట్టాలు చేస్తారు."
+        },
+        "s9": {
+          "text": "డెమోక్రసీ అనేది స్వేచ్ఛాయుత, న్యాయమైన ఎన్నికలు, సమానత్వం, చట్టబద్ధమైన పాలన, వాక్ స్వాతంత్ర్యం మీద ఆధారపడి ఉంటుంది."
+        },
+        "s10": {
+          "question": "మీకు క్యాపిటలిజం, డెమోక్రసీ బేసిక్స్ అర్థమయ్యాయా?",
+          "accept": [
+            "అవునండి",
+            "సరేనండి",
+            "అవును",
+            "ఓకేనండి",
+            "అర్థమైంది",
+            "Yes, I did.",
+            "Yes, I understood.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s11": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "పెట్టుబడిదారీ విధానంలో, ప్రైవేట్ వ్యక్తులు ఫ్యాక్టరీలు, భూములు, వ్యాపారాలను కలిగి ఉంటారు."
+            },
+            {
+              "text": "వారు లాభం కోసం వస్తువులను ఉత్పత్తి చేస్తారు, మార్కెట్ ధరలను నిర్ణయిస్తుంది."
+            },
+            {
+              "text": "ఇది వృద్ధిని తెస్తుంది, కానీ ధనికులు, పేదల మధ్య గ్యాప్ కూడా పెంచుతుంది."
+            }
+          ]
+        },
+        "s12": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "ప్రజాస్వామ్యం అంటే ప్రజల పాలన."
+            },
+            {
+              "text": "ప్రాతినిధ్య ప్రజాస్వామ్యంలో, చట్టాలు చేసే నాయకులను ప్రజలు ఎన్నుకుంటారు."
+            },
+            {
+              "text": "స్వేచ్ఛాయుత ఎన్నికలు, సమానత్వం, వాక్ స్వాతంత్ర్యం ప్రజాస్వామ్యాన్ని సజీవంగా ఉంచుతాయి."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.835Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "3. पूंजीवाद और लोकतंत्र",
+      "steps": {
+        "s1": {
+          "text": "कैपिटलिज्म एक ऐसी इकॉनमी है जहाँ फैक्ट्रियां, ज़मीन और बिज़नेस सरकार के नहीं, बल्कि प्राइवेट लोगों के होते हैं।"
+        },
+        "s2": {
+          "text": "लोग प्रॉफिट कमाने के लिए सामान बनाते हैं, और मार्केट में कॉम्पिटिशन के हिसाब से कीमतें तय होती हैं।"
+        },
+        "s3": {
+          "text": "एडम स्मिथ ने अपनी 1776 की किताब The Wealth of Nations में इन बातों को समझाया था।"
+        },
+        "s4": {
+          "text": "कैपिटलिज्म से तेज़ी से ग्रोथ और नई चीज़ें आईं, लेकिन इससे अमीर और गरीब के बीच बहुत बड़ा गैप भी बन सकता है।"
+        },
+        "s5": {
+          "text": "डेमोक्रेसी दो ग्रीक शब्दों से बनी है: डेमोस, जिसका मतलब लोग, और क्रैटोस, जिसका मतलब राज।"
+        },
+        "s6": {
+          "text": "तो डेमोक्रेसी का मतलब है लोगों का राज। अब्राहम लिंकन ने इसे लोगों की, लोगों द्वारा और लोगों के लिए सरकार कहा था।"
+        },
+        "s7": {
+          "text": "डायरेक्ट डेमोक्रेसी में लोग खुद कानून तय करते हैं, जैसे पुराने एथेंस में होता था।"
+        },
+        "s8": {
+          "text": "इंडिया जैसी रिप्रेजेंटेटिव डेमोक्रेसी में, लोग अपने प्रतिनिधि चुनते हैं जो कानून बनाते हैं।"
+        },
+        "s9": {
+          "text": "डेमोक्रेसी फ्री और फेयर इलेक्शन, बराबरी, कानून के राज और बोलने की आज़ादी पर टिकी होती है।"
+        },
+        "s10": {
+          "question": "क्या आपको कैपिटलिज्म और डेमोक्रेसी की बेसिक बातें समझ आई हैं?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "बिल्कुल",
+            "सही बात",
+            "ठीक है",
+            "हाँ जी",
+            "एकदम सही",
+            "बिलकुल समझ आ गया",
+            "Yes, I did.",
+            "Yes, I understood.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s11": {
+          "text": "अब चलिए एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "पूंजीवाद के तहत, निजी लोग कारखानों, ज़मीन और व्यापार के मालिक होते हैं।"
+            },
+            {
+              "text": "वे मुनाफा कमाने के लिए सामान बनाते हैं, और बाज़ार कीमतें तय करता है।"
+            },
+            {
+              "text": "इससे विकास तो होता है, लेकिन अमीर और गरीब के बीच खाई भी आती है।"
+            }
+          ]
+        },
+        "s12": {
+          "text": "अब चलिए एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "लोकतंत्र का मतलब है जनता का शासन।"
+            },
+            {
+              "text": "प्रतिनिधि लोकतंत्र में, लोग ऐसे नेताओं को चुनते हैं जो कानून बनाते हैं।"
+            },
+            {
+              "text": "स्वतंत्र चुनाव, समानता और बोलने की आज़ादी लोकतंत्र को ज़िंदा रखते हैं।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.835Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "3. Capitalism and Democracy basics",
+      "steps": {
+        "s1": {
+          "text": "Capitalism is an economic system where factories, land and businesses are owned by private people, not the government."
+        },
+        "s2": {
+          "text": "People produce goods to earn profit, and prices are decided by competition in the market."
+        },
+        "s3": {
+          "text": "Adam Smith explained these ideas in his 1776 book The Wealth of Nations."
+        },
+        "s4": {
+          "text": "Capitalism brought fast growth and new inventions, but it can also create a big gap between the rich and the poor."
+        },
+        "s5": {
+          "text": "Democracy comes from two Greek words: demos, meaning people, and kratos, meaning rule."
+        },
+        "s6": {
+          "text": "So democracy means rule by the people. Abraham Lincoln described it as government of the people, by the people and for the people."
+        },
+        "s7": {
+          "text": "In a direct democracy, the people decide laws themselves, as in ancient Athens."
+        },
+        "s8": {
+          "text": "In a representative democracy, like India, the people elect representatives who make the laws."
+        },
+        "s9": {
+          "text": "Democracy depends on free and fair elections, equality, the rule of law and freedom of speech."
+        },
+        "s10": {
+          "question": "Did you understand capitalism and democracy basics?",
+          "accept": [
+            "Yes, I did.",
+            "Yes, I understood.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s11": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Under capitalism, private people own factories, land and businesses."
+            },
+            {
+              "text": "They produce goods to earn profit, and the market sets prices."
+            },
+            {
+              "text": "It brings growth, but also a gap between the rich and the poor."
+            }
+          ]
+        },
+        "s12": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Democracy means rule by the people."
+            },
+            {
+              "text": "In a representative democracy, people elect leaders who make laws."
+            },
+            {
+              "text": "Free elections, equality and freedom of speech keep democracy alive."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.835Z"
+    }
+  },
+  "order": 3
+}

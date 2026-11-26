@@ -1,0 +1,305 @@
+{
+  "id": "7-indian-constitution-main-features-62c611",
+  "version": 1,
+  "course": "history-and-civics",
+  "mode": "scripted",
+  "objectives": [
+    "Recall the adoption and enforcement dates of the Indian Constitution",
+    "Identify the key features including government structure, rights, and secularism"
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s6",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s7",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s8",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s10",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "dJfahPoL3HQ"
+      },
+      "label": "Features of the Indian Constitution",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "7. భారత రాజ్యాంగం ముఖ్యమైన లక్షణాలు",
+      "steps": {
+        "s1": {
+          "text": "ఇండియా రాజ్యాంగాన్ని 1949 నవంబర్ 26న ఆమోదించారు. ఇది 1950 జనవరి 26న అమలులోకి వచ్చింది. దీన్ని మనం రిపబ్లిక్ డే గా జరుపుకుంటాం. డాక్టర్ బి. ఆర్. అంబేద్కర్ గారిది దీని డ్రాఫ్టింగ్ కమిటీకి చైర్మన్ గా ఉన్నారు."
+        },
+        "s2": {
+          "text": "ఇది ప్రపంచంలోనే అతి పొడవైన రాతపూర్వక రాజ్యాంగం."
+        },
+        "s3": {
+          "text": "ప్రియంబుల్ లో ఇండియాను సార్వభౌమ, సోషలిస్ట్, లౌకిక, ప్రజాస్వామ్య రిపబ్లిక్ గా ప్రకటించారు."
+        },
+        "s4": {
+          "text": "ఇండియాలో పార్లమెంటరీ ప్రభుత్వ విధానం ఉంది. ఇది బలమైన కేంద్రంతో కూడిన ఫెడరల్ సిస్టమ్."
+        },
+        "s5": {
+          "text": "పౌరులకు ఫండమెంటల్ రైట్స్, ఫండమెంటల్ డ్యూటీస్ ఉంటాయి. ప్రభుత్వం డైరెక్టివ్ ప్రిన్సిపల్స్ ఆఫ్ స్టేట్ పాలసీ ప్రకారం నడుస్తుంది."
+        },
+        "s6": {
+          "text": "న్యాయ వ్యవస్థ స్వతంత్రమైనది. 18 ఏళ్లు లేదా అంతకంటే ఎక్కువ వయసు ఉన్న ప్రతి పౌరుడు ఓటు వేయవచ్చు. దీన్ని యూనివర్సల్ అడల్ట్ ఫ్రాంచైజ్ అంటారు."
+        },
+        "s7": {
+          "text": "సింగిల్ సిటిజన్‌షిప్ ఉంది. రాజ్యాంగం కొంత రిజిడ్ గా, కొంత ఫ్లెక్సిబుల్ గా ఉంటుంది. కాబట్టి అవసరమైనప్పుడు దీన్ని సవరించవచ్చు."
+        },
+        "s8": {
+          "text": "ఇండియా లౌకిక దేశం. ప్రభుత్వం అన్ని మతాలను సమానంగా చూస్తుంది."
+        },
+        "s9": {
+          "question": "ఇండియన్ రాజ్యాంగం మెయిన్ ఫీచర్స్ మీకు అర్థమయ్యాయా?",
+          "accept": [
+            "అర్థమైంది",
+            "అవును",
+            "అవునులే",
+            "ఓకే",
+            "అవును సరే",
+            "అవును అండి",
+            "అవును కదా",
+            "అవునుండి",
+            "Yes",
+            "I understood",
+            "Correct",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s10": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "మన రాజ్యాంగం 26 January 1950న అమల్లోకి వచ్చింది."
+            },
+            {
+              "text": "ఇది ప్రపంచంలోనే అతిపెద్ద రాతపూర్వక రాజ్యాంగం."
+            },
+            {
+              "text": "ఇది Fundamental Rights, పార్లమెంటరీ ప్రభుత్వం, స్వతంత్ర న్యాయవ్యవస్థను ఇస్తుంది."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.700Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "7. भारतीय संविधान की मुख्य विशेषताएँ",
+      "steps": {
+        "s1": {
+          "text": "भारत का संविधान 26 नवंबर 1949 को अपनाया गया था। यह 26 जनवरी 1950 को लागू हुआ, जिसे हम गणतंत्र दिवस के रूप में मनाते हैं। डॉ. बी. आर. अंबेडकर इसकी ड्राफ्टिंग कमेटी के चेयरमैन थे।"
+        },
+        "s2": {
+          "text": "यह दुनिया का सबसे लंबा लिखित संविधान है।"
+        },
+        "s3": {
+          "text": "प्रस्तावना भारत को एक संप्रभु, समाजवादी, धर्मनिरपेक्ष और लोकतांत्रिक गणतंत्र घोषित करती है।"
+        },
+        "s4": {
+          "text": "भारत में संसदीय सरकार है। यह एक संघीय व्यवस्था है, जिसमें केंद्र मजबूत है।"
+        },
+        "s5": {
+          "text": "नागरिकों के पास मौलिक अधिकार और मौलिक कर्तव्य हैं। सरकार को राज्य नीति के निर्देशक सिद्धांतों से मार्गदर्शन मिलता है।"
+        },
+        "s6": {
+          "text": "न्यायपालिका स्वतंत्र है। 18 साल या उससे ज्यादा उम्र का हर नागरिक वोट दे सकता है। इसे सार्वभौमिक वयस्क मताधिकार कहते हैं।"
+        },
+        "s7": {
+          "text": "यहाँ एकल नागरिकता है। संविधान आंशिक रूप से कठोर और आंशिक रूप से लचीला है। इसलिए जरूरत पड़ने पर इसमें संशोधन किया जा सकता है।"
+        },
+        "s8": {
+          "text": "भारत धर्मनिरपेक्ष है। राज्य सभी धर्मों के साथ समान व्यवहार करता है।"
+        },
+        "s9": {
+          "question": "क्या आपको भारतीय संविधान की मुख्य विशेषताएँ समझ में आईं?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "बिल्कुल",
+            "जी हाँ",
+            "हाँ जी",
+            "हाँ, समझ गया/गई",
+            "हाँ, क्लियर है",
+            "Yes",
+            "I understood",
+            "Correct",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s10": {
+          "text": "अब चलिए एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "हमारा संविधान 26 जनवरी 1950 को लागू हुआ।"
+            },
+            {
+              "text": "यह दुनिया का सबसे लंबा लिखित संविधान है।"
+            },
+            {
+              "text": "यह मौलिक अधिकार, संसदीय सरकार और स्वतंत्र न्यायपालिका देता है।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.700Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "7. Indian Constitution main features",
+      "steps": {
+        "s1": {
+          "text": "The Constitution of India was adopted on 26 November 1949 and came into force on 26 January 1950, which we celebrate as Republic Day. Dr. B. R. Ambedkar was the chairman of its Drafting Committee."
+        },
+        "s2": {
+          "text": "It is the longest written constitution in the world."
+        },
+        "s3": {
+          "text": "The Preamble declares India a sovereign, socialist, secular, democratic republic."
+        },
+        "s4": {
+          "text": "India has a parliamentary form of government. It is a federal system with a strong centre."
+        },
+        "s5": {
+          "text": "Citizens have Fundamental Rights and Fundamental Duties, and the government is guided by the Directive Principles of State Policy."
+        },
+        "s6": {
+          "text": "The judiciary is independent. Every citizen aged 18 or above can vote, which is universal adult franchise."
+        },
+        "s7": {
+          "text": "There is single citizenship. The Constitution is partly rigid and partly flexible, so it can be amended when needed."
+        },
+        "s8": {
+          "text": "India is secular: the state treats all religions equally."
+        },
+        "s9": {
+          "question": "Did you understand the main features of the Indian Constitution?",
+          "accept": [
+            "Yes",
+            "I understood",
+            "Correct",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s10": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Our Constitution came into force on 26 January 1950."
+            },
+            {
+              "text": "It is the longest written constitution in the world."
+            },
+            {
+              "text": "It gives Fundamental Rights, a parliamentary government and an independent judiciary."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.700Z"
+    }
+  },
+  "order": 7
+}

@@ -1,0 +1,357 @@
+{
+  "id": "8-fundamental-rights-and-duties-a55014",
+  "version": 1,
+  "course": "history-and-civics",
+  "mode": "scripted",
+  "objectives": [
+    "Understand the six Fundamental Rights in the Constitution",
+    "Know where Fundamental Duties are located and what they include"
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s6",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s7",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s8",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s9",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s10",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s11",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s12",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s14",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "cwAf2HxMQzc"
+      },
+      "label": "Our Rights and Duties l Fundamental Rights l Fundamental duties l Directive principles state policy",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "8. ప్రాథమిక హక్కులు మరియు విధులు",
+      "steps": {
+        "s1": {
+          "text": "Fundamental Rights అనేవి రాజ్యాంగంలోని మూడవ భాగంలో, Articles 12 నుండి 35 వరకు ఉన్నాయి. ఇవి ప్రతి పౌరుడి స్వేచ్ఛను, గౌరవాన్ని కాపాడతాయి. వీటిని ఉల్లంఘిస్తే పౌరుడు కోర్టుకు వెళ్ళవచ్చు."
+        },
+        "s2": {
+          "text": "మొత్తం ఆరు Fundamental Rights ఉన్నాయి. Right to Equality అంటే చట్టం ముందు అందరూ సమానమే, అలాగే అంటరానితనం రద్దు చేయబడింది."
+        },
+        "s3": {
+          "text": "Right to Freedom లో మాట్లాడే స్వేచ్ఛ, గుమిగూడే స్వేచ్ఛ, తిరిగే స్వేచ్ఛ, అలాగే వృత్తిని ఎంచుకునే స్వేచ్ఛ ఉంటాయి."
+        },
+        "s4": {
+          "text": "Right against Exploitation ఫ్యాక్టరీలలో బలవంతపు కూలిని, బాలకార్మిక వ్యవస్థను నిషేధిస్తుంది."
+        },
+        "s5": {
+          "text": "Right to Freedom of Religion మరియు Cultural and Educational Rights ద్వారా మైనారిటీలు తమ సంస్కృతిని కాపాడుకోవచ్చు, తమ సొంత స్కూల్స్ నడుపుకోవచ్చు."
+        },
+        "s6": {
+          "text": "Right to Constitutional Remedies, Article 32 ద్వారా పౌరుడు నేరుగా Supreme Court కు వెళ్ళవచ్చు. Dr. Ambedkar గారు Article 32 ను రాజ్యాంగాని గుండెకాయ, ఆత్మ అని పిలిచారు."
+        },
+        "s7": {
+          "text": "Right to Property ను 1978 లో 44th Amendment ద్వారా ఆ లిస్ట్ నుండి తీసేశారు."
+        },
+        "s8": {
+          "text": "Swaran Singh Committee సలహా మేరకు 1976 లో 42nd Amendment ద్వారా Fundamental Duties ను చేర్చారు. ఇవి Article 51A లో ఉన్నాయి."
+        },
+        "s9": {
+          "text": "మొదట్లో పది ఉన్నాయి, 2002 లో పదకొండవది కూడా కలిపారు."
+        },
+        "s10": {
+          "text": "రాజ్యాంగాన్ని, National Flag ను, National Anthem ను గౌరవించడం, అలాగే India ఐక్యతను, సమగ్రతను కాపాడటం కొన్ని duties."
+        },
+        "s11": {
+          "text": "మిగతా duties లో సామరస్యం, సోదరభావం పెంచడం, మహిళలను గౌరవించడం, అడవులు, నదులు, వన్యప్రాణులను రక్షించడం, శాస్త్రీయ దృక్పథాన్ని పెంపొందించుకోవడం ఉన్నాయి."
+        },
+        "s12": {
+          "text": "పౌరులు ప్రభుత్వ ఆస్తిని కాపాడాలి, హింసకు దూరంగా ఉండాలి. అలాగే తల్లిదండ్రులు 6 నుండి 14 ఏళ్ల పిల్లలకు చదువుకునే అవకాశం ఇవ్వాలి."
+        },
+        "s13": {
+          "question": "మీకు Fundamental Rights మరియు Duties అర్థమయ్యాయా?",
+          "accept": [
+            "అర్థమయ్యాయి",
+            "అవును",
+            "అవును అండి",
+            "సరేనండి",
+            "అవును, క్లియర్ గా అర్థమైంది",
+            "అవును అండి, అర్థమైంది",
+            "Yes",
+            "I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s14": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "Fundamental Rights ప్రతి పౌరుడి స్వేచ్ఛను, గౌరవాన్ని కాపాడతాయి."
+            },
+            {
+              "text": "హక్కులతో పాటు దేశ పట్ల విధులు కూడా వస్తాయి."
+            },
+            {
+              "text": "Fundamental Duties ఆర్టికల్ 51Aలో ఉన్నాయి."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.671Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "8. मूल अधिकार और कर्तव्य",
+      "steps": {
+        "s1": {
+          "text": "Fundamental Rights संविधान के भाग तीन में हैं, Articles 12 से 35 तक। ये हर नागरिक की आज़ादी और सम्मान की रक्षा करते हैं। अगर इनका उल्लंघन हो, तो नागरिक कोर्ट जा सकता है।"
+        },
+        "s2": {
+          "text": "छह Fundamental Rights हैं। Right to Equality का मतलब है कि कानून के सामने सब बराबर हैं, और छुआछूत खत्म कर दी गई है।"
+        },
+        "s3": {
+          "text": "Right to Freedom में बोलने, इकट्ठा होने, घूमने और अपना पेशा चुनने की आज़ादी शामिल है।"
+        },
+        "s4": {
+          "text": "Right against Exploitation फैक्ट्रियों में जबरन मजदूरी और बाल मजदूरी पर रोक लगाता है।"
+        },
+        "s5": {
+          "text": "Right to Freedom of Religion और Cultural and Educational Rights की वजह से अल्पसंख्यक अपनी संस्कृति बचा सकते हैं और अपने स्कूल चला सकते हैं।"
+        },
+        "s6": {
+          "text": "Right to Constitutional Remedies, Article 32, नागरिक को सीधे सुप्रीम कोर्ट जाने की सुविधा देता है। Dr. Ambedkar ने Article 32 को संविधान का दिल और आत्मा कहा था।"
+        },
+        "s7": {
+          "text": "Right to Property को 1978 में 44th Amendment के ज़रिए लिस्ट से हटा दिया गया था।"
+        },
+        "s8": {
+          "text": "Fundamental Duties को 1976 में Swaran Singh Committee की सलाह पर 42nd Amendment से जोड़ा गया था। ये Article 51A में हैं।"
+        },
+        "s9": {
+          "text": "शुरू में 10 duties थीं, और 2002 में 11वीं duty जोड़ी गई।"
+        },
+        "s10": {
+          "text": "कुछ duties में संविधान, National Flag और National Anthem का सम्मान करना, और भारत की एकता और अखंडता को बचाना शामिल है।"
+        },
+        "s11": {
+          "text": "अन्य duties में भाईचारा बढ़ाना, महिलाओं का सम्मान करना, जंगलों, नदियों और वन्यजीवों को बचाना, और वैज्ञानिक सोच विकसित करना शामिल है।"
+        },
+        "s12": {
+          "text": "नागरिकों को सार्वजनिक संपत्ति की रक्षा करनी चाहिए और हिंसा से बचना चाहिए। माता-पिता को 6 से 14 साल के बच्चों को शिक्षा का मौका देना चाहिए।"
+        },
+        "s13": {
+          "question": "क्या आपको Fundamental Rights और Duties समझ आए?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "बिलकुल",
+            "हाँ जी",
+            "हाँ, समझ आ गया",
+            "हाँ, क्लियर है",
+            "हाँ, समझ में आ गया",
+            "हाँ, बिलकुल",
+            "Yes",
+            "I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s14": {
+          "text": "अब चलिए एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "मौलिक अधिकार हर नागरिक की आज़ादी और गरिमा की रक्षा करते हैं।"
+            },
+            {
+              "text": "अधिकारों के साथ-साथ राष्ट्र के प्रति कर्तव्य भी आते हैं।"
+            },
+            {
+              "text": "मौलिक कर्तव्य अनुच्छेद 51A में लिखे गए हैं।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.671Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "8. Fundamental Rights and Duties",
+      "steps": {
+        "s1": {
+          "text": "Fundamental Rights are in Part Three of the Constitution, Articles 12 to 35. They protect the freedom and dignity of every citizen, and a citizen can go to court if they are violated."
+        },
+        "s2": {
+          "text": "There are six Fundamental Rights. The Right to Equality means everyone is equal before the law, and untouchability is abolished."
+        },
+        "s3": {
+          "text": "The Right to Freedom includes freedom of speech, of assembly, of movement, and of profession."
+        },
+        "s4": {
+          "text": "The Right against Exploitation bans forced labour and child labour in factories."
+        },
+        "s5": {
+          "text": "The Right to Freedom of Religion and Cultural and Educational Rights let minorities protect their culture and run their own schools."
+        },
+        "s6": {
+          "text": "The Right to Constitutional Remedies, Article 32, lets a citizen go directly to the Supreme Court. Dr. Ambedkar called Article 32 the heart and soul of the Constitution."
+        },
+        "s7": {
+          "text": "The Right to Property was removed from the list by the 44th Amendment in 1978."
+        },
+        "s8": {
+          "text": "Fundamental Duties were added by the 42nd Amendment in 1976, on the advice of the Swaran Singh Committee. They are in Article 51A."
+        },
+        "s9": {
+          "text": "There were ten at first, and the eleventh was added in 2002."
+        },
+        "s10": {
+          "text": "Some duties are to respect the Constitution, the National Flag and the National Anthem, and to protect the unity and integrity of India."
+        },
+        "s11": {
+          "text": "Other duties include promoting harmony and brotherhood, respecting women, protecting forests, rivers and wildlife, and developing a scientific temper."
+        },
+        "s12": {
+          "text": "Citizens must also protect public property, avoid violence, and parents must give children between 6 and 14 years the chance of education."
+        },
+        "s13": {
+          "question": "Did you understand Fundamental Rights and Duties?",
+          "accept": [
+            "Yes",
+            "I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s14": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Fundamental Rights protect the freedom and dignity of every citizen."
+            },
+            {
+              "text": "With rights come duties towards the nation."
+            },
+            {
+              "text": "Fundamental Duties are listed in Article 51A."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.671Z"
+    }
+  },
+  "order": 8
+}

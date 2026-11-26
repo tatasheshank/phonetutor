@@ -1,0 +1,302 @@
+{
+  "id": "6-what-is-civics-and-its-scope-db1e84",
+  "version": 1,
+  "course": "history-and-civics",
+  "mode": "scripted",
+  "objectives": [
+    "Explain the origin and meaning of civics",
+    "Describe the nature of civics as a social science",
+    "State the scope of civics covering individuals, institutions, and international bodies"
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s6",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s7",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s8",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s10",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "QF2uQNQZKfU"
+      },
+      "label": "Responsibilities of a good citizen class-4",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "6. పౌరశాస్త్రం అంటే ఏమిటి, దాని పరిధి",
+      "steps": {
+        "s1": {
+          "text": "సివిక్స్ అనే పదం లాటిన్ పదాలైన సివిస్, అంటే పౌరుడు, సివిటాస్, అంటే నగరం లేదా రాష్ట్రం నుండి వచ్చింది."
+        },
+        "s2": {
+          "text": "సివిక్స్ అంటే పౌరుల గురించి చదవడం. ఇందులో వారి హక్కులు, వారి బాధ్యతలు, వారిని ఎలా పాలిస్తున్నారు అనేది ఉంటుంది."
+        },
+        "s3": {
+          "text": "ఇది సమాజంలో కలిసి జీవించే మనుషుల గురించి చదివే ఒక సోషల్ సైన్స్. సమాజం మారినప్పుడు ఇది కూడా మారుతుంది."
+        },
+        "s4": {
+          "text": "ఇది ప్రాక్టికల్ సబ్జెక్ట్, ఎందుకంటే ఇది మంచి పౌరులుగా మనల్ని తయారు చేస్తుంది."
+        },
+        "s5": {
+          "text": "సివిక్స్ పరిధిలో పౌరుడు, కుటుంబం, స్కూల్స్, ఇంకా ఇతర సోషల్ గ్రూప్స్ ఉంటాయి."
+        },
+        "s6": {
+          "text": "ఇందులో పంచాయతీ, మున్సిపాలిటీ లాంటి లోకల్ గవర్నమెంట్, రాష్ట్ర మరియు కేంద్ర ప్రభుత్వం, దేశం కూడా ఉంటాయి."
+        },
+        "s7": {
+          "text": "యునైటెడ్ నేషన్స్ లాంటి ఇంటర్నేషనల్ బాడీస్ కూడా ఇందులో ఉంటాయి."
+        },
+        "s8": {
+          "text": "ఇందులో హక్కులు, బాధ్యతలు, రాజ్యాంగం, ఎలక్షన్స్, పొలిటికల్ పార్టీస్, పబ్లిక్ ఒపీనియన్ గురించి చదువుతాం."
+        },
+        "s9": {
+          "question": "సివిక్స్ అంటే ఏమిటి, దాని పరిధి ఏమిటి అనేది మీకు అర్థమైందా?",
+          "accept": [
+            "అర్థమైంది",
+            "అవును",
+            "సరే",
+            "అవును సార్/మేడమ్",
+            "అవును, అర్థమైంది",
+            "అవునండి",
+            "అవును అండి",
+            "Yes",
+            "Yes, I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s10": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "పౌరశాస్త్రం మంచి పౌరులుగా ఎలా ఉండాలో నేర్పుతుంది."
+            },
+            {
+              "text": "మంచి పౌరుడు చట్టాలను పాటిస్తాడు, ఇతరులను గౌరవిస్తాడు."
+            },
+            {
+              "text": "మనం మన పరిసరాలను శుభ్రంగా ఉంచుతాం, పబ్లిక్ ప్రాపర్టీని రక్షిస్తాం."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.775Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "6. नागरिक शास्त्र क्या है और इसका क्षेत्र",
+      "steps": {
+        "s1": {
+          "text": "सिविक्स शब्द लैटिन शब्दों civis, जिसका मतलब नागरिक है, और civitas, जिसका मतलब शहर या राज्य है, से आया है।"
+        },
+        "s2": {
+          "text": "सिविक्स नागरिकों का अध्ययन है। इसमें उनके अधिकार, उनके कर्तव्य और उन पर शासन कैसे होता है, यह सब शामिल है।"
+        },
+        "s3": {
+          "text": "यह एक सोशल साइंस है। यह समाज में एक साथ रहने वाले लोगों का अध्ययन करता है। जैसे-जैसे समाज बदलता है, यह भी बदलता है।"
+        },
+        "s4": {
+          "text": "यह प्रैक्टिकल है। यह अच्छे नागरिक बनाता है।"
+        },
+        "s5": {
+          "text": "सिविक्स की सीमा में नागरिक और परिवार, स्कूल, और अन्य सामाजिक समूह आते हैं।"
+        },
+        "s6": {
+          "text": "इसमें लोकल गवर्नमेंट जैसे पंचायत और नगर पालिका, राज्य और केंद्र सरकार, और राष्ट्र भी शामिल हैं।"
+        },
+        "s7": {
+          "text": "इसमें यूनाइटेड नेशंस जैसे इंटरनेशनल बॉडीज भी शामिल हैं।"
+        },
+        "s8": {
+          "text": "यह अधिकार और कर्तव्य, संविधान, चुनाव, राजनीतिक दलों और पब्लिक ओपिनियन का अध्ययन करता है।"
+        },
+        "s9": {
+          "question": "क्या आपको समझ आया कि सिविक्स क्या है और इसकी सीमा क्या है?",
+          "accept": [
+            "जी",
+            "हाँ",
+            "जी, समझ आ गया",
+            "जी, समझ में आ गया",
+            "हाँ, बिल्कुल",
+            "जी, हाँ",
+            "जी, क्लियर है",
+            "Yes",
+            "Yes, I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s10": {
+          "text": "अब चलिए एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "नागरिक शास्त्र हमें अच्छे नागरिक बनना सिखाता है।"
+            },
+            {
+              "text": "एक अच्छा नागरिक कानूनों का पालन करता है और दूसरों की इज़्ज़त करता है।"
+            },
+            {
+              "text": "हम अपने आस-पास सफाई रखते हैं और सार्वजनिक संपत्ति की रक्षा करते हैं।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.775Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "6. What is Civics and its scope",
+      "steps": {
+        "s1": {
+          "text": "The word civics comes from the Latin words civis, meaning citizen, and civitas, meaning city or state."
+        },
+        "s2": {
+          "text": "Civics is the study of citizens, including their rights, their duties, and how they are governed."
+        },
+        "s3": {
+          "text": "It is a social science that studies people living together in society, and it changes as society changes."
+        },
+        "s4": {
+          "text": "It is practical because it trains good citizens."
+        },
+        "s5": {
+          "text": "The scope of Civics covers the citizen and the family, schools, and other social groups."
+        },
+        "s6": {
+          "text": "It also covers local government such as the panchayat and the municipality, state and central government, and the nation."
+        },
+        "s7": {
+          "text": "It covers international bodies such as the United Nations."
+        },
+        "s8": {
+          "text": "It studies rights and duties, the constitution, elections, political parties, and public opinion."
+        },
+        "s9": {
+          "question": "Did you understand what civics is and its scope?",
+          "accept": [
+            "Yes",
+            "Yes, I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s10": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Civics teaches us how to be good citizens."
+            },
+            {
+              "text": "A good citizen obeys laws and respects others."
+            },
+            {
+              "text": "We keep our surroundings clean and protect public property."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.775Z"
+    }
+  },
+  "order": 6
+}

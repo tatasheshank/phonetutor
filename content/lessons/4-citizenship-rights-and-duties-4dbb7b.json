@@ -1,0 +1,262 @@
+{
+  "id": "4-citizenship-rights-and-duties-4dbb7b",
+  "version": 1,
+  "course": "history-and-civics",
+  "mode": "scripted",
+  "objectives": [
+    "Understand what a citizen is and the rights and duties involved.",
+    "Learn how citizenship is acquired in India.",
+    "Know that India has single citizenship."
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s7",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "XoowXMw0z1c"
+      },
+      "label": "Citizenship - Article 5 to 11 of Indian Constitution | Citizenship in India |Indian Polity UPSC 2023",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "4. పౌరసత్వ హక్కులు మరియు విధులు",
+      "steps": {
+        "s1": {
+          "text": "పౌరుడు అంటే ఒక దేశానికి పూర్తి సభ్యుడు. వాళ్ళు ఆ దేశ హక్కులను అనుభవిస్తారు, అలాగే దాని పట్ల తమ బాధ్యతలను నెరవేరుస్తారు."
+        },
+        "s2": {
+          "text": "పౌరసత్వం వల్ల ఓటు వేయడం, ఎన్నికలలో పోటీ చేయడం, చట్టపరమైన రక్షణ లాంటి హక్కులు వస్తాయి. అలాగే చట్టాలను గౌరవించడం, పన్నులు కట్టడం, దేశాన్ని గౌరవించడం లాంటి బాధ్యతలు ఉంటాయి."
+        },
+        "s3": {
+          "text": "పౌరసత్వం అనేది పుట్టుక ద్వారా, వంశపారంపర్యంగా, రిజిస్ట్రేషన్ ద్వారా లేదా సహజసిద్ధంగా పొందవచ్చు."
+        },
+        "s4": {
+          "text": "భారత రాజ్యాంగంలోని ఆర్టికల్స్ 5 నుంచి 11 వరకు పౌరసత్వం గురించి ఉంటాయి. 1955 పౌరసత్వ చట్టం దీని వివరాలు చెబుతుంది."
+        },
+        "s5": {
+          "text": "భారతదేశంలో సింగిల్ సిటిజన్‌షిప్ ఉంది. ప్రతి భారతీయుడు భారతదేశానికి మాత్రమే పౌరుడు, వేరే ఏ రాష్ట్రానికీ కాదు."
+        },
+        "s6": {
+          "question": "పౌరుడు అంటే ఏమిటి, భారతదేశంలో పౌరసత్వం ఎలా వస్తుంది అనేది మీకు అర్థమైందా?",
+          "accept": [
+            "అర్థమైంది",
+            "అవును",
+            "సరే",
+            "ఓకే",
+            "అవును అండి",
+            "అవును సార్/మేడమ్",
+            "అర్థమైంది అండి",
+            "అవును కదా",
+            "Yes, I understood.",
+            "Yes, I get it.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s7": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "మన రాజ్యాంగంలోని ఆర్టికల్స్ 5 నుంచి 11 పౌరసత్వానికి సంబంధించినవి."
+            },
+            {
+              "text": "పౌరసత్వాన్ని పుట్టుక, వంశపారంపర్యంగా, రిజిస్ట్రేషన్ లేదా సహజసిద్ధీకరణ ద్వారా పొందవచ్చు."
+            },
+            {
+              "text": "ప్రతి భారతీయుడికి ఇండియా ఒకే పౌరసత్వం ఇస్తుంది."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.806Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "4. नागरिकता के अधिकार और कर्तव्य",
+      "steps": {
+        "s1": {
+          "text": "नागरिक किसी राज्य का पूरा सदस्य होता है। वे इसके अधिकारों का मज़ा लेते हैं और इसके प्रति अपने कर्तव्य निभाते हैं।"
+        },
+        "s2": {
+          "text": "नागरिकता से वोट देने, चुनाव लड़ने और कानूनी सुरक्षा जैसे अधिकार मिलते हैं। साथ ही, कानून मानने, टैक्स देने और देश का सम्मान करने जैसे कर्तव्य भी आते हैं।"
+        },
+        "s3": {
+          "text": "नागरिकता जन्म से, वंश से, रजिस्ट्रेशन से, या नेचुरलाइजेशन से मिल सकती है।"
+        },
+        "s4": {
+          "text": "भारतीय संविधान के आर्टिकल 5 से 11 में नागरिकता के बारे में बताया गया है। 1955 का नागरिकता कानून इसकी पूरी जानकारी देता है।"
+        },
+        "s5": {
+          "text": "भारत में सिंगल सिटिजनशिप है। हर भारतीय सिर्फ भारत का नागरिक है, किसी अलग राज्य का नहीं।"
+        },
+        "s6": {
+          "question": "क्या आपको समझ आया कि नागरिक क्या होता है और भारत में नागरिकता कैसे मिलती है?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "जी हाँ",
+            "बिल्कुल",
+            "हाँ जी",
+            "सही है",
+            "हाँ यार",
+            "हाँ ब्रो",
+            "Yes, I understood.",
+            "Yes, I get it.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s7": {
+          "text": "अब चलिए एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "हमारे संविधान के अनुच्छेद 5 से 11 तक नागरिकता के बारे में बताया गया है।"
+            },
+            {
+              "text": "नागरिकता जन्म, वंश, पंजीकरण या नागरिकता प्राप्त करने से मिल सकती है।"
+            },
+            {
+              "text": "भारत में हर भारतीय के लिए एकल नागरिकता है।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.806Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "4. Citizenship rights and duties",
+      "steps": {
+        "s1": {
+          "text": "A citizen is a full member of a state. They enjoy its rights and perform duties towards it."
+        },
+        "s2": {
+          "text": "Citizenship gives rights like voting, contesting elections, and legal protection. It brings duties like obeying laws, paying taxes, and respecting the nation."
+        },
+        "s3": {
+          "text": "Citizenship can be gained by birth, by descent, by registration, or by naturalisation."
+        },
+        "s4": {
+          "text": "Articles 5 to 11 of the Indian Constitution deal with citizenship. The Citizenship Act of 1955 gives the details."
+        },
+        "s5": {
+          "text": "India has single citizenship. Every Indian is a citizen of India only, not of a separate state."
+        },
+        "s6": {
+          "question": "Did you understand what a citizen is and how citizenship is acquired in India?",
+          "accept": [
+            "Yes, I understood.",
+            "Yes, I get it.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s7": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Articles 5 to 11 of our Constitution deal with citizenship."
+            },
+            {
+              "text": "Citizenship can be gained by birth, descent, registration or naturalisation."
+            },
+            {
+              "text": "India has single citizenship for every Indian."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.806Z"
+    }
+  },
+  "order": 4
+}

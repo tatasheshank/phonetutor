@@ -1,0 +1,357 @@
+{
+  "id": "10-teaching-methods-and-group-discussion-db0fb9",
+  "version": 1,
+  "course": "history-and-civics",
+  "mode": "scripted",
+  "objectives": [
+    "Understand teaching strategies for History and Civics",
+    "Learn the rules of effective group discussion"
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s6",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s7",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s8",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s9",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s10",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s11",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s12",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s14",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "WQKHMjurCEs"
+      },
+      "label": "How to Make Social Studies FUN for Students!",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "10. బోధనా పద్ధతులు మరియు బృంద చర్చ",
+      "steps": {
+        "s1": {
+          "text": "ఒక మంచి టీచర్ హిస్టరీ, సివిక్స్ సబ్జెక్టులను ఇంట్రెస్టింగ్ గా చెప్పడానికి చాలా పద్ధతులు వాడుతారు. చిన్న పిల్లలకు కథలు చెప్పడం వల్ల పాత సంఘటనలు కళ్ళ ముందు ఉన్నట్లు అనిపిస్తాయి."
+        },
+        "s2": {
+          "text": "ప్రశ్నలు అడుగుతూ లెక్చర్ ఇవ్వడం వల్ల ఒక టాపిక్ గురించి క్లియర్ గా అర్థమవుతుంది."
+        },
+        "s3": {
+          "text": "డిస్కషన్, డిబేట్ ద్వారా స్టూడెంట్స్ తమ ఐడియాలు పంచుకోవచ్చు, వాటిని టెస్ట్ చేసుకోవచ్చు."
+        },
+        "s4": {
+          "text": "మాక్ పార్లమెంట్ లేదా మాక్ ఎలక్షన్ లాంటి డ్రామాటిజేషన్, రోల్ ప్లే ద్వారా గవర్నమెంట్ నిజంగా ఎలా పనిచేస్తుందో తెలుస్తుంది."
+        },
+        "s5": {
+          "text": "ప్రాజెక్ట్ పద్ధతి ద్వారా స్టూడెంట్స్ ఇన్ఫర్మేషన్ కలెక్ట్ చేసి ప్రెజెంట్ చేస్తారు."
+        },
+        "s6": {
+          "text": "సోర్స్ పద్ధతి ద్వారా నిజమైన డాక్యుమెంట్లు, నాణాలు, ఫోటోలు వాడతారు."
+        },
+        "s7": {
+          "text": "మ్యూజియంలు, కట్టడాలు, పంచాయతీ ఆఫీస్ లకు ఫీల్డ్ ట్రిప్స్ వెళ్లడం వల్ల డైరెక్ట్ ఎక్స్పీరియన్స్ వస్తుంది."
+        },
+        "s8": {
+          "text": "మ్యాప్స్, టైమ్‌లైన్స్, చార్టులు, మోడల్స్, వీడియోలు వల్ల ప్లేసులు, సమయం క్లియర్ గా అర్థం అవుతాయి."
+        },
+        "s9": {
+          "text": "గ్రూప్ డిస్కషన్ లో, ప్రతి మెంబర్ డిస్కషన్ లక్ష్యం ఏంటో అర్థం చేసుకోవాలి."
+        },
+        "s10": {
+          "text": "వాళ్లు బాగా ప్రిపేర్ అవ్వాలి, పాయింట్స్ కి ఫ్యాక్ట్స్ తో సపోర్ట్ ఇవ్వాలి, అందరికీ వినపడేలా గట్టిగా, క్లియర్ గా మాట్లాడాలి."
+        },
+        "s11": {
+          "text": "గ్రూప్ వాళ్ల ఐడియాలను యాక్సెప్ట్ చేయకపోయినా వాళ్లు ఫీల్ అవ్వకూడదు."
+        },
+        "s12": {
+          "text": "ఏదైనా అర్థం కానప్పుడు అడగాలి, గ్రూప్ తీసుకున్న డెసిషన్ కి సపోర్ట్ చేయాలి."
+        },
+        "s13": {
+          "question": "ఈ బోధనా పద్ధతులు, గ్రూప్ డిస్కషన్ రూల్స్ మీకు అర్థమయ్యాయి కదా?",
+          "accept": [
+            "అవునండి",
+            "అవును",
+            "సరేనండి",
+            "ఖచ్చితంగా",
+            "అవును అండి, అర్థమైంది",
+            "ఓకే అండి",
+            "అవును అండి, క్లియర్ గా అర్థమైంది",
+            "Yes, I understood.",
+            "Yes, I got it.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s14": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "మంచి టీచర్లు సోషల్ స్టడీస్ ను ఆసక్తికరంగా చేస్తారు."
+            },
+            {
+              "text": "యాక్టివిటీస్, రోల్ ప్లే, ప్రాజెక్ట్స్ వల్ల విద్యార్థులు చేసి నేర్చుకుంటారు."
+            },
+            {
+              "text": "మ్యాప్స్, టైమ్‌లైన్స్, బొమ్మలు గతాన్ని సులభంగా చూపిస్తాయి."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.646Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "10. शिक्षण के तरीके और समूह चर्चा",
+      "steps": {
+        "s1": {
+          "text": "एक अच्छी टीचर हिस्ट्री और सिविक्स को दिलचस्प बनाने के लिए कई तरीके अपनाती है। कहानी सुनाने से छोटे बच्चों के लिए पुरानी घटनाएँ जीवंत हो जाती हैं।"
+        },
+        "s2": {
+          "text": "सवाल-जवाब के साथ लेक्चर के तरीके से किसी टॉपिक की साफ रूपरेखा मिल जाती है।"
+        },
+        "s3": {
+          "text": "चर्चा और बहस से स्टूडेंट्स अपने आइडिया शेयर कर सकते हैं और उन्हें टेस्ट कर सकते हैं।"
+        },
+        "s4": {
+          "text": "नाटक और रोल प्ले, जैसे कि मॉक पार्लियामेंट या मॉक इलेक्शन, यह दिखाते हैं कि सरकार असल में कैसे काम करती है।"
+        },
+        "s5": {
+          "text": "प्रोजेक्ट के तरीके से स्टूडेंट्स जानकारी इकट्ठा कर सकते हैं और उसे प्रेजेंट कर सकते हैं।"
+        },
+        "s6": {
+          "text": "सोर्स के तरीके में असली दस्तावेज़, सिक्के और तस्वीरें इस्तेमाल होती हैं।"
+        },
+        "s7": {
+          "text": "म्यूज़ियम, स्मारकों और पंचायत ऑफिस के फील्ड ट्रिप से सीधा अनुभव मिलता है।"
+        },
+        "s8": {
+          "text": "मैप, टाइमलाइन, चार्ट, मॉडल और वीडियो से स्टूडेंट्स को जगह और समय साफ तौर पर समझने में मदद मिलती है।"
+        },
+        "s9": {
+          "text": "ग्रुप डिस्कशन में, हर मेंबर को डिस्कशन का लक्ष्य समझना चाहिए।"
+        },
+        "s10": {
+          "text": "उन्हें अच्छी तैयारी करनी चाहिए, अपने पॉइंट्स को फैक्ट्स के साथ सपोर्ट करना चाहिए, और इतनी तेज़ी से और साफ बोलना चाहिए कि सबको सुनाई दे।"
+        },
+        "s11": {
+          "text": "जब ग्रुप उनके आइडिया एक्सेप्ट न करे, तो उन्हें बुरा नहीं मानना चाहिए।"
+        },
+        "s12": {
+          "text": "जब उन्हें कुछ समझ न आए, तो उन्हें पूछना चाहिए, और एक बार ग्रुप का फैसला हो जाने पर उसका सपोर्ट करना चाहिए।"
+        },
+        "s13": {
+          "question": "क्या आपको टीचिंग स्ट्रैटेजीज़ और ग्रुप डिस्कशन के नियम समझ आए?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "बिलकुल",
+            "जी हाँ",
+            "हाँ जी",
+            "हाँ, समझ गया/गईं",
+            "हाँ, समझ आया",
+            "Yes, I understood.",
+            "Yes, I got it.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s14": {
+          "text": "अब चलिए एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "अच्छे शिक्षक सामाजिक अध्ययन को रोचक बनाते हैं।"
+            },
+            {
+              "text": "गतिविधियाँ, रोल प्ले और प्रोजेक्ट छात्रों को करके सीखने में मदद करते हैं।"
+            },
+            {
+              "text": "नक्शे, टाइमलाइन और तस्वीरें अतीत को देखना आसान बना देती हैं।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.646Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "10. Teaching methods and group discussion",
+      "steps": {
+        "s1": {
+          "text": "A good teacher uses many strategies to make History and Civics interesting. Storytelling brings past events to life for young children."
+        },
+        "s2": {
+          "text": "The lecture method, with questions, gives a clear outline of a topic."
+        },
+        "s3": {
+          "text": "Discussion and debate let students share and test their ideas."
+        },
+        "s4": {
+          "text": "Dramatisation and role play, such as a mock parliament or a mock election, show how government really works."
+        },
+        "s5": {
+          "text": "The project method lets students collect information and present it."
+        },
+        "s6": {
+          "text": "The source method uses real documents, coins and pictures."
+        },
+        "s7": {
+          "text": "Field trips to museums, monuments and the panchayat office give first-hand experience."
+        },
+        "s8": {
+          "text": "Maps, timelines, charts, models and videos help students see places and time clearly."
+        },
+        "s9": {
+          "text": "In group discussion, every member should understand the goal of the discussion."
+        },
+        "s10": {
+          "text": "They should prepare well, support their points with facts, and speak loudly and clearly enough for everyone to hear."
+        },
+        "s11": {
+          "text": "They should not feel offended when the group does not accept their ideas."
+        },
+        "s12": {
+          "text": "They should ask when they do not understand something, and support the decision of the group once it is made."
+        },
+        "s13": {
+          "question": "Did you understand the teaching strategies and group discussion rules?",
+          "accept": [
+            "Yes, I understood.",
+            "Yes, I got it.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s14": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Good teachers make social studies lively."
+            },
+            {
+              "text": "Activities, role play and projects help students learn by doing."
+            },
+            {
+              "text": "Maps, timelines and pictures make the past easy to see."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.646Z"
+    }
+  },
+  "order": 10
+}

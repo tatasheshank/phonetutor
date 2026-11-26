@@ -1,0 +1,376 @@
+{
+  "id": "4-transportation-in-humans-and-plants-e3cb52",
+  "version": 1,
+  "course": "class-10-biology",
+  "mode": "scripted",
+  "objectives": [
+    "Understand how transportation works in human beings and plants"
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s6",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s7",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s9",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "LVVbKoN8Duo"
+      },
+      "label": "CLASS 10 LIFE PROCESSES FULL CHAPTER (Animation)| PART - 3  | NCERT Science ch 6| Transportation",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        },
+        {
+          "at": 70,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "BA-nPuxc0z4"
+      },
+      "label": "Transportation in Organisms Class 10 | Life Processes Chapter 1 | Full Animated Explanation | NCERT ",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        },
+        {
+          "at": 70,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "4. మనుషులు మరియు మొక్కలలో రవాణా",
+      "steps": {
+        "s1": {
+          "text": "రవాణా అనేది శరీరంలో ఆహారం, ఆక్సిజన్, వ్యర్థాలను అటూ ఇటూ తీసుకువెళుతుంది. మనుషుల్లో, గుండె రక్తాన్ని పంప్ చేస్తుంది."
+        },
+        "s2": {
+          "text": "గుండెకు 4 గదులు ఉంటాయి. ధమనులు రక్తాన్ని గుండె నుండి దూరంగా తీసుకువెళతాయి, సిరలు రక్తాన్ని వెనక్కి తీసుకువస్తాయి, చిన్న కేశనాళికలు వాటిని కలుపుతాయి."
+        },
+        "s3": {
+          "text": "ఆక్సిజన్ ఎక్కువగా ఉన్న రక్తాన్ని, ఆక్సిజన్ తక్కువగా ఉన్న రక్తాన్ని వేర్వేరుగా ఉంచుతారు. దీనిని డబుల్ సర్క్యులేషన్ అంటారు."
+        },
+        "s4": {
+          "text": "గాయం అయినప్పుడు రక్తం గడ్డకట్టడానికి ప్లేట్‌లెట్స్ సహాయపడతాయి. శోషరసం కూడా అరిగిన కొవ్వులను తీసుకువెళుతుంది, ఇన్ఫెక్షన్లతో పోరాడటానికి సహాయపడుతుంది."
+        },
+        "s5": {
+          "text": "మొక్కలకు 2 రవాణా కణజాలాలు ఉంటాయి. జైలమ్ వేర్లు నుండి ఆకుల వరకు నీరు, ఖనిజాలను తీసుకువెళుతుంది."
+        },
+        "s6": {
+          "text": "ఆకుల నుండి కోల్పోయే నీటిని ట్రాన్స్‌పిరేషన్ అంటారు, ఇది నీటిని పైకి లాగడానికి సహాయపడుతుంది. ఫ్లోయమ్ ఆకుల్లో తయారైన ఆహారాన్ని మొక్కలోని అన్ని భాగాలకు తీసుకువెళుతుంది."
+        },
+        "s7": {
+          "text": "మొక్కల్లో ఆహారం కదిలే ఈ ప్రక్రియను ట్రాన్స్‌లోకేషన్ అంటారు."
+        },
+        "s8": {
+          "question": "మీకు మనుషులు మరియు మొక్కల్లో రవాణా గురించి అర్థమైందా?",
+          "accept": [
+            "అర్థమైంది",
+            "అవును",
+            "అవును అండి",
+            "సరే",
+            "ఓకే",
+            "అవును, అర్థమైంది",
+            "Yes",
+            "Yes, I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s9": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "మన బాడీలో రక్తం ఎలా తిరుగుతుందో చూడండి."
+            },
+            {
+              "text": "గుండె, దాని 4 గదులతో, రక్తాన్ని పంప్ చేస్తుంది."
+            },
+            {
+              "text": "ఆర్టరీస్ రక్తాన్ని గుండె నుంచి దూరంగా తీసుకెళ్తాయి, మరియు వెయిన్స్ దాన్ని తిరిగి తీసుకువస్తాయి."
+            },
+            {
+              "text": "ఆక్సిజన్ ఎక్కువగా ఉన్న రక్తం మరియు ఆక్సిజన్ తక్కువగా ఉన్న రక్తం వేర్వేరుగా ఉంచబడతాయి."
+            }
+          ]
+        },
+        "s10": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "ఇప్పుడు మొక్కలు నీరు, ఆహారం ఎలా కదుపుతాయో చూడండి."
+            },
+            {
+              "text": "Xylem వేరుల నుండి నీరు, ఖనిజాలను పైకి తీసుకువెళుతుంది."
+            },
+            {
+              "text": "ఆకుల నుండి జరిగే transpiration నీటిని పైకి లాగడానికి సహాయపడుతుంది."
+            },
+            {
+              "text": "Phloem ఆకుల నుండి మొక్కలోని ప్రతి భాగానికి ఆహారాన్ని తీసుకువెళుతుంది."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.748Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "4. मनुष्यों और पौधों में परिवहन",
+      "steps": {
+        "s1": {
+          "text": "ट्रांसपोर्टेशन शरीर में खाना, ऑक्सीजन और कचरा इधर-उधर ले जाती है। इंसानों में, दिल खून को पंप करता है।"
+        },
+        "s2": {
+          "text": "दिल में चार चैंबर होते हैं। आर्टरीज़ खून को दिल से दूर ले जाती हैं, वेन्स खून को वापस लाती हैं, और छोटी कैपिलरीज़ इन्हें जोड़ती हैं।"
+        },
+        "s3": {
+          "text": "ऑक्सीजन से भरा खून और ऑक्सीजन से कम खून अलग रखा जाता है। इसे डबल सर्कुलेशन कहते हैं।"
+        },
+        "s4": {
+          "text": "प्लेटलेट्स कटने पर खून को जमने में मदद करते हैं। लिम्फ पचे हुए फैट को ले जाता है और इन्फेक्शन से लड़ने में मदद करता है।"
+        },
+        "s5": {
+          "text": "प्लांट्स में दो ट्रांसपोर्ट टिश्यू होते हैं। जाइलम जड़ों से पानी और मिनरल्स को पत्तियों तक ऊपर ले जाता है।"
+        },
+        "s6": {
+          "text": "पत्तियों से जो पानी कम होता है, उसे ट्रांसपिरेशन कहते हैं। यह पानी को ऊपर खींचने में मदद करता है। फ्लोएम पत्तियों में बने खाने को प्लांट के सभी हिस्सों तक ले जाता है।"
+        },
+        "s7": {
+          "text": "प्लांट्स में खाने की इस मूवमेंट को ट्रांसलोकेशन कहते हैं।"
+        },
+        "s8": {
+          "question": "क्या आपको इंसानों और प्लांट्स में ट्रांसपोर्टेशन समझ आया?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "बिल्कुल",
+            "जी हाँ",
+            "हाँ जी",
+            "हाँ, समझ आ गया",
+            "हाँ, समझ में आ गया",
+            "Yes",
+            "Yes, I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s9": {
+          "text": "अब हम एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "देखिए, खून हमारे शरीर में कैसे घूमता है।"
+            },
+            {
+              "text": "दिल, अपने 4 chambers के साथ, खून को पंप करता है।"
+            },
+            {
+              "text": "Arteries खून को दिल से दूर ले जाती हैं, और veins इसे वापस लाती हैं।"
+            },
+            {
+              "text": "ऑक्सीजन से भरपूर खून और ऑक्सीजन से कम खून को अलग रखा जाता है।"
+            }
+          ]
+        },
+        "s10": {
+          "text": "अब हम एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "अब देखिए कि पौधे पानी और खाना कैसे ले जाते हैं।"
+            },
+            {
+              "text": "Xylem जड़ों से पानी और मिनरल्स को ऊपर ले जाता है।"
+            },
+            {
+              "text": "पत्तों से होने वाला transpiration पानी को ऊपर खींचने में मदद करता है।"
+            },
+            {
+              "text": "Phloem पत्तों से खाना पौधे के हर हिस्से तक ले जाता है।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.748Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "4. Transportation in humans and plants",
+      "steps": {
+        "s1": {
+          "text": "Transportation carries food, oxygen and wastes around the body. In human beings, the heart pumps blood."
+        },
+        "s2": {
+          "text": "The heart has four chambers. Arteries carry blood away from the heart, veins bring blood back, and tiny capillaries connect them."
+        },
+        "s3": {
+          "text": "Blood rich in oxygen and blood poor in oxygen are kept separate. This is called double circulation."
+        },
+        "s4": {
+          "text": "Platelets help the blood to clot at a cut. Lymph also carries digested fats and helps fight infection."
+        },
+        "s5": {
+          "text": "Plants have two transport tissues. Xylem carries water and minerals from the roots up to the leaves."
+        },
+        "s6": {
+          "text": "Water lost from the leaves, called transpiration, helps pull the water up. Phloem carries the food made in the leaves to all parts of the plant."
+        },
+        "s7": {
+          "text": "This movement of food in plants is called translocation."
+        },
+        "s8": {
+          "question": "Did you understand transportation in humans and plants?",
+          "accept": [
+            "Yes",
+            "Yes, I understood",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s9": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Watch how blood moves around our body."
+            },
+            {
+              "text": "The heart, with its four chambers, pumps the blood."
+            },
+            {
+              "text": "Arteries carry blood away from the heart, and veins bring it back."
+            },
+            {
+              "text": "Blood rich in oxygen and blood poor in oxygen are kept separate."
+            }
+          ]
+        },
+        "s10": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Now see how plants move water and food."
+            },
+            {
+              "text": "Xylem carries water and minerals up from the roots."
+            },
+            {
+              "text": "Transpiration from the leaves helps pull the water up."
+            },
+            {
+              "text": "Phloem carries food from the leaves to every part of the plant."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.748Z"
+    }
+  },
+  "order": 4
+}

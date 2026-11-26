@@ -1,0 +1,247 @@
+{
+  "id": "1-what-are-life-processes-and-nutrition-eafe5c",
+  "version": 1,
+  "course": "class-10-biology",
+  "mode": "scripted",
+  "objectives": [
+    "Explain what life processes are and why they need energy.",
+    "Describe the two types of nutrition: autotrophic and heterotrophic."
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s6",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "6-UoHYdoxhw"
+      },
+      "label": "Life processes Full chapter in Animation | AP State New Syllabus | class 10  BIOLOGY chapter 6",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "1. లైఫ్ ప్రాసెసెస్, న్యూట్రిషన్ అంటే ఏమిటి",
+      "steps": {
+        "s1": {
+          "text": "నిద్రపోతున్నప్పుడు కూడా, బతికే జీవులు బతికి ఉండడానికి కొన్ని పనులు చేస్తూనే ఉండాలి. ఈ పనులనే లైఫ్ ప్రాసెసెస్ అంటారు."
+        },
+        "s2": {
+          "text": "ప్రధాన లైఫ్ ప్రాసెసెస్ ఏంటంటే న్యూట్రిషన్, రెస్పిరేషన్, ట్రాన్స్‌పోర్టేషన్, ఎక్స్‌క్రియేషన్. వీటన్నింటికీ ఎనర్జీ కావాలి, ఆ ఎనర్జీ ఫుడ్ నుంచి వస్తుంది."
+        },
+        "s3": {
+          "text": "న్యూట్రిషన్ అంటే జీవులు తమకు కావాల్సిన ఫుడ్ ఎలా తెచ్చుకుంటాయో చెప్పడం. ఆకుపచ్చని మొక్కలు తమ ఫుడ్‌ను తామే తయారు చేసుకుంటాయి. దీన్నే ఆటోట్రోఫిక్ న్యూట్రిషన్ అంటారు."
+        },
+        "s4": {
+          "text": "జంతువులు, మనుషులు ఫుడ్ కోసం ఇతర జీవుల మీద ఆధారపడతాయి. దీన్నే హెటెరోట్రోఫిక్ న్యూట్రిషన్ అంటారు."
+        },
+        "s5": {
+          "question": "లైఫ్ ప్రాసెసెస్, ఆ రెండు రకాల న్యూట్రిషన్స్ అంటే ఏంటో మీకు అర్థమైందా?",
+          "accept": [
+            "అర్థమైంది",
+            "అవును",
+            "సరే",
+            "ఓకే",
+            "అవును సరే",
+            "అవును అర్థమైంది",
+            "Yes, I understood.",
+            "Yes, I got it.",
+            "Yes.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s6": {
+          "text": "ఇప్పుడు మనం ఒక చిన్న video చూద్దాం.",
+          "cues": [
+            {
+              "text": "ఈ video లో జీవుల life processes గురించి తెలుసుకుందాం."
+            },
+            {
+              "text": "ఇందులో నాలుగు main life processes ఉన్నాయి: nutrition, respiration, transportation, ఇంకా excretion."
+            },
+            {
+              "text": "వాటన్నింటికీ energy కావాలి, ఆ energy మనకు food నుంచి వస్తుంది."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.838Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "1. जीवन प्रक्रियाएं और पोषण क्या हैं",
+      "steps": {
+        "s1": {
+          "text": "जीवित चीजों को जीवित रहने के लिए कुछ काम लगातार करने पड़ते हैं। वे सोते समय भी ये काम करती हैं। इन कामों को जीवन प्रक्रियाएं कहते हैं।"
+        },
+        "s2": {
+          "text": "मुख्य जीवन प्रक्रियाएं पोषण, श्वसन, परिवहन और उत्सर्जन हैं। इन सभी को ऊर्जा की ज़रूरत होती है। वह ऊर्जा भोजन से मिलती है।"
+        },
+        "s3": {
+          "text": "पोषण वह तरीका है जिससे जीवित चीजें अपना भोजन प्राप्त करती हैं। हरी पौधे अपना भोजन खुद बनाते हैं। इसे स्वपोषी पोषण कहते हैं।"
+        },
+        "s4": {
+          "text": "जानवर और इंसान भोजन के लिए दूसरी जीवित चीजों पर निर्भर रहते हैं। इसे परपोषी पोषण कहते हैं।"
+        },
+        "s5": {
+          "question": "क्या आपको समझ आया कि जीवन प्रक्रियाएं और पोषण के दो प्रकार क्या हैं?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "हूँ",
+            "जी हाँ",
+            "ठीक है",
+            "हाँ जी",
+            "जी बिलकुल",
+            "Yes, I understood.",
+            "Yes, I got it.",
+            "Yes.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s6": {
+          "text": "अब हम एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "यह video जीवित चीज़ों में जीवन प्रक्रियाओं (life processes) का एक ओवरव्यू देता है।"
+            },
+            {
+              "text": "ध्यान दें, इसमें 4 मुख्य जीवन प्रक्रियाएँ बताई गई हैं: न्यूट्रिशन, रेस्पिरेशन, ट्रांसपोर्टेशन और एक्सक्रीशन।"
+            },
+            {
+              "text": "इन सभी के लिए एनर्जी की ज़रूरत होती है, और वह एनर्जी खाने से आती है।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.838Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "1. What are life processes and nutrition",
+      "steps": {
+        "s1": {
+          "text": "Living things must keep doing certain jobs to stay alive, even while they sleep. These jobs are called life processes."
+        },
+        "s2": {
+          "text": "The main life processes are nutrition, respiration, transportation and excretion. All of them need energy, and that energy comes from food."
+        },
+        "s3": {
+          "text": "Nutrition is how living things get their food. Green plants make their own food, which is called autotrophic nutrition."
+        },
+        "s4": {
+          "text": "Animals and human beings depend on other living things for food, which is called heterotrophic nutrition."
+        },
+        "s5": {
+          "question": "Did you understand what life processes and the two types of nutrition are?",
+          "accept": [
+            "Yes, I understood.",
+            "Yes, I got it.",
+            "Yes.",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s6": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "This video gives an overview of life processes in living things."
+            },
+            {
+              "text": "Notice the four main life processes: nutrition, respiration, transportation and excretion."
+            },
+            {
+              "text": "All of them need energy, and that energy comes from food."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T05:19:21.838Z"
+    }
+  },
+  "order": 1
+}

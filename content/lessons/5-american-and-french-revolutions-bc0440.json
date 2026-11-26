@@ -1,0 +1,393 @@
+{
+  "id": "5-american-and-french-revolutions-bc0440",
+  "version": 1,
+  "course": "history-and-civics",
+  "mode": "scripted",
+  "objectives": [
+    "Explain the causes and key events of the American Revolution",
+    "Explain the causes and key events of the French Revolution"
+  ],
+  "screens": [],
+  "interruptions": {
+    "enabled": true,
+    "maxLiveTurns": 8,
+    "maxLiveSeconds": 180
+  },
+  "steps": [
+    {
+      "id": "s1",
+      "type": "say",
+      "avatar": "smile"
+    },
+    {
+      "id": "s2",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s3",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s4",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s5",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s11",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "bywvz1wZMtE"
+      },
+      "label": "The American Revolution in 4 Minutes",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s7",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s8",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s9",
+      "type": "say",
+      "avatar": "neutral"
+    },
+    {
+      "id": "s12",
+      "type": "video",
+      "source": {
+        "kind": "youtube",
+        "videoId": "HjvoFo0MRgk"
+      },
+      "label": "The French Revolution Animated Class 9 (Part 1)",
+      "cues": [
+        {
+          "at": 0,
+          "pause": true
+        },
+        {
+          "at": 20,
+          "pause": true
+        },
+        {
+          "at": 45,
+          "pause": true
+        },
+        {
+          "at": 70,
+          "pause": true
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "type": "check",
+      "tapFallback": [
+        "yes",
+        "no"
+      ]
+    }
+  ],
+  "quiz": [],
+  "knowledge": [],
+  "safety": {
+    "neverSay": [
+      "share your otp",
+      "tell me your pin",
+      "tell me your password"
+    ]
+  },
+  "locales": {
+    "te": {
+      "status": "reviewed",
+      "title": "5. అమెరికన్ మరియు ఫ్రెంచ్ విప్లవాలు",
+      "steps": {
+        "s1": {
+          "text": "అమెరికన్ విప్లవం 1775 మరియు 1783 మధ్య జరిగింది. నార్త్ అమెరికాలోని 13 బ్రిటిష్ కాలనీలు తమ స్వేచ్ఛ కోసం బ్రిటన్‌తో పోరాడాయి."
+        },
+        "s2": {
+          "text": "బ్రిటన్ కాలనీలపై కొత్త పన్నులు వేసింది. బ్రిటిష్ పార్లమెంట్‌లో ఈ కాలనీలకు సభ్యులు లేరు. వాళ్ళ నినాదం 'ప్రాతినిధ్యం లేకుండా పన్ను లేదు' అనేది."
+        },
+        "s3": {
+          "text": "1773లో, బోస్టన్ దగ్గర వలసవాదులు బ్రిటిష్ టీని సముద్రంలో పడేశారు. ఈ సంఘటనను బోస్టన్ టీ పార్టీ అంటారు."
+        },
+        "s4": {
+          "text": "4 జూలై 1776న, కాలనీలు డిక్లరేషన్ ఆఫ్ ఇండిపెండెన్స్ ను ఆమోదించాయి. థామస్ జెఫర్సన్ దీన్ని ప్రధానంగా రాశారు, జార్జ్ వాషింగ్టన్ వలస సైన్యానికి నాయకత్వం వహించారు."
+        },
+        "s5": {
+          "text": "1783లో పారిస్ ఒప్పందం ద్వారా బ్రిటన్ అమెరికన్ స్వాతంత్ర్యాన్ని అంగీకరించింది. ఈ విప్లవం యునైటెడ్ స్టేట్స్ ఆఫ్ అమెరికాను సృష్టించింది. అలాగే ప్రపంచవ్యాప్తంగా స్వేచ్ఛ మరియు ప్రజాస్వామ్యాన్ని వ్యాప్తి చేసింది."
+        },
+        "s6": {
+          "text": "లూయిస్ 16వ వాడు రాజుగా ఉన్నప్పుడు 1789లో ఫ్రెంచ్ విప్లవం మొదలైంది. ఫ్రెంచ్ సమాజం మూడు వర్గాలుగా విభజించబడింది: మతాధికారులు, ప్రభువులు, మరియు సామాన్య ప్రజలు."
+        },
+        "s7": {
+          "text": "సామాన్య ప్రజలు ఎక్కువ పన్నులు కట్టారు కానీ వారికి హక్కులు తక్కువే. రూసో, వోల్టైర్, మరియు మాంటెస్క్యూ లాంటి ఆలోచనాపరులు స్వేచ్ఛ మరియు సమానత్వం అనే కొత్త ఆలోచనలను వ్యాప్తి చేశారు."
+        },
+        "s8": {
+          "text": "14 జూలై 1789న, పారిస్ ప్రజలు బాస్టిల్ జైలుపై దాడి చేశారు. నేషనల్ అసెంబ్లీ డిక్లరేషన్ ఆఫ్ ది రైట్స్ ఆఫ్ మ్యాన్ అండ్ ఆఫ్ ది సిటిజెన్ ను ఆమోదించింది."
+        },
+        "s9": {
+          "text": "తరువాత రాజును ఉరితీశారు మరియు ఫ్రాన్స్ ఒక రిపబ్లిక్ గా మారింది. ఈ విప్లవం ప్రపంచానికి స్వేచ్ఛ, సమానత్వం, మరియు సౌభ్రాతృత్వం అనే ఆదర్శాలను ఇచ్చింది."
+        },
+        "s10": {
+          "question": "అమెరికన్ మరియు ఫ్రెంచ్ విప్లవాల గురించి మీకు అర్థమైందా?",
+          "accept": [
+            "అవునండి",
+            "సరేనండి",
+            "అవును",
+            "అర్థమైంది",
+            "Yes, I understood",
+            "Yes, I got it",
+            "Yes",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s11": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "బ్రిటన్ నుంచి స్వేచ్ఛ కోసం 13 బ్రిటిష్ కాలనీలు పోరాడాయి."
+            },
+            {
+              "text": "వారి నినాదం రిప్రజెంటేషన్ లేకుండా పన్ను లేదు."
+            },
+            {
+              "text": "1776లో వారు స్వాతంత్ర్యం ప్రకటించారు, అప్పుడు యునైటెడ్ స్టేట్స్ పుట్టింది."
+            }
+          ]
+        },
+        "s12": {
+          "text": "ఇప్పుడు ఒక చిన్న వీడియో చూద్దాం.",
+          "cues": [
+            {
+              "text": "ఫ్రెంచ్ విప్లవం 1789లో మొదలైంది."
+            },
+            {
+              "text": "సామాన్య ప్రజలు ఎక్కువ పన్నులు కట్టారు కానీ వారికి హక్కులు తక్కువే."
+            },
+            {
+              "text": "14 July 1789న ప్రజలు బాస్టిల్ పై దాడి చేశారు."
+            },
+            {
+              "text": "ఈ విప్లవం మనకు Liberty, Equality, Fraternity లను ఇచ్చింది."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.726Z"
+    },
+    "hi": {
+      "status": "reviewed",
+      "title": "5. अमेरिकी और फ्रांसीसी क्रांति",
+      "steps": {
+        "s1": {
+          "text": "अमेरिकन रेवोल्यूशन 1775 और 1783 के बीच हुई थी। नॉर्थ अमेरिका की 13 ब्रिटिश कॉलोनियों ने अपनी आज़ादी के लिए ब्रिटेन से लड़ाई लड़ी।"
+        },
+        "s2": {
+          "text": "ब्रिटेन ने कॉलोनियों पर नए टैक्स लगा दिए। ब्रिटिश पार्लियामेंट में इन कॉलोनियों का कोई सदस्य नहीं था। उनका नारा था, बिना रिप्रजेंटेशन के कोई टैक्स नहीं।"
+        },
+        "s3": {
+          "text": "1773 में, कॉलोनिस्ट्स ने बोस्टन में ब्रिटिश चाय समुद्र में फेंक दी। इस घटना को बोस्टन टी पार्टी कहा जाता है।"
+        },
+        "s4": {
+          "text": "4 जुलाई 1776 को, कॉलोनियों ने डिक्लेरेशन ऑफ इंडिपेंडेंस अपनाया। थॉमस जेफरसन ने इसे मुख्य रूप से लिखा था, और जॉर्ज वाशिंगटन ने कॉलोनियल आर्मी की अगुवाई की थी।"
+        },
+        "s5": {
+          "text": "1783 में ट्रीटी ऑफ पेरिस के ज़रिए ब्रिटेन ने अमेरिकन इंडिपेंडेंस को मान लिया। इस रेवोल्यूशन ने यूनाइटेड स्टेट्स ऑफ अमेरिका बनाया और पूरी दुनिया में आज़ादी और डेमोक्रेसी फैलाई।"
+        },
+        "s6": {
+          "text": "फ्रेंच रेवोल्यूशन 1789 में शुरू हुई, जब लुई सोलहवें राजा थे। फ्रेंच समाज तीन एस्टेट्स में बंटा हुआ था: पादरी, रईस, और आम लोग।"
+        },
+        "s7": {
+          "text": "आम लोग सबसे ज़्यादा टैक्स देते थे, लेकिन उनके पास बहुत कम अधिकार थे। रूसो, वोल्टेयर, और मोंटेस्क्यू जैसे विचारकों ने आज़ादी और बराबरी के नए विचार फैलाए।"
+        },
+        "s8": {
+          "text": "14 जुलाई 1789 को, पेरिस के लोगों ने बैस्टिल जेल पर हमला किया। नेशनल असेंबली ने डिक्लेरेशन ऑफ द राइट्स ऑफ मैन एंड ऑफ द सिटीज़न पास किया।"
+        },
+        "s9": {
+          "text": "बाद में राजा को फाँसी दे दी गई और फ्रांस एक रिपब्लिक बन गया। इस रेवोल्यूशन ने दुनिया को लिबर्टी, इक्वालिटी, और फ्रेटरनिटी के आदर्श दिए।"
+        },
+        "s10": {
+          "question": "क्या आपको अमेरिकन और फ्रेंच रेवोल्यूशन समझ आया?",
+          "accept": [
+            "हाँ",
+            "जी",
+            "बिल्कुल",
+            "जी हाँ",
+            "हाँ जी",
+            "हाँ, समझ आ गया",
+            "हाँ, समझ में आ गया",
+            "Yes, I understood",
+            "Yes, I got it",
+            "Yes",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s11": {
+          "text": "अब चलिए एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "13 ब्रिटिश कॉलोनियों ने ब्रिटेन से आज़ादी के लिए लड़ाई लड़ी।"
+            },
+            {
+              "text": "उनका नारा था बिना प्रतिनिधित्व के कोई टैक्स नहीं।"
+            },
+            {
+              "text": "1776 में उन्होंने आज़ादी का ऐलान किया, और संयुक्त राज्य अमेरिका का जन्म हुआ।"
+            }
+          ]
+        },
+        "s12": {
+          "text": "अब चलिए एक छोटा सा video देखते हैं।",
+          "cues": [
+            {
+              "text": "फ्रांसीसी क्रांति 1789 में शुरू हुई।"
+            },
+            {
+              "text": "आम लोगों ने सबसे ज़्यादा टैक्स दिए लेकिन उनके पास अधिकार बहुत कम थे।"
+            },
+            {
+              "text": "14 जुलाई 1789 को लोगों ने बैस्टिल पर धावा बोल दिया।"
+            },
+            {
+              "text": "इस क्रांति ने हमें स्वतंत्रता, समानता और बंधुत्व दिया।"
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.726Z"
+    },
+    "en": {
+      "status": "reviewed",
+      "title": "5. American and French Revolutions",
+      "steps": {
+        "s1": {
+          "text": "The American Revolution happened between 1775 and 1783. Thirteen British colonies in North America fought Britain for their freedom."
+        },
+        "s2": {
+          "text": "Britain added new taxes on the colonies. The colonies had no members in the British Parliament. Their slogan was no taxation without representation."
+        },
+        "s3": {
+          "text": "In 1773, colonists threw British tea into the sea at Boston. This event is called the Boston Tea Party."
+        },
+        "s4": {
+          "text": "On 4 July 1776, the colonies adopted the Declaration of Independence. Thomas Jefferson wrote it mainly, and George Washington led the colonial army."
+        },
+        "s5": {
+          "text": "Britain accepted American independence by the Treaty of Paris in 1783. This revolution created the United States of America and spread liberty and democracy worldwide."
+        },
+        "s6": {
+          "text": "The French Revolution began in 1789 when Louis the Sixteenth was king. French society was divided into three estates: the clergy, the nobles, and the common people."
+        },
+        "s7": {
+          "text": "The common people paid most taxes but had few rights. Thinkers like Rousseau, Voltaire, and Montesquieu spread new ideas of freedom and equality."
+        },
+        "s8": {
+          "text": "On 14 July 1789, the people of Paris stormed the Bastille prison. The National Assembly passed the Declaration of the Rights of Man and of the Citizen."
+        },
+        "s9": {
+          "text": "The king was later executed and France became a republic. The revolution gave the world the ideals of Liberty, Equality, and Fraternity."
+        },
+        "s10": {
+          "question": "Did you understand the American and French Revolutions?",
+          "accept": [
+            "Yes, I understood",
+            "Yes, I got it",
+            "Yes",
+            "yes",
+            "yes i did",
+            "ok",
+            "okay",
+            "understood",
+            "got it",
+            "haan"
+          ]
+        },
+        "s11": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "Thirteen British colonies fought for freedom from Britain."
+            },
+            {
+              "text": "Their slogan was no taxation without representation."
+            },
+            {
+              "text": "In 1776 they declared independence, and the United States was born."
+            }
+          ]
+        },
+        "s12": {
+          "text": "Now let us watch a short video.",
+          "cues": [
+            {
+              "text": "The French Revolution began in 1789."
+            },
+            {
+              "text": "The common people paid most taxes but had few rights."
+            },
+            {
+              "text": "On 14 July 1789 the people stormed the Bastille."
+            },
+            {
+              "text": "The revolution gave us Liberty, Equality and Fraternity."
+            }
+          ]
+        }
+      },
+      "quiz": {},
+      "neverSay": [],
+      "reviewer": "admin (AI-prepared)",
+      "reviewedAt": "2026-11-26T14:33:48.726Z"
+    }
+  },
+  "order": 5
+}

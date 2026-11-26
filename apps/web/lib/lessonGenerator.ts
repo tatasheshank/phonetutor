@@ -201,6 +201,18 @@ async function translatePacks(lesson: Lesson, warnings: string[], track: (u: Usa
       }
       const merged = mergeTranslatedPack(en, translated, lang);
       warnings.push(...merged.warnings);
+      // The title is sometimes left in English (the line retry above only covers steps).
+      if (merged.pack.title === en.title && en.title.trim()) {
+        try {
+          // Without a leading "2. " (course numbering), which makes the model keep it as a label.
+          const num = /^\s*(\d+\.\s*)/.exec(en.title)?.[1] ?? "";
+          const { lines, usage: u } = await translateLines([en.title.slice(num.length)], lang);
+          track(u);
+          if (lines[0] && lines[0] !== en.title.slice(num.length)) merged.pack.title = `${num}${lines[0]}`;
+        } catch (err) {
+          console.warn(`[lessons] ${lang}: title translation failed`, err);
+        }
+      }
       return merged.pack;
     } catch (err) {
       warnings.push(`${lang}: translation failed (${(err as Error).message}); English is used until it is regenerated.`);
@@ -271,12 +283,15 @@ export interface ClipInfo {
   ext: "mp4" | "webm";
 }
 
-const VIDEO_PLAN_SYSTEM = (clips: ClipInfo[]) => `You turn a document into a short lesson for older people in India who are learning to use a COMPUTER (for example Microsoft Excel).
-The teacher plays short screen recordings ("clips") on a board, one after another, and explains them aloud. The learner only watches and listens.
+const VIDEO_PLAN_SYSTEM = (clips: ClipInfo[]) =>
+  clips.length ? VIDEO_PLAN_WITH_CLIPS(clips) : TALK_PLAN_NO_CLIPS;
+
+const VIDEO_PLAN_WITH_CLIPS = (clips: ClipInfo[]) => `You turn a document into a short lesson for learners in India, taught with screen recordings.
+The teacher plays short recordings ("clips") on a board, one after another, and explains them aloud. The learner only watches and listens.
 There are NO phone screens in this lesson. Never mention WhatsApp or phone apps unless the document does.
 
 Clips, in order (use each exactly once, in this order):
-${clips.length ? clips.map((c, i) => `${i + 1}. "${c.name}"${c.duration ? ` (${c.duration.toFixed(0)} s)` : ""}`).join("\n") : "(no clips: use only explain steps)"}
+${clips.map((c, i) => `${i + 1}. "${c.name}"${c.duration ? ` (${c.duration.toFixed(0)} s)` : ""}`).join("\n")}
 The file names usually say what each clip shows.
 
 Step kinds:
@@ -286,13 +301,30 @@ Step kinds:
 
 Rules:
 - Follow the document's order. Cover every action it describes, including the last one.
-- Each "text" is spoken aloud: simple everyday English, 1-2 short sentences, at most 30 words. Name what is on the screen by its label, colour and position ("the green Excel icon", "the Save button at the top left").
+- Each "text" is spoken aloud: simple everyday English, 1-2 short sentences, at most 30 words. Name what is on the screen by its label, colour and position, as the document describes it.
 - Speak as the one doing it ("Now I click ..."); the learner only watches.
-- Only teach what the document says. Do not invent features or menus.
+- Only teach what the document says. Do not invent features, menus or what a clip shows beyond its name and the document.
 - Never tell anyone to share an OTP, PIN or password; only warn never to share them.
 
 Return JSON only, no other text:
 {"title": "...", "objectives": ["..."], "steps": [{"kind": "explain", "text": "..."}, {"kind": "clip", "clip": 1, "intro": "...", "cues": [{"at": 0, "text": "..."}]}, {"kind": "check", "question": "...", "accept": ["..."]}]}`;
+
+/** No clips: a spoken lesson on any subject (videos, e.g. from YouTube, can be added afterwards). */
+const TALK_PLAN_NO_CLIPS = `You turn a document into a short spoken lesson for learners in India. A teacher explains it aloud, step by step; the learner listens.
+There are no clips, videos, screens or pictures in this lesson. NEVER mention clips, videos, screens, icons, labels, colours of diagrams, or clicking.
+
+Step kinds:
+- "explain": the teacher says "text".
+- "check": exactly one, last: a yes/no question "Did you understand ...?" with "accept": short spoken ways to say yes.
+
+Rules:
+- Follow the document's order and cover every idea in it. One idea per step.
+- Each "text" is spoken aloud: simple, clear English, 1-3 short sentences, at most 40 words. Keep the document's correct terms (for example "photosynthesis", "alveoli") and explain them simply.
+- Only teach what the document says. Do not add facts that aren't in it.
+- Never tell anyone to share an OTP, PIN or password; only warn never to share them.
+
+Return JSON only, no other text:
+{"title": "...", "objectives": ["..."], "steps": [{"kind": "explain", "text": "..."}, {"kind": "check", "question": "...", "accept": ["..."]}]}`;
 
 /**
  * Prepares a video lesson draft: plans clips and narration from the document, translates it, and
