@@ -40,7 +40,7 @@ export default async function LessonsAdminPage({
         <div>
           <h1>Lessons</h1>
           <p className="muted small">
-            <Link href="/admin">← Cost dashboard</Link>
+            <Link href="/admin">← Cost dashboard</Link> · <Link href="/admin/assistant">✨ Lesson assistant</Link>
           </p>
         </div>
       </header>

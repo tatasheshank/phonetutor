@@ -48,6 +48,19 @@ export function SlidesPanel({ lessonId, steps }: { lessonId: string; steps: Talk
       (d) => `Made ${d.count} slides. Check them in the preview above, then publish.`,
     );
 
+  const find = (what: "pictures" | "videos") =>
+    run(
+      what,
+      what === "pictures" ? "Looking for free pictures on Wikimedia Commons… about a minute." : "Looking for YouTube videos… about a minute.",
+      () => fetch(`/api/admin/lessons/${lessonId}/find`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ what }) }),
+      (d) => {
+        const added = Array.isArray(d.added) ? (d.added as string[]) : [];
+        const notes = Array.isArray(d.notes) ? (d.notes as string[]) : [];
+        const cost = typeof d.costInr === "number" ? ` (₹${d.costInr.toFixed(2)})` : "";
+        return (added.length ? `Added: ${added.join("; ")}.` : `No suitable ${what} found.`) + cost + (notes.length ? " " + notes.join(" ") : "");
+      },
+    );
+
   function upload(stepId: string, form: HTMLFormElement) {
     const data = new FormData(form);
     const file = data.get("file");
@@ -81,6 +94,12 @@ export function SlidesPanel({ lessonId, steps }: { lessonId: string; steps: Talk
       <div className="row">
         <button className="btn" onClick={makeSlides} disabled={busy !== null}>
           {withSlides ? "↻ Make the slides again" : "✨ Make board slides"}
+        </button>
+        <button className="btn secondary" onClick={() => find("pictures")} disabled={busy !== null}>
+          🖼 Find pictures
+        </button>
+        <button className="btn secondary" onClick={() => find("videos")} disabled={busy !== null}>
+          🎬 Find videos
         </button>
       </div>
       {status && (

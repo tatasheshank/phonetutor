@@ -17,3 +17,4 @@ export * from "./lesson/fromVideoPlan";
 export * from "./lesson/courseOutline";
 export * from "./liveAvatar";
 export * from "./lesson/slides";
+export * from "./lesson/assistant";

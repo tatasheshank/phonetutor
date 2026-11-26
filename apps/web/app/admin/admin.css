@@ -445,3 +445,47 @@
 .live-option .stack {
   gap: 2px;
 }
+
+/* Lesson assistant */
+.assistant-log {
+  gap: 8px;
+}
+.assistant-msg {
+  max-width: 92%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.assistant-msg p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+.assistant-msg.admin {
+  align-self: flex-end;
+  background: var(--accent);
+  color: #fff;
+  border-color: transparent;
+}
+.assistant-msg.assistant {
+  align-self: flex-start;
+}
+.assistant-msg.warn {
+  border-color: #f59e0b;
+}
+.assistant-msg.error {
+  border-color: #dc2626;
+}
+.assistant-msg.done {
+  border-color: #16a34a;
+  font-weight: 600;
+}
+.assistant-msg.question {
+  border-color: var(--accent);
+}
+.assistant-chapter {
+  white-space: pre-wrap;
+  font-size: 0.85rem;
+  max-height: 320px;
+  overflow: auto;
+}

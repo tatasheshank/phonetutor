@@ -94,7 +94,7 @@ Return JSON only, no other text.`;
  * Asks for a JSON answer; if the model returns broken JSON, asks once more, showing it the problem.
  * Models occasionally drop a quote or bracket, and a second try almost always fixes it.
  */
-async function askJson(
+export async function askJson(
   messages: ChatMessage[],
   opts: ChatOptions,
   track: (u: { promptTokens: number; completionTokens: number }) => void,
@@ -229,7 +229,7 @@ async function translatePacks(lesson: Lesson, warnings: string[], track: (u: Usa
   lesson.locales = { te, hi, en };
 }
 
-function newTracker() {
+export function newTracker() {
   const usage: Usage = { promptTokens: 0, completionTokens: 0 };
   const track = (u: Usage) => {
     usage.promptTokens += u.promptTokens;
