@@ -27,12 +27,20 @@
     {
       "id": "s3",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/boston-tea-party.jpg",
+        "credit": "Nathaniel Currier · Public domain · Wikimedia Commons"
+      }
     },
     {
       "id": "s4",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/declaration-of-independence.jpg",
+        "credit": "John Trumbull · Public domain · Wikimedia Commons"
+      }
     },
     {
       "id": "s5",
@@ -65,7 +73,11 @@
     {
       "id": "s6",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/louis-xvi.jpg",
+        "credit": "Public domain · Wikimedia Commons"
+      }
     },
     {
       "id": "s7",
@@ -75,7 +87,11 @@
     {
       "id": "s8",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/storming-of-the-bastille.jpg",
+        "credit": "Jean-Pierre Houël · Public domain · Wikimedia Commons"
+      }
     },
     {
       "id": "s9",
@@ -133,31 +149,103 @@
       "title": "5. అమెరికన్ మరియు ఫ్రెంచ్ విప్లవాలు",
       "steps": {
         "s1": {
-          "text": "అమెరికన్ విప్లవం 1775 మరియు 1783 మధ్య జరిగింది. నార్త్ అమెరికాలోని 13 బ్రిటిష్ కాలనీలు తమ స్వేచ్ఛ కోసం బ్రిటన్‌తో పోరాడాయి."
+          "text": "అమెరికన్ విప్లవం 1775 మరియు 1783 మధ్య జరిగింది. నార్త్ అమెరికాలోని 13 బ్రిటిష్ కాలనీలు తమ స్వేచ్ఛ కోసం బ్రిటన్‌తో పోరాడాయి.",
+          "slide": {
+            "heading": "అమెరికన్ రెవల్యూషన్ టైమ్‌లైన్",
+            "points": [
+              "1783 వరకు",
+              "13 బ్రిటిష్ కాలనీలు",
+              "స్వేచ్ఛ కోసం బ్రిటన్‌తో పోరాటం"
+            ]
+          }
         },
         "s2": {
-          "text": "బ్రిటన్ కాలనీలపై కొత్త పన్నులు వేసింది. బ్రిటిష్ పార్లమెంట్‌లో ఈ కాలనీలకు సభ్యులు లేరు. వాళ్ళ నినాదం 'ప్రాతినిధ్యం లేకుండా పన్ను లేదు' అనేది."
+          "text": "బ్రిటన్ కాలనీలపై కొత్త పన్నులు వేసింది. బ్రిటిష్ పార్లమెంట్‌లో ఈ కాలనీలకు సభ్యులు లేరు. వాళ్ళ నినాదం 'ప్రాతినిధ్యం లేకుండా పన్ను లేదు' అనేది.",
+          "slide": {
+            "heading": "బ్రిటిష్ పన్నులు మరియు ప్రాతినిధ్యం",
+            "points": [
+              "కాలనీలపై కొత్త పన్నులు",
+              "బ్రిటిష్ పార్లమెంట్‌లో సభ్యులు లేరు",
+              "ప్రాతినిధ్యం లేకుండా పన్ను లేదు"
+            ]
+          }
         },
         "s3": {
-          "text": "1773లో, బోస్టన్ దగ్గర వలసవాదులు బ్రిటిష్ టీని సముద్రంలో పడేశారు. ఈ సంఘటనను బోస్టన్ టీ పార్టీ అంటారు."
+          "text": "1773లో, బోస్టన్ దగ్గర వలసవాదులు బ్రిటిష్ టీని సముద్రంలో పడేశారు. ఈ సంఘటనను బోస్టన్ టీ పార్టీ అంటారు.",
+          "slide": {
+            "heading": "బోస్టన్ టీ పార్టీ",
+            "points": [
+              "వలసవాసులు టీని విసిరారు",
+              "బోస్టన్‌లో సముద్రంలో కలిపారు",
+              "దీన్ని బోస్టన్ టీ పార్టీ అంటారు"
+            ]
+          }
         },
         "s4": {
-          "text": "4 జూలై 1776న, కాలనీలు డిక్లరేషన్ ఆఫ్ ఇండిపెండెన్స్ ను ఆమోదించాయి. థామస్ జెఫర్సన్ దీన్ని ప్రధానంగా రాశారు, జార్జ్ వాషింగ్టన్ వలస సైన్యానికి నాయకత్వం వహించారు."
+          "text": "4 జూలై 1776న, కాలనీలు డిక్లరేషన్ ఆఫ్ ఇండిపెండెన్స్ ను ఆమోదించాయి. థామస్ జెఫర్సన్ దీన్ని ప్రధానంగా రాశారు, జార్జ్ వాషింగ్టన్ వలస సైన్యానికి నాయకత్వం వహించారు.",
+          "slide": {
+            "heading": "స్వాతంత్ర్య ప్రకటన",
+            "points": [
+              "జూలై 1776 లో ఆమోదించారు",
+              "థామస్ జెఫర్సన్ దీన్ని రాశారు",
+              "జార్జ్ వాషింగ్టన్ సైన్యాన్ని నడిపించారు"
+            ]
+          }
         },
         "s5": {
-          "text": "1783లో పారిస్ ఒప్పందం ద్వారా బ్రిటన్ అమెరికన్ స్వాతంత్ర్యాన్ని అంగీకరించింది. ఈ విప్లవం యునైటెడ్ స్టేట్స్ ఆఫ్ అమెరికాను సృష్టించింది. అలాగే ప్రపంచవ్యాప్తంగా స్వేచ్ఛ మరియు ప్రజాస్వామ్యాన్ని వ్యాప్తి చేసింది."
+          "text": "1783లో పారిస్ ఒప్పందం ద్వారా బ్రిటన్ అమెరికన్ స్వాతంత్ర్యాన్ని అంగీకరించింది. ఈ విప్లవం యునైటెడ్ స్టేట్స్ ఆఫ్ అమెరికాను సృష్టించింది. అలాగే ప్రపంచవ్యాప్తంగా స్వేచ్ఛ మరియు ప్రజాస్వామ్యాన్ని వ్యాప్తి చేసింది.",
+          "slide": {
+            "heading": "పారిస్ ఒప్పందం మరియు USA",
+            "points": [
+              "పారిస్ ఒప్పందం 1783",
+              "బ్రిటన్ స్వాతంత్ర్యాన్ని అంగీకరించింది",
+              "యునైటెడ్ స్టేట్స్ ఆఫ్ అమెరికా ఏర్పడింది"
+            ]
+          }
         },
         "s6": {
-          "text": "లూయిస్ 16వ వాడు రాజుగా ఉన్నప్పుడు 1789లో ఫ్రెంచ్ విప్లవం మొదలైంది. ఫ్రెంచ్ సమాజం మూడు వర్గాలుగా విభజించబడింది: మతాధికారులు, ప్రభువులు, మరియు సామాన్య ప్రజలు."
+          "text": "లూయిస్ 16వ వాడు రాజుగా ఉన్నప్పుడు 1789లో ఫ్రెంచ్ విప్లవం మొదలైంది. ఫ్రెంచ్ సమాజం మూడు వర్గాలుగా విభజించబడింది: మతాధికారులు, ప్రభువులు, మరియు సామాన్య ప్రజలు.",
+          "slide": {
+            "heading": "ఫ్రెంచ్ రెవల్యూషన్ మొదలైంది",
+            "points": [
+              "16వ లూయిస్ రాజు",
+              "3 ఎస్టేట్లు: మతాధికారులు, కులీనులు, సామాన్యులు",
+              "సామాన్యులకు చాలా తక్కువ హక్కులు ఉన్నాయి"
+            ]
+          }
         },
         "s7": {
-          "text": "సామాన్య ప్రజలు ఎక్కువ పన్నులు కట్టారు కానీ వారికి హక్కులు తక్కువే. రూసో, వోల్టైర్, మరియు మాంటెస్క్యూ లాంటి ఆలోచనాపరులు స్వేచ్ఛ మరియు సమానత్వం అనే కొత్త ఆలోచనలను వ్యాప్తి చేశారు."
+          "text": "సామాన్య ప్రజలు ఎక్కువ పన్నులు కట్టారు కానీ వారికి హక్కులు తక్కువే. రూసో, వోల్టైర్, మరియు మాంటెస్క్యూ లాంటి ఆలోచనాపరులు స్వేచ్ఛ మరియు సమానత్వం అనే కొత్త ఆలోచనలను వ్యాప్తి చేశారు.",
+          "slide": {
+            "heading": "ఆలోచనాపరులు మరియు కొత్త ఆలోచనలు",
+            "points": [
+              "రూసో, వోల్టైర్, మాంటెస్క్యూ",
+              "స్వేచ్ఛ మరియు సమానత్వాన్ని వ్యాప్తి చేశారు",
+              "సామాన్య ప్రజలు ఎక్కువ పన్నులు కట్టారు"
+            ]
+          }
         },
         "s8": {
-          "text": "14 జూలై 1789న, పారిస్ ప్రజలు బాస్టిల్ జైలుపై దాడి చేశారు. నేషనల్ అసెంబ్లీ డిక్లరేషన్ ఆఫ్ ది రైట్స్ ఆఫ్ మ్యాన్ అండ్ ఆఫ్ ది సిటిజెన్ ను ఆమోదించింది."
+          "text": "14 జూలై 1789న, పారిస్ ప్రజలు బాస్టిల్ జైలుపై దాడి చేశారు. నేషనల్ అసెంబ్లీ డిక్లరేషన్ ఆఫ్ ది రైట్స్ ఆఫ్ మ్యాన్ అండ్ ఆఫ్ ది సిటిజెన్ ను ఆమోదించింది.",
+          "slide": {
+            "heading": "బాస్టిల్ పై దాడి",
+            "points": [
+              "జూలై 1789 పారిస్‌లో బాస్టిల్ పై దాడి జరిగింది",
+              "నేషనల్ అసెంబ్లీ ప్రకటనను ఆమోదించింది",
+              "మనిషి హక్కుల ప్రకటన"
+            ]
+          }
         },
         "s9": {
-          "text": "తరువాత రాజును ఉరితీశారు మరియు ఫ్రాన్స్ ఒక రిపబ్లిక్ గా మారింది. ఈ విప్లవం ప్రపంచానికి స్వేచ్ఛ, సమానత్వం, మరియు సౌభ్రాతృత్వం అనే ఆదర్శాలను ఇచ్చింది."
+          "text": "తరువాత రాజును ఉరితీశారు మరియు ఫ్రాన్స్ ఒక రిపబ్లిక్ గా మారింది. ఈ విప్లవం ప్రపంచానికి స్వేచ్ఛ, సమానత్వం, మరియు సౌభ్రాతృత్వం అనే ఆదర్శాలను ఇచ్చింది.",
+          "slide": {
+            "heading": "రిపబ్లిక్ మరియు ఆదర్శాలు",
+            "points": [
+              "రాజుకు ఉరిశిక్ష పడింది",
+              "ఫ్రాన్స్ ఒక రిపబ్లిక్‌గా మారింది",
+              "లిబర్టీ, ఈక్వాలిటీ, ఫ్రాటర్నిటీ"
+            ]
+          }
         },
         "s10": {
           "question": "అమెరికన్ మరియు ఫ్రెంచ్ విప్లవాల గురించి మీకు అర్థమైందా?",
@@ -213,38 +301,110 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.726Z"
+      "reviewedAt": "2026-11-26T15:14:43.196Z"
     },
     "hi": {
       "status": "reviewed",
       "title": "5. अमेरिकी और फ्रांसीसी क्रांति",
       "steps": {
         "s1": {
-          "text": "अमेरिकन रेवोल्यूशन 1775 और 1783 के बीच हुई थी। नॉर्थ अमेरिका की 13 ब्रिटिश कॉलोनियों ने अपनी आज़ादी के लिए ब्रिटेन से लड़ाई लड़ी।"
+          "text": "अमेरिकन रेवोल्यूशन 1775 और 1783 के बीच हुई थी। नॉर्थ अमेरिका की 13 ब्रिटिश कॉलोनियों ने अपनी आज़ादी के लिए ब्रिटेन से लड़ाई लड़ी।",
+          "slide": {
+            "heading": "अमेरिकन रेवोल्यूशन की टाइमलाइन",
+            "points": [
+              "1783 तक",
+              "13 ब्रिटिश कॉलोनियां",
+              "आज़ादी के लिए ब्रिटेन से लड़े"
+            ]
+          }
         },
         "s2": {
-          "text": "ब्रिटेन ने कॉलोनियों पर नए टैक्स लगा दिए। ब्रिटिश पार्लियामेंट में इन कॉलोनियों का कोई सदस्य नहीं था। उनका नारा था, बिना रिप्रजेंटेशन के कोई टैक्स नहीं।"
+          "text": "ब्रिटेन ने कॉलोनियों पर नए टैक्स लगा दिए। ब्रिटिश पार्लियामेंट में इन कॉलोनियों का कोई सदस्य नहीं था। उनका नारा था, बिना रिप्रजेंटेशन के कोई टैक्स नहीं।",
+          "slide": {
+            "heading": "ब्रिटिश टैक्स और रिप्रजेंटेशन",
+            "points": [
+              "कॉलोनियों पर नए टैक्स",
+              "ब्रिटिश पार्लियामेंट में कोई सदस्य नहीं",
+              "बिना रिप्रजेंटेशन के टैक्स नहीं"
+            ]
+          }
         },
         "s3": {
-          "text": "1773 में, कॉलोनिस्ट्स ने बोस्टन में ब्रिटिश चाय समुद्र में फेंक दी। इस घटना को बोस्टन टी पार्टी कहा जाता है।"
+          "text": "1773 में, कॉलोनिस्ट्स ने बोस्टन में ब्रिटिश चाय समुद्र में फेंक दी। इस घटना को बोस्टन टी पार्टी कहा जाता है।",
+          "slide": {
+            "heading": "बोस्टन टी पार्टी",
+            "points": [
+              "कॉलोनिस्ट्स ने चाय फेंकी",
+              "बोस्टन में समुद्र में",
+              "इसे बोस्टन टी पार्टी कहा गया"
+            ]
+          }
         },
         "s4": {
-          "text": "4 जुलाई 1776 को, कॉलोनियों ने डिक्लेरेशन ऑफ इंडिपेंडेंस अपनाया। थॉमस जेफरसन ने इसे मुख्य रूप से लिखा था, और जॉर्ज वाशिंगटन ने कॉलोनियल आर्मी की अगुवाई की थी।"
+          "text": "4 जुलाई 1776 को, कॉलोनियों ने डिक्लेरेशन ऑफ इंडिपेंडेंस अपनाया। थॉमस जेफरसन ने इसे मुख्य रूप से लिखा था, और जॉर्ज वाशिंगटन ने कॉलोनियल आर्मी की अगुवाई की थी।",
+          "slide": {
+            "heading": "डिक्लेरेशन ऑफ इंडिपेंडेंस",
+            "points": [
+              "जुलाई 1776 में अपनाया गया",
+              "थॉमस जेफरसन ने इसे लिखा",
+              "जॉर्ज वाशिंगटन ने सेना का नेतृत्व किया"
+            ]
+          }
         },
         "s5": {
-          "text": "1783 में ट्रीटी ऑफ पेरिस के ज़रिए ब्रिटेन ने अमेरिकन इंडिपेंडेंस को मान लिया। इस रेवोल्यूशन ने यूनाइटेड स्टेट्स ऑफ अमेरिका बनाया और पूरी दुनिया में आज़ादी और डेमोक्रेसी फैलाई।"
+          "text": "1783 में ट्रीटी ऑफ पेरिस के ज़रिए ब्रिटेन ने अमेरिकन इंडिपेंडेंस को मान लिया। इस रेवोल्यूशन ने यूनाइटेड स्टेट्स ऑफ अमेरिका बनाया और पूरी दुनिया में आज़ादी और डेमोक्रेसी फैलाई।",
+          "slide": {
+            "heading": "ट्रीटी ऑफ पेरिस और यूएसए",
+            "points": [
+              "ट्रीटी ऑफ पेरिस 1783",
+              "ब्रिटेन ने आज़ादी स्वीकार की",
+              "यूनाइटेड स्टेट्स ऑफ अमेरिका बनाया"
+            ]
+          }
         },
         "s6": {
-          "text": "फ्रेंच रेवोल्यूशन 1789 में शुरू हुई, जब लुई सोलहवें राजा थे। फ्रेंच समाज तीन एस्टेट्स में बंटा हुआ था: पादरी, रईस, और आम लोग।"
+          "text": "फ्रेंच रेवोल्यूशन 1789 में शुरू हुई, जब लुई सोलहवें राजा थे। फ्रेंच समाज तीन एस्टेट्स में बंटा हुआ था: पादरी, रईस, और आम लोग।",
+          "slide": {
+            "heading": "फ्रेंच रेवोल्यूशन शुरू",
+            "points": [
+              "लुई सोलहवें राजा थे",
+              "3 एस्टेट्स: पादरी, रईस, आम",
+              "आम लोगों के पास कम अधिकार थे"
+            ]
+          }
         },
         "s7": {
-          "text": "आम लोग सबसे ज़्यादा टैक्स देते थे, लेकिन उनके पास बहुत कम अधिकार थे। रूसो, वोल्टेयर, और मोंटेस्क्यू जैसे विचारकों ने आज़ादी और बराबरी के नए विचार फैलाए।"
+          "text": "आम लोग सबसे ज़्यादा टैक्स देते थे, लेकिन उनके पास बहुत कम अधिकार थे। रूसो, वोल्टेयर, और मोंटेस्क्यू जैसे विचारकों ने आज़ादी और बराबरी के नए विचार फैलाए।",
+          "slide": {
+            "heading": "विचारक और नए विचार",
+            "points": [
+              "रूसो, वोल्टेयर, मोंटेस्क्यू",
+              "आज़ादी और समानता फैलाई",
+              "आम लोगों ने सबसे ज़्यादा टैक्स दिया"
+            ]
+          }
         },
         "s8": {
-          "text": "14 जुलाई 1789 को, पेरिस के लोगों ने बैस्टिल जेल पर हमला किया। नेशनल असेंबली ने डिक्लेरेशन ऑफ द राइट्स ऑफ मैन एंड ऑफ द सिटीज़न पास किया।"
+          "text": "14 जुलाई 1789 को, पेरिस के लोगों ने बैस्टिल जेल पर हमला किया। नेशनल असेंबली ने डिक्लेरेशन ऑफ द राइट्स ऑफ मैन एंड ऑफ द सिटीज़न पास किया।",
+          "slide": {
+            "heading": "स्टॉर्मिंग द बैस्टिल",
+            "points": [
+              "जुलाई 1789 पेरिस में बैस्टिल पर धावा बोला",
+              "नेशनल असेंबली ने डिक्लेरेशन पास किया",
+              "डिक्लेरेशन ऑफ राइट्स ऑफ मैन"
+            ]
+          }
         },
         "s9": {
-          "text": "बाद में राजा को फाँसी दे दी गई और फ्रांस एक रिपब्लिक बन गया। इस रेवोल्यूशन ने दुनिया को लिबर्टी, इक्वालिटी, और फ्रेटरनिटी के आदर्श दिए।"
+          "text": "बाद में राजा को फाँसी दे दी गई और फ्रांस एक रिपब्लिक बन गया। इस रेवोल्यूशन ने दुनिया को लिबर्टी, इक्वालिटी, और फ्रेटरनिटी के आदर्श दिए।",
+          "slide": {
+            "heading": "रिपब्लिक और आदर्श",
+            "points": [
+              "राजा को फाँसी दी गई",
+              "फ्रांस एक रिपब्लिक बन गया",
+              "लिबर्टी, इक्वालिटी, फ्रेटरनिटी"
+            ]
+          }
         },
         "s10": {
           "question": "क्या आपको अमेरिकन और फ्रेंच रेवोल्यूशन समझ आया?",
@@ -303,38 +463,110 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.726Z"
+      "reviewedAt": "2026-11-26T15:14:43.196Z"
     },
     "en": {
       "status": "reviewed",
       "title": "5. American and French Revolutions",
       "steps": {
         "s1": {
-          "text": "The American Revolution happened between 1775 and 1783. Thirteen British colonies in North America fought Britain for their freedom."
+          "text": "The American Revolution happened between 1775 and 1783. Thirteen British colonies in North America fought Britain for their freedom.",
+          "slide": {
+            "heading": "American Revolution timeline",
+            "points": [
+              "to 1783",
+              "Thirteen British colonies",
+              "Fought Britain for freedom"
+            ]
+          }
         },
         "s2": {
-          "text": "Britain added new taxes on the colonies. The colonies had no members in the British Parliament. Their slogan was no taxation without representation."
+          "text": "Britain added new taxes on the colonies. The colonies had no members in the British Parliament. Their slogan was no taxation without representation.",
+          "slide": {
+            "heading": "British taxes and representation",
+            "points": [
+              "New taxes on colonies",
+              "No members in British Parliament",
+              "No taxation without representation"
+            ]
+          }
         },
         "s3": {
-          "text": "In 1773, colonists threw British tea into the sea at Boston. This event is called the Boston Tea Party."
+          "text": "In 1773, colonists threw British tea into the sea at Boston. This event is called the Boston Tea Party.",
+          "slide": {
+            "heading": "Boston Tea Party",
+            "points": [
+              "colonists threw tea",
+              "Into the sea at Boston",
+              "Called the Boston Tea Party"
+            ]
+          }
         },
         "s4": {
-          "text": "On 4 July 1776, the colonies adopted the Declaration of Independence. Thomas Jefferson wrote it mainly, and George Washington led the colonial army."
+          "text": "On 4 July 1776, the colonies adopted the Declaration of Independence. Thomas Jefferson wrote it mainly, and George Washington led the colonial army.",
+          "slide": {
+            "heading": "Declaration of Independence",
+            "points": [
+              "July 1776 adopted",
+              "Thomas Jefferson wrote it",
+              "George Washington led army"
+            ]
+          }
         },
         "s5": {
-          "text": "Britain accepted American independence by the Treaty of Paris in 1783. This revolution created the United States of America and spread liberty and democracy worldwide."
+          "text": "Britain accepted American independence by the Treaty of Paris in 1783. This revolution created the United States of America and spread liberty and democracy worldwide.",
+          "slide": {
+            "heading": "Treaty of Paris and USA",
+            "points": [
+              "Treaty of Paris 1783",
+              "Britain accepted independence",
+              "Created United States of America"
+            ]
+          }
         },
         "s6": {
-          "text": "The French Revolution began in 1789 when Louis the Sixteenth was king. French society was divided into three estates: the clergy, the nobles, and the common people."
+          "text": "The French Revolution began in 1789 when Louis the Sixteenth was king. French society was divided into three estates: the clergy, the nobles, and the common people.",
+          "slide": {
+            "heading": "French Revolution begins",
+            "points": [
+              "Louis the Sixteenth king",
+              "Three estates: clergy, nobles, common",
+              "Common people had few rights"
+            ]
+          }
         },
         "s7": {
-          "text": "The common people paid most taxes but had few rights. Thinkers like Rousseau, Voltaire, and Montesquieu spread new ideas of freedom and equality."
+          "text": "The common people paid most taxes but had few rights. Thinkers like Rousseau, Voltaire, and Montesquieu spread new ideas of freedom and equality.",
+          "slide": {
+            "heading": "Thinkers and new ideas",
+            "points": [
+              "Rousseau, Voltaire, Montesquieu",
+              "Spread freedom and equality",
+              "Common people paid most taxes"
+            ]
+          }
         },
         "s8": {
-          "text": "On 14 July 1789, the people of Paris stormed the Bastille prison. The National Assembly passed the Declaration of the Rights of Man and of the Citizen."
+          "text": "On 14 July 1789, the people of Paris stormed the Bastille prison. The National Assembly passed the Declaration of the Rights of Man and of the Citizen.",
+          "slide": {
+            "heading": "Storming the Bastille",
+            "points": [
+              "July 1789 Paris stormed Bastille",
+              "National Assembly passed declaration",
+              "Declaration of Rights of Man"
+            ]
+          }
         },
         "s9": {
-          "text": "The king was later executed and France became a republic. The revolution gave the world the ideals of Liberty, Equality, and Fraternity."
+          "text": "The king was later executed and France became a republic. The revolution gave the world the ideals of Liberty, Equality, and Fraternity.",
+          "slide": {
+            "heading": "Republic and ideals",
+            "points": [
+              "King executed",
+              "France became a republic",
+              "Liberty, Equality, Fraternity"
+            ]
+          }
         },
         "s10": {
           "question": "Did you understand the American and French Revolutions?",
@@ -386,7 +618,7 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.726Z"
+      "reviewedAt": "2026-11-26T15:14:43.196Z"
     }
   },
   "order": 5

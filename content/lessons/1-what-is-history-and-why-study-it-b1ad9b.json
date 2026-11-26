@@ -18,7 +18,11 @@
     {
       "id": "s1",
       "type": "say",
-      "avatar": "smile"
+      "avatar": "smile",
+      "image": {
+        "src": "/lesson-media/history-civics/herodotus.jpg",
+        "credit": "Livioandronico2013 · CC BY-SA 4.0 · Wikimedia Commons"
+      }
     },
     {
       "id": "s2",
@@ -38,7 +42,11 @@
     {
       "id": "s5",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/flag-of-india.png",
+        "credit": "Government of India · Public domain · Wikimedia Commons"
+      }
     },
     {
       "id": "s6",
@@ -112,34 +120,105 @@
       "title": "1. చరిత్ర అంటే ఏమిటి, దాన్ని ఎందుకు చదువుతాం",
       "steps": {
         "s1": {
-          "text": "హిస్టరీ అనే పదం గ్రీక్ పదం historia నుంచి వచ్చింది. అంటే ప్రశ్నలు అడగడం ద్వారా వచ్చే జ్ఞానం లేదా విచారణ అని అర్థం."
+          "text": "హిస్టరీ అనే పదం గ్రీక్ పదం historia నుంచి వచ్చింది. అంటే ప్రశ్నలు అడగడం ద్వారా వచ్చే జ్ఞానం లేదా విచారణ అని అర్థం.",
+          "slide": {
+            "heading": "చరిత్ర పుట్టుక",
+            "points": [
+              "గ్రీక్ పదం చరిత్ర నుండి చరిత్ర అనే పదం వచ్చింది",
+              "అంటే ప్రశ్నలు అడిగి తెలుసుకునే విషయం లేదా జ్ఞానం"
+            ]
+          }
         },
         "s2": {
-          "text": "హిస్టరీ అంటే మనుషుల గతాన్ని అధ్యయనం చేయడం. ప్రజలు ఏం చేశారు, ఎలా బతికారు, పరిస్థితులు ఎందుకు మారాయి అనేది ఇందులో ఉంటుంది."
+          "text": "హిస్టరీ అంటే మనుషుల గతాన్ని అధ్యయనం చేయడం. ప్రజలు ఏం చేశారు, ఎలా బతికారు, పరిస్థితులు ఎందుకు మారాయి అనేది ఇందులో ఉంటుంది.",
+          "slide": {
+            "heading": "చరిత్ర నిర్వచనం",
+            "points": [
+              "మనుషుల గతాన్ని చదివేది",
+              "ప్రజలు ఏం చేశారు, ఎలా బతికారు, ఎందుకు మారాయి అనేది ఇందులో ఉంటుంది"
+            ]
+          }
         },
         "s3": {
-          "text": "చరిత్రకారుడు E. H. Carr హిస్టరీని వర్తమానం, గతం మధ్య జరిగే అంతులేని సంభాషణ అని చెప్పారు."
+          "text": "చరిత్రకారుడు E. H. Carr హిస్టరీని వర్తమానం, గతం మధ్య జరిగే అంతులేని సంభాషణ అని చెప్పారు.",
+          "slide": {
+            "heading": "చరిత్రకారుడు E. H. Carr",
+            "points": [
+              "E. H. Carr చరిత్రను ఒక అంతులేని సంభాషణ అన్నారు",
+              "వర్తమానానికి, గతానికి మధ్య జరిగేది"
+            ]
+          }
         },
         "s4": {
-          "text": "గతం నుంచి నేటి ప్రపంచం పుట్టింది కాబట్టి, హిస్టరీ మనకు వర్తమానాన్ని అర్థం చేసుకోవడానికి సహాయపడుతుంది."
+          "text": "గతం నుంచి నేటి ప్రపంచం పుట్టింది కాబట్టి, హిస్టరీ మనకు వర్తమానాన్ని అర్థం చేసుకోవడానికి సహాయపడుతుంది.",
+          "slide": {
+            "heading": "వర్తమానాన్ని అర్థం చేసుకోవడం",
+            "points": [
+              "చరిత్ర మనకు వర్తమానాన్ని అర్థం చేసుకోవడానికి సహాయపడుతుంది",
+              "నేటి ప్రపంచం గతం నుండే పుట్టింది"
+            ]
+          }
         },
         "s5": {
-          "text": "ఇది మన సంస్కృతి, వారసత్వం గురించి నేర్పుతుంది. మన దేశం మీద ప్రేమను పెంచుతుంది."
+          "text": "ఇది మన సంస్కృతి, వారసత్వం గురించి నేర్పుతుంది. మన దేశం మీద ప్రేమను పెంచుతుంది.",
+          "slide": {
+            "heading": "సంస్కృతి మరియు వారసత్వం",
+            "points": [
+              "సంస్కృతి, వారసత్వం గురించి నేర్పుతుంది",
+              "దేశం మీద ప్రేమను పెంచుతుంది"
+            ]
+          }
         },
         "s6": {
-          "text": "పాత కాలపు వాళ్లు చేసిన తప్పులు, విజయాలను ఇది చూపిస్తుంది. వాటి నుంచి మనం నేర్చుకోవచ్చు."
+          "text": "పాత కాలపు వాళ్లు చేసిన తప్పులు, విజయాలను ఇది చూపిస్తుంది. వాటి నుంచి మనం నేర్చుకోవచ్చు.",
+          "slide": {
+            "heading": "తప్పుల నుండి నేర్చుకోవడం",
+            "points": [
+              "గతంలోని ప్రజల తప్పులు, విజయాలు చూపిస్తుంది",
+              "వారి నుండి నేర్చుకోండి"
+            ]
+          }
         },
         "s7": {
-          "text": "ఆధారాలను చూడటం, వేర్వేరు మూలాలను పోల్చడం, విమర్శనాత్మకంగా ఆలోచించడం లాంటివి ఇది మన మైండ్‌కి నేర్పుతుంది."
+          "text": "ఆధారాలను చూడటం, వేర్వేరు మూలాలను పోల్చడం, విమర్శనాత్మకంగా ఆలోచించడం లాంటివి ఇది మన మైండ్‌కి నేర్పుతుంది.",
+          "slide": {
+            "heading": "విమర్శనాత్మక ఆలోచన నైపుణ్యాలు",
+            "points": [
+              "సాక్ష్యాలను చూసేలా మనసును సిద్ధం చేస్తుంది",
+              "మూలాలను పోల్చి విమర్శనాత్మకంగా ఆలోచించండి"
+            ]
+          }
         },
         "s8": {
-          "text": "వేర్వేరు ప్రజలు, మతాలు కలిసి ఎలా బతికారో మనం నేర్చుకుంటాం కాబట్టి, ఇది సహనాన్ని కూడా పెంచుతుంది."
+          "text": "వేర్వేరు ప్రజలు, మతాలు కలిసి ఎలా బతికారో మనం నేర్చుకుంటాం కాబట్టి, ఇది సహనాన్ని కూడా పెంచుతుంది.",
+          "slide": {
+            "heading": "సహనాన్ని పెంచడం",
+            "points": [
+              "సహనాన్ని పెంచుతుంది",
+              "వేర్వేరు ప్రజలు, మతాలు కలిసి ఎలా బతికారో నేర్చుకోండి"
+            ]
+          }
         },
         "s9": {
-          "text": "హిస్టరీ పరిధి చాలా పెద్దది. ప్రాచీన కాలం నుంచి ఇప్పటి వరకు ప్రతి కాలాన్ని, మన ఊరి నుంచి ప్రపంచం వరకు ప్రతి ప్రదేశాన్ని ఇది కవర్ చేస్తుంది."
+          "text": "హిస్టరీ పరిధి చాలా పెద్దది. ప్రాచీన కాలం నుంచి ఇప్పటి వరకు ప్రతి కాలాన్ని, మన ఊరి నుంచి ప్రపంచం వరకు ప్రతి ప్రదేశాన్ని ఇది కవర్ చేస్తుంది.",
+          "slide": {
+            "heading": "చరిత్ర పరిధి",
+            "points": [
+              "చాలా పెద్ద పరిధి",
+              "ప్రాచీన కాలం నుండి నేటి వరకు ప్రతి కాలం",
+              "ఊరు నుండి ప్రపంచం మొత్తం వరకు ప్రతి ప్రదేశం"
+            ]
+          }
         },
         "s10": {
-          "text": "రాజకీయాలు, సమాజం, ఆర్థిక వ్యవస్థ, మతం, కళ, సైన్స్, ఆలోచనలు... ఇలా మానవ జీవితంలోని ప్రతి కోణాన్ని ఇది అధ్యయనం చేస్తుంది."
+          "text": "రాజకీయాలు, సమాజం, ఆర్థిక వ్యవస్థ, మతం, కళ, సైన్స్, ఆలోచనలు... ఇలా మానవ జీవితంలోని ప్రతి కోణాన్ని ఇది అధ్యయనం చేస్తుంది.",
+          "slide": {
+            "heading": "మానవ జీవిత అంశాలు",
+            "points": [
+              "మానవ జీవితంలో ప్రతి కోణాన్ని చదువుతుంది",
+              "రాజకీయాలు, సమాజం, ఆర్థిక వ్యవస్థ, మతం, కళ, సైన్స్ మరియు ఆలోచనలు"
+            ]
+          }
         },
         "s11": {
           "question": "హిస్టరీ అంటే ఏమిటి, దాన్ని ఎందుకు చదువుతాం అనేది మీకు అర్థమైందా?",
@@ -182,41 +261,112 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.860Z"
+      "reviewedAt": "2026-11-26T15:14:43.280Z"
     },
     "hi": {
       "status": "reviewed",
       "title": "1. इतिहास क्या है और हम इसे क्यों पढ़ते हैं",
       "steps": {
         "s1": {
-          "text": "इतिहास शब्द ग्रीक शब्द हिस्टोरिया से आया है। इसका मतलब है पूछताछ, या सवाल पूछकर हासिल किया गया ज्ञान।"
+          "text": "इतिहास शब्द ग्रीक शब्द हिस्टोरिया से आया है। इसका मतलब है पूछताछ, या सवाल पूछकर हासिल किया गया ज्ञान।",
+          "slide": {
+            "heading": "इतिहास की शुरुआत",
+            "points": [
+              "वर्ड history ग्रीक शब्द historia से आया है",
+              "इसका मतलब है पूछताछ या सवाल पूछकर मिली जानकारी"
+            ]
+          }
         },
         "s2": {
-          "text": "इतिहास इंसानों के अतीत की पढ़ाई है। इसमें यह बताया गया है कि लोगों ने क्या किया, वे कैसे रहते थे, और चीज़ें क्यों बदलीं।"
+          "text": "इतिहास इंसानों के अतीत की पढ़ाई है। इसमें यह बताया गया है कि लोगों ने क्या किया, वे कैसे रहते थे, और चीज़ें क्यों बदलीं।",
+          "slide": {
+            "heading": "इतिहास की परिभाषा",
+            "points": [
+              "इंसानों के अतीत का अध्ययन",
+              "इसमें बताया गया है कि लोगों ने क्या किया, वे कैसे रहते थे, और चीज़ें क्यों बदलीं"
+            ]
+          }
         },
         "s3": {
-          "text": "इतिहासकार ई. एच. कार ने इतिहास को वर्तमान और अतीत के बीच एक कभी न खत्म होने वाली बातचीत कहा है।"
+          "text": "इतिहासकार ई. एच. कार ने इतिहास को वर्तमान और अतीत के बीच एक कभी न खत्म होने वाली बातचीत कहा है।",
+          "slide": {
+            "heading": "इतिहासकार E. H. Carr",
+            "points": [
+              "E. H. Carr ने इतिहास को एक कभी न खत्म होने वाला संवाद कहा है",
+              "जो वर्तमान और अतीत के बीच होता है"
+            ]
+          }
         },
         "s4": {
-          "text": "इतिहास हमें वर्तमान समझने में मदद करता है, क्योंकि आज की दुनिया अतीत से ही निकली है।"
+          "text": "इतिहास हमें वर्तमान समझने में मदद करता है, क्योंकि आज की दुनिया अतीत से ही निकली है।",
+          "slide": {
+            "heading": "वर्तमान को समझना",
+            "points": [
+              "इतिहास हमें वर्तमान को समझने में मदद करता है",
+              "आज की दुनिया अतीत से ही निकली है"
+            ]
+          }
         },
         "s5": {
-          "text": "यह हमें हमारी संस्कृति और विरासत के बारे में बताता है, और देश के लिए प्यार जगाता है।"
+          "text": "यह हमें हमारी संस्कृति और विरासत के बारे में बताता है, और देश के लिए प्यार जगाता है।",
+          "slide": {
+            "heading": "संस्कृति और विरासत",
+            "points": [
+              "यह संस्कृति और विरासत के बारे में सिखाता है",
+              "देश के लिए प्यार जगाता है"
+            ]
+          }
         },
         "s6": {
-          "text": "यह हमें पहले के लोगों की गलतियों और सफलताओं के बारे में दिखाता है, ताकि हम उनसे सीख सकें।"
+          "text": "यह हमें पहले के लोगों की गलतियों और सफलताओं के बारे में दिखाता है, ताकि हम उनसे सीख सकें।",
+          "slide": {
+            "heading": "गलतियों से सीखना",
+            "points": [
+              "यह पहले के लोगों की गलतियों और सफलताओं को दिखाता है",
+              "उनसे सीखें"
+            ]
+          }
         },
         "s7": {
-          "text": "यह दिमाग को सबूत देखने, स्रोतों की तुलना करने और गहराई से सोचने की ट्रेनिंग देता है।"
+          "text": "यह दिमाग को सबूत देखने, स्रोतों की तुलना करने और गहराई से सोचने की ट्रेनिंग देता है।",
+          "slide": {
+            "heading": "क्रिटिकल थिंकिंग स्किल्स",
+            "points": [
+              "यह दिमाग को सबूतों को देखने की ट्रेनिंग देता है",
+              "सोर्स की तुलना करें और क्रिटिकल सोचें"
+            ]
+          }
         },
         "s8": {
-          "text": "यह सहनशीलता भी बढ़ाता है, क्योंकि हम सीखते हैं कि अलग-अलग लोग और धर्म एक साथ कैसे रहते थे।"
+          "text": "यह सहनशीलता भी बढ़ाता है, क्योंकि हम सीखते हैं कि अलग-अलग लोग और धर्म एक साथ कैसे रहते थे।",
+          "slide": {
+            "heading": "सहनशीलता बढ़ाना",
+            "points": [
+              "यह सहनशीलता बढ़ाता है",
+              "सीखें कि अलग-अलग लोग और धर्म एक साथ कैसे रहते थे"
+            ]
+          }
         },
         "s9": {
-          "text": "इतिहास का दायरा बहुत बड़ा है। यह प्राचीन काल से लेकर आज तक के हर दौर को कवर करता है, और हमारे गाँव से लेकर पूरी दुनिया तक की हर जगह को।"
+          "text": "इतिहास का दायरा बहुत बड़ा है। यह प्राचीन काल से लेकर आज तक के हर दौर को कवर करता है, और हमारे गाँव से लेकर पूरी दुनिया तक की हर जगह को।",
+          "slide": {
+            "heading": "इतिहास का दायरा",
+            "points": [
+              "इसका दायरा बहुत बड़ा है",
+              "प्राचीन काल से लेकर आज तक का हर दौर",
+              "गांव से लेकर पूरी दुनिया तक की हर जगह"
+            ]
+          }
         },
         "s10": {
-          "text": "यह इंसानी जीवन के हर पहलू की पढ़ाई करता है, जिसमें राजनीति, समाज, अर्थव्यवस्था, धर्म, कला, विज्ञान और विचार शामिल हैं।"
+          "text": "यह इंसानी जीवन के हर पहलू की पढ़ाई करता है, जिसमें राजनीति, समाज, अर्थव्यवस्था, धर्म, कला, विज्ञान और विचार शामिल हैं।",
+          "slide": {
+            "heading": "मानव जीवन के पहलू",
+            "points": [
+              "यह मानव जीवन के हर पहलू का अध्ययन करता है",
+              "राजनीति, समाज, अर्थव्यवस्था, धर्म, कला, विज्ञान और विचार"
+            ]
+          }
         },
         "s11": {
           "question": "क्या आपको समझ आया कि इतिहास क्या है और हम इसे क्यों पढ़ते हैं?",
@@ -259,41 +409,112 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.860Z"
+      "reviewedAt": "2026-11-26T15:14:43.280Z"
     },
     "en": {
       "status": "reviewed",
       "title": "1. What is History and why study it",
       "steps": {
         "s1": {
-          "text": "The word history comes from the Greek word historia. It means inquiry, or knowledge gained by asking questions."
+          "text": "The word history comes from the Greek word historia. It means inquiry, or knowledge gained by asking questions.",
+          "slide": {
+            "heading": "Origin of History",
+            "points": [
+              "Word history from Greek historia",
+              "Means inquiry or knowledge gained by asking questions"
+            ]
+          }
         },
         "s2": {
-          "text": "History is the study of the past of human beings. It covers what people did, how they lived, and why things changed."
+          "text": "History is the study of the past of human beings. It covers what people did, how they lived, and why things changed.",
+          "slide": {
+            "heading": "Definition of History",
+            "points": [
+              "Study of the past of human beings",
+              "Covers what people did, how they lived, why things changed"
+            ]
+          }
         },
         "s3": {
-          "text": "The historian E. H. Carr called history an unending dialogue between the present and the past."
+          "text": "The historian E. H. Carr called history an unending dialogue between the present and the past.",
+          "slide": {
+            "heading": "Historian E. H. Carr",
+            "points": [
+              "E. H. Carr called history an unending dialogue",
+              "Between the present and the past"
+            ]
+          }
         },
         "s4": {
-          "text": "History helps us understand the present, because today's world grew out of the past."
+          "text": "History helps us understand the present, because today's world grew out of the past.",
+          "slide": {
+            "heading": "Understanding the Present",
+            "points": [
+              "History helps us understand the present",
+              "Today's world grew out of the past"
+            ]
+          }
         },
         "s5": {
-          "text": "It teaches us about our culture and heritage, and builds love for the nation."
+          "text": "It teaches us about our culture and heritage, and builds love for the nation.",
+          "slide": {
+            "heading": "Culture and Heritage",
+            "points": [
+              "Teaches about culture and heritage",
+              "Builds love for the nation"
+            ]
+          }
         },
         "s6": {
-          "text": "It shows us the mistakes and successes of earlier people, so that we can learn from them."
+          "text": "It shows us the mistakes and successes of earlier people, so that we can learn from them.",
+          "slide": {
+            "heading": "Learning from Mistakes",
+            "points": [
+              "Shows mistakes and successes of earlier people",
+              "Learn from them"
+            ]
+          }
         },
         "s7": {
-          "text": "It trains the mind to look at evidence, compare sources and think critically."
+          "text": "It trains the mind to look at evidence, compare sources and think critically.",
+          "slide": {
+            "heading": "Critical Thinking Skills",
+            "points": [
+              "Trains mind to look at evidence",
+              "Compare sources and think critically"
+            ]
+          }
         },
         "s8": {
-          "text": "It also builds tolerance, because we learn how different peoples and religions lived together."
+          "text": "It also builds tolerance, because we learn how different peoples and religions lived together.",
+          "slide": {
+            "heading": "Building Tolerance",
+            "points": [
+              "Builds tolerance",
+              "Learn how different peoples and religions lived together"
+            ]
+          }
         },
         "s9": {
-          "text": "The scope of History is very wide. It covers every period, from ancient times to the present day, and every place, from our village to the whole world."
+          "text": "The scope of History is very wide. It covers every period, from ancient times to the present day, and every place, from our village to the whole world.",
+          "slide": {
+            "heading": "Scope of History",
+            "points": [
+              "Very wide scope",
+              "Every period from ancient times to present day",
+              "Every place from village to whole world"
+            ]
+          }
         },
         "s10": {
-          "text": "It studies every side of human life, including politics, society, economy, religion, art, science and ideas."
+          "text": "It studies every side of human life, including politics, society, economy, religion, art, science and ideas.",
+          "slide": {
+            "heading": "Aspects of Human Life",
+            "points": [
+              "Studies every side of human life",
+              "Politics, society, economy, religion, art, science and ideas"
+            ]
+          }
         },
         "s11": {
           "question": "Did you understand what history is and why we study it?",
@@ -328,7 +549,7 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.860Z"
+      "reviewedAt": "2026-11-26T15:14:43.280Z"
     }
   },
   "order": 1

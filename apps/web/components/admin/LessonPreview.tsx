@@ -12,6 +12,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { strings } from "../../lib/strings";
 import { Avatar } from "../Avatar";
 import { Board, type BoardState } from "../Board";
+import { SlideBoard, type SlideState } from "../SlideBoard";
 import { reportVideoError } from "../reportVideoError";
 import { afterPress, emptyStage, startPress, LessonStage, type StageState } from "../LessonStage";
 
@@ -29,6 +30,7 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
   const [waiting, setWaiting] = useState(false);
   const [pointAt, setPointAt] = useState<{ x: number; y: number } | null>(null);
   const [board, setBoard] = useState<BoardState | null>(null);
+  const [slide, setSlide] = useState<SlideState | null>(null);
   const runnerRef = useRef<LessonRunner | null>(null);
   const queue = useRef<RunnerAction[]>([]);
   const t = strings(lang);
@@ -36,6 +38,7 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
   const apply = useCallback((e: AgentEvent) => {
     switch (e.type) {
       case "show_screen":
+        setSlide(null);
         setStage((s) => ({ ...s, screen: e.screen, pressed: null }));
         break;
       case "highlight":
@@ -47,6 +50,10 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
         break;
       case "board_video":
         setBoard({ stepId: e.stepId, source: e.source, cue: null });
+        setSlide(null);
+        break;
+      case "board_slide":
+        setSlide(e);
         break;
       case "board_cue":
         setBoard((b) => (b && b.stepId === e.stepId ? { ...b, cue: e } : b));
@@ -55,6 +62,7 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
         setBoard((b) => (b?.stepId === e.stepId ? null : b));
         break;
       case "check":
+        setSlide(null);
         setStage((s) => ({ ...s, check: { stepId: e.stepId, question: e.question, options: e.options } }));
         break;
       case "check_done":
@@ -62,6 +70,7 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
         break;
       case "lesson_done":
         setDone(true);
+        setSlide(null);
         setStage((s) => ({ ...s, highlight: null, check: null }));
         break;
     }
@@ -97,6 +106,7 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
     queue.current = runnerRef.current.start();
     setStage(emptyStage);
     setBoard(null);
+    setSlide(null);
     setCaption("");
     setDone(false);
     setWaiting(false);
@@ -125,6 +135,8 @@ export function LessonPreview({ lesson }: { lesson: Lesson }) {
       </div>
       {board ? (
         <Board board={board} hold={false} t={t} onPointScreen={setPointAt} onMediaError={(stepId, code) => reportVideoError(lesson.id, stepId, code)} />
+      ) : slide ? (
+        <SlideBoard slide={slide} />
       ) : stage.screen ? (
         <LessonStage
           stage={stage}

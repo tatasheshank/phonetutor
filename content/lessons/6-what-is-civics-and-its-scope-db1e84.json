@@ -43,12 +43,20 @@
     {
       "id": "s6",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/gram-panchayat.jpg",
+        "credit": "B Suraj Patra · CC0 · Wikimedia Commons"
+      }
     },
     {
       "id": "s7",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/un-headquarters.jpg",
+        "credit": "Jakub Hałun · CC BY 4.0 · Wikimedia Commons"
+      }
     },
     {
       "id": "s8",
@@ -102,28 +110,86 @@
       "title": "6. పౌరశాస్త్రం అంటే ఏమిటి, దాని పరిధి",
       "steps": {
         "s1": {
-          "text": "సివిక్స్ అనే పదం లాటిన్ పదాలైన సివిస్, అంటే పౌరుడు, సివిటాస్, అంటే నగరం లేదా రాష్ట్రం నుండి వచ్చింది."
+          "text": "సివిక్స్ అనే పదం లాటిన్ పదాలైన సివిస్, అంటే పౌరుడు, సివిటాస్, అంటే నగరం లేదా రాష్ట్రం నుండి వచ్చింది.",
+          "slide": {
+            "heading": "సివిక్స్ పుట్టుక",
+            "points": [
+              "లాటిన్ పదాల నుంచి సివిక్స్ వచ్చింది",
+              "civis అంటే పౌరుడు",
+              "civitas అంటే నగరం లేదా రాష్ట్రం"
+            ]
+          }
         },
         "s2": {
-          "text": "సివిక్స్ అంటే పౌరుల గురించి చదవడం. ఇందులో వారి హక్కులు, వారి బాధ్యతలు, వారిని ఎలా పాలిస్తున్నారు అనేది ఉంటుంది."
+          "text": "సివిక్స్ అంటే పౌరుల గురించి చదవడం. ఇందులో వారి హక్కులు, వారి బాధ్యతలు, వారిని ఎలా పాలిస్తున్నారు అనేది ఉంటుంది.",
+          "slide": {
+            "heading": "సివిక్స్ నిర్వచనం",
+            "points": [
+              "పౌరుల గురించి అధ్యయనం",
+              "హక్కులు మరియు విధులు",
+              "వాళ్లను ఎలా పాలిస్తారు"
+            ]
+          }
         },
         "s3": {
-          "text": "ఇది సమాజంలో కలిసి జీవించే మనుషుల గురించి చదివే ఒక సోషల్ సైన్స్. సమాజం మారినప్పుడు ఇది కూడా మారుతుంది."
+          "text": "ఇది సమాజంలో కలిసి జీవించే మనుషుల గురించి చదివే ఒక సోషల్ సైన్స్. సమాజం మారినప్పుడు ఇది కూడా మారుతుంది.",
+          "slide": {
+            "heading": "సామాజిక శాస్త్రంగా సివిక్స్",
+            "points": [
+              "సమాజంలోని ప్రజలను చదువుతుంది",
+              "సమాజం మారినప్పుడు మార్పులు వస్తాయి"
+            ]
+          }
         },
         "s4": {
-          "text": "ఇది ప్రాక్టికల్ సబ్జెక్ట్, ఎందుకంటే ఇది మంచి పౌరులుగా మనల్ని తయారు చేస్తుంది."
+          "text": "ఇది ప్రాక్టికల్ సబ్జెక్ట్, ఎందుకంటే ఇది మంచి పౌరులుగా మనల్ని తయారు చేస్తుంది.",
+          "slide": {
+            "heading": "సివిక్స్ ప్రాక్టికల్ స్వభావం",
+            "points": [
+              "మంచి పౌరులను తయారు చేస్తుంది"
+            ]
+          }
         },
         "s5": {
-          "text": "సివిక్స్ పరిధిలో పౌరుడు, కుటుంబం, స్కూల్స్, ఇంకా ఇతర సోషల్ గ్రూప్స్ ఉంటాయి."
+          "text": "సివిక్స్ పరిధిలో పౌరుడు, కుటుంబం, స్కూల్స్, ఇంకా ఇతర సోషల్ గ్రూప్స్ ఉంటాయి.",
+          "slide": {
+            "heading": "సివిక్స్ పరిధి",
+            "points": [
+              "పౌరుడు మరియు కుటుంబం",
+              "స్కూల్స్ మరియు సామాజిక గ్రూపులు"
+            ]
+          }
         },
         "s6": {
-          "text": "ఇందులో పంచాయతీ, మున్సిపాలిటీ లాంటి లోకల్ గవర్నమెంట్, రాష్ట్ర మరియు కేంద్ర ప్రభుత్వం, దేశం కూడా ఉంటాయి."
+          "text": "ఇందులో పంచాయతీ, మున్సిపాలిటీ లాంటి లోకల్ గవర్నమెంట్, రాష్ట్ర మరియు కేంద్ర ప్రభుత్వం, దేశం కూడా ఉంటాయి.",
+          "slide": {
+            "heading": "ప్రభుత్వ స్థాయిలు",
+            "points": [
+              "స్థానిక ప్రభుత్వం: పంచాయతీ, మున్సిపాలిటీ",
+              "రాష్ట్ర మరియు కేంద్ర ప్రభుత్వం",
+              "దేశం"
+            ]
+          }
         },
         "s7": {
-          "text": "యునైటెడ్ నేషన్స్ లాంటి ఇంటర్నేషనల్ బాడీస్ కూడా ఇందులో ఉంటాయి."
+          "text": "యునైటెడ్ నేషన్స్ లాంటి ఇంటర్నేషనల్ బాడీస్ కూడా ఇందులో ఉంటాయి.",
+          "slide": {
+            "heading": "అంతర్జాతీయ సంస్థలు",
+            "points": [
+              "యునైటెడ్ నేషన్స్"
+            ]
+          }
         },
         "s8": {
-          "text": "ఇందులో హక్కులు, బాధ్యతలు, రాజ్యాంగం, ఎలక్షన్స్, పొలిటికల్ పార్టీస్, పబ్లిక్ ఒపీనియన్ గురించి చదువుతాం."
+          "text": "ఇందులో హక్కులు, బాధ్యతలు, రాజ్యాంగం, ఎలక్షన్స్, పొలిటికల్ పార్టీస్, పబ్లిక్ ఒపీనియన్ గురించి చదువుతాం.",
+          "slide": {
+            "heading": "సివిక్స్ లోని టాపిక్స్",
+            "points": [
+              "హక్కులు మరియు విధులు",
+              "రాజ్యాంగం మరియు ఎన్నికలు",
+              "రాజకీయ పార్టీలు మరియు ప్రజాభిప్రాయం"
+            ]
+          }
         },
         "s9": {
           "question": "సివిక్స్ అంటే ఏమిటి, దాని పరిధి ఏమిటి అనేది మీకు అర్థమైందా?",
@@ -164,35 +230,93 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.775Z"
+      "reviewedAt": "2026-11-26T15:14:43.217Z"
     },
     "hi": {
       "status": "reviewed",
       "title": "6. नागरिक शास्त्र क्या है और इसका क्षेत्र",
       "steps": {
         "s1": {
-          "text": "सिविक्स शब्द लैटिन शब्दों civis, जिसका मतलब नागरिक है, और civitas, जिसका मतलब शहर या राज्य है, से आया है।"
+          "text": "सिविक्स शब्द लैटिन शब्दों civis, जिसका मतलब नागरिक है, और civitas, जिसका मतलब शहर या राज्य है, से आया है।",
+          "slide": {
+            "heading": "सिविक्स की शुरुआत",
+            "points": [
+              "लैटिन शब्दों से सिविक्स आया",
+              "civis का मतलब है नागरिक",
+              "civitas का मतलब है शहर या राज्य"
+            ]
+          }
         },
         "s2": {
-          "text": "सिविक्स नागरिकों का अध्ययन है। इसमें उनके अधिकार, उनके कर्तव्य और उन पर शासन कैसे होता है, यह सब शामिल है।"
+          "text": "सिविक्स नागरिकों का अध्ययन है। इसमें उनके अधिकार, उनके कर्तव्य और उन पर शासन कैसे होता है, यह सब शामिल है।",
+          "slide": {
+            "heading": "सिविक्स की परिभाषा",
+            "points": [
+              "नागरिकों का अध्ययन",
+              "अधिकार और कर्तव्य",
+              "उन पर कैसे शासन होता है"
+            ]
+          }
         },
         "s3": {
-          "text": "यह एक सोशल साइंस है। यह समाज में एक साथ रहने वाले लोगों का अध्ययन करता है। जैसे-जैसे समाज बदलता है, यह भी बदलता है।"
+          "text": "यह एक सोशल साइंस है। यह समाज में एक साथ रहने वाले लोगों का अध्ययन करता है। जैसे-जैसे समाज बदलता है, यह भी बदलता है।",
+          "slide": {
+            "heading": "सोशल साइंस के रूप में सिविक्स",
+            "points": [
+              "समाज में लोगों का अध्ययन",
+              "समाज के साथ बदलाव"
+            ]
+          }
         },
         "s4": {
-          "text": "यह प्रैक्टिकल है। यह अच्छे नागरिक बनाता है।"
+          "text": "यह प्रैक्टिकल है। यह अच्छे नागरिक बनाता है।",
+          "slide": {
+            "heading": "सिविक्स की प्रैक्टिकल प्रकृति",
+            "points": [
+              "अच्छे नागरिक तैयार करता है"
+            ]
+          }
         },
         "s5": {
-          "text": "सिविक्स की सीमा में नागरिक और परिवार, स्कूल, और अन्य सामाजिक समूह आते हैं।"
+          "text": "सिविक्स की सीमा में नागरिक और परिवार, स्कूल, और अन्य सामाजिक समूह आते हैं।",
+          "slide": {
+            "heading": "सिविक्स का दायरा",
+            "points": [
+              "नागरिक और परिवार",
+              "स्कूल और सामाजिक समूह"
+            ]
+          }
         },
         "s6": {
-          "text": "इसमें लोकल गवर्नमेंट जैसे पंचायत और नगर पालिका, राज्य और केंद्र सरकार, और राष्ट्र भी शामिल हैं।"
+          "text": "इसमें लोकल गवर्नमेंट जैसे पंचायत और नगर पालिका, राज्य और केंद्र सरकार, और राष्ट्र भी शामिल हैं।",
+          "slide": {
+            "heading": "सरकार के स्तर",
+            "points": [
+              "स्थानीय सरकार: पंचायत, नगर पालिका",
+              "राज्य और केंद्र सरकार",
+              "राष्ट्र"
+            ]
+          }
         },
         "s7": {
-          "text": "इसमें यूनाइटेड नेशंस जैसे इंटरनेशनल बॉडीज भी शामिल हैं।"
+          "text": "इसमें यूनाइटेड नेशंस जैसे इंटरनेशनल बॉडीज भी शामिल हैं।",
+          "slide": {
+            "heading": "अंतर्राष्ट्रीय संस्थाएं",
+            "points": [
+              "संयुक्त राष्ट्र"
+            ]
+          }
         },
         "s8": {
-          "text": "यह अधिकार और कर्तव्य, संविधान, चुनाव, राजनीतिक दलों और पब्लिक ओपिनियन का अध्ययन करता है।"
+          "text": "यह अधिकार और कर्तव्य, संविधान, चुनाव, राजनीतिक दलों और पब्लिक ओपिनियन का अध्ययन करता है।",
+          "slide": {
+            "heading": "सिविक्स के विषय",
+            "points": [
+              "अधिकार और कर्तव्य",
+              "संविधान और चुनाव",
+              "राजनीतिक दल और जनमत"
+            ]
+          }
         },
         "s9": {
           "question": "क्या आपको समझ आया कि सिविक्स क्या है और इसकी सीमा क्या है?",
@@ -233,35 +357,93 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.775Z"
+      "reviewedAt": "2026-11-26T15:14:43.217Z"
     },
     "en": {
       "status": "reviewed",
       "title": "6. What is Civics and its scope",
       "steps": {
         "s1": {
-          "text": "The word civics comes from the Latin words civis, meaning citizen, and civitas, meaning city or state."
+          "text": "The word civics comes from the Latin words civis, meaning citizen, and civitas, meaning city or state.",
+          "slide": {
+            "heading": "Origin of Civics",
+            "points": [
+              "civics from Latin words",
+              "civis means citizen",
+              "civitas means city or state"
+            ]
+          }
         },
         "s2": {
-          "text": "Civics is the study of citizens, including their rights, their duties, and how they are governed."
+          "text": "Civics is the study of citizens, including their rights, their duties, and how they are governed.",
+          "slide": {
+            "heading": "Definition of Civics",
+            "points": [
+              "study of citizens",
+              "rights and duties",
+              "how they are governed"
+            ]
+          }
         },
         "s3": {
-          "text": "It is a social science that studies people living together in society, and it changes as society changes."
+          "text": "It is a social science that studies people living together in society, and it changes as society changes.",
+          "slide": {
+            "heading": "Civics as Social Science",
+            "points": [
+              "studies people in society",
+              "changes as society changes"
+            ]
+          }
         },
         "s4": {
-          "text": "It is practical because it trains good citizens."
+          "text": "It is practical because it trains good citizens.",
+          "slide": {
+            "heading": "Practical Nature of Civics",
+            "points": [
+              "trains good citizens"
+            ]
+          }
         },
         "s5": {
-          "text": "The scope of Civics covers the citizen and the family, schools, and other social groups."
+          "text": "The scope of Civics covers the citizen and the family, schools, and other social groups.",
+          "slide": {
+            "heading": "Scope of Civics",
+            "points": [
+              "citizen and family",
+              "schools and social groups"
+            ]
+          }
         },
         "s6": {
-          "text": "It also covers local government such as the panchayat and the municipality, state and central government, and the nation."
+          "text": "It also covers local government such as the panchayat and the municipality, state and central government, and the nation.",
+          "slide": {
+            "heading": "Levels of Government",
+            "points": [
+              "local government: panchayat, municipality",
+              "state and central government",
+              "the nation"
+            ]
+          }
         },
         "s7": {
-          "text": "It covers international bodies such as the United Nations."
+          "text": "It covers international bodies such as the United Nations.",
+          "slide": {
+            "heading": "International Bodies",
+            "points": [
+              "United Nations"
+            ]
+          }
         },
         "s8": {
-          "text": "It studies rights and duties, the constitution, elections, political parties, and public opinion."
+          "text": "It studies rights and duties, the constitution, elections, political parties, and public opinion.",
+          "slide": {
+            "heading": "Topics in Civics",
+            "points": [
+              "rights and duties",
+              "constitution and elections",
+              "political parties and public opinion"
+            ]
+          }
         },
         "s9": {
           "question": "Did you understand what civics is and its scope?",
@@ -295,7 +477,7 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.775Z"
+      "reviewedAt": "2026-11-26T15:14:43.217Z"
     }
   },
   "order": 6

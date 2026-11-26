@@ -3,11 +3,6 @@ import { locateMedia, YOUTUBE_ID } from "./media";
 
 const langCode = z.enum(["te", "hi", "en"]);
 
-const sayStep = z.object({
-  id: z.string(),
-  type: z.literal("say"),
-  avatar: z.enum(["neutral", "smile", "listening", "thinking"]).default("neutral"),
-});
 
 const showStep = z.object({
   id: z.string(),
@@ -53,6 +48,24 @@ const mediaPath = (kind: "video" | "image") =>
         ? "src must be an uploaded video (/api/lesson-media/<lesson>/<file>.mp4 or .webm) or /lesson-media/<path>.mp4 or .webm"
         : "poster must be an uploaded image or a /lesson-media/ image (.png, .jpg, .jpeg, .webp)",
     );
+
+/**
+ * A picture on the board while the teacher talks: an uploaded image or one in public/lesson-media/,
+ * with where it came from (e.g. "Wikimedia Commons, public domain"), shown small under it.
+ */
+export const slideImageSchema = z.object({
+  src: mediaPath("image"),
+  credit: z.string().max(200).optional(),
+});
+export type SlideImage = z.infer<typeof slideImageSchema>;
+
+/** The teacher talks. The board shows this step's slide (key points) and picture, if it has them. */
+const sayStep = z.object({
+  id: z.string(),
+  type: z.literal("say"),
+  avatar: z.enum(["neutral", "smile", "listening", "thinking"]).default("neutral"),
+  image: slideImageSchema.optional(),
+});
 
 /**
  * Where a board video comes from, chosen per step:
@@ -106,6 +119,13 @@ const quizItem = z.discriminatedUnion("kind", [
   }),
 ]);
 
+export const MAX_SLIDE_POINTS = 4;
+export const slideSchema = z.object({
+  heading: z.string().max(80),
+  points: z.array(z.string().max(120)).max(MAX_SLIDE_POINTS).default([]),
+});
+export type Slide = z.infer<typeof slideSchema>;
+
 /** Per-language text and audio for one step. Which fields are required depends on the step type. */
 const localeStep = z.object({
   text: z.string().optional(),
@@ -116,6 +136,8 @@ const localeStep = z.object({
   accept: z.array(z.string()).optional(),
   /** Video steps: narration per cue, same order as the step's cues. `text` above is an optional intro. */
   cues: z.array(z.object({ text: z.string(), caption: z.string().optional() })).optional(),
+  /** Say steps: key points on the board while the teacher speaks (a heading and up to 4 short points). */
+  slide: slideSchema.optional(),
 });
 
 const localeQuiz = z.object({

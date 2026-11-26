@@ -42,12 +42,20 @@
     {
       "id": "s6",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/sarnath-capital.jpg",
+        "credit": "Chrisi1964 · CC BY-SA 4.0 · Wikimedia Commons"
+      }
     },
     {
       "id": "s7",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/taj-mahal.jpg",
+        "credit": "Yann; edited by Jim Carter · CC BY-SA 4.0 · Wikimedia Commons"
+      }
     },
     {
       "id": "s8",
@@ -121,40 +129,124 @@
       "title": "10. బోధనా పద్ధతులు మరియు బృంద చర్చ",
       "steps": {
         "s1": {
-          "text": "ఒక మంచి టీచర్ హిస్టరీ, సివిక్స్ సబ్జెక్టులను ఇంట్రెస్టింగ్ గా చెప్పడానికి చాలా పద్ధతులు వాడుతారు. చిన్న పిల్లలకు కథలు చెప్పడం వల్ల పాత సంఘటనలు కళ్ళ ముందు ఉన్నట్లు అనిపిస్తాయి."
+          "text": "ఒక మంచి టీచర్ హిస్టరీ, సివిక్స్ సబ్జెక్టులను ఇంట్రెస్టింగ్ గా చెప్పడానికి చాలా పద్ధతులు వాడుతారు. చిన్న పిల్లలకు కథలు చెప్పడం వల్ల పాత సంఘటనలు కళ్ళ ముందు ఉన్నట్లు అనిపిస్తాయి.",
+          "slide": {
+            "heading": "హిస్టరీ బోధించే పద్ధతులు",
+            "points": [
+              "కథలు చెప్పడం వల్ల గత సంఘటనలు కళ్ళ ముందు ఉన్నట్లు ఉంటాయి",
+              "హిస్టరీ, సివిక్స్ ఆసక్తికరంగా మారుతాయి"
+            ]
+          }
         },
         "s2": {
-          "text": "ప్రశ్నలు అడుగుతూ లెక్చర్ ఇవ్వడం వల్ల ఒక టాపిక్ గురించి క్లియర్ గా అర్థమవుతుంది."
+          "text": "ప్రశ్నలు అడుగుతూ లెక్చర్ ఇవ్వడం వల్ల ఒక టాపిక్ గురించి క్లియర్ గా అర్థమవుతుంది.",
+          "slide": {
+            "heading": "ప్రశ్నలతో లెక్చర్ పద్ధతి",
+            "points": [
+              "ప్రశ్నలతో లెక్చర్ పద్ధతి",
+              "ఒక టాపిక్ గురించి స్పష్టమైన అవగాహన ఇస్తుంది"
+            ]
+          }
         },
         "s3": {
-          "text": "డిస్కషన్, డిబేట్ ద్వారా స్టూడెంట్స్ తమ ఐడియాలు పంచుకోవచ్చు, వాటిని టెస్ట్ చేసుకోవచ్చు."
+          "text": "డిస్కషన్, డిబేట్ ద్వారా స్టూడెంట్స్ తమ ఐడియాలు పంచుకోవచ్చు, వాటిని టెస్ట్ చేసుకోవచ్చు.",
+          "slide": {
+            "heading": "చర్చ, వాదన",
+            "points": [
+              "చర్చ, వాదన",
+              "ఐడియాలు పంచుకుని టెస్ట్ చేయడం"
+            ]
+          }
         },
         "s4": {
-          "text": "మాక్ పార్లమెంట్ లేదా మాక్ ఎలక్షన్ లాంటి డ్రామాటిజేషన్, రోల్ ప్లే ద్వారా గవర్నమెంట్ నిజంగా ఎలా పనిచేస్తుందో తెలుస్తుంది."
+          "text": "మాక్ పార్లమెంట్ లేదా మాక్ ఎలక్షన్ లాంటి డ్రామాటిజేషన్, రోల్ ప్లే ద్వారా గవర్నమెంట్ నిజంగా ఎలా పనిచేస్తుందో తెలుస్తుంది.",
+          "slide": {
+            "heading": "డ్రామా, రోల్ ప్లే",
+            "points": [
+              "డ్రామా, రోల్ ప్లే",
+              "మాక్ పార్లమెంట్ లేదా మాక్ ఎలక్షన్",
+              "ప్రభుత్వం ఎలా పనిచేస్తుందో చూపించడం"
+            ]
+          }
         },
         "s5": {
-          "text": "ప్రాజెక్ట్ పద్ధతి ద్వారా స్టూడెంట్స్ ఇన్ఫర్మేషన్ కలెక్ట్ చేసి ప్రెజెంట్ చేస్తారు."
+          "text": "ప్రాజెక్ట్ పద్ధతి ద్వారా స్టూడెంట్స్ ఇన్ఫర్మేషన్ కలెక్ట్ చేసి ప్రెజెంట్ చేస్తారు.",
+          "slide": {
+            "heading": "ప్రాజెక్ట్ పద్ధతి",
+            "points": [
+              "ప్రాజెక్ట్ పద్ధతి",
+              "సమాచారం సేకరించి ప్రెజెంట్ చేయడం"
+            ]
+          }
         },
         "s6": {
-          "text": "సోర్స్ పద్ధతి ద్వారా నిజమైన డాక్యుమెంట్లు, నాణాలు, ఫోటోలు వాడతారు."
+          "text": "సోర్స్ పద్ధతి ద్వారా నిజమైన డాక్యుమెంట్లు, నాణాలు, ఫోటోలు వాడతారు.",
+          "slide": {
+            "heading": "సోర్స్ పద్ధతి",
+            "points": [
+              "సోర్స్ పద్ధతి",
+              "నిజమైన డాక్యుమెంట్లు, నాణేలు, ఫోటోలు"
+            ]
+          }
         },
         "s7": {
-          "text": "మ్యూజియంలు, కట్టడాలు, పంచాయతీ ఆఫీస్ లకు ఫీల్డ్ ట్రిప్స్ వెళ్లడం వల్ల డైరెక్ట్ ఎక్స్పీరియన్స్ వస్తుంది."
+          "text": "మ్యూజియంలు, కట్టడాలు, పంచాయతీ ఆఫీస్ లకు ఫీల్డ్ ట్రిప్స్ వెళ్లడం వల్ల డైరెక్ట్ ఎక్స్పీరియన్స్ వస్తుంది.",
+          "slide": {
+            "heading": "ఫీల్డ్ ట్రిప్స్",
+            "points": [
+              "మ్యూజియంలు, కట్టడాలకు ఫీల్డ్ ట్రిప్స్",
+              "పంచాయతీ ఆఫీస్ ద్వారా ప్రత్యక్ష అనుభవం వస్తుంది"
+            ]
+          }
         },
         "s8": {
-          "text": "మ్యాప్స్, టైమ్‌లైన్స్, చార్టులు, మోడల్స్, వీడియోలు వల్ల ప్లేసులు, సమయం క్లియర్ గా అర్థం అవుతాయి."
+          "text": "మ్యాప్స్, టైమ్‌లైన్స్, చార్టులు, మోడల్స్, వీడియోలు వల్ల ప్లేసులు, సమయం క్లియర్ గా అర్థం అవుతాయి.",
+          "slide": {
+            "heading": "విజువల్ ఎయిడ్స్",
+            "points": [
+              "మ్యాప్స్, టైమ్‌లైన్స్, చార్ట్స్, మోడల్స్",
+              "వీడియోలు చూస్తే ప్రదేశాలు, కాలం అర్థమవుతాయి"
+            ]
+          }
         },
         "s9": {
-          "text": "గ్రూప్ డిస్కషన్ లో, ప్రతి మెంబర్ డిస్కషన్ లక్ష్యం ఏంటో అర్థం చేసుకోవాలి."
+          "text": "గ్రూప్ డిస్కషన్ లో, ప్రతి మెంబర్ డిస్కషన్ లక్ష్యం ఏంటో అర్థం చేసుకోవాలి.",
+          "slide": {
+            "heading": "గ్రూప్ డిస్కషన్ లక్ష్యాలు",
+            "points": [
+              "ప్రతి సభ్యుడికి లక్ష్యం అర్థం కావాలి"
+            ]
+          }
         },
         "s10": {
-          "text": "వాళ్లు బాగా ప్రిపేర్ అవ్వాలి, పాయింట్స్ కి ఫ్యాక్ట్స్ తో సపోర్ట్ ఇవ్వాలి, అందరికీ వినపడేలా గట్టిగా, క్లియర్ గా మాట్లాడాలి."
+          "text": "వాళ్లు బాగా ప్రిపేర్ అవ్వాలి, పాయింట్స్ కి ఫ్యాక్ట్స్ తో సపోర్ట్ ఇవ్వాలి, అందరికీ వినపడేలా గట్టిగా, క్లియర్ గా మాట్లాడాలి.",
+          "slide": {
+            "heading": "గ్రూప్ డిస్కషన్ ప్రిపరేషన్",
+            "points": [
+              "బాగా ప్రిపేర్ అవ్వండి",
+              "వాస్తవాలతో పాయింట్లకు సపోర్ట్ చేయండి",
+              "గట్టిగా, స్పష్టంగా మాట్లాడండి"
+            ]
+          }
         },
         "s11": {
-          "text": "గ్రూప్ వాళ్ల ఐడియాలను యాక్సెప్ట్ చేయకపోయినా వాళ్లు ఫీల్ అవ్వకూడదు."
+          "text": "గ్రూప్ వాళ్ల ఐడియాలను యాక్సెప్ట్ చేయకపోయినా వాళ్లు ఫీల్ అవ్వకూడదు.",
+          "slide": {
+            "heading": "గ్రూప్‌లో భేదాభిప్రాయాలు వచ్చినప్పుడు",
+            "points": [
+              "గ్రూప్ మీ ఐడియాలను రిజెక్ట్ చేసినప్పుడు బాధపడకండి"
+            ]
+          }
         },
         "s12": {
-          "text": "ఏదైనా అర్థం కానప్పుడు అడగాలి, గ్రూప్ తీసుకున్న డెసిషన్ కి సపోర్ట్ చేయాలి."
+          "text": "ఏదైనా అర్థం కానప్పుడు అడగాలి, గ్రూప్ తీసుకున్న డెసిషన్ కి సపోర్ట్ చేయాలి.",
+          "slide": {
+            "heading": "నిర్ణయాలు అడగడం, సపోర్ట్ చేయడం",
+            "points": [
+              "ఏదైనా అర్థం కానప్పుడు అడగండి",
+              "ఒకసారి తీసుకున్న గ్రూప్ నిర్ణయానికి సపోర్ట్ చేయండి"
+            ]
+          }
         },
         "s13": {
           "question": "ఈ బోధనా పద్ధతులు, గ్రూప్ డిస్కషన్ రూల్స్ మీకు అర్థమయ్యాయి కదా?",
@@ -195,47 +287,131 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.646Z"
+      "reviewedAt": "2026-11-26T15:14:43.124Z"
     },
     "hi": {
       "status": "reviewed",
       "title": "10. शिक्षण के तरीके और समूह चर्चा",
       "steps": {
         "s1": {
-          "text": "एक अच्छी टीचर हिस्ट्री और सिविक्स को दिलचस्प बनाने के लिए कई तरीके अपनाती है। कहानी सुनाने से छोटे बच्चों के लिए पुरानी घटनाएँ जीवंत हो जाती हैं।"
+          "text": "एक अच्छी टीचर हिस्ट्री और सिविक्स को दिलचस्प बनाने के लिए कई तरीके अपनाती है। कहानी सुनाने से छोटे बच्चों के लिए पुरानी घटनाएँ जीवंत हो जाती हैं।",
+          "slide": {
+            "heading": "हिस्ट्री पढ़ाने के तरीके",
+            "points": [
+              "कहानी सुनाने से बीते हुए किस्से जीवंत हो उठते हैं",
+              "इससे हिस्ट्री और सिविक्स दिलचस्प बन जाते हैं"
+            ]
+          }
         },
         "s2": {
-          "text": "सवाल-जवाब के साथ लेक्चर के तरीके से किसी टॉपिक की साफ रूपरेखा मिल जाती है।"
+          "text": "सवाल-जवाब के साथ लेक्चर के तरीके से किसी टॉपिक की साफ रूपरेखा मिल जाती है।",
+          "slide": {
+            "heading": "सवाल-जवाब के साथ लेक्चर का तरीका",
+            "points": [
+              "सवाल-जवाब के साथ लेक्चर का तरीका",
+              "इससे किसी टॉपिक की साफ़ रूपरेखा मिलती है"
+            ]
+          }
         },
         "s3": {
-          "text": "चर्चा और बहस से स्टूडेंट्स अपने आइडिया शेयर कर सकते हैं और उन्हें टेस्ट कर सकते हैं।"
+          "text": "चर्चा और बहस से स्टूडेंट्स अपने आइडिया शेयर कर सकते हैं और उन्हें टेस्ट कर सकते हैं।",
+          "slide": {
+            "heading": "चर्चा और बहस",
+            "points": [
+              "चर्चा और बहस",
+              "विचारों को साझा करें और परखें"
+            ]
+          }
         },
         "s4": {
-          "text": "नाटक और रोल प्ले, जैसे कि मॉक पार्लियामेंट या मॉक इलेक्शन, यह दिखाते हैं कि सरकार असल में कैसे काम करती है।"
+          "text": "नाटक और रोल प्ले, जैसे कि मॉक पार्लियामेंट या मॉक इलेक्शन, यह दिखाते हैं कि सरकार असल में कैसे काम करती है।",
+          "slide": {
+            "heading": "नाटक और रोल प्ले",
+            "points": [
+              "नाटक और रोल प्ले",
+              "मॉक पार्लियामेंट या मॉक इलेक्शन",
+              "दिखाता है कि सरकार कैसे काम करती है"
+            ]
+          }
         },
         "s5": {
-          "text": "प्रोजेक्ट के तरीके से स्टूडेंट्स जानकारी इकट्ठा कर सकते हैं और उसे प्रेजेंट कर सकते हैं।"
+          "text": "प्रोजेक्ट के तरीके से स्टूडेंट्स जानकारी इकट्ठा कर सकते हैं और उसे प्रेजेंट कर सकते हैं।",
+          "slide": {
+            "heading": "प्रोजेक्ट का तरीका",
+            "points": [
+              "प्रोजेक्ट का तरीका",
+              "जानकारी इकट्ठा करें और पेश करें"
+            ]
+          }
         },
         "s6": {
-          "text": "सोर्स के तरीके में असली दस्तावेज़, सिक्के और तस्वीरें इस्तेमाल होती हैं।"
+          "text": "सोर्स के तरीके में असली दस्तावेज़, सिक्के और तस्वीरें इस्तेमाल होती हैं।",
+          "slide": {
+            "heading": "सोर्स का तरीका",
+            "points": [
+              "सोर्स का तरीका",
+              "असली दस्तावेज़, सिक्के और तस्वीरें"
+            ]
+          }
         },
         "s7": {
-          "text": "म्यूज़ियम, स्मारकों और पंचायत ऑफिस के फील्ड ट्रिप से सीधा अनुभव मिलता है।"
+          "text": "म्यूज़ियम, स्मारकों और पंचायत ऑफिस के फील्ड ट्रिप से सीधा अनुभव मिलता है।",
+          "slide": {
+            "heading": "फील्ड ट्रिप्स",
+            "points": [
+              "म्यूज़ियम और स्मारकों की फील्ड ट्रिप्स",
+              "पंचायत ऑफिस से सीधा अनुभव मिलता है"
+            ]
+          }
         },
         "s8": {
-          "text": "मैप, टाइमलाइन, चार्ट, मॉडल और वीडियो से स्टूडेंट्स को जगह और समय साफ तौर पर समझने में मदद मिलती है।"
+          "text": "मैप, टाइमलाइन, चार्ट, मॉडल और वीडियो से स्टूडेंट्स को जगह और समय साफ तौर पर समझने में मदद मिलती है।",
+          "slide": {
+            "heading": "विज़ुअल एड्स",
+            "points": [
+              "नक्शे, टाइमलाइन, चार्ट और मॉडल",
+              "वीडियो से जगह और समय को समझने में मदद मिलती है"
+            ]
+          }
         },
         "s9": {
-          "text": "ग्रुप डिस्कशन में, हर मेंबर को डिस्कशन का लक्ष्य समझना चाहिए।"
+          "text": "ग्रुप डिस्कशन में, हर मेंबर को डिस्कशन का लक्ष्य समझना चाहिए।",
+          "slide": {
+            "heading": "ग्रुप डिस्कशन के लक्ष्य",
+            "points": [
+              "हर सदस्य को लक्ष्य समझना चाहिए"
+            ]
+          }
         },
         "s10": {
-          "text": "उन्हें अच्छी तैयारी करनी चाहिए, अपने पॉइंट्स को फैक्ट्स के साथ सपोर्ट करना चाहिए, और इतनी तेज़ी से और साफ बोलना चाहिए कि सबको सुनाई दे।"
+          "text": "उन्हें अच्छी तैयारी करनी चाहिए, अपने पॉइंट्स को फैक्ट्स के साथ सपोर्ट करना चाहिए, और इतनी तेज़ी से और साफ बोलना चाहिए कि सबको सुनाई दे।",
+          "slide": {
+            "heading": "ग्रुप डिस्कशन की तैयारी",
+            "points": [
+              "अच्छी तैयारी करें",
+              "तथ्यों के साथ अपनी बातों का समर्थन करें",
+              "ज़ोर से और साफ़ बोलें"
+            ]
+          }
         },
         "s11": {
-          "text": "जब ग्रुप उनके आइडिया एक्सेप्ट न करे, तो उन्हें बुरा नहीं मानना चाहिए।"
+          "text": "जब ग्रुप उनके आइडिया एक्सेप्ट न करे, तो उन्हें बुरा नहीं मानना चाहिए।",
+          "slide": {
+            "heading": "ग्रुप में असहमति को संभालना",
+            "points": [
+              "जब ग्रुप आपके विचारों को न माने तो बुरा न मानें"
+            ]
+          }
         },
         "s12": {
-          "text": "जब उन्हें कुछ समझ न आए, तो उन्हें पूछना चाहिए, और एक बार ग्रुप का फैसला हो जाने पर उसका सपोर्ट करना चाहिए।"
+          "text": "जब उन्हें कुछ समझ न आए, तो उन्हें पूछना चाहिए, और एक बार ग्रुप का फैसला हो जाने पर उसका सपोर्ट करना चाहिए।",
+          "slide": {
+            "heading": "निर्णय पूछना और उनका समर्थन करना",
+            "points": [
+              "जब कुछ समझ न आए तो पूछें",
+              "एक बार ग्रुप का निर्णय हो जाए, तो उसका समर्थन करें"
+            ]
+          }
         },
         "s13": {
           "question": "क्या आपको टीचिंग स्ट्रैटेजीज़ और ग्रुप डिस्कशन के नियम समझ आए?",
@@ -276,47 +452,131 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.646Z"
+      "reviewedAt": "2026-11-26T15:14:43.124Z"
     },
     "en": {
       "status": "reviewed",
       "title": "10. Teaching methods and group discussion",
       "steps": {
         "s1": {
-          "text": "A good teacher uses many strategies to make History and Civics interesting. Storytelling brings past events to life for young children."
+          "text": "A good teacher uses many strategies to make History and Civics interesting. Storytelling brings past events to life for young children.",
+          "slide": {
+            "heading": "Teaching strategies for History",
+            "points": [
+              "Storytelling brings past events to life",
+              "Makes History and Civics interesting"
+            ]
+          }
         },
         "s2": {
-          "text": "The lecture method, with questions, gives a clear outline of a topic."
+          "text": "The lecture method, with questions, gives a clear outline of a topic.",
+          "slide": {
+            "heading": "Lecture method with questions",
+            "points": [
+              "Lecture method with questions",
+              "Gives clear outline of a topic"
+            ]
+          }
         },
         "s3": {
-          "text": "Discussion and debate let students share and test their ideas."
+          "text": "Discussion and debate let students share and test their ideas.",
+          "slide": {
+            "heading": "Discussion and debate",
+            "points": [
+              "Discussion and debate",
+              "Share and test ideas"
+            ]
+          }
         },
         "s4": {
-          "text": "Dramatisation and role play, such as a mock parliament or a mock election, show how government really works."
+          "text": "Dramatisation and role play, such as a mock parliament or a mock election, show how government really works.",
+          "slide": {
+            "heading": "Dramatisation and role play",
+            "points": [
+              "Dramatisation and role play",
+              "Mock parliament or mock election",
+              "Show how government works"
+            ]
+          }
         },
         "s5": {
-          "text": "The project method lets students collect information and present it."
+          "text": "The project method lets students collect information and present it.",
+          "slide": {
+            "heading": "Project method",
+            "points": [
+              "Project method",
+              "Collect information and present it"
+            ]
+          }
         },
         "s6": {
-          "text": "The source method uses real documents, coins and pictures."
+          "text": "The source method uses real documents, coins and pictures.",
+          "slide": {
+            "heading": "Source method",
+            "points": [
+              "Source method",
+              "Real documents, coins and pictures"
+            ]
+          }
         },
         "s7": {
-          "text": "Field trips to museums, monuments and the panchayat office give first-hand experience."
+          "text": "Field trips to museums, monuments and the panchayat office give first-hand experience.",
+          "slide": {
+            "heading": "Field trips",
+            "points": [
+              "Field trips to museums, monuments",
+              "Panchayat office gives first-hand experience"
+            ]
+          }
         },
         "s8": {
-          "text": "Maps, timelines, charts, models and videos help students see places and time clearly."
+          "text": "Maps, timelines, charts, models and videos help students see places and time clearly.",
+          "slide": {
+            "heading": "Visual aids",
+            "points": [
+              "Maps, timelines, charts, models",
+              "Videos help see places and time"
+            ]
+          }
         },
         "s9": {
-          "text": "In group discussion, every member should understand the goal of the discussion."
+          "text": "In group discussion, every member should understand the goal of the discussion.",
+          "slide": {
+            "heading": "Group discussion goals",
+            "points": [
+              "Every member should understand the goal"
+            ]
+          }
         },
         "s10": {
-          "text": "They should prepare well, support their points with facts, and speak loudly and clearly enough for everyone to hear."
+          "text": "They should prepare well, support their points with facts, and speak loudly and clearly enough for everyone to hear.",
+          "slide": {
+            "heading": "Group discussion preparation",
+            "points": [
+              "Prepare well",
+              "Support points with facts",
+              "Speak loudly and clearly"
+            ]
+          }
         },
         "s11": {
-          "text": "They should not feel offended when the group does not accept their ideas."
+          "text": "They should not feel offended when the group does not accept their ideas.",
+          "slide": {
+            "heading": "Handling group disagreement",
+            "points": [
+              "Do not feel offended when group rejects ideas"
+            ]
+          }
         },
         "s12": {
-          "text": "They should ask when they do not understand something, and support the decision of the group once it is made."
+          "text": "They should ask when they do not understand something, and support the decision of the group once it is made.",
+          "slide": {
+            "heading": "Asking and supporting decisions",
+            "points": [
+              "Ask when something is not understood",
+              "Support group decision once made"
+            ]
+          }
         },
         "s13": {
           "question": "Did you understand the teaching strategies and group discussion rules?",
@@ -350,7 +610,7 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.646Z"
+      "reviewedAt": "2026-11-26T15:14:43.124Z"
     }
   },
   "order": 10

@@ -45,6 +45,17 @@ export type AgentEvent =
     }
   | { type: "board_done"; stepId: string }
   /**
+   * The board while the teacher talks: key points and/or a picture. Stays up through following
+   * talk steps without one, until the next slide, video or question replaces it.
+   */
+  | {
+      type: "board_slide";
+      stepId: string;
+      heading: string | null;
+      points: string[];
+      image: { src: string; credit: string | null } | null;
+    }
+  /**
    * The live (talking video) teacher: "starting" while the service joins, "ready" once its video
    * is in the room, "failed" if it couldn't start (the lesson goes on with the voice and the
    * learner's other look).

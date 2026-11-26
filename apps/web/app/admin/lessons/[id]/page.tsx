@@ -5,6 +5,7 @@ import { mediaErrorMessage } from "../../../../lib/mediaErrors";
 import { statSync } from "node:fs";
 import { AddClipsForm } from "../../../../components/admin/AddClipsForm";
 import { PrerecordPanel } from "../../../../components/admin/PrerecordPanel";
+import { SlidesPanel } from "../../../../components/admin/SlidesPanel";
 import { VideoCueEditor, type VideoStepForEditor } from "../../../../components/admin/VideoCueEditor";
 import { mediaExists, uploadedFilePath } from "../../../../lib/lessonMedia";
 import type { Metadata } from "next";
@@ -173,6 +174,25 @@ export default async function LessonDraftPage({
           </table>
         </div>
       </section>
+
+      {lesson.steps.some((s) => s.type === "say") && (
+        <SlidesPanel
+          lessonId={lesson.id}
+          steps={lesson.steps.flatMap((s, index) =>
+            s.type === "say"
+              ? [
+                  {
+                    id: s.id,
+                    index,
+                    text: lesson.locales.en?.steps[s.id]?.text ?? "",
+                    slide: lesson.locales.en?.steps[s.id]?.slide ?? null,
+                    image: s.image ?? null,
+                  },
+                ]
+              : [],
+          )}
+        />
+      )}
 
       {videoSteps.map(({ s, index }) => (
         <VideoCueEditor

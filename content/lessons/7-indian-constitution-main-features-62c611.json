@@ -17,7 +17,11 @@
     {
       "id": "s1",
       "type": "say",
-      "avatar": "smile"
+      "avatar": "smile",
+      "image": {
+        "src": "/lesson-media/history-civics/constitution-of-india.jpg",
+        "credit": "Illumination/ornamentation by Beohar Rammanohar Sinha, calligraphy by Prem Behar · Public domain · Wikimedia Commons"
+      }
     },
     {
       "id": "s2",
@@ -27,12 +31,20 @@
     {
       "id": "s3",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/preamble.jpg",
+        "credit": "Government of India · CC BY-SA 4.0 · Wikimedia Commons"
+      }
     },
     {
       "id": "s4",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/parliament.jpg",
+        "credit": "Nikhilb239 · CC BY-SA 4.0 · Wikimedia Commons"
+      }
     },
     {
       "id": "s5",
@@ -42,7 +54,11 @@
     {
       "id": "s6",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/supreme-court.jpg",
+        "credit": "Legaleagle86 · CC BY-SA 3.0 · Wikimedia Commons"
+      }
     },
     {
       "id": "s7",
@@ -101,28 +117,82 @@
       "title": "7. భారత రాజ్యాంగం ముఖ్యమైన లక్షణాలు",
       "steps": {
         "s1": {
-          "text": "ఇండియా రాజ్యాంగాన్ని 1949 నవంబర్ 26న ఆమోదించారు. ఇది 1950 జనవరి 26న అమలులోకి వచ్చింది. దీన్ని మనం రిపబ్లిక్ డే గా జరుపుకుంటాం. డాక్టర్ బి. ఆర్. అంబేద్కర్ గారిది దీని డ్రాఫ్టింగ్ కమిటీకి చైర్మన్ గా ఉన్నారు."
+          "text": "ఇండియా రాజ్యాంగాన్ని 1949 నవంబర్ 26న ఆమోదించారు. ఇది 1950 జనవరి 26న అమలులోకి వచ్చింది. దీన్ని మనం రిపబ్లిక్ డే గా జరుపుకుంటాం. డాక్టర్ బి. ఆర్. అంబేద్కర్ గారిది దీని డ్రాఫ్టింగ్ కమిటీకి చైర్మన్ గా ఉన్నారు.",
+          "slide": {
+            "heading": "భారత రాజ్యాంగ స్వీకరణ",
+            "points": [
+              "26 నవంబర్ 1949న ఆమోదించబడింది",
+              "26 జనవరి 1950న అమలులోకి వచ్చింది",
+              "డాక్టర్ బి. ఆర్. అంబేద్కర్, డ్రాఫ్టింగ్ కమిటీ ఛైర్మన్"
+            ]
+          }
         },
         "s2": {
-          "text": "ఇది ప్రపంచంలోనే అతి పొడవైన రాతపూర్వక రాజ్యాంగం."
+          "text": "ఇది ప్రపంచంలోనే అతి పొడవైన రాతపూర్వక రాజ్యాంగం.",
+          "slide": {
+            "heading": "అతి పొడవైన లిఖిత రాజ్యాంగం",
+            "points": [
+              "ప్రపంచంలోనే అతి పొడవైన లిఖిత రాజ్యాంగం"
+            ]
+          }
         },
         "s3": {
-          "text": "ప్రియంబుల్ లో ఇండియాను సార్వభౌమ, సోషలిస్ట్, లౌకిక, ప్రజాస్వామ్య రిపబ్లిక్ గా ప్రకటించారు."
+          "text": "ప్రియంబుల్ లో ఇండియాను సార్వభౌమ, సోషలిస్ట్, లౌకిక, ప్రజాస్వామ్య రిపబ్లిక్ గా ప్రకటించారు.",
+          "slide": {
+            "heading": "ఉపక్రమణిక ప్రకటనలు",
+            "points": [
+              "సార్వభౌమ, సామ్యవాద, లౌకిక, ప్రజాస్వామ్య రిపబ్లిక్"
+            ]
+          }
         },
         "s4": {
-          "text": "ఇండియాలో పార్లమెంటరీ ప్రభుత్వ విధానం ఉంది. ఇది బలమైన కేంద్రంతో కూడిన ఫెడరల్ సిస్టమ్."
+          "text": "ఇండియాలో పార్లమెంటరీ ప్రభుత్వ విధానం ఉంది. ఇది బలమైన కేంద్రంతో కూడిన ఫెడరల్ సిస్టమ్.",
+          "slide": {
+            "heading": "పార్లమెంటరీ సమాఖ్య వ్యవస్థ",
+            "points": [
+              "పార్లమెంటరీ ప్రభుత్వ విధానం",
+              "బలమైన కేంద్రంతో కూడిన సమాఖ్య వ్యవస్థ"
+            ]
+          }
         },
         "s5": {
-          "text": "పౌరులకు ఫండమెంటల్ రైట్స్, ఫండమెంటల్ డ్యూటీస్ ఉంటాయి. ప్రభుత్వం డైరెక్టివ్ ప్రిన్సిపల్స్ ఆఫ్ స్టేట్ పాలసీ ప్రకారం నడుస్తుంది."
+          "text": "పౌరులకు ఫండమెంటల్ రైట్స్, ఫండమెంటల్ డ్యూటీస్ ఉంటాయి. ప్రభుత్వం డైరెక్టివ్ ప్రిన్సిపల్స్ ఆఫ్ స్టేట్ పాలసీ ప్రకారం నడుస్తుంది.",
+          "slide": {
+            "heading": "హక్కులు మరియు సూత్రాలు",
+            "points": [
+              "ప్రాథమిక హక్కులు మరియు ప్రాథమిక విధులు",
+              "రాష్ట్ర విధాన ఆదేశాలు"
+            ]
+          }
         },
         "s6": {
-          "text": "న్యాయ వ్యవస్థ స్వతంత్రమైనది. 18 ఏళ్లు లేదా అంతకంటే ఎక్కువ వయసు ఉన్న ప్రతి పౌరుడు ఓటు వేయవచ్చు. దీన్ని యూనివర్సల్ అడల్ట్ ఫ్రాంచైజ్ అంటారు."
+          "text": "న్యాయ వ్యవస్థ స్వతంత్రమైనది. 18 ఏళ్లు లేదా అంతకంటే ఎక్కువ వయసు ఉన్న ప్రతి పౌరుడు ఓటు వేయవచ్చు. దీన్ని యూనివర్సల్ అడల్ట్ ఫ్రాంచైజ్ అంటారు.",
+          "slide": {
+            "heading": "న్యాయవ్యవస్థ మరియు ఓటింగ్",
+            "points": [
+              "స్వతంత్ర న్యాయవ్యవస్థ",
+              "18 ఏళ్లు లేదా అంతకంటే ఎక్కువ వయస్సు ఉన్న అందరికీ వయోజన ఓటు హక్కు"
+            ]
+          }
         },
         "s7": {
-          "text": "సింగిల్ సిటిజన్‌షిప్ ఉంది. రాజ్యాంగం కొంత రిజిడ్ గా, కొంత ఫ్లెక్సిబుల్ గా ఉంటుంది. కాబట్టి అవసరమైనప్పుడు దీన్ని సవరించవచ్చు."
+          "text": "సింగిల్ సిటిజన్‌షిప్ ఉంది. రాజ్యాంగం కొంత రిజిడ్ గా, కొంత ఫ్లెక్సిబుల్ గా ఉంటుంది. కాబట్టి అవసరమైనప్పుడు దీన్ని సవరించవచ్చు.",
+          "slide": {
+            "heading": "పౌరసత్వం మరియు సవరణ",
+            "points": [
+              "ఏక పౌరసత్వం",
+              "పాక్షికంగా కఠినమైనది మరియు పాక్షికంగా సరళమైనది"
+            ]
+          }
         },
         "s8": {
-          "text": "ఇండియా లౌకిక దేశం. ప్రభుత్వం అన్ని మతాలను సమానంగా చూస్తుంది."
+          "text": "ఇండియా లౌకిక దేశం. ప్రభుత్వం అన్ని మతాలను సమానంగా చూస్తుంది.",
+          "slide": {
+            "heading": "లౌకిక రాజ్యం",
+            "points": [
+              "రాజ్యం అన్ని మతాలను సమానంగా చూస్తుంది"
+            ]
+          }
         },
         "s9": {
           "question": "ఇండియన్ రాజ్యాంగం మెయిన్ ఫీచర్స్ మీకు అర్థమయ్యాయా?",
@@ -165,35 +235,89 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.700Z"
+      "reviewedAt": "2026-11-26T15:14:43.173Z"
     },
     "hi": {
       "status": "reviewed",
       "title": "7. भारतीय संविधान की मुख्य विशेषताएँ",
       "steps": {
         "s1": {
-          "text": "भारत का संविधान 26 नवंबर 1949 को अपनाया गया था। यह 26 जनवरी 1950 को लागू हुआ, जिसे हम गणतंत्र दिवस के रूप में मनाते हैं। डॉ. बी. आर. अंबेडकर इसकी ड्राफ्टिंग कमेटी के चेयरमैन थे।"
+          "text": "भारत का संविधान 26 नवंबर 1949 को अपनाया गया था। यह 26 जनवरी 1950 को लागू हुआ, जिसे हम गणतंत्र दिवस के रूप में मनाते हैं। डॉ. बी. आर. अंबेडकर इसकी ड्राफ्टिंग कमेटी के चेयरमैन थे।",
+          "slide": {
+            "heading": "भारतीय संविधान को अपनाना",
+            "points": [
+              "26 नवंबर 1949 को इसे अपनाया गया",
+              "26 जनवरी 1950 को यह लागू हुआ",
+              "डॉ. बी. आर. अंबेडकर, ड्राफ्टिंग कमिटी के चेयरमैन"
+            ]
+          }
         },
         "s2": {
-          "text": "यह दुनिया का सबसे लंबा लिखित संविधान है।"
+          "text": "यह दुनिया का सबसे लंबा लिखित संविधान है।",
+          "slide": {
+            "heading": "सबसे लंबा लिखित संविधान",
+            "points": [
+              "दुनिया का सबसे लंबा लिखित संविधान"
+            ]
+          }
         },
         "s3": {
-          "text": "प्रस्तावना भारत को एक संप्रभु, समाजवादी, धर्मनिरपेक्ष और लोकतांत्रिक गणतंत्र घोषित करती है।"
+          "text": "प्रस्तावना भारत को एक संप्रभु, समाजवादी, धर्मनिरपेक्ष और लोकतांत्रिक गणतंत्र घोषित करती है।",
+          "slide": {
+            "heading": "प्रस्तावना की घोषणाएँ",
+            "points": [
+              "संप्रभु, समाजवादी, धर्मनिरपेक्ष, लोकतांत्रिक गणराज्य"
+            ]
+          }
         },
         "s4": {
-          "text": "भारत में संसदीय सरकार है। यह एक संघीय व्यवस्था है, जिसमें केंद्र मजबूत है।"
+          "text": "भारत में संसदीय सरकार है। यह एक संघीय व्यवस्था है, जिसमें केंद्र मजबूत है।",
+          "slide": {
+            "heading": "संसदीय संघीय व्यवस्था",
+            "points": [
+              "सरकार का संसदीय स्वरूप",
+              "मज़बूत केंद्र के साथ संघीय व्यवस्था"
+            ]
+          }
         },
         "s5": {
-          "text": "नागरिकों के पास मौलिक अधिकार और मौलिक कर्तव्य हैं। सरकार को राज्य नीति के निर्देशक सिद्धांतों से मार्गदर्शन मिलता है।"
+          "text": "नागरिकों के पास मौलिक अधिकार और मौलिक कर्तव्य हैं। सरकार को राज्य नीति के निर्देशक सिद्धांतों से मार्गदर्शन मिलता है।",
+          "slide": {
+            "heading": "अधिकार और सिद्धांत",
+            "points": [
+              "मौलिक अधिकार और मौलिक कर्तव्य",
+              "राज्य नीति निर्देशक तत्व"
+            ]
+          }
         },
         "s6": {
-          "text": "न्यायपालिका स्वतंत्र है। 18 साल या उससे ज्यादा उम्र का हर नागरिक वोट दे सकता है। इसे सार्वभौमिक वयस्क मताधिकार कहते हैं।"
+          "text": "न्यायपालिका स्वतंत्र है। 18 साल या उससे ज्यादा उम्र का हर नागरिक वोट दे सकता है। इसे सार्वभौमिक वयस्क मताधिकार कहते हैं।",
+          "slide": {
+            "heading": "न्यायपालिका और मतदान",
+            "points": [
+              "स्वतंत्र न्यायपालिका",
+              "सार्वभौमिक वयस्क मताधिकार, 18 या उससे ज़्यादा उम्र"
+            ]
+          }
         },
         "s7": {
-          "text": "यहाँ एकल नागरिकता है। संविधान आंशिक रूप से कठोर और आंशिक रूप से लचीला है। इसलिए जरूरत पड़ने पर इसमें संशोधन किया जा सकता है।"
+          "text": "यहाँ एकल नागरिकता है। संविधान आंशिक रूप से कठोर और आंशिक रूप से लचीला है। इसलिए जरूरत पड़ने पर इसमें संशोधन किया जा सकता है।",
+          "slide": {
+            "heading": "नागरिकता और संशोधन",
+            "points": [
+              "एकल नागरिकता",
+              "आंशिक रूप से कठोर और आंशिक रूप से लचीला"
+            ]
+          }
         },
         "s8": {
-          "text": "भारत धर्मनिरपेक्ष है। राज्य सभी धर्मों के साथ समान व्यवहार करता है।"
+          "text": "भारत धर्मनिरपेक्ष है। राज्य सभी धर्मों के साथ समान व्यवहार करता है।",
+          "slide": {
+            "heading": "धर्मनिरपेक्ष राज्य",
+            "points": [
+              "राज्य सभी धर्मों के साथ समान व्यवहार करता है"
+            ]
+          }
         },
         "s9": {
           "question": "क्या आपको भारतीय संविधान की मुख्य विशेषताएँ समझ में आईं?",
@@ -235,35 +359,89 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.700Z"
+      "reviewedAt": "2026-11-26T15:14:43.173Z"
     },
     "en": {
       "status": "reviewed",
       "title": "7. Indian Constitution main features",
       "steps": {
         "s1": {
-          "text": "The Constitution of India was adopted on 26 November 1949 and came into force on 26 January 1950, which we celebrate as Republic Day. Dr. B. R. Ambedkar was the chairman of its Drafting Committee."
+          "text": "The Constitution of India was adopted on 26 November 1949 and came into force on 26 January 1950, which we celebrate as Republic Day. Dr. B. R. Ambedkar was the chairman of its Drafting Committee.",
+          "slide": {
+            "heading": "Indian Constitution adoption",
+            "points": [
+              "Adopted on 26 November 1949",
+              "Came into force on 26 January 1950",
+              "Dr. B. R. Ambedkar, Drafting Committee chairman"
+            ]
+          }
         },
         "s2": {
-          "text": "It is the longest written constitution in the world."
+          "text": "It is the longest written constitution in the world.",
+          "slide": {
+            "heading": "Longest written constitution",
+            "points": [
+              "Longest written constitution in the world"
+            ]
+          }
         },
         "s3": {
-          "text": "The Preamble declares India a sovereign, socialist, secular, democratic republic."
+          "text": "The Preamble declares India a sovereign, socialist, secular, democratic republic.",
+          "slide": {
+            "heading": "Preamble declarations",
+            "points": [
+              "Sovereign, socialist, secular, democratic republic"
+            ]
+          }
         },
         "s4": {
-          "text": "India has a parliamentary form of government. It is a federal system with a strong centre."
+          "text": "India has a parliamentary form of government. It is a federal system with a strong centre.",
+          "slide": {
+            "heading": "Parliamentary federal system",
+            "points": [
+              "Parliamentary form of government",
+              "Federal system with a strong centre"
+            ]
+          }
         },
         "s5": {
-          "text": "Citizens have Fundamental Rights and Fundamental Duties, and the government is guided by the Directive Principles of State Policy."
+          "text": "Citizens have Fundamental Rights and Fundamental Duties, and the government is guided by the Directive Principles of State Policy.",
+          "slide": {
+            "heading": "Rights and principles",
+            "points": [
+              "Fundamental Rights and Fundamental Duties",
+              "Directive Principles of State Policy"
+            ]
+          }
         },
         "s6": {
-          "text": "The judiciary is independent. Every citizen aged 18 or above can vote, which is universal adult franchise."
+          "text": "The judiciary is independent. Every citizen aged 18 or above can vote, which is universal adult franchise.",
+          "slide": {
+            "heading": "Judiciary and voting",
+            "points": [
+              "Independent judiciary",
+              "Universal adult franchise, age 18 or above"
+            ]
+          }
         },
         "s7": {
-          "text": "There is single citizenship. The Constitution is partly rigid and partly flexible, so it can be amended when needed."
+          "text": "There is single citizenship. The Constitution is partly rigid and partly flexible, so it can be amended when needed.",
+          "slide": {
+            "heading": "Citizenship and amendment",
+            "points": [
+              "Single citizenship",
+              "Partly rigid and partly flexible"
+            ]
+          }
         },
         "s8": {
-          "text": "India is secular: the state treats all religions equally."
+          "text": "India is secular: the state treats all religions equally.",
+          "slide": {
+            "heading": "Secular state",
+            "points": [
+              "State treats all religions equally"
+            ]
+          }
         },
         "s9": {
           "question": "Did you understand the main features of the Indian Constitution?",
@@ -298,7 +476,7 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.700Z"
+      "reviewedAt": "2026-11-26T15:14:43.173Z"
     }
   },
   "order": 7

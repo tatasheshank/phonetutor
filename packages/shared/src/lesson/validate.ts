@@ -69,6 +69,14 @@ export function validateLesson(input: unknown, options: ValidateOptions = {}): V
     if (q.kind === "tap") checkScreen(`quiz.${q.id}`, q.screen, q.expect.tap);
   }
 
+  // Board pictures on talk steps: the file exists.
+  for (const step of lesson.steps) {
+    if (step.type !== "say" || !step.image) continue;
+    if (options.mediaExists && !options.mediaExists(step.image.src)) {
+      errors.push(`steps.${step.id}: picture "${step.image.src}" not found`);
+    }
+  }
+
   // Classroom-board videos: cue times go forward, media files exist.
   for (const step of lesson.steps) {
     if (step.type !== "video") continue;

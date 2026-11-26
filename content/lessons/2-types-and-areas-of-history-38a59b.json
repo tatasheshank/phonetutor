@@ -16,7 +16,11 @@
     {
       "id": "s1",
       "type": "say",
-      "avatar": "smile"
+      "avatar": "smile",
+      "image": {
+        "src": "/lesson-media/history-civics/lion-capital.jpg",
+        "credit": "Yann · CC BY-SA 4.0 · Wikimedia Commons"
+      }
     },
     {
       "id": "s2",
@@ -31,7 +35,11 @@
     {
       "id": "s4",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/taj-mahal.jpg",
+        "credit": "Yann; edited by Jim Carter · CC BY-SA 4.0 · Wikimedia Commons"
+      }
     },
     {
       "id": "s5",
@@ -110,34 +118,96 @@
       "title": "2. చరిత్ర రకాలు మరియు ప్రాంతాలు",
       "steps": {
         "s1": {
-          "text": "చరిత్రను దాని సబ్జెక్ట్ బట్టి విభజించవచ్చు. రాజకీయ చరిత్రలో రాజులు, ప్రభుత్వాలు, యుద్ధాలు, రాష్ట్రాల గురించి చదువుతాం."
+          "text": "చరిత్రను దాని సబ్జెక్ట్ బట్టి విభజించవచ్చు. రాజకీయ చరిత్రలో రాజులు, ప్రభుత్వాలు, యుద్ధాలు, రాష్ట్రాల గురించి చదువుతాం.",
+          "slide": {
+            "heading": "హిస్టరీ రకాలు",
+            "points": [
+              "సబ్జెక్ట్ బట్టి విభజించారు",
+              "పొలిటికల్ హిస్టరీ: రాజులు, ప్రభుత్వాలు, యుద్ధాలు, రాష్ట్రాలు"
+            ]
+          }
         },
         "s2": {
-          "text": "సామాజిక చరిత్రలో కుటుంబ జీవితం, ఆచారాలు, కులం, మహిళల స్థానం, రోజువారీ జీవితం గురించి చదువుతాం."
+          "text": "సామాజిక చరిత్రలో కుటుంబ జీవితం, ఆచారాలు, కులం, మహిళల స్థానం, రోజువారీ జీవితం గురించి చదువుతాం.",
+          "slide": {
+            "heading": "హిస్టరీ రకాలు",
+            "points": [
+              "సోషల్ హిస్టరీ: కుటుంబ జీవితం, ఆచారాలు, కులం",
+              "మహిళల స్థానం, రోజువారీ జీవితం"
+            ]
+          }
         },
         "s3": {
-          "text": "ఆర్థిక చరిత్రలో వ్యవసాయం, వ్యాపారం, పరిశ్రమలు, డబ్బు గురించి చదువుతాం."
+          "text": "ఆర్థిక చరిత్రలో వ్యవసాయం, వ్యాపారం, పరిశ్రమలు, డబ్బు గురించి చదువుతాం.",
+          "slide": {
+            "heading": "హిస్టరీ రకాలు",
+            "points": [
+              "ఎకనామిక్ హిస్టరీ: వ్యవసాయం, వ్యాపారం, పరిశ్రమ, డబ్బు"
+            ]
+          }
         },
         "s4": {
-          "text": "సాంస్కృతిక చరిత్రలో కళ, సాహిత్యం, సంగీతం, కట్టడాల గురించి చదువుతాం."
+          "text": "సాంస్కృతిక చరిత్రలో కళ, సాహిత్యం, సంగీతం, కట్టడాల గురించి చదువుతాం.",
+          "slide": {
+            "heading": "హిస్టరీ రకాలు",
+            "points": [
+              "కల్చరల్ హిస్టరీ: కళ, సాహిత్యం, సంగీతం, ఆర్కిటెక్చర్"
+            ]
+          }
         },
         "s5": {
-          "text": "మత చరిత్రలో మతాలు, మత ఉద్యమాల గురించి చదువుతాం."
+          "text": "మత చరిత్రలో మతాలు, మత ఉద్యమాల గురించి చదువుతాం.",
+          "slide": {
+            "heading": "హిస్టరీ రకాలు",
+            "points": [
+              "రిలిజియస్ హిస్టరీ: మతాలు, మత ఉద్యమాలు"
+            ]
+          }
         },
         "s6": {
-          "text": "రాజ్యాంగ చరిత్రలో చట్టాలు, రాజ్యాంగాలు ఎలా ఏర్పడ్డాయో చదువుతాం."
+          "text": "రాజ్యాంగ చరిత్రలో చట్టాలు, రాజ్యాంగాలు ఎలా ఏర్పడ్డాయో చదువుతాం.",
+          "slide": {
+            "heading": "హిస్టరీ రకాలు",
+            "points": [
+              "కాన్‌స్టిట్యూషనల్ హిస్టరీ: చట్టాలు, రాజ్యాంగాలు"
+            ]
+          }
         },
         "s7": {
-          "text": "దౌత్య చరిత్రలో దేశాల మధ్య సంబంధాల గురించి చదువుతాం."
+          "text": "దౌత్య చరిత్రలో దేశాల మధ్య సంబంధాల గురించి చదువుతాం.",
+          "slide": {
+            "heading": "హిస్టరీ రకాలు",
+            "points": [
+              "డిప్లొమాటిక్ హిస్టరీ: దేశాల మధ్య సంబంధాలు"
+            ]
+          }
         },
         "s8": {
-          "text": "శాస్త్ర చరిత్రలో ఆవిష్కరణలు, కొత్త inventions గురించి చదువుతాం."
+          "text": "శాస్త్ర చరిత్రలో ఆవిష్కరణలు, కొత్త inventions గురించి చదువుతాం.",
+          "slide": {
+            "heading": "హిస్టరీ రకాలు",
+            "points": [
+              "సైన్స్ హిస్టరీ: ఆవిష్కరణలు, కనిపెట్టడాలు"
+            ]
+          }
         },
         "s9": {
-          "text": "చరిత్రను ప్రాంతాల బట్టి కూడా విభజించవచ్చు. అంటే స్థానిక, ప్రాంతీయ, జాతీయ, ప్రపంచ చరిత్ర అని అన్నమాట."
+          "text": "చరిత్రను ప్రాంతాల బట్టి కూడా విభజించవచ్చు. అంటే స్థానిక, ప్రాంతీయ, జాతీయ, ప్రపంచ చరిత్ర అని అన్నమాట.",
+          "slide": {
+            "heading": "హిస్టరీ ఏరియాలు",
+            "points": [
+              "ఏరియా బట్టి విభజించారు: స్థానిక, ప్రాంతీయ, జాతీయ, ప్రపంచ"
+            ]
+          }
         },
         "s10": {
-          "text": "సమయాన్ని బట్టి చూస్తే, దీనిని ప్రాచీన, మధ్యయుగ, ఆధునిక చరిత్ర అని విభజించవచ్చు."
+          "text": "సమయాన్ని బట్టి చూస్తే, దీనిని ప్రాచీన, మధ్యయుగ, ఆధునిక చరిత్ర అని విభజించవచ్చు.",
+          "slide": {
+            "heading": "హిస్టరీ టైమ్ పీరియడ్స్",
+            "points": [
+              "సమయం బట్టి విభజించారు: ప్రాచీన, మధ్యయుగ, ఆధునిక"
+            ]
+          }
         },
         "s11": {
           "question": "చరిత్రలో ఉండే వేర్వేరు రకాలు, ప్రాంతాల గురించి మీకు అర్థమైందా?",
@@ -177,41 +247,103 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.889Z"
+      "reviewedAt": "2026-11-26T15:14:43.299Z"
     },
     "hi": {
       "status": "reviewed",
       "title": "2. इतिहास के प्रकार और क्षेत्र",
       "steps": {
         "s1": {
-          "text": "इतिहास को उसके विषय के आधार पर बाँटा जा सकता है। राजनीतिक इतिहास में राजाओं, सरकारों, युद्धों और राज्यों का अध्ययन किया जाता है।"
+          "text": "इतिहास को उसके विषय के आधार पर बाँटा जा सकता है। राजनीतिक इतिहास में राजाओं, सरकारों, युद्धों और राज्यों का अध्ययन किया जाता है।",
+          "slide": {
+            "heading": "इतिहास के प्रकार",
+            "points": [
+              "विषय के आधार पर",
+              "राजनीतिक इतिहास: राजा, सरकारें, युद्ध, राज्य"
+            ]
+          }
         },
         "s2": {
-          "text": "सामाजिक इतिहास में पारिवारिक जीवन, रीति-रिवाजों, जाति, महिलाओं की स्थिति और रोज़मर्रा के जीवन का अध्ययन किया जाता है।"
+          "text": "सामाजिक इतिहास में पारिवारिक जीवन, रीति-रिवाजों, जाति, महिलाओं की स्थिति और रोज़मर्रा के जीवन का अध्ययन किया जाता है।",
+          "slide": {
+            "heading": "इतिहास के प्रकार",
+            "points": [
+              "सामाजिक इतिहास: पारिवारिक जीवन, रीति-रिवाज, जाति",
+              "महिलाओं की स्थिति, दैनिक जीवन"
+            ]
+          }
         },
         "s3": {
-          "text": "आर्थिक इतिहास में कृषि, व्यापार, उद्योग और पैसे का अध्ययन किया जाता है।"
+          "text": "आर्थिक इतिहास में कृषि, व्यापार, उद्योग और पैसे का अध्ययन किया जाता है।",
+          "slide": {
+            "heading": "इतिहास के प्रकार",
+            "points": [
+              "आर्थिक इतिहास: कृषि, व्यापार, उद्योग, पैसा"
+            ]
+          }
         },
         "s4": {
-          "text": "सांस्कृतिक इतिहास में कला, साहित्य, संगीत और वास्तुकला का अध्ययन किया जाता है।"
+          "text": "सांस्कृतिक इतिहास में कला, साहित्य, संगीत और वास्तुकला का अध्ययन किया जाता है।",
+          "slide": {
+            "heading": "इतिहास के प्रकार",
+            "points": [
+              "सांस्कृतिक इतिहास: कला, साहित्य, संगीत, वास्तुकला"
+            ]
+          }
         },
         "s5": {
-          "text": "धार्मिक इतिहास में धर्मों और धार्मिक आंदोलनों का अध्ययन किया जाता है।"
+          "text": "धार्मिक इतिहास में धर्मों और धार्मिक आंदोलनों का अध्ययन किया जाता है।",
+          "slide": {
+            "heading": "इतिहास के प्रकार",
+            "points": [
+              "धार्मिक इतिहास: धर्म, धार्मिक आंदोलन"
+            ]
+          }
         },
         "s6": {
-          "text": "संवैधानिक इतिहास में यह देखा जाता है कि कानून और संविधान कैसे विकसित हुए।"
+          "text": "संवैधानिक इतिहास में यह देखा जाता है कि कानून और संविधान कैसे विकसित हुए।",
+          "slide": {
+            "heading": "इतिहास के प्रकार",
+            "points": [
+              "संवैधानिक इतिहास: कानून, संविधान"
+            ]
+          }
         },
         "s7": {
-          "text": "कूटनीतिक इतिहास में देशों के बीच संबंधों का अध्ययन किया जाता है।"
+          "text": "कूटनीतिक इतिहास में देशों के बीच संबंधों का अध्ययन किया जाता है।",
+          "slide": {
+            "heading": "इतिहास के प्रकार",
+            "points": [
+              "राजनयिक इतिहास: देशों के बीच संबंध"
+            ]
+          }
         },
         "s8": {
-          "text": "विज्ञान के इतिहास में खोजों और आविष्कारों का अध्ययन किया जाता है।"
+          "text": "विज्ञान के इतिहास में खोजों और आविष्कारों का अध्ययन किया जाता है।",
+          "slide": {
+            "heading": "इतिहास के प्रकार",
+            "points": [
+              "विज्ञान का इतिहास: खोजें, आविष्कार"
+            ]
+          }
         },
         "s9": {
-          "text": "इतिहास को क्षेत्र के आधार पर स्थानीय, क्षेत्रीय, राष्ट्रीय और विश्व इतिहास में भी बाँटा जा सकता है।"
+          "text": "इतिहास को क्षेत्र के आधार पर स्थानीय, क्षेत्रीय, राष्ट्रीय और विश्व इतिहास में भी बाँटा जा सकता है।",
+          "slide": {
+            "heading": "इतिहास के क्षेत्र",
+            "points": [
+              "क्षेत्र के आधार पर: स्थानीय, क्षेत्रीय, राष्ट्रीय, विश्व"
+            ]
+          }
         },
         "s10": {
-          "text": "इसे समय के आधार पर प्राचीन, मध्यकालीन और आधुनिक इतिहास में बाँटा जा सकता है।"
+          "text": "इसे समय के आधार पर प्राचीन, मध्यकालीन और आधुनिक इतिहास में बाँटा जा सकता है।",
+          "slide": {
+            "heading": "इतिहास के समय काल",
+            "points": [
+              "समय के आधार पर: प्राचीन, मध्यकालीन, आधुनिक"
+            ]
+          }
         },
         "s11": {
           "question": "क्या आपको इतिहास के अलग-अलग प्रकार और क्षेत्रों के बारे में समझ आया?",
@@ -253,41 +385,103 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.889Z"
+      "reviewedAt": "2026-11-26T15:14:43.299Z"
     },
     "en": {
       "status": "reviewed",
       "title": "2. Types and areas of History",
       "steps": {
         "s1": {
-          "text": "History can be divided by its subject. Political history studies kings, governments, wars and states."
+          "text": "History can be divided by its subject. Political history studies kings, governments, wars and states.",
+          "slide": {
+            "heading": "Types of History",
+            "points": [
+              "Divided by subject",
+              "Political history: kings, governments, wars, states"
+            ]
+          }
         },
         "s2": {
-          "text": "Social history studies family life, customs, caste, the position of women and daily life."
+          "text": "Social history studies family life, customs, caste, the position of women and daily life.",
+          "slide": {
+            "heading": "Types of History",
+            "points": [
+              "Social history: family life, customs, caste",
+              "Position of women, daily life"
+            ]
+          }
         },
         "s3": {
-          "text": "Economic history studies agriculture, trade, industry and money."
+          "text": "Economic history studies agriculture, trade, industry and money.",
+          "slide": {
+            "heading": "Types of History",
+            "points": [
+              "Economic history: agriculture, trade, industry, money"
+            ]
+          }
         },
         "s4": {
-          "text": "Cultural history studies art, literature, music and architecture."
+          "text": "Cultural history studies art, literature, music and architecture.",
+          "slide": {
+            "heading": "Types of History",
+            "points": [
+              "Cultural history: art, literature, music, architecture"
+            ]
+          }
         },
         "s5": {
-          "text": "Religious history studies religions and religious movements."
+          "text": "Religious history studies religions and religious movements.",
+          "slide": {
+            "heading": "Types of History",
+            "points": [
+              "Religious history: religions, religious movements"
+            ]
+          }
         },
         "s6": {
-          "text": "Constitutional history studies how laws and constitutions grew."
+          "text": "Constitutional history studies how laws and constitutions grew.",
+          "slide": {
+            "heading": "Types of History",
+            "points": [
+              "Constitutional history: laws, constitutions"
+            ]
+          }
         },
         "s7": {
-          "text": "Diplomatic history studies relations between countries."
+          "text": "Diplomatic history studies relations between countries.",
+          "slide": {
+            "heading": "Types of History",
+            "points": [
+              "Diplomatic history: relations between countries"
+            ]
+          }
         },
         "s8": {
-          "text": "The history of science studies discoveries and inventions."
+          "text": "The history of science studies discoveries and inventions.",
+          "slide": {
+            "heading": "Types of History",
+            "points": [
+              "History of science: discoveries, inventions"
+            ]
+          }
         },
         "s9": {
-          "text": "History can also be divided by area into local, regional, national and world history."
+          "text": "History can also be divided by area into local, regional, national and world history.",
+          "slide": {
+            "heading": "Areas of History",
+            "points": [
+              "Divided by area: local, regional, national, world"
+            ]
+          }
         },
         "s10": {
-          "text": "It can be divided by time into ancient, medieval and modern history."
+          "text": "It can be divided by time into ancient, medieval and modern history.",
+          "slide": {
+            "heading": "Time Periods of History",
+            "points": [
+              "Divided by time: ancient, medieval, modern"
+            ]
+          }
         },
         "s11": {
           "question": "Did you understand the different kinds and areas of history?",
@@ -321,7 +515,7 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.889Z"
+      "reviewedAt": "2026-11-26T15:14:43.299Z"
     }
   },
   "order": 2

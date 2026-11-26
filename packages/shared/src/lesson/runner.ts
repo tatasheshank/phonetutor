@@ -101,6 +101,9 @@ export class LessonRunner {
       const text = this.pack.steps[step.id];
       lines.push(`Current step (${this.index + 1} of ${this.total}): ${text?.text ?? text?.question ?? ""}`);
       if (step.type === "practice") lines.push(`The teacher is showing how to tap "${step.expect.tap}" on screen "${step.screen}".`);
+      if (step.type === "say" && text?.slide) {
+        lines.push(`On the board: ${text.slide.heading}. ${text.slide.points.join("; ")}`);
+      }
       if (step.type === "video") {
         const narration = (text?.cues ?? []).map((c) => c.text).join(" ");
         lines.push(`They are watching a short video on the board. The teacher's narration: ${narration}`);
@@ -161,8 +164,19 @@ export class LessonRunner {
     const say = (line?: string): RunnerAction[] => (line ? [{ kind: "say", text: line }] : []);
 
     switch (step.type) {
-      case "say":
-        return say(text?.text);
+      case "say": {
+        const slide = text?.slide;
+        if (!slide && !step.image) return say(text?.text);
+        const event: AgentEvent = {
+          type: "board_slide",
+          stepId: step.id,
+          heading: slide?.heading.trim() || null,
+          points: (slide?.points ?? []).map((p) => p.trim()).filter(Boolean),
+          image: step.image ? { src: step.image.src, credit: step.image.credit ?? null } : null,
+        };
+        // Sent with the line, so it comes back if the teacher repeats it after a question.
+        return text?.text ? [{ kind: "say", text: text.text, events: [event] }] : [{ kind: "event", event }];
+      }
       case "show":
         return [...this.goTo(step.screen), this.point(step.highlight ?? null), ...say(text?.text)];
       case "practice": {

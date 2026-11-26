@@ -32,7 +32,11 @@
     {
       "id": "s4",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/gandhi.jpg",
+        "credit": "Elliott & Fry · Public domain · Wikimedia Commons"
+      }
     },
     {
       "id": "s5",
@@ -70,7 +74,11 @@
     {
       "id": "s7",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/parliament.jpg",
+        "credit": "Nikhilb239 · CC BY-SA 4.0 · Wikimedia Commons"
+      }
     },
     {
       "id": "s8",
@@ -80,7 +88,11 @@
     {
       "id": "s9",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/rashtrapati-bhavan.jpg",
+        "credit": "President's Secretariat · GODL-India · Wikimedia Commons"
+      }
     },
     {
       "id": "s10",
@@ -90,7 +102,11 @@
     {
       "id": "s11",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/supreme-court.jpg",
+        "credit": "Legaleagle86 · CC BY-SA 3.0 · Wikimedia Commons"
+      }
     },
     {
       "id": "s12",
@@ -144,40 +160,132 @@
       "title": "9. ఆదేశిక సూత్రాలు మరియు ప్రభుత్వ అంగాలు",
       "steps": {
         "s1": {
-          "text": "ది డైరెక్టివ్ ప్రిన్సిపల్స్ ఆఫ్ స్టేట్ పాలసీ అనేవి రాజ్యాంగంలో 4వ భాగంలో, ఆర్టికల్స్ 36 నుంచి 51 వరకు ఉన్నాయి. ఈ ఐడియా ఐర్లాండ్ రాజ్యాంగం నుంచి తీసుకున్నాం."
+          "text": "ది డైరెక్టివ్ ప్రిన్సిపల్స్ ఆఫ్ స్టేట్ పాలసీ అనేవి రాజ్యాంగంలో 4వ భాగంలో, ఆర్టికల్స్ 36 నుంచి 51 వరకు ఉన్నాయి. ఈ ఐడియా ఐర్లాండ్ రాజ్యాంగం నుంచి తీసుకున్నాం.",
+          "slide": {
+            "heading": "డైరెక్టివ్ ప్రిన్సిపల్స్ లొకేషన్",
+            "points": [
+              "రాజ్యాంగంలోని 4వ భాగం",
+              "ఆర్టికల్స్ 36 నుండి 51 వరకు",
+              "ఐర్లాండ్ రాజ్యాంగం నుండి వచ్చిన ఆలోచన"
+            ]
+          }
         },
         "s2": {
-          "text": "ఇండియాని ఒక వెల్ఫేర్ స్టేట్ గా మార్చడానికి ఇవి ప్రభుత్వానికి గైడ్ లైన్స్ లాంటివి. వీటిని కోర్టులో అమలు చేయించలేము, కానీ దేశాన్ని పాలించడంలో ఇవి చాలా ముఖ్యం."
+          "text": "ఇండియాని ఒక వెల్ఫేర్ స్టేట్ గా మార్చడానికి ఇవి ప్రభుత్వానికి గైడ్ లైన్స్ లాంటివి. వీటిని కోర్టులో అమలు చేయించలేము, కానీ దేశాన్ని పాలించడంలో ఇవి చాలా ముఖ్యం.",
+          "slide": {
+            "heading": "డైరెక్టివ్ ప్రిన్సిపల్స్ స్వభావం",
+            "points": [
+              "ప్రభుత్వానికి మార్గదర్శకాలు",
+              "లక్ష్యం: సంక్షేమ రాజ్యం",
+              "కోర్టులో అమలు చేయలేము"
+            ]
+          }
         },
         "s3": {
-          "text": "సోషలిస్ట్ ప్రిన్సిపల్స్ లో అందరికీ తగినంత జీవనాధారం, ఆడవాళ్ళకి, మగవాళ్ళకి సమాన పనికి సమాన వేతనం, కార్మికులకు కనీస వేతనం ఇవ్వడం లాంటివి ఉన్నాయి."
+          "text": "సోషలిస్ట్ ప్రిన్సిపల్స్ లో అందరికీ తగినంత జీవనాధారం, ఆడవాళ్ళకి, మగవాళ్ళకి సమాన పనికి సమాన వేతనం, కార్మికులకు కనీస వేతనం ఇవ్వడం లాంటివి ఉన్నాయి.",
+          "slide": {
+            "heading": "సోషలిస్ట్ సూత్రాలు",
+            "points": [
+              "అందరికీ తగినంత జీవనాధారం",
+              "ఒకే పనికి సమాన వేతనం",
+              "కార్మికులకు కనీస వేతనం"
+            ]
+          }
         },
         "s4": {
-          "text": "గాంధేయ ప్రిన్సిపల్స్ అంటే గ్రామ పంచాయతీలను ఏర్పాటు చేయడం, కుటీర పరిశ్రమలను ప్రోత్సహించడం, హానికరమైన మత్తు పానీయాలను నిషేధించడం."
+          "text": "గాంధేయ ప్రిన్సిపల్స్ అంటే గ్రామ పంచాయతీలను ఏర్పాటు చేయడం, కుటీర పరిశ్రమలను ప్రోత్సహించడం, హానికరమైన మత్తు పానీయాలను నిషేధించడం.",
+          "slide": {
+            "heading": "గాంధీ సూత్రాలు",
+            "points": [
+              "గ్రామ పంచాయతీలను ఏర్పాటు చేయడం",
+              "కుటీర పరిశ్రమలను ప్రోత్సహించడం",
+              "హానికరమైన మత్తు పానీయాలను నిషేధించడం"
+            ]
+          }
         },
         "s5": {
-          "text": "లిబరల్ ప్రిన్సిపల్స్ లో పౌరులందరికీ ఒకే సివిల్ కోడ్, చిన్న పిల్లల సంరక్షణ మరియు విద్య, న్యాయవ్యవస్థను కార్యనిర్వాహక వర్గం నుంచి వేరు చేయడం, అంతర్జాతీయ శాంతిని ప్రోత్సహించడం ఉన్నాయి."
+          "text": "లిబరల్ ప్రిన్సిపల్స్ లో పౌరులందరికీ ఒకే సివిల్ కోడ్, చిన్న పిల్లల సంరక్షణ మరియు విద్య, న్యాయవ్యవస్థను కార్యనిర్వాహక వర్గం నుంచి వేరు చేయడం, అంతర్జాతీయ శాంతిని ప్రోత్సహించడం ఉన్నాయి.",
+          "slide": {
+            "heading": "ఉదారవాద సూత్రాలు",
+            "points": [
+              "పౌరులందరికీ ఒకే సివిల్ కోడ్",
+              "చిన్న పిల్లల సంరక్షణ మరియు విద్య",
+              "న్యాయవ్యవస్థను కార్యనిర్వాహక వర్గం నుండి వేరు చేయడం"
+            ]
+          }
         },
         "s6": {
-          "text": "భారత ప్రభుత్వానికి మూడు విభాగాలు ఉన్నాయి. చట్టాలు చేసేది లెజిస్లేచర్."
+          "text": "భారత ప్రభుత్వానికి మూడు విభాగాలు ఉన్నాయి. చట్టాలు చేసేది లెజిస్లేచర్.",
+          "slide": {
+            "heading": "భారత ప్రభుత్వ విభాగాలు",
+            "points": [
+              "ప్రభుత్వంలోని 3 విభాగాలు",
+              "శాసనసభ చట్టాలు చేస్తుంది"
+            ]
+          }
         },
         "s7": {
-          "text": "కేంద్రంలో, లెజిస్లేచర్ అంటే పార్లమెంట్. ఇందులో ప్రెసిడెంట్, లోక్ సభ, రాజ్య సభ ఉంటాయి."
+          "text": "కేంద్రంలో, లెజిస్లేచర్ అంటే పార్లమెంట్. ఇందులో ప్రెసిడెంట్, లోక్ సభ, రాజ్య సభ ఉంటాయి.",
+          "slide": {
+            "heading": "పార్లమెంట్ నిర్మాణం",
+            "points": [
+              "కేంద్రంలో శాసనసభే పార్లమెంట్",
+              "ప్రెసిడెంట్, లోక్ సభ, రాజ్య సభలతో కూడింది"
+            ]
+          }
         },
         "s8": {
-          "text": "లోక్ సభను ప్రజలు నేరుగా 5 ఏళ్ల పాటు ఎన్నుకుంటారు. రాజ్య సభ అనేది ఒక శాశ్వత సభ, దీనిలో ప్రతి రెండేళ్లకోసారి మూడో వంతు సభ్యులు రిటైర్ అవుతారు."
+          "text": "లోక్ సభను ప్రజలు నేరుగా 5 ఏళ్ల పాటు ఎన్నుకుంటారు. రాజ్య సభ అనేది ఒక శాశ్వత సభ, దీనిలో ప్రతి రెండేళ్లకోసారి మూడో వంతు సభ్యులు రిటైర్ అవుతారు.",
+          "slide": {
+            "heading": "లోక్ సభ మరియు రాజ్య సభ",
+            "points": [
+              "ప్రజలు నేరుగా ఎన్నుకునేది లోక్ సభ",
+              "కాలం: 5 ఏళ్లు",
+              "రాజ్య సభ శాశ్వత సభ"
+            ]
+          }
         },
         "s9": {
-          "text": "చట్టాలను అమలు చేసేది ఎగ్జిక్యూటివ్. ప్రెసిడెంట్ రాష్ట్రానికి హెడ్, కానీ నిజమైన పవర్ ప్రైమ్ మినిస్టర్ మరియు మంత్రి మండలి చేతిలో ఉంటుంది."
+          "text": "చట్టాలను అమలు చేసేది ఎగ్జిక్యూటివ్. ప్రెసిడెంట్ రాష్ట్రానికి హెడ్, కానీ నిజమైన పవర్ ప్రైమ్ మినిస్టర్ మరియు మంత్రి మండలి చేతిలో ఉంటుంది.",
+          "slide": {
+            "heading": "కార్యనిర్వాహక అధికారం",
+            "points": [
+              "కార్యనిర్వాహక వర్గం చట్టాలను అమలు చేస్తుంది",
+              "రాష్ట్రపతి దేశాధినేత",
+              "నిజమైన అధికారం ప్రధాని దగ్గర ఉంటుంది"
+            ]
+          }
         },
         "s10": {
-          "text": "ఎగ్జిక్యూటివ్ లోక్ సభకు జవాబుదారీగా ఉంటుంది. న్యాయవ్యవస్థ చట్టాలను వివరిస్తుంది, వివాదాలను పరిష్కరిస్తుంది మరియు పౌరుల హక్కులను కాపాడుతుంది."
+          "text": "ఎగ్జిక్యూటివ్ లోక్ సభకు జవాబుదారీగా ఉంటుంది. న్యాయవ్యవస్థ చట్టాలను వివరిస్తుంది, వివాదాలను పరిష్కరిస్తుంది మరియు పౌరుల హక్కులను కాపాడుతుంది.",
+          "slide": {
+            "heading": "కార్యనిర్వాహక మరియు న్యాయవ్యవస్థ పాత్రలు",
+            "points": [
+              "కార్యనిర్వాహక వర్గం లోక్ సభకు బాధ్యత వహిస్తుంది",
+              "న్యాయవ్యవస్థ చట్టాలను వివరిస్తుంది",
+              "వివాదాలను పరిష్కరిస్తుంది మరియు హక్కులను కాపాడుతుంది"
+            ]
+          }
         },
         "s11": {
-          "text": "సుప్రీం కోర్ట్ అత్యున్నత కోర్టు, దాని కింద హై కోర్ట్స్ మరియు కింది కోర్టులు ఉంటాయి."
+          "text": "సుప్రీం కోర్ట్ అత్యున్నత కోర్టు, దాని కింద హై కోర్ట్స్ మరియు కింది కోర్టులు ఉంటాయి.",
+          "slide": {
+            "heading": "కోర్టుల క్రమం",
+            "points": [
+              "సుప్రీం కోర్టు అత్యున్నత కోర్టు",
+              "దాని కింద హైకోర్టులు మరియు కింది కోర్టులు ఉంటాయి"
+            ]
+          }
         },
         "s12": {
-          "text": "ఈ మూడు విభాగాలు ఒకదానిపై ఒకటి చెక్ పెట్టుకుంటాయి, అప్పుడు ఏ విభాగం కూడా మరీ పవర్ ఫుల్ గా మారదు."
+          "text": "ఈ మూడు విభాగాలు ఒకదానిపై ఒకటి చెక్ పెట్టుకుంటాయి, అప్పుడు ఏ విభాగం కూడా మరీ పవర్ ఫుల్ గా మారదు.",
+          "slide": {
+            "heading": "చెక్స్ అండ్ బ్యాలెన్సెస్",
+            "points": [
+              "3 విభాగాలు ఒకదానికొకటి చెక్ చేసుకుంటాయి",
+              "ఏ విభాగం కూడా అతి శక్తివంతంగా మారకుండా ఆపుతాయి"
+            ]
+          }
         },
         "s13": {
           "question": "డైరెక్టివ్ ప్రిన్సిపల్స్ మరియు భారత ప్రభుత్వంలోని మూడు విభాగాల గురించి మీకు అర్థమైందా?",
@@ -230,47 +338,139 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.615Z"
+      "reviewedAt": "2026-11-26T15:14:43.071Z"
     },
     "hi": {
       "status": "reviewed",
       "title": "9. राज्य के नीति निदेशक तत्व और सरकार के अंग",
       "steps": {
         "s1": {
-          "text": "राज्य की नीति के निर्देशक तत्व संविधान के भाग चार में हैं, जो अनुच्छेद 36 से 51 तक हैं। यह आइडिया आयरलैंड के संविधान से लिया गया था।"
+          "text": "राज्य की नीति के निर्देशक तत्व संविधान के भाग चार में हैं, जो अनुच्छेद 36 से 51 तक हैं। यह आइडिया आयरलैंड के संविधान से लिया गया था।",
+          "slide": {
+            "heading": "डायरेक्टिव प्रिंसिपल्स की लोकेशन",
+            "points": [
+              "संविधान का पार्ट फोर",
+              "आर्टिकल्स 36 से 51",
+              "आइडिया कॉन्स्टिट्यूशन ऑफ आयरलैंड से"
+            ]
+          }
         },
         "s2": {
-          "text": "ये सरकार के लिए गाइडलाइंस हैं ताकि भारत को एक वेलफेयर स्टेट बनाया जा सके। इन्हें कोर्ट में लागू नहीं किया जा सकता, लेकिन देश चलाने के लिए ये बहुत ज़रूरी हैं।"
+          "text": "ये सरकार के लिए गाइडलाइंस हैं ताकि भारत को एक वेलफेयर स्टेट बनाया जा सके। इन्हें कोर्ट में लागू नहीं किया जा सकता, लेकिन देश चलाने के लिए ये बहुत ज़रूरी हैं।",
+          "slide": {
+            "heading": "डायरेक्टिव प्रिंसिपल्स का नेचर",
+            "points": [
+              "सरकार के लिए गाइडलाइन्स",
+              "गोल: वेलफेयर स्टेट",
+              "कोर्ट में लागू नहीं किया जा सकता"
+            ]
+          }
         },
         "s3": {
-          "text": "सोशलिस्ट सिद्धांतों में सभी के लिए रोज़गार के सही साधन, पुरुषों और महिलाओं को समान काम के लिए समान वेतन, और मज़दूरों के लिए गुज़ारे लायक वेतन शामिल हैं।"
+          "text": "सोशलिस्ट सिद्धांतों में सभी के लिए रोज़गार के सही साधन, पुरुषों और महिलाओं को समान काम के लिए समान वेतन, और मज़दूरों के लिए गुज़ारे लायक वेतन शामिल हैं।",
+          "slide": {
+            "heading": "सोशलिस्ट प्रिंसिपल्स",
+            "points": [
+              "सबके लिए रोज़ी-रोटी के पर्याप्त साधन",
+              "बराबर काम के लिए बराबर वेतन",
+              "मज़दूरों के लिए लिविंग वेज"
+            ]
+          }
         },
         "s4": {
-          "text": "गांधीवादी सिद्धांतों का मतलब है ग्राम पंचायतों को व्यवस्थित करना, कुटीर उद्योगों को बढ़ावा देना, और नुकसानदायक नशीले पदार्थों पर रोक लगाना।"
+          "text": "गांधीवादी सिद्धांतों का मतलब है ग्राम पंचायतों को व्यवस्थित करना, कुटीर उद्योगों को बढ़ावा देना, और नुकसानदायक नशीले पदार्थों पर रोक लगाना।",
+          "slide": {
+            "heading": "गांधीवादी प्रिंसिपल्स",
+            "points": [
+              "गांव की पंचायतें ऑर्गनाइज़ करना",
+              "कुटीर उद्योगों को बढ़ावा देना",
+              "नुकसानदायक नशीली शराब पर रोक"
+            ]
+          }
         },
         "s5": {
-          "text": "लिबरल सिद्धांतों में सभी नागरिकों के लिए एक यूनिफॉर्म सिविल कोड, छोटे बच्चों की देखभाल और शिक्षा, न्यायपालिका को कार्यपालिका से अलग करना, और अंतर्राष्ट्रीय शांति को बढ़ावा देना शामिल है।"
+          "text": "लिबरल सिद्धांतों में सभी नागरिकों के लिए एक यूनिफॉर्म सिविल कोड, छोटे बच्चों की देखभाल और शिक्षा, न्यायपालिका को कार्यपालिका से अलग करना, और अंतर्राष्ट्रीय शांति को बढ़ावा देना शामिल है।",
+          "slide": {
+            "heading": "लिबरल प्रिंसिपल्स",
+            "points": [
+              "सभी नागरिकों के लिए यूनिफॉर्म सिविल कोड",
+              "छोटे बच्चों की देखभाल और शिक्षा",
+              "कार्यपालिका से न्यायपालिका को अलग करना"
+            ]
+          }
         },
         "s6": {
-          "text": "भारत सरकार के तीन अंग हैं। विधायिका कानून बनाती है।"
+          "text": "भारत सरकार के तीन अंग हैं। विधायिका कानून बनाती है।",
+          "slide": {
+            "heading": "भारत सरकार के अंग",
+            "points": [
+              "सरकार के तीन अंग",
+              "विधानमंडल कानून बनाता है"
+            ]
+          }
         },
         "s7": {
-          "text": "केंद्र में, विधायिका संसद है, जो राष्ट्रपति, लोकसभा और राज्यसभा से मिलकर बनी है।"
+          "text": "केंद्र में, विधायिका संसद है, जो राष्ट्रपति, लोकसभा और राज्यसभा से मिलकर बनी है।",
+          "slide": {
+            "heading": "पारलियामेंट का स्ट्रक्चर",
+            "points": [
+              "सेंटर में विधानमंडल पार्लियामेंट है",
+              "राष्ट्रपति, लोकसभा, राज्यसभा से बना"
+            ]
+          }
         },
         "s8": {
-          "text": "लोकसभा के सदस्य लोगों द्वारा सीधे 5 साल के लिए चुने जाते हैं। राज्यसभा एक स्थायी सदन है, और इसके एक-तिहाई सदस्य हर 2 साल में रिटायर होते हैं।"
+          "text": "लोकसभा के सदस्य लोगों द्वारा सीधे 5 साल के लिए चुने जाते हैं। राज्यसभा एक स्थायी सदन है, और इसके एक-तिहाई सदस्य हर 2 साल में रिटायर होते हैं।",
+          "slide": {
+            "heading": "लोकसभा और राज्यसभा",
+            "points": [
+              "लोकसभा सीधे लोगों द्वारा चुनी जाती है",
+              "टर्म: 5 साल",
+              "राज्यसभा परमानेंट हाउस है"
+            ]
+          }
         },
         "s9": {
-          "text": "कार्यपालिका कानूनों को लागू करती है। राष्ट्रपति राज्य के प्रमुख हैं, लेकिन असली पावर प्रधानमंत्री और मंत्रिपरिषद के पास होती है।"
+          "text": "कार्यपालिका कानूनों को लागू करती है। राष्ट्रपति राज्य के प्रमुख हैं, लेकिन असली पावर प्रधानमंत्री और मंत्रिपरिषद के पास होती है।",
+          "slide": {
+            "heading": "एग्जीक्यूटिव पावर",
+            "points": [
+              "एग्जीक्यूटिव कानून लागू करता है",
+              "राष्ट्रपति राज्य का प्रमुख है",
+              "असली पावर प्रधानमंत्री के पास है"
+            ]
+          }
         },
         "s10": {
-          "text": "कार्यपालिका लोकसभा के प्रति जवाबदेह है। न्यायपालिका कानूनों को समझाती है, विवाद सुलझाती है और नागरिकों के अधिकारों की रक्षा करती है।"
+          "text": "कार्यपालिका लोकसभा के प्रति जवाबदेह है। न्यायपालिका कानूनों को समझाती है, विवाद सुलझाती है और नागरिकों के अधिकारों की रक्षा करती है।",
+          "slide": {
+            "heading": "एग्जीक्यूटिव और न्यायपालिका के रोल",
+            "points": [
+              "एग्जीक्यूटिव लोकसभा के प्रति जवाबदेह है",
+              "न्यायपालिका कानूनों को समझाती है",
+              "विवाद सुलझाती है और अधिकारों की रक्षा करती है"
+            ]
+          }
         },
         "s11": {
-          "text": "सुप्रीम कोर्ट सबसे ऊँची अदालत है, और उसके नीचे हाई कोर्ट और निचली अदालतें हैं।"
+          "text": "सुप्रीम कोर्ट सबसे ऊँची अदालत है, और उसके नीचे हाई कोर्ट और निचली अदालतें हैं।",
+          "slide": {
+            "heading": "कोर्ट की हायरार्की",
+            "points": [
+              "सुप्रीम कोर्ट सबसे ऊंचा कोर्ट है",
+              "नीचे हाई कोर्ट और निचली अदालतें हैं"
+            ]
+          }
         },
         "s12": {
-          "text": "ये तीनों अंग एक-दूसरे पर नज़र रखते हैं, ताकि कोई भी अंग बहुत ज़्यादा पावरफुल न बन जाए।"
+          "text": "ये तीनों अंग एक-दूसरे पर नज़र रखते हैं, ताकि कोई भी अंग बहुत ज़्यादा पावरफुल न बन जाए।",
+          "slide": {
+            "heading": "चेक्स एंड बैलेंसेस",
+            "points": [
+              "तीन अंग एक-दूसरे को चेक करते हैं",
+              "किसी भी अंग को बहुत पावरफुल होने से रोकता है"
+            ]
+          }
         },
         "s13": {
           "question": "क्या आपको निर्देशक तत्व और भारत सरकार के तीन अंगों के बारे में समझ आया?",
@@ -325,47 +525,139 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.615Z"
+      "reviewedAt": "2026-11-26T15:14:43.071Z"
     },
     "en": {
       "status": "reviewed",
       "title": "9. Directive Principles and government organs",
       "steps": {
         "s1": {
-          "text": "The Directive Principles of State Policy are in Part Four of the Constitution, from Articles 36 to 51. The idea was taken from the Constitution of Ireland."
+          "text": "The Directive Principles of State Policy are in Part Four of the Constitution, from Articles 36 to 51. The idea was taken from the Constitution of Ireland.",
+          "slide": {
+            "heading": "Directive Principles location",
+            "points": [
+              "Part Four of the Constitution",
+              "Articles 36 to 51",
+              "Idea from Constitution of Ireland"
+            ]
+          }
         },
         "s2": {
-          "text": "They are guidelines for the government to make India a welfare state. They cannot be enforced in a court, but they are fundamental in governing the country."
+          "text": "They are guidelines for the government to make India a welfare state. They cannot be enforced in a court, but they are fundamental in governing the country.",
+          "slide": {
+            "heading": "Directive Principles nature",
+            "points": [
+              "Guidelines for government",
+              "Goal: welfare state",
+              "Not enforceable in court"
+            ]
+          }
         },
         "s3": {
-          "text": "Socialist principles include adequate means of livelihood for all, equal pay for equal work for men and women, and a living wage for workers."
+          "text": "Socialist principles include adequate means of livelihood for all, equal pay for equal work for men and women, and a living wage for workers.",
+          "slide": {
+            "heading": "Socialist principles",
+            "points": [
+              "Adequate means of livelihood for all",
+              "Equal pay for equal work",
+              "Living wage for workers"
+            ]
+          }
         },
         "s4": {
-          "text": "Gandhian principles mean organising village panchayats, promoting cottage industries, and prohibiting harmful intoxicating drinks."
+          "text": "Gandhian principles mean organising village panchayats, promoting cottage industries, and prohibiting harmful intoxicating drinks.",
+          "slide": {
+            "heading": "Gandhian principles",
+            "points": [
+              "Organising village panchayats",
+              "Promoting cottage industries",
+              "Prohibiting harmful intoxicating drinks"
+            ]
+          }
         },
         "s5": {
-          "text": "Liberal principles include a uniform civil code for all citizens, care and education for young children, separating the judiciary from the executive, and promoting international peace."
+          "text": "Liberal principles include a uniform civil code for all citizens, care and education for young children, separating the judiciary from the executive, and promoting international peace.",
+          "slide": {
+            "heading": "Liberal principles",
+            "points": [
+              "Uniform civil code for all citizens",
+              "Care and education for young children",
+              "Separating judiciary from executive"
+            ]
+          }
         },
         "s6": {
-          "text": "The Government of India has three organs. The legislature makes laws."
+          "text": "The Government of India has three organs. The legislature makes laws.",
+          "slide": {
+            "heading": "Government of India organs",
+            "points": [
+              "Three organs of government",
+              "Legislature makes laws"
+            ]
+          }
         },
         "s7": {
-          "text": "At the centre, the legislature is Parliament, made of the President, the Lok Sabha and the Rajya Sabha."
+          "text": "At the centre, the legislature is Parliament, made of the President, the Lok Sabha and the Rajya Sabha.",
+          "slide": {
+            "heading": "Parliament structure",
+            "points": [
+              "Legislature at centre is Parliament",
+              "Made of President, Lok Sabha, Rajya Sabha"
+            ]
+          }
         },
         "s8": {
-          "text": "The Lok Sabha is elected directly by the people for five years. The Rajya Sabha is a permanent house, and one third of its members retire every two years."
+          "text": "The Lok Sabha is elected directly by the people for five years. The Rajya Sabha is a permanent house, and one third of its members retire every two years.",
+          "slide": {
+            "heading": "Lok Sabha and Rajya Sabha",
+            "points": [
+              "Lok Sabha elected directly by people",
+              "Term: five years",
+              "Rajya Sabha permanent house"
+            ]
+          }
         },
         "s9": {
-          "text": "The executive carries out the laws. The President is the head of the state, but real power is with the Prime Minister and the Council of Ministers."
+          "text": "The executive carries out the laws. The President is the head of the state, but real power is with the Prime Minister and the Council of Ministers.",
+          "slide": {
+            "heading": "Executive power",
+            "points": [
+              "Executive carries out laws",
+              "President head of state",
+              "Real power with Prime Minister"
+            ]
+          }
         },
         "s10": {
-          "text": "The executive is responsible to the Lok Sabha. The judiciary explains the laws, settles disputes and protects the rights of citizens."
+          "text": "The executive is responsible to the Lok Sabha. The judiciary explains the laws, settles disputes and protects the rights of citizens.",
+          "slide": {
+            "heading": "Executive and judiciary roles",
+            "points": [
+              "Executive responsible to Lok Sabha",
+              "Judiciary explains laws",
+              "Settles disputes and protects rights"
+            ]
+          }
         },
         "s11": {
-          "text": "The Supreme Court is the highest court, and below it are the High Courts and the lower courts."
+          "text": "The Supreme Court is the highest court, and below it are the High Courts and the lower courts.",
+          "slide": {
+            "heading": "Court hierarchy",
+            "points": [
+              "Supreme Court highest court",
+              "High Courts and lower courts below"
+            ]
+          }
         },
         "s12": {
-          "text": "The three organs keep a check on each other, so that no organ becomes too powerful."
+          "text": "The three organs keep a check on each other, so that no organ becomes too powerful.",
+          "slide": {
+            "heading": "Checks and balances",
+            "points": [
+              "Three organs check each other",
+              "Prevents any organ becoming too powerful"
+            ]
+          }
         },
         "s13": {
           "question": "Did you understand the Directive Principles and the three organs of the Government of India?",
@@ -414,7 +706,7 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.615Z"
+      "reviewedAt": "2026-11-26T15:14:43.071Z"
     }
   },
   "order": 9

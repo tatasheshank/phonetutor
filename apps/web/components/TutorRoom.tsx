@@ -19,6 +19,7 @@ import type { Me } from "./LoginStep";
 import { Avatar } from "./Avatar";
 import { afterPress, emptyStage, startPress, LessonStage, type StageState } from "./LessonStage";
 import { Board, type BoardState } from "./Board";
+import { SlideBoard, type SlideState } from "./SlideBoard";
 import { reportVideoError } from "./reportVideoError";
 import { resolveLook, stillLook, useTeacher, type TeacherLook } from "../lib/useTeacher";
 import { LiveTeacher } from "./LiveTeacher";
@@ -92,6 +93,8 @@ export function TutorRoom({
   const [stage, setStage] = useState<StageState>(emptyStage);
   // Classroom board (video step) and where on screen the teacher should point.
   const [board, setBoard] = useState<BoardState | null>(null);
+  // The board while the teacher talks (key points / picture), when there's no video on it.
+  const [slide, setSlide] = useState<SlideState | null>(null);
   const [pointAt, setPointAt] = useState<{ x: number; y: number } | null>(null);
   // The teacher (agent) has shown up in the room: until then, say she's getting ready.
   const [teacherHere, setTeacherHere] = useState(false);
@@ -132,9 +135,14 @@ export function TutorRoom({
         setLessonInfo({ title: e.title, index: 0, total: e.total, done: false });
         setStage(emptyStage);
         setBoard(null);
+        setSlide(null);
         break;
       case "board_video":
         setBoard({ stepId: e.stepId, source: e.source, cue: null });
+        setSlide(null);
+        break;
+      case "board_slide":
+        setSlide(e);
         break;
       case "board_cue":
         setBoard((b) => (b && b.stepId === e.stepId ? { ...b, cue: e } : b));
@@ -146,6 +154,7 @@ export function TutorRoom({
         setLessonInfo((i) => (i ? { ...i, index: e.index, total: e.total } : i));
         break;
       case "show_screen":
+        setSlide(null);
         setStage((st) => ({ ...st, screen: e.screen }));
         break;
       case "highlight":
@@ -157,6 +166,7 @@ export function TutorRoom({
         setTimeout(() => setStage((st) => afterPress(st, e.target)), 650);
         break;
       case "check":
+        setSlide(null);
         setStage((st) => ({ ...st, check: { stepId: e.stepId, question: e.question, options: e.options } }));
         break;
       case "check_done":
@@ -164,6 +174,7 @@ export function TutorRoom({
         break;
       case "lesson_done":
         setLessonInfo((i) => (i ? { ...i, index: i.total, done: true } : i));
+        setSlide(null);
         setStage((st) => ({ ...st, check: null, highlight: null, pressed: null }));
         break;
     }
@@ -187,6 +198,7 @@ export function TutorRoom({
     setLessonId(chosenLesson);
     setLessonInfo(null);
     setStage(emptyStage);
+    setSlide(null);
     setLiveVideo(null);
     setLiveStatus("off");
     setTeacherHere(false);
@@ -362,7 +374,7 @@ export function TutorRoom({
           </span>
         </div>
       )}
-      {inLesson && (board || stage.screen) ? (
+      {inLesson && (board || slide || stage.screen) ? (
         // Teaching layout: the board on top (the live, tappable phone screen, or a lesson video),
         // the teacher small at the bottom left, pointing at what she's talking about.
         <>
@@ -374,6 +386,8 @@ export function TutorRoom({
               onPointScreen={setPointAt}
               onMediaError={(stepId, code) => lessonId && reportVideoError(lessonId, stepId, code)}
             />
+          ) : slide ? (
+            <SlideBoard slide={slide} />
           ) : (
             <LessonStage stage={stage} screenLanguage={screenLanguage} t={t} send={send} onPointScreen={setPointAt} board />
           )}
@@ -409,7 +423,7 @@ export function TutorRoom({
       <div ref={audioBox} hidden />
 
       {/* No screen yet (e.g. the intro, or a check question on its own): just the question card. */}
-      {inLesson && !board && !stage.screen && <LessonStage stage={stage} screenLanguage={screenLanguage} t={t} send={send} />}
+      {inLesson && !board && !slide && !stage.screen && <LessonStage stage={stage} screenLanguage={screenLanguage} t={t} send={send} />}
 
       {phase === "ready" && (
         <div className="stack">

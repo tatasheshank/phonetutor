@@ -1,0 +1,112 @@
+{
+  "herodotus": {
+    "src": "/lesson-media/history-civics/herodotus.jpg",
+    "credit": "Livioandronico2013 · CC BY-SA 4.0 · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Bust_of_Herodotus_in_Palazzo_Massimo_(Rome).JPG"
+  },
+  "adam-smith": {
+    "src": "/lesson-media/history-civics/adam-smith.jpg",
+    "credit": "Public domain · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Adam_Smith_The_Muir_portrait.jpg"
+  },
+  "lincoln": {
+    "src": "/lesson-media/history-civics/lincoln.jpg",
+    "credit": "Alexander Gardner · Public domain · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Abraham_Lincoln_O-74_by_A_Gardner,_1863.jpg"
+  },
+  "pnyx": {
+    "src": "/lesson-media/history-civics/pnyx.jpg",
+    "credit": "Peulle · CC BY-SA 4.0 · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Pnyx_seen_from_Acropolis_in_2017_(2).jpg"
+  },
+  "boston-tea-party": {
+    "src": "/lesson-media/history-civics/boston-tea-party.jpg",
+    "credit": "Nathaniel Currier · Public domain · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Boston_Tea_Party_Currier_colored.jpg"
+  },
+  "declaration-of-independence": {
+    "src": "/lesson-media/history-civics/declaration-of-independence.jpg",
+    "credit": "John Trumbull · Public domain · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Declaration_of_Independence_(1819),_by_John_Trumbull.jpg"
+  },
+  "storming-of-the-bastille": {
+    "src": "/lesson-media/history-civics/storming-of-the-bastille.jpg",
+    "credit": "Jean-Pierre Houël · Public domain · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Prise_de_la_Bastille.jpg"
+  },
+  "louis-xvi": {
+    "src": "/lesson-media/history-civics/louis-xvi.jpg",
+    "credit": "Public domain · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Louis_XVI_en_costume_de_sacre_-_Joseph-Siffred_Duplessis.jpg"
+  },
+  "preamble": {
+    "src": "/lesson-media/history-civics/preamble.jpg",
+    "credit": "Government of India · CC BY-SA 4.0 · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Preamble_of_Constitution_of_India.jpg"
+  },
+  "ambedkar": {
+    "src": "/lesson-media/history-civics/ambedkar.jpg",
+    "credit": "Snehrashmi · CC BY-SA 4.0 · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Dr._B._R._Ambedkar.jpg"
+  },
+  "parliament": {
+    "src": "/lesson-media/history-civics/parliament.jpg",
+    "credit": "Nikhilb239 · CC BY-SA 4.0 · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Sansad_Bhavan,_Delhi,_BNK.jpg"
+  },
+  "supreme-court": {
+    "src": "/lesson-media/history-civics/supreme-court.jpg",
+    "credit": "Legaleagle86 · CC BY-SA 3.0 · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Supreme_Court_of_India_-_200705_(edited).jpg"
+  },
+  "rashtrapati-bhavan": {
+    "src": "/lesson-media/history-civics/rashtrapati-bhavan.jpg",
+    "credit": "President's Secretariat · GODL-India · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Rashtrapati_Bhavan_1.jpg"
+  },
+  "un-headquarters": {
+    "src": "/lesson-media/history-civics/un-headquarters.jpg",
+    "credit": "Jakub Hałun · CC BY 4.0 · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Headquarters_of_the_United_Nations,_New_York_City,_20231001_1103_1006.jpg"
+  },
+  "voter-1952": {
+    "src": "/lesson-media/history-civics/voter-1952.jpg",
+    "credit": "Photo Division, Ministry of Information & Broadcasting, Government of India · Public domain · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:A_Polling_Officer_affixes_indelible_ink_mark_on_the_fore-finger_of_a_voter_before_allowing_her_to_cast_the_vote_at_a_polling_station_in_Delhi_on_14_January_1952.jpg"
+  },
+  "gram-panchayat": {
+    "src": "/lesson-media/history-civics/gram-panchayat.jpg",
+    "credit": "B Suraj Patra · CC0 · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Gram_Panchayat_Office_Semiliguda.jpg"
+  },
+  "gandhi": {
+    "src": "/lesson-media/history-civics/gandhi.jpg",
+    "credit": "Elliott & Fry · Public domain · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Mahatma-Gandhi,_studio,_1931.jpg"
+  },
+  "taj-mahal": {
+    "src": "/lesson-media/history-civics/taj-mahal.jpg",
+    "credit": "Yann; edited by Jim Carter · CC BY-SA 4.0 · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Taj_Mahal_(Edited).jpeg"
+  },
+  "flag-of-india": {
+    "src": "/lesson-media/history-civics/flag-of-india.png",
+    "credit": "Government of India · Public domain · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Flag_of_India.svg"
+  },
+  "sarnath-capital": {
+    "src": "/lesson-media/history-civics/sarnath-capital.jpg",
+    "credit": "Chrisi1964 · CC BY-SA 4.0 · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Sarnath_capital.jpg"
+  },
+  "lion-capital": {
+    "src": "/lesson-media/history-civics/lion-capital.jpg",
+    "credit": "Yann · CC BY-SA 4.0 · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Lion_Capital_of_Ashoka.jpg"
+  },
+  "constitution-of-india": {
+    "src": "/lesson-media/history-civics/constitution-of-india.jpg",
+    "credit": "Illumination/ornamentation by Beohar Rammanohar Sinha, calligraphy by Prem Behar · Public domain · Wikimedia Commons",
+    "page": "https://commons.wikimedia.org/wiki/File:Constitution_of_India.jpg"
+  }
+}

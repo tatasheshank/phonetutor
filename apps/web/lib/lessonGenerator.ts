@@ -4,6 +4,12 @@ import {
   lessonFromPlan,
   lessonPlanSchema,
   mergeTranslatedPack,
+  repairSlides,
+  setSlides,
+  slideLines,
+  slidePlanSchema,
+  slidesFromLines,
+  talkSteps,
   SCREEN_MANIFEST,
   SCREEN_NAV,
   slugify,
@@ -362,8 +368,17 @@ export async function generateVideoLesson(
   if (clips.length) warnings.push("Set where the teacher points, and fine-tune the timings, in each clip's cue editor below.");
 
   await translatePacks(lesson, warnings, track);
-  finalCheck(lesson, warnings);
-  return { lesson, warnings, usage };
+  let withSlides = lesson;
+  try {
+    const slides = await generateSlides(lesson);
+    track(slides.usage);
+    withSlides = slides.lesson;
+  } catch (err) {
+    console.warn("[lessons] board slides failed", err);
+    warnings.push("The board slides couldn't be made; use \"Make board slides\" on the lesson page.");
+  }
+  finalCheck(withSlides, warnings);
+  return { lesson: withSlides, warnings, usage };
 }
 
 /**
@@ -386,4 +401,42 @@ export async function translateLines(lines: string[], lang: LanguageCode): Promi
   )) as { lines?: unknown };
   const got = Array.isArray(out?.lines) ? out.lines : [];
   return { lines: lines.map((_, i) => (typeof got[i] === "string" ? (got[i] as string).trim() : "")), usage };
+}
+
+const SLIDES_SYSTEM = `You write the classroom board for a spoken lesson. While the teacher says each line, the board shows a short slide for it.
+You get {"title": "...", "steps": [{"step": "s1", "text": "the teacher's line"}, ...]}.
+Return only JSON: {"slides": [{"step": "s1", "heading": "...", "points": ["...", "..."]}, ...]} with one slide per step, same step ids, same order.
+Rules:
+- heading: the topic in 2 to 5 words (e.g. "Capitalism", "Right to Equality"). Steps about the same topic use the same heading.
+- points: 1 to 3 key points from THAT line only, as a student would note them down: keywords, names, dates, numbers, at most 8 words each. No full sentences, no "the teacher says".
+- Only facts from the line. Never invent facts, examples or numbers.
+- Plain text only: no emoji, no markdown, no numbering.`;
+
+/**
+ * Drafts board slides (a heading and key points) for every talk step, in English, then translates
+ * them into the lesson's other languages. Returns the updated lesson; the admin reviews it.
+ * Pictures are not touched.
+ */
+export async function generateSlides(lesson: Lesson): Promise<{ lesson: Lesson; usage: Usage; count: number }> {
+  const { usage, track } = newTracker();
+  const steps = talkSteps(lesson);
+  if (steps.length === 0) return { lesson, usage, count: 0 };
+  const json = await askJson(
+    [
+      { role: "system", content: SLIDES_SYSTEM },
+      { role: "user", content: JSON.stringify({ title: lesson.locales.en?.title ?? "", steps: steps.map((s) => ({ step: s.id, text: s.text })) }) },
+    ],
+    { model: "sarvam-105b-conversations", maxTokens: 4000, temperature: 0.2 },
+    track,
+  );
+  const english = repairSlides(slidePlanSchema.parse(json), steps.map((s) => s.id));
+  let out = setSlides(lesson, "en", english);
+  const lines = slideLines(english);
+  for (const lang of ["te", "hi"] as const) {
+    if (!out.locales[lang]) continue;
+    const { lines: translated, usage: u } = await translateLines(lines, lang);
+    track(u);
+    out = setSlides(out, lang, slidesFromLines(english, translated));
+  }
+  return { lesson: out, usage, count: Object.keys(english).length };
 }

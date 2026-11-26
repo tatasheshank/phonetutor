@@ -18,12 +18,20 @@
     {
       "id": "s1",
       "type": "say",
-      "avatar": "smile"
+      "avatar": "smile",
+      "image": {
+        "src": "/lesson-media/history-civics/flag-of-india.png",
+        "credit": "Government of India · Public domain · Wikimedia Commons"
+      }
     },
     {
       "id": "s2",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/voter-1952.jpg",
+        "credit": "Photo Division, Ministry of Information & Broadcasting, Government of India · Public domain · Wikimedia Commons"
+      }
     },
     {
       "id": "s3",
@@ -33,7 +41,11 @@
     {
       "id": "s4",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/constitution-of-india.jpg",
+        "credit": "Illumination/ornamentation by Beohar Rammanohar Sinha, calligraphy by Prem Behar · Public domain · Wikimedia Commons"
+      }
     },
     {
       "id": "s5",
@@ -87,19 +99,58 @@
       "title": "4. పౌరసత్వ హక్కులు మరియు విధులు",
       "steps": {
         "s1": {
-          "text": "పౌరుడు అంటే ఒక దేశానికి పూర్తి సభ్యుడు. వాళ్ళు ఆ దేశ హక్కులను అనుభవిస్తారు, అలాగే దాని పట్ల తమ బాధ్యతలను నెరవేరుస్తారు."
+          "text": "పౌరుడు అంటే ఒక దేశానికి పూర్తి సభ్యుడు. వాళ్ళు ఆ దేశ హక్కులను అనుభవిస్తారు, అలాగే దాని పట్ల తమ బాధ్యతలను నెరవేరుస్తారు.",
+          "slide": {
+            "heading": "పౌరసత్వం అంటే ఏమిటి",
+            "points": [
+              "ఒక దేశానికి పూర్తి సభ్యుడు అవ్వడం",
+              "హక్కులు అనుభవించడం",
+              "విధులు నిర్వర్తించడం"
+            ]
+          }
         },
         "s2": {
-          "text": "పౌరసత్వం వల్ల ఓటు వేయడం, ఎన్నికలలో పోటీ చేయడం, చట్టపరమైన రక్షణ లాంటి హక్కులు వస్తాయి. అలాగే చట్టాలను గౌరవించడం, పన్నులు కట్టడం, దేశాన్ని గౌరవించడం లాంటి బాధ్యతలు ఉంటాయి."
+          "text": "పౌరసత్వం వల్ల ఓటు వేయడం, ఎన్నికలలో పోటీ చేయడం, చట్టపరమైన రక్షణ లాంటి హక్కులు వస్తాయి. అలాగే చట్టాలను గౌరవించడం, పన్నులు కట్టడం, దేశాన్ని గౌరవించడం లాంటి బాధ్యతలు ఉంటాయి.",
+          "slide": {
+            "heading": "హక్కులు, విధులు",
+            "points": [
+              "ఓటింగ్, ఎన్నికలు, చట్టపరమైన రక్షణ",
+              "చట్టాలను పాటించడం, పన్నులు కట్టడం",
+              "దేశాన్ని గౌరవించడం"
+            ]
+          }
         },
         "s3": {
-          "text": "పౌరసత్వం అనేది పుట్టుక ద్వారా, వంశపారంపర్యంగా, రిజిస్ట్రేషన్ ద్వారా లేదా సహజసిద్ధంగా పొందవచ్చు."
+          "text": "పౌరసత్వం అనేది పుట్టుక ద్వారా, వంశపారంపర్యంగా, రిజిస్ట్రేషన్ ద్వారా లేదా సహజసిద్ధంగా పొందవచ్చు.",
+          "slide": {
+            "heading": "పౌరసత్వం పొందడానికి మార్గాలు",
+            "points": [
+              "పుట్టుక ద్వారా",
+              "వంశపారంపర్యంగా",
+              "రిజిస్ట్రేషన్ ద్వారా",
+              "సహజసిద్ధంగా పొందడం"
+            ]
+          }
         },
         "s4": {
-          "text": "భారత రాజ్యాంగంలోని ఆర్టికల్స్ 5 నుంచి 11 వరకు పౌరసత్వం గురించి ఉంటాయి. 1955 పౌరసత్వ చట్టం దీని వివరాలు చెబుతుంది."
+          "text": "భారత రాజ్యాంగంలోని ఆర్టికల్స్ 5 నుంచి 11 వరకు పౌరసత్వం గురించి ఉంటాయి. 1955 పౌరసత్వ చట్టం దీని వివరాలు చెబుతుంది.",
+          "slide": {
+            "heading": "భారతదేశంలో పౌరసత్వం",
+            "points": [
+              "ఆర్టికల్స్ 5 నుండి 11 వరకు",
+              "పౌరసత్వ చట్టం 1955"
+            ]
+          }
         },
         "s5": {
-          "text": "భారతదేశంలో సింగిల్ సిటిజన్‌షిప్ ఉంది. ప్రతి భారతీయుడు భారతదేశానికి మాత్రమే పౌరుడు, వేరే ఏ రాష్ట్రానికీ కాదు."
+          "text": "భారతదేశంలో సింగిల్ సిటిజన్‌షిప్ ఉంది. ప్రతి భారతీయుడు భారతదేశానికి మాత్రమే పౌరుడు, వేరే ఏ రాష్ట్రానికీ కాదు.",
+          "slide": {
+            "heading": "భారతదేశంలో ఏక పౌరసత్వం",
+            "points": [
+              "ఏక పౌరసత్వం",
+              "భారతీయుడు మాత్రమే"
+            ]
+          }
         },
         "s6": {
           "question": "పౌరుడు అంటే ఏమిటి, భారతదేశంలో పౌరసత్వం ఎలా వస్తుంది అనేది మీకు అర్థమైందా?",
@@ -141,26 +192,65 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.806Z"
+      "reviewedAt": "2026-11-26T15:14:43.236Z"
     },
     "hi": {
       "status": "reviewed",
       "title": "4. नागरिकता के अधिकार और कर्तव्य",
       "steps": {
         "s1": {
-          "text": "नागरिक किसी राज्य का पूरा सदस्य होता है। वे इसके अधिकारों का मज़ा लेते हैं और इसके प्रति अपने कर्तव्य निभाते हैं।"
+          "text": "नागरिक किसी राज्य का पूरा सदस्य होता है। वे इसके अधिकारों का मज़ा लेते हैं और इसके प्रति अपने कर्तव्य निभाते हैं।",
+          "slide": {
+            "heading": "नागरिकता की परिभाषा",
+            "points": [
+              "राज्य का पूर्ण सदस्य",
+              "अधिकारों का आनंद लेना",
+              "कर्तव्यों का पालन करना"
+            ]
+          }
         },
         "s2": {
-          "text": "नागरिकता से वोट देने, चुनाव लड़ने और कानूनी सुरक्षा जैसे अधिकार मिलते हैं। साथ ही, कानून मानने, टैक्स देने और देश का सम्मान करने जैसे कर्तव्य भी आते हैं।"
+          "text": "नागरिकता से वोट देने, चुनाव लड़ने और कानूनी सुरक्षा जैसे अधिकार मिलते हैं। साथ ही, कानून मानने, टैक्स देने और देश का सम्मान करने जैसे कर्तव्य भी आते हैं।",
+          "slide": {
+            "heading": "अधिकार और कर्तव्य",
+            "points": [
+              "वोटिंग, चुनाव, कानूनी सुरक्षा",
+              "कानूनों का पालन करना, टैक्स देना",
+              "राष्ट्र का सम्मान करना"
+            ]
+          }
         },
         "s3": {
-          "text": "नागरिकता जन्म से, वंश से, रजिस्ट्रेशन से, या नेचुरलाइजेशन से मिल सकती है।"
+          "text": "नागरिकता जन्म से, वंश से, रजिस्ट्रेशन से, या नेचुरलाइजेशन से मिल सकती है।",
+          "slide": {
+            "heading": "नागरिकता पाने के तरीके",
+            "points": [
+              "जन्म से",
+              "वंश से",
+              "रजिस्ट्रेशन से",
+              "नेचुरलाइजेशन से"
+            ]
+          }
         },
         "s4": {
-          "text": "भारतीय संविधान के आर्टिकल 5 से 11 में नागरिकता के बारे में बताया गया है। 1955 का नागरिकता कानून इसकी पूरी जानकारी देता है।"
+          "text": "भारतीय संविधान के आर्टिकल 5 से 11 में नागरिकता के बारे में बताया गया है। 1955 का नागरिकता कानून इसकी पूरी जानकारी देता है।",
+          "slide": {
+            "heading": "भारत में नागरिकता",
+            "points": [
+              "अनुच्छेद 5 से 11",
+              "नागरिकता अधिनियम 1955"
+            ]
+          }
         },
         "s5": {
-          "text": "भारत में सिंगल सिटिजनशिप है। हर भारतीय सिर्फ भारत का नागरिक है, किसी अलग राज्य का नहीं।"
+          "text": "भारत में सिंगल सिटिजनशिप है। हर भारतीय सिर्फ भारत का नागरिक है, किसी अलग राज्य का नहीं।",
+          "slide": {
+            "heading": "भारत में एकल नागरिकता",
+            "points": [
+              "एकल नागरिकता",
+              "केवल भारत का नागरिक"
+            ]
+          }
         },
         "s6": {
           "question": "क्या आपको समझ आया कि नागरिक क्या होता है और भारत में नागरिकता कैसे मिलती है?",
@@ -202,26 +292,65 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.806Z"
+      "reviewedAt": "2026-11-26T15:14:43.236Z"
     },
     "en": {
       "status": "reviewed",
       "title": "4. Citizenship rights and duties",
       "steps": {
         "s1": {
-          "text": "A citizen is a full member of a state. They enjoy its rights and perform duties towards it."
+          "text": "A citizen is a full member of a state. They enjoy its rights and perform duties towards it.",
+          "slide": {
+            "heading": "Definition of citizenship",
+            "points": [
+              "Full member of a state",
+              "Enjoy rights",
+              "Perform duties"
+            ]
+          }
         },
         "s2": {
-          "text": "Citizenship gives rights like voting, contesting elections, and legal protection. It brings duties like obeying laws, paying taxes, and respecting the nation."
+          "text": "Citizenship gives rights like voting, contesting elections, and legal protection. It brings duties like obeying laws, paying taxes, and respecting the nation.",
+          "slide": {
+            "heading": "Rights and duties",
+            "points": [
+              "Voting, elections, legal protection",
+              "Obey laws, pay taxes",
+              "Respect the nation"
+            ]
+          }
         },
         "s3": {
-          "text": "Citizenship can be gained by birth, by descent, by registration, or by naturalisation."
+          "text": "Citizenship can be gained by birth, by descent, by registration, or by naturalisation.",
+          "slide": {
+            "heading": "Ways to gain citizenship",
+            "points": [
+              "By birth",
+              "By descent",
+              "By registration",
+              "By naturalisation"
+            ]
+          }
         },
         "s4": {
-          "text": "Articles 5 to 11 of the Indian Constitution deal with citizenship. The Citizenship Act of 1955 gives the details."
+          "text": "Articles 5 to 11 of the Indian Constitution deal with citizenship. The Citizenship Act of 1955 gives the details.",
+          "slide": {
+            "heading": "Citizenship in India",
+            "points": [
+              "Articles 5 to 11",
+              "Citizenship Act 1955"
+            ]
+          }
         },
         "s5": {
-          "text": "India has single citizenship. Every Indian is a citizen of India only, not of a separate state."
+          "text": "India has single citizenship. Every Indian is a citizen of India only, not of a separate state.",
+          "slide": {
+            "heading": "Single citizenship in India",
+            "points": [
+              "Single citizenship",
+              "Citizen of India only"
+            ]
+          }
         },
         "s6": {
           "question": "Did you understand what a citizen is and how citizenship is acquired in India?",
@@ -255,7 +384,7 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.806Z"
+      "reviewedAt": "2026-11-26T15:14:43.236Z"
     }
   },
   "order": 4

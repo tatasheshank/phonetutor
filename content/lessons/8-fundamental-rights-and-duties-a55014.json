@@ -17,7 +17,11 @@
     {
       "id": "s1",
       "type": "say",
-      "avatar": "smile"
+      "avatar": "smile",
+      "image": {
+        "src": "/lesson-media/history-civics/constitution-of-india.jpg",
+        "credit": "Illumination/ornamentation by Beohar Rammanohar Sinha, calligraphy by Prem Behar · Public domain · Wikimedia Commons"
+      }
     },
     {
       "id": "s2",
@@ -42,7 +46,11 @@
     {
       "id": "s6",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/ambedkar.jpg",
+        "credit": "Snehrashmi · CC BY-SA 4.0 · Wikimedia Commons"
+      }
     },
     {
       "id": "s7",
@@ -62,7 +70,11 @@
     {
       "id": "s10",
       "type": "say",
-      "avatar": "neutral"
+      "avatar": "neutral",
+      "image": {
+        "src": "/lesson-media/history-civics/flag-of-india.png",
+        "credit": "Government of India · Public domain · Wikimedia Commons"
+      }
     },
     {
       "id": "s11",
@@ -121,40 +133,134 @@
       "title": "8. ప్రాథమిక హక్కులు మరియు విధులు",
       "steps": {
         "s1": {
-          "text": "Fundamental Rights అనేవి రాజ్యాంగంలోని మూడవ భాగంలో, Articles 12 నుండి 35 వరకు ఉన్నాయి. ఇవి ప్రతి పౌరుడి స్వేచ్ఛను, గౌరవాన్ని కాపాడతాయి. వీటిని ఉల్లంఘిస్తే పౌరుడు కోర్టుకు వెళ్ళవచ్చు."
+          "text": "Fundamental Rights అనేవి రాజ్యాంగంలోని మూడవ భాగంలో, Articles 12 నుండి 35 వరకు ఉన్నాయి. ఇవి ప్రతి పౌరుడి స్వేచ్ఛను, గౌరవాన్ని కాపాడతాయి. వీటిని ఉల్లంఘిస్తే పౌరుడు కోర్టుకు వెళ్ళవచ్చు.",
+          "slide": {
+            "heading": "ఫండమెంటల్ రైట్స్ ఓవర్‌వ్యూ",
+            "points": [
+              "కాన్స్టిట్యూషన్‌లో పార్ట్ 3",
+              "ఆర్టికల్స్ 12 నుంచి 35 వరకు",
+              "స్వేచ్ఛను, గౌరవాన్ని కాపాడాలి"
+            ]
+          }
         },
         "s2": {
-          "text": "మొత్తం ఆరు Fundamental Rights ఉన్నాయి. Right to Equality అంటే చట్టం ముందు అందరూ సమానమే, అలాగే అంటరానితనం రద్దు చేయబడింది."
+          "text": "మొత్తం ఆరు Fundamental Rights ఉన్నాయి. Right to Equality అంటే చట్టం ముందు అందరూ సమానమే, అలాగే అంటరానితనం రద్దు చేయబడింది.",
+          "slide": {
+            "heading": "ఈక్వాలిటీ హక్కు",
+            "points": [
+              "మొత్తం 6 ఫండమెంటల్ రైట్స్ ఉన్నాయి",
+              "చట్టం ముందు అందరూ సమానం",
+              "అంటరానితనం రద్దు చేయబడింది"
+            ]
+          }
         },
         "s3": {
-          "text": "Right to Freedom లో మాట్లాడే స్వేచ్ఛ, గుమిగూడే స్వేచ్ఛ, తిరిగే స్వేచ్ఛ, అలాగే వృత్తిని ఎంచుకునే స్వేచ్ఛ ఉంటాయి."
+          "text": "Right to Freedom లో మాట్లాడే స్వేచ్ఛ, గుమిగూడే స్వేచ్ఛ, తిరిగే స్వేచ్ఛ, అలాగే వృత్తిని ఎంచుకునే స్వేచ్ఛ ఉంటాయి.",
+          "slide": {
+            "heading": "ఫ్రీడమ్ హక్కు",
+            "points": [
+              "స్పీచ్ ఫ్రీడమ్",
+              "అసెంబ్లీ ఫ్రీడమ్",
+              "మూవ్‌మెంట్, ప్రొఫెషన్ ఫ్రీడమ్"
+            ]
+          }
         },
         "s4": {
-          "text": "Right against Exploitation ఫ్యాక్టరీలలో బలవంతపు కూలిని, బాలకార్మిక వ్యవస్థను నిషేధిస్తుంది."
+          "text": "Right against Exploitation ఫ్యాక్టరీలలో బలవంతపు కూలిని, బాలకార్మిక వ్యవస్థను నిషేధిస్తుంది.",
+          "slide": {
+            "heading": "ఎక్స్‌ప్లాయిటేషన్ కి వ్యతిరేకంగా హక్కు",
+            "points": [
+              "ఫోర్స్డ్ లేబర్‌ను బ్యాన్ చేశారు",
+              "ఫ్యాక్టరీల్లో చైల్డ్ లేబర్‌ను బ్యాన్ చేశారు"
+            ]
+          }
         },
         "s5": {
-          "text": "Right to Freedom of Religion మరియు Cultural and Educational Rights ద్వారా మైనారిటీలు తమ సంస్కృతిని కాపాడుకోవచ్చు, తమ సొంత స్కూల్స్ నడుపుకోవచ్చు."
+          "text": "Right to Freedom of Religion మరియు Cultural and Educational Rights ద్వారా మైనారిటీలు తమ సంస్కృతిని కాపాడుకోవచ్చు, తమ సొంత స్కూల్స్ నడుపుకోవచ్చు.",
+          "slide": {
+            "heading": "మతం, ఎడ్యుకేషన్ హక్కులు",
+            "points": [
+              "మత స్వేచ్ఛ",
+              "కల్చరల్, ఎడ్యుకేషనల్ హక్కులు",
+              "మైనారిటీలు తమ కల్చర్‌ను, స్కూల్స్‌ను కాపాడుకుంటారు"
+            ]
+          }
         },
         "s6": {
-          "text": "Right to Constitutional Remedies, Article 32 ద్వారా పౌరుడు నేరుగా Supreme Court కు వెళ్ళవచ్చు. Dr. Ambedkar గారు Article 32 ను రాజ్యాంగాని గుండెకాయ, ఆత్మ అని పిలిచారు."
+          "text": "Right to Constitutional Remedies, Article 32 ద్వారా పౌరుడు నేరుగా Supreme Court కు వెళ్ళవచ్చు. Dr. Ambedkar గారు Article 32 ను రాజ్యాంగాని గుండెకాయ, ఆత్మ అని పిలిచారు.",
+          "slide": {
+            "heading": "కాన్స్టిట్యూషనల్ రెమెడీస్",
+            "points": [
+              "ఆర్టికల్ 32",
+              "డైరెక్ట్‌గా సుప్రీం కోర్టుకు వెళ్లొచ్చు",
+              "అంబేద్కర్: హార్ట్ అండ్ సోల్"
+            ]
+          }
         },
         "s7": {
-          "text": "Right to Property ను 1978 లో 44th Amendment ద్వారా ఆ లిస్ట్ నుండి తీసేశారు."
+          "text": "Right to Property ను 1978 లో 44th Amendment ద్వారా ఆ లిస్ట్ నుండి తీసేశారు.",
+          "slide": {
+            "heading": "ప్రాపర్టీ హక్కు",
+            "points": [
+              "44th అమెండ్‌మెంట్ ద్వారా తీసేశారు",
+              "సంవత్సరం 1978"
+            ]
+          }
         },
         "s8": {
-          "text": "Swaran Singh Committee సలహా మేరకు 1976 లో 42nd Amendment ద్వారా Fundamental Duties ను చేర్చారు. ఇవి Article 51A లో ఉన్నాయి."
+          "text": "Swaran Singh Committee సలహా మేరకు 1976 లో 42nd Amendment ద్వారా Fundamental Duties ను చేర్చారు. ఇవి Article 51A లో ఉన్నాయి.",
+          "slide": {
+            "heading": "ఫండమెంటల్ డ్యూటీస్",
+            "points": [
+              "42nd అమెండ్‌మెంట్ ద్వారా యాడ్ చేశారు",
+              "సంవత్సరం 1976",
+              "స్వర్ణ సింగ్ కమిటీ సలహా",
+              "ఆర్టికల్ 51A"
+            ]
+          }
         },
         "s9": {
-          "text": "మొదట్లో పది ఉన్నాయి, 2002 లో పదకొండవది కూడా కలిపారు."
+          "text": "మొదట్లో పది ఉన్నాయి, 2002 లో పదకొండవది కూడా కలిపారు.",
+          "slide": {
+            "heading": "ఫండమెంటల్ డ్యూటీస్ కౌంట్",
+            "points": [
+              "మొదట 10 డ్యూటీస్ ఉన్నాయి",
+              "2002లో 11వది యాడ్ చేశారు"
+            ]
+          }
         },
         "s10": {
-          "text": "రాజ్యాంగాన్ని, National Flag ను, National Anthem ను గౌరవించడం, అలాగే India ఐక్యతను, సమగ్రతను కాపాడటం కొన్ని duties."
+          "text": "రాజ్యాంగాన్ని, National Flag ను, National Anthem ను గౌరవించడం, అలాగే India ఐక్యతను, సమగ్రతను కాపాడటం కొన్ని duties.",
+          "slide": {
+            "heading": "రెస్పెక్ట్, యూనిటీ డ్యూటీస్",
+            "points": [
+              "కాన్స్టిట్యూషన్, ఫ్లాగ్, యాంథెమ్‌ను గౌరవించాలి",
+              "యూనిటీ, ఇంటిగ్రిటీని కాపాడాలి"
+            ]
+          }
         },
         "s11": {
-          "text": "మిగతా duties లో సామరస్యం, సోదరభావం పెంచడం, మహిళలను గౌరవించడం, అడవులు, నదులు, వన్యప్రాణులను రక్షించడం, శాస్త్రీయ దృక్పథాన్ని పెంపొందించుకోవడం ఉన్నాయి."
+          "text": "మిగతా duties లో సామరస్యం, సోదరభావం పెంచడం, మహిళలను గౌరవించడం, అడవులు, నదులు, వన్యప్రాణులను రక్షించడం, శాస్త్రీయ దృక్పథాన్ని పెంపొందించుకోవడం ఉన్నాయి.",
+          "slide": {
+            "heading": "ఇతర ఫండమెంటల్ డ్యూటీస్",
+            "points": [
+              "హార్మనీ, బ్రదర్‌హుడ్‌ను ప్రమోట్ చేయాలి",
+              "మహిళలను గౌరవించాలి",
+              "అడవులు, నదులు, వైల్డ్‌లైఫ్‌ను కాపాడాలి",
+              "సైంటిఫిక్ టెంపర్‌ను డెవలప్ చేయాలి"
+            ]
+          }
         },
         "s12": {
-          "text": "పౌరులు ప్రభుత్వ ఆస్తిని కాపాడాలి, హింసకు దూరంగా ఉండాలి. అలాగే తల్లిదండ్రులు 6 నుండి 14 ఏళ్ల పిల్లలకు చదువుకునే అవకాశం ఇవ్వాలి."
+          "text": "పౌరులు ప్రభుత్వ ఆస్తిని కాపాడాలి, హింసకు దూరంగా ఉండాలి. అలాగే తల్లిదండ్రులు 6 నుండి 14 ఏళ్ల పిల్లలకు చదువుకునే అవకాశం ఇవ్వాలి.",
+          "slide": {
+            "heading": "అదనపు డ్యూటీస్",
+            "points": [
+              "పబ్లిక్ ప్రాపర్టీని కాపాడాలి",
+              "హింసను అవాయిడ్ చేయాలి",
+              "పేరెంట్స్: 6 నుంచి 14 ఏళ్ల వరకు పిల్లలకు ఎడ్యుకేషన్ ఇప్పించాలి"
+            ]
+          }
         },
         "s13": {
           "question": "మీకు Fundamental Rights మరియు Duties అర్థమయ్యాయా?",
@@ -194,47 +300,141 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.671Z"
+      "reviewedAt": "2026-11-26T15:14:43.150Z"
     },
     "hi": {
       "status": "reviewed",
       "title": "8. मूल अधिकार और कर्तव्य",
       "steps": {
         "s1": {
-          "text": "Fundamental Rights संविधान के भाग तीन में हैं, Articles 12 से 35 तक। ये हर नागरिक की आज़ादी और सम्मान की रक्षा करते हैं। अगर इनका उल्लंघन हो, तो नागरिक कोर्ट जा सकता है।"
+          "text": "Fundamental Rights संविधान के भाग तीन में हैं, Articles 12 से 35 तक। ये हर नागरिक की आज़ादी और सम्मान की रक्षा करते हैं। अगर इनका उल्लंघन हो, तो नागरिक कोर्ट जा सकता है।",
+          "slide": {
+            "heading": "बुनियादी अधिकारों का ओवरव्यू",
+            "points": [
+              "संविधान का तीसरा भाग",
+              "आर्टिकल्स 12 से 35",
+              "आज़ादी और सम्मान की रक्षा"
+            ]
+          }
         },
         "s2": {
-          "text": "छह Fundamental Rights हैं। Right to Equality का मतलब है कि कानून के सामने सब बराबर हैं, और छुआछूत खत्म कर दी गई है।"
+          "text": "छह Fundamental Rights हैं। Right to Equality का मतलब है कि कानून के सामने सब बराबर हैं, और छुआछूत खत्म कर दी गई है।",
+          "slide": {
+            "heading": "समानता का अधिकार",
+            "points": [
+              "कुल 6 बुनियादी अधिकार हैं",
+              "कानून के सामने सब बराबर हैं",
+              "छुआछूत खत्म की गई"
+            ]
+          }
         },
         "s3": {
-          "text": "Right to Freedom में बोलने, इकट्ठा होने, घूमने और अपना पेशा चुनने की आज़ादी शामिल है।"
+          "text": "Right to Freedom में बोलने, इकट्ठा होने, घूमने और अपना पेशा चुनने की आज़ादी शामिल है।",
+          "slide": {
+            "heading": "स्वतंत्रता का अधिकार",
+            "points": [
+              "बोलने की आज़ादी",
+              "इकट्ठा होने की आज़ादी",
+              "आने-जाने और पेशे की आज़ादी"
+            ]
+          }
         },
         "s4": {
-          "text": "Right against Exploitation फैक्ट्रियों में जबरन मजदूरी और बाल मजदूरी पर रोक लगाता है।"
+          "text": "Right against Exploitation फैक्ट्रियों में जबरन मजदूरी और बाल मजदूरी पर रोक लगाता है।",
+          "slide": {
+            "heading": "शोषण के खिलाफ अधिकार",
+            "points": [
+              "मज़दूरी पर रोक",
+              "फैक्ट्रियों में बाल मज़दूरी पर रोक"
+            ]
+          }
         },
         "s5": {
-          "text": "Right to Freedom of Religion और Cultural and Educational Rights की वजह से अल्पसंख्यक अपनी संस्कृति बचा सकते हैं और अपने स्कूल चला सकते हैं।"
+          "text": "Right to Freedom of Religion और Cultural and Educational Rights की वजह से अल्पसंख्यक अपनी संस्कृति बचा सकते हैं और अपने स्कूल चला सकते हैं।",
+          "slide": {
+            "heading": "धर्म और शिक्षा के अधिकार",
+            "points": [
+              "धर्म की आज़ादी",
+              "सांस्कृतिक और शैक्षिक अधिकार",
+              "अल्पसंख्यक अपनी संस्कृति और स्कूलों को बचाते हैं"
+            ]
+          }
         },
         "s6": {
-          "text": "Right to Constitutional Remedies, Article 32, नागरिक को सीधे सुप्रीम कोर्ट जाने की सुविधा देता है। Dr. Ambedkar ने Article 32 को संविधान का दिल और आत्मा कहा था।"
+          "text": "Right to Constitutional Remedies, Article 32, नागरिक को सीधे सुप्रीम कोर्ट जाने की सुविधा देता है। Dr. Ambedkar ने Article 32 को संविधान का दिल और आत्मा कहा था।",
+          "slide": {
+            "heading": "संवैधानिक उपाय",
+            "points": [
+              "आर्टिकल 32",
+              "सीधे सुप्रीम कोर्ट जाएं",
+              "अम्बेडकर: दिल और आत्मा"
+            ]
+          }
         },
         "s7": {
-          "text": "Right to Property को 1978 में 44th Amendment के ज़रिए लिस्ट से हटा दिया गया था।"
+          "text": "Right to Property को 1978 में 44th Amendment के ज़रिए लिस्ट से हटा दिया गया था।",
+          "slide": {
+            "heading": "संपत्ति का अधिकार",
+            "points": [
+              "44वें संशोधन से हटाया गया",
+              "साल 1978"
+            ]
+          }
         },
         "s8": {
-          "text": "Fundamental Duties को 1976 में Swaran Singh Committee की सलाह पर 42nd Amendment से जोड़ा गया था। ये Article 51A में हैं।"
+          "text": "Fundamental Duties को 1976 में Swaran Singh Committee की सलाह पर 42nd Amendment से जोड़ा गया था। ये Article 51A में हैं।",
+          "slide": {
+            "heading": "मूल कर्तव्य",
+            "points": [
+              "42वें संशोधन से जोड़े गए",
+              "साल 1976",
+              "स्वर्ण सिंह कमेटी की सलाह",
+              "आर्टिकल 51A"
+            ]
+          }
         },
         "s9": {
-          "text": "शुरू में 10 duties थीं, और 2002 में 11वीं duty जोड़ी गई।"
+          "text": "शुरू में 10 duties थीं, और 2002 में 11वीं duty जोड़ी गई।",
+          "slide": {
+            "heading": "मूल कर्तव्यों की गिनती",
+            "points": [
+              "शुरू में 10 कर्तव्य थे",
+              "2002 में 11वां जोड़ा गया"
+            ]
+          }
         },
         "s10": {
-          "text": "कुछ duties में संविधान, National Flag और National Anthem का सम्मान करना, और भारत की एकता और अखंडता को बचाना शामिल है।"
+          "text": "कुछ duties में संविधान, National Flag और National Anthem का सम्मान करना, और भारत की एकता और अखंडता को बचाना शामिल है।",
+          "slide": {
+            "heading": "सम्मान और एकता के कर्तव्य",
+            "points": [
+              "संविधान, झंडे और राष्ट्रगान का सम्मान करें",
+              "एकता और अखंडता बनाए रखें"
+            ]
+          }
         },
         "s11": {
-          "text": "अन्य duties में भाईचारा बढ़ाना, महिलाओं का सम्मान करना, जंगलों, नदियों और वन्यजीवों को बचाना, और वैज्ञानिक सोच विकसित करना शामिल है।"
+          "text": "अन्य duties में भाईचारा बढ़ाना, महिलाओं का सम्मान करना, जंगलों, नदियों और वन्यजीवों को बचाना, और वैज्ञानिक सोच विकसित करना शामिल है।",
+          "slide": {
+            "heading": "अन्य मूल कर्तव्य",
+            "points": [
+              "मेलजोल और भाईचारे को बढ़ावा दें",
+              "महिलाओं का सम्मान करें",
+              "जंगल, नदियों और वन्यजीवों की रक्षा करें",
+              "वैज्ञानिक सोच विकसित करें"
+            ]
+          }
         },
         "s12": {
-          "text": "नागरिकों को सार्वजनिक संपत्ति की रक्षा करनी चाहिए और हिंसा से बचना चाहिए। माता-पिता को 6 से 14 साल के बच्चों को शिक्षा का मौका देना चाहिए।"
+          "text": "नागरिकों को सार्वजनिक संपत्ति की रक्षा करनी चाहिए और हिंसा से बचना चाहिए। माता-पिता को 6 से 14 साल के बच्चों को शिक्षा का मौका देना चाहिए।",
+          "slide": {
+            "heading": "अतिरिक्त कर्तव्य",
+            "points": [
+              "सार्वजनिक संपत्ति की रक्षा करें",
+              "हिंसा से बचें",
+              "माता-पिता: 6 से 14 साल तक की शिक्षा"
+            ]
+          }
         },
         "s13": {
           "question": "क्या आपको Fundamental Rights और Duties समझ आए?",
@@ -276,47 +476,141 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.671Z"
+      "reviewedAt": "2026-11-26T15:14:43.150Z"
     },
     "en": {
       "status": "reviewed",
       "title": "8. Fundamental Rights and Duties",
       "steps": {
         "s1": {
-          "text": "Fundamental Rights are in Part Three of the Constitution, Articles 12 to 35. They protect the freedom and dignity of every citizen, and a citizen can go to court if they are violated."
+          "text": "Fundamental Rights are in Part Three of the Constitution, Articles 12 to 35. They protect the freedom and dignity of every citizen, and a citizen can go to court if they are violated.",
+          "slide": {
+            "heading": "Fundamental Rights Overview",
+            "points": [
+              "Part Three of the Constitution",
+              "Articles 12 to 35",
+              "Protect freedom and dignity"
+            ]
+          }
         },
         "s2": {
-          "text": "There are six Fundamental Rights. The Right to Equality means everyone is equal before the law, and untouchability is abolished."
+          "text": "There are six Fundamental Rights. The Right to Equality means everyone is equal before the law, and untouchability is abolished.",
+          "slide": {
+            "heading": "Right to Equality",
+            "points": [
+              "Six Fundamental Rights total",
+              "Everyone equal before law",
+              "Untouchability abolished"
+            ]
+          }
         },
         "s3": {
-          "text": "The Right to Freedom includes freedom of speech, of assembly, of movement, and of profession."
+          "text": "The Right to Freedom includes freedom of speech, of assembly, of movement, and of profession.",
+          "slide": {
+            "heading": "Right to Freedom",
+            "points": [
+              "Freedom of speech",
+              "Freedom of assembly",
+              "Freedom of movement and profession"
+            ]
+          }
         },
         "s4": {
-          "text": "The Right against Exploitation bans forced labour and child labour in factories."
+          "text": "The Right against Exploitation bans forced labour and child labour in factories.",
+          "slide": {
+            "heading": "Right against Exploitation",
+            "points": [
+              "Bans forced labour",
+              "Bans child labour in factories"
+            ]
+          }
         },
         "s5": {
-          "text": "The Right to Freedom of Religion and Cultural and Educational Rights let minorities protect their culture and run their own schools."
+          "text": "The Right to Freedom of Religion and Cultural and Educational Rights let minorities protect their culture and run their own schools.",
+          "slide": {
+            "heading": "Religion and Education Rights",
+            "points": [
+              "Freedom of religion",
+              "Cultural and educational rights",
+              "Minorities protect culture and schools"
+            ]
+          }
         },
         "s6": {
-          "text": "The Right to Constitutional Remedies, Article 32, lets a citizen go directly to the Supreme Court. Dr. Ambedkar called Article 32 the heart and soul of the Constitution."
+          "text": "The Right to Constitutional Remedies, Article 32, lets a citizen go directly to the Supreme Court. Dr. Ambedkar called Article 32 the heart and soul of the Constitution.",
+          "slide": {
+            "heading": "Constitutional Remedies",
+            "points": [
+              "Article 32",
+              "Direct to Supreme Court",
+              "Ambedkar: heart and soul"
+            ]
+          }
         },
         "s7": {
-          "text": "The Right to Property was removed from the list by the 44th Amendment in 1978."
+          "text": "The Right to Property was removed from the list by the 44th Amendment in 1978.",
+          "slide": {
+            "heading": "Right to Property",
+            "points": [
+              "Removed by 44th Amendment",
+              "Year 1978"
+            ]
+          }
         },
         "s8": {
-          "text": "Fundamental Duties were added by the 42nd Amendment in 1976, on the advice of the Swaran Singh Committee. They are in Article 51A."
+          "text": "Fundamental Duties were added by the 42nd Amendment in 1976, on the advice of the Swaran Singh Committee. They are in Article 51A.",
+          "slide": {
+            "heading": "Fundamental Duties",
+            "points": [
+              "Added by 42nd Amendment",
+              "Year 1976",
+              "Swaran Singh Committee advice",
+              "Article 51A"
+            ]
+          }
         },
         "s9": {
-          "text": "There were ten at first, and the eleventh was added in 2002."
+          "text": "There were ten at first, and the eleventh was added in 2002.",
+          "slide": {
+            "heading": "Fundamental Duties Count",
+            "points": [
+              "Ten duties at first",
+              "Eleventh added in 2002"
+            ]
+          }
         },
         "s10": {
-          "text": "Some duties are to respect the Constitution, the National Flag and the National Anthem, and to protect the unity and integrity of India."
+          "text": "Some duties are to respect the Constitution, the National Flag and the National Anthem, and to protect the unity and integrity of India.",
+          "slide": {
+            "heading": "Respect and Unity Duties",
+            "points": [
+              "Respect Constitution, Flag, Anthem",
+              "Protect unity and integrity"
+            ]
+          }
         },
         "s11": {
-          "text": "Other duties include promoting harmony and brotherhood, respecting women, protecting forests, rivers and wildlife, and developing a scientific temper."
+          "text": "Other duties include promoting harmony and brotherhood, respecting women, protecting forests, rivers and wildlife, and developing a scientific temper.",
+          "slide": {
+            "heading": "Other Fundamental Duties",
+            "points": [
+              "Promote harmony and brotherhood",
+              "Respect women",
+              "Protect forests, rivers, wildlife",
+              "Develop scientific temper"
+            ]
+          }
         },
         "s12": {
-          "text": "Citizens must also protect public property, avoid violence, and parents must give children between 6 and 14 years the chance of education."
+          "text": "Citizens must also protect public property, avoid violence, and parents must give children between 6 and 14 years the chance of education.",
+          "slide": {
+            "heading": "Additional Duties",
+            "points": [
+              "Protect public property",
+              "Avoid violence",
+              "Parents: education for 6 to 14 years"
+            ]
+          }
         },
         "s13": {
           "question": "Did you understand Fundamental Rights and Duties?",
@@ -350,7 +644,7 @@
       "quiz": {},
       "neverSay": [],
       "reviewer": "admin (AI-prepared)",
-      "reviewedAt": "2026-11-26T14:33:48.671Z"
+      "reviewedAt": "2026-11-26T15:14:43.150Z"
     }
   },
   "order": 8

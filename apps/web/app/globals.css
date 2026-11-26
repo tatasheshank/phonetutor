@@ -829,6 +829,89 @@ p {
   border-radius: var(--radius);
   padding: 8px 12px;
 }
+/* The board while the teacher talks: key points in chalk, and a picture when there is one. */
+.slide-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 190px;
+  padding: 16px 18px;
+  color: #f8fafc;
+  background: #1f3d2b;
+  border: 10px solid #6b4423;
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 3px #2f5d3f, 0 4px 14px rgb(0 0 0 / 0.2);
+}
+@media (min-width: 640px) {
+  .slide-frame.with-image {
+    flex-direction: row;
+    align-items: center;
+  }
+  .slide-frame.with-image .slide-picture {
+    flex: 0 0 45%;
+  }
+}
+.slide-picture {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.slide-picture img {
+  width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+  animation: slide-in 0.5s ease-out both;
+}
+.slide-picture figcaption {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  text-align: right;
+}
+.slide-text {
+  flex: 1;
+  min-width: 0;
+}
+.slide-heading {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  color: #fde68a;
+  border-bottom: 2px dashed rgb(253 230 138 / 0.5);
+  padding-bottom: 6px;
+  animation: slide-in 0.4s ease-out both;
+}
+.slide-points {
+  margin: 0;
+  padding-left: 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 1.08rem;
+  line-height: 1.4;
+}
+.slide-points li {
+  animation: slide-in 0.5s ease-out both;
+}
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slide-heading,
+  .slide-points li,
+  .slide-picture img {
+    animation: none;
+  }
+}
+
 /* Teaching layout: avatar small at the bottom left, beside the status, pointing up at the board. */
 .teach-row {
   display: flex;
